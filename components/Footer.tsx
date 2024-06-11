@@ -70,6 +70,7 @@ export default async function Footer() {
             <Link
               href="https://www.facebook.com/wearelovefirst"
               target="_blank"
+              aria-label="Visit Love First on Facebook"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -85,6 +86,7 @@ export default async function Footer() {
             <Link
               href="https://www.instagram.com/wearelovefirst/"
               target="_blank"
+              aria-label="Visit Love First on Instagram"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -100,6 +102,7 @@ export default async function Footer() {
             <Link
               href="https://www.youtube.com/@LovefirstChristianCenter/featured"
               target="_blank"
+              aria-label="Visit Love First on YouTube"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +116,11 @@ export default async function Footer() {
               </svg>
             </Link>
 
-            <Link href="https://x.com/wearelovefirst" target="_blank">
+            <Link
+              href="https://x.com/wearelovefirst"
+              target="_blank"
+              aria-label="Visit Love First on X"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 data-name="Layer 1"
