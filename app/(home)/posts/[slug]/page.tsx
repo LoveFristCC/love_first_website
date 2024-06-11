@@ -37,7 +37,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata(
   { params }: Props,
-  parent: ResolvingMetadata,
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const post = await sanityFetch<PostQueryResult>({
     query: postQuery,
@@ -69,6 +69,7 @@ export default async function PostPage({ params }: Props) {
   ]);
 
   if (!post?._id) {
+    console.log("made it here");
     return notFound();
   }
 

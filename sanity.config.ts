@@ -16,8 +16,11 @@ import { structureTool } from "sanity/structure";
 import { apiVersion, dataset, projectId, studioUrl } from "@/sanity/lib/api";
 import { pageStructure, singletonPlugin } from "@/sanity/plugins/settings";
 import { assistWithPresets } from "@/sanity/plugins/assist";
-import author from "@/sanity/schemas/documents/author";
-import post from "@/sanity/schemas/documents/post";
+// import author from "@/sanity/schemas/documents/author";
+// import post from "@/sanity/schemas/documents/post";
+import pastors from "@/sanity/schemas/documents/pastors";
+import leaders from "@/sanity/schemas/documents/leaders";
+import staff from "@/sanity/schemas/documents/staff";
 import settings from "@/sanity/schemas/singletons/settings";
 import { resolveHref } from "@/sanity/lib/utils";
 
@@ -35,8 +38,11 @@ export default defineConfig({
       // Singletons
       settings,
       // Documents
-      post,
-      author,
+      // post,
+      // author,
+      pastors,
+      leaders,
+      staff,
     ],
   },
   plugins: [

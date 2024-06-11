@@ -112,7 +112,7 @@ export default defineType({
               href="https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase"
               rel="noreferrer noopener"
             >
-              More information
+              test
             </a>
           ),
         }),

@@ -13,45 +13,10 @@ export const description = [
         _key: "4a58edd077880",
         _type: "span",
         marks: [],
-        text: "A statically generated blog example using ",
-      },
-      {
-        _key: "4a58edd077881",
-        _type: "span",
-        marks: ["ec5b66c9b1e0"],
-        text: "Next.js",
-      },
-      {
-        _key: "4a58edd077882",
-        _type: "span",
-        marks: [],
-        text: " and ",
-      },
-      {
-        _key: "4a58edd077883",
-        _type: "span",
-        marks: ["1f8991913ea8"],
-        text: "Sanity",
-      },
-      {
-        _key: "4a58edd077884",
-        _type: "span",
-        marks: [],
-        text: ".",
+        text: "Welcome to Love First Christian Center in Riverview, FL. Join us for inspiring worship, engaging life groups, community outreach, and meaningful fellowship. Experience love and faith in action with our vibrant church family.",
       },
     ],
-    markDefs: [
-      {
-        _key: "ec5b66c9b1e0",
-        _type: "link",
-        href: "https://nextjs.org/",
-      },
-      {
-        _key: "1f8991913ea8",
-        _type: "link",
-        href: "https://sanity.io/",
-      },
-    ],
+
     style: "normal",
   },
 ];
