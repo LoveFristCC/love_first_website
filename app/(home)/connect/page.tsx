@@ -8,8 +8,6 @@ export default async function Connect() {
   const url =
     "https://api.planningcenteronline.com/groups/v2/group_types?filter=church_center_visible";
   const groups = await getPcData(url);
-  const { data } = groups;
-  console.log("🚀 ~ data:", data);
 
   type GroupKeys =
     | "Love Groups"
@@ -72,7 +70,7 @@ export default async function Connect() {
         ></path>
       </svg>
       <section className="connectionGroups">
-        {data.map(
+        {groups?.data?.map(
           (
             el: { attributes: { name: string; description: string } },
             key: number
