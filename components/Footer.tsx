@@ -47,7 +47,7 @@ export default async function Footer() {
           <div className="footerLinks">
             <p>Connect</p>
             <Link href="/connect/events">Events</Link>
-            <Link href="/connect/life-groups">Life Groups</Link>
+            <Link href="/connect/love-groups">Love Groups</Link>
             <Link href="/connect/life-university">Life University</Link>
             <Link href="/connect/ministries">Ministries</Link>
             <Link href="/connect/outreach">Outreach</Link>
