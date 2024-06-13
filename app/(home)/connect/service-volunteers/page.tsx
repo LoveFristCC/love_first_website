@@ -43,7 +43,7 @@ export default async function ServiceVolunteers() {
                 <p>{el.attributes.schedule}</p>
 
                 <Link
-                  href={`/connect/love-groups/${el.id}`}
+                  href={`/connect/service-volunteers/${el.id}`}
                   className="groupLinks"
                 >
                   Learn More

@@ -43,7 +43,7 @@ export default async function Media() {
                 <p>{el.attributes.schedule}</p>
 
                 <Link
-                  href={`/connect/love-groups/${el.id}`}
+                  href={`/connect/media-team/${el.id}`}
                   className="groupLinks"
                 >
                   Learn More

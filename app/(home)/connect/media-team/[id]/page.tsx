@@ -38,12 +38,5 @@ export default async function IndividualMediaTeam({
 }: {
   params: { id: string };
 }) {
-  const [settings, heroPost] = await Promise.all([
-    sanityFetch<SettingsQueryResult>({
-      query: settingsQuery,
-    }),
-    sanityFetch<HeroQueryResult>({ query: heroQuery }),
-  ]);
-
   return <div className="container mx-auto px-5">{params.id}</div>;
 }

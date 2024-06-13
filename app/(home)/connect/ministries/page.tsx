@@ -43,7 +43,7 @@ export default async function Ministries() {
                 <p>{el.attributes.schedule}</p>
 
                 <Link
-                  href={`/connect/love-groups/${el.id}`}
+                  href={`/connect/ministries/${el.id}`}
                   className="groupLinks"
                 >
                   Learn More

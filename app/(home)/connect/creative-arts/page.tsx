@@ -43,7 +43,7 @@ export default async function CreativeArts() {
                 <p>{el.attributes.schedule}</p>
 
                 <Link
-                  href={`/connect/love-groups/${el.id}`}
+                  href={`/connect/creative-arts/${el.id}`}
                   className="groupLinks"
                 >
                   Learn More

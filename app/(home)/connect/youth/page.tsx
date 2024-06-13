@@ -42,10 +42,7 @@ export default async function Youth() {
 
                 <p>{el.attributes.schedule}</p>
 
-                <Link
-                  href={`/connect/love-groups/${el.id}`}
-                  className="groupLinks"
-                >
+                <Link href={`/connect/youth/${el.id}`} className="groupLinks">
                   Learn More
                 </Link>
               </div>
