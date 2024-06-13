@@ -103,7 +103,7 @@ export default async function Connect() {
                   <p>{el.attributes.description}</p>
 
                   <Link href={url} className="groupLinks">
-                    Learn More
+                    Find Out How You Can Get Involved
                   </Link>
                 </div>
               </div>

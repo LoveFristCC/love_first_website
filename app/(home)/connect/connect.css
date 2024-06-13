@@ -46,6 +46,9 @@
 .groupCards {  
 max-width: 100%;
 }
+.groupCards img {
+  min-height: 190px;
+}
 
 .groupContent h2 {
   font-size: var(--font-size-fluid-1);
