@@ -46,11 +46,14 @@ export default async function Footer() {
           </div>
           <div className="footerLinks">
             <p>Connect</p>
-            <Link href="/connect/events">Events</Link>
+            <Link href="/connect/creative-arts">Creative Arts</Link>
             <Link href="/connect/love-groups">Love Groups</Link>
-            <Link href="/connect/life-university">Life University</Link>
+            <Link href="/connect/media-team">Media Team</Link>
             <Link href="/connect/ministries">Ministries</Link>
-            <Link href="/connect/outreach">Outreach</Link>
+            <Link href="/connect/service-volunteers">Service Volunteers</Link>
+            <Link href="/connect/theatrical-ministry">Theatrical Ministry</Link>
+            <Link href="/connect/youth">Youth Ministry</Link>
+            <Link href="/connect/volunteer-army">Volunteer Army</Link>
           </div>
           <div className="footerLinks">
             <p>Media</p>

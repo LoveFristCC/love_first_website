@@ -1,17 +1,56 @@
 import Link from "next/link";
-import { Suspense } from "react";
-import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
+import Image from "next/image";
+import { getPcData } from "@/app/lib/getPcData";
 
-import { sanityFetch } from "@/sanity/lib/fetch";
-import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
+export default async function LoveGroups() {
+  const url =
+    "https://api.planningcenteronline.com/groups/v2/group_types/27871/groups?filter=enrollment&enrollment=open_signup%2Crequest_to_join&per_page=42&include=location";
+  const loveGroups = await getPcData(url);
 
-export default async function LifeGroups() {
-  const [settings, heroPost] = await Promise.all([
-    sanityFetch<SettingsQueryResult>({
-      query: settingsQuery,
-    }),
-    sanityFetch<HeroQueryResult>({ query: heroQuery }),
-  ]);
+  return (
+    <div className="loveGroupsContainer">
+      {loveGroups.data.map(
+        (
+          el: {
+            id: string;
+            attributes: {
+              name: string;
+              schedule: string;
+              header_image: { medium: string };
+            };
+          },
+          key: number
+        ) => {
+          return (
+            <div key={key}>
+              <Image
+                src={el.attributes.header_image.medium}
+                alt={el.attributes.name}
+                width={200}
+                height={100}
+              />
+              <div className="groupContent">
+                <h2>{el.attributes.name}</h2>
 
-  return <div className="container mx-auto px-5">Life Groups</div>;
+                {/* <div
+                  dangerouslySetInnerHTML={{
+                    __html: el.attributes.description,
+                  }}
+                /> */}
+
+                <p>{el.attributes.schedule}</p>
+
+                <Link
+                  href={`/connect/love-groups/${el.id}`}
+                  className="groupLinks"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+          );
+        }
+      )}
+    </div>
+  );
 }

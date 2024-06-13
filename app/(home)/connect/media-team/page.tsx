@@ -2,15 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { getPcData } from "@/app/lib/getPcData";
 
-export default async function Ministries() {
+export default async function Media() {
   const url =
-    "https://api.planningcenteronline.com/groups/v2/group_types/27876/groups?filter=enrollment&enrollment=open_signup%2Crequest_to_join&per_page=42&include=location";
-  const ministries = await getPcData(url);
-  console.log("🚀 ~ ministries:", ministries);
+    "https://api.planningcenteronline.com/groups/v2/group_types/260323/groups?filter=enrollment&enrollment=open_signup%2Crequest_to_join&per_page=42&include=location";
+  const media = await getPcData(url);
+  console.log("🚀 ~ media:", media);
 
   return (
-    <div className="ministriesContainer">
-      {ministries.data.map(
+    <div className="mediaContainer">
+      {media.data.map(
         (
           el: {
             id: string;

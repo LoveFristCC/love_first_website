@@ -5,7 +5,7 @@ import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 
-export default async function LifeUniversity() {
+export default async function TheatricalMinistry() {
   const [settings, heroPost] = await Promise.all([
     sanityFetch<SettingsQueryResult>({
       query: settingsQuery,
@@ -13,5 +13,5 @@ export default async function LifeUniversity() {
     sanityFetch<HeroQueryResult>({ query: heroQuery }),
   ]);
 
-  return <div className="container mx-auto px-5">Life University</div>;
+  return <div className="container mx-auto px-5">Theatrical Ministry</div>;
 }
