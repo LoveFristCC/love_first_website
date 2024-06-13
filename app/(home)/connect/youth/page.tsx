@@ -6,7 +6,6 @@ export default async function Youth() {
   const url =
     "https://api.planningcenteronline.com/groups/v2/group_types/30699/groups?filter=enrollment&enrollment=open_signup%2Crequest_to_join&per_page=42&include=location";
   const youth = await getPcData(url);
-  console.log("🚀 ~ youth:", youth);
 
   return (
     <div className="youthContainer">
@@ -22,7 +21,6 @@ export default async function Youth() {
           },
           key: number
         ) => {
-          console.log(el);
           return (
             <div key={key}>
               <Image

@@ -6,7 +6,6 @@ export default async function Media() {
   const url =
     "https://api.planningcenteronline.com/groups/v2/group_types/260323/groups?filter=enrollment&enrollment=open_signup%2Crequest_to_join&per_page=42&include=location";
   const media = await getPcData(url);
-  console.log("🚀 ~ media:", media);
 
   return (
     <div className="mediaContainer">
@@ -22,7 +21,6 @@ export default async function Media() {
           },
           key: number
         ) => {
-          console.log(el);
           return (
             <div key={key}>
               <Image

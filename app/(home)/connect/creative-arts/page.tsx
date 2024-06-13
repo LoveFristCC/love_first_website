@@ -6,7 +6,6 @@ export default async function CreativeArts() {
   const url =
     "https://api.planningcenteronline.com/groups/v2/group_types/30700/groups?filter=enrollment&enrollment=open_signup%2Crequest_to_join&per_page=42&include=location";
   const creativeArts = await getPcData(url);
-  console.log("🚀 ~ creativeArts:", creativeArts);
 
   return (
     <div className="creativeArtsContainer">
@@ -22,7 +21,6 @@ export default async function CreativeArts() {
           },
           key: number
         ) => {
-          console.log(el);
           return (
             <div key={key}>
               <Image

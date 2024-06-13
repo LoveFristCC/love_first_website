@@ -4,7 +4,8 @@ import { getPcData } from "@/app/lib/getPcData";
 
 export default async function LoveGroups() {
   const url =
-    "https://api.planningcenteronline.com/groups/v2/group_types/27871/groups?filter=enrollment&enrollment=open_signup%2Crequest_to_join&per_page=42&include=location";
+    "https://api.planningcenteronline.com/groups/v2/group_types/27871/groups?filter=enrollment&enrollment=closed&per_page=42&include=location";
+
   const loveGroups = await getPcData(url);
 
   return (

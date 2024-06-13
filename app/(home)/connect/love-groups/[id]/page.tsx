@@ -14,7 +14,6 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   // read route params
   const id = params.id;
-  console.log("🚀 ~ group:", id);
 
   // fetch data
   // const product = await fetch(`https://.../${id}`).then((res) => res.json());
@@ -36,21 +35,24 @@ export default async function IndividualLoveGroups({
   params: { id: string };
 }) {
   const url = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}`;
-  const pastEventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}/events?filter=past%2Cpublic&order=-starts_at&per_page=3&include=location%2Cmy_rsvp`;
 
-  const futureEventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}/events?filter=upcoming%2Cpublic&order=starts_at&per_page=3&include=location%2Cmy_rsvp`;
+  const eventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}/events?filter=past%2Cpublic&order=-starts_at&per_page=3&include=location%2Cmy_rsvp`;
+
+  // const futureEventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}/events?filter=upcoming%2Cpublic&order=starts_at&per_page=3&include=location%2Cmy_rsvp`;
 
   // const loveGroups = await getPcData(url);
   // const loveGroupsPastEvents = await getPcData(pastEventsUrl);
   // const loveGroupsFutureEvents = await getPcData(pastEventsUrl);
   const [loveGroups, loveGroupsEvents] = await Promise.all([
     await getPcData(url),
-    await getPcData(pastEventsUrl),
-    await getPcData(futureEventsUrl),
+    await getPcData(eventsUrl),
+    // await getPcData(futureEventsUrl),
   ]);
+
   const groupName = loveGroups.data.attributes.name;
   const groupImage = loveGroups.data.attributes.header_image.medium;
   const groupSchedule = loveGroups.data.attributes.schedule;
+  const groupDescription = loveGroups.data.attributes.description;
   const groupEmail = loveGroups.data.attributes.contact_email;
   return (
     <div>
@@ -59,17 +61,18 @@ export default async function IndividualLoveGroups({
           <Image src={groupImage} alt={groupName} width={200} height={100} />
           <div className="groupContent">
             <h2>{groupName}</h2>
-
-            {/* <div
-              dangerouslySetInnerHTML={{
-                __html: el.attributes.description,
-              }}
-            /> */}
-
             <p>{groupSchedule}</p>
 
             {groupEmail && (
               <Link href={`mailto:${groupEmail}`}>contact us</Link>
+            )}
+
+            {groupDescription && (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: groupDescription,
+                }}
+              />
             )}
 
             {loveGroupsEvents.data.map(
@@ -83,7 +86,10 @@ export default async function IndividualLoveGroups({
                 },
                 key: number
               ) => {
-                console.log(el.attributes);
+                const date = new Date(el.attributes.starts_at);
+                const easternTime = date.toLocaleString("en-US", {
+                  timeZone: "America/New_York",
+                });
                 return (
                   <div key={key}>
                     <h3>{el.attributes.name}</h3>
@@ -92,8 +98,12 @@ export default async function IndividualLoveGroups({
                         __html: el.attributes.description,
                       }}
                     />
-                    <p>Time</p>
-                    <p>{el.attributes.starts_at}</p>
+                    {easternTime && (
+                      <>
+                        <p>Time</p>
+                        <p>{easternTime}</p>
+                      </>
+                    )}
                   </div>
                 );
               }

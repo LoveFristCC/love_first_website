@@ -6,7 +6,6 @@ export default async function Ministries() {
   const url =
     "https://api.planningcenteronline.com/groups/v2/group_types/27876/groups?filter=enrollment&enrollment=open_signup%2Crequest_to_join&per_page=42&include=location";
   const ministries = await getPcData(url);
-  console.log("🚀 ~ ministries:", ministries);
 
   return (
     <div className="ministriesContainer">
@@ -22,7 +21,6 @@ export default async function Ministries() {
           },
           key: number
         ) => {
-          console.log(el);
           return (
             <div key={key}>
               <Image

@@ -69,7 +69,6 @@ export default async function PostPage({ params }: Props) {
   ]);
 
   if (!post?._id) {
-    console.log("made it here");
     return notFound();
   }
 

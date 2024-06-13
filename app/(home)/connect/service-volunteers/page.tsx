@@ -6,7 +6,6 @@ export default async function ServiceVolunteers() {
   const url =
     "https://api.planningcenteronline.com/groups/v2/group_types/27873/groups?filter=enrollment&enrollment=open_signup%2Crequest_to_join&per_page=42&include=location";
   const serviceVolunteers = await getPcData(url);
-  console.log("🚀 ~ serviceVolunteers:", serviceVolunteers);
 
   return (
     <div className="serviceVolunteersContainer">
@@ -22,7 +21,6 @@ export default async function ServiceVolunteers() {
           },
           key: number
         ) => {
-          console.log(el);
           return (
             <div key={key}>
               <Image

@@ -51,7 +51,7 @@ export default async function Footer() {
             <Link href="/connect/media-team">Media Team</Link>
             <Link href="/connect/ministries">Ministries</Link>
             <Link href="/connect/service-volunteers">Service Volunteers</Link>
-            <Link href="/connect/theatrical-ministry">Theatrical Ministry</Link>
+            {/* <Link href="/connect/theatrical-ministry">Theatrical Ministry</Link> */}
             <Link href="/connect/youth">Youth Ministry</Link>
             <Link href="/connect/volunteer-army">Volunteer Army</Link>
           </div>

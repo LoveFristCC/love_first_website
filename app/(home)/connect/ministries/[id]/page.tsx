@@ -17,7 +17,6 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   // read route params
   const id = params.id;
-  console.log("🚀 ~ group:", id);
 
   // fetch data
   // const product = await fetch(`https://.../${id}`).then((res) => res.json());
