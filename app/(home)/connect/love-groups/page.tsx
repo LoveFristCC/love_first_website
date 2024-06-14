@@ -33,12 +33,6 @@ export default async function LoveGroups() {
               <div className="groupContent">
                 <h2>{el.attributes.name}</h2>
 
-                {/* <div
-                  dangerouslySetInnerHTML={{
-                    __html: el.attributes.description,
-                  }}
-                /> */}
-
                 <p>{el.attributes.schedule}</p>
 
                 <Link

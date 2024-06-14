@@ -44,7 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase,
     title: {
-      template: `%s | ${title}`,
+      template: `%s`,
       default: title,
     },
     description: toPlainText(description),
