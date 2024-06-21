@@ -48,14 +48,31 @@ export default async function Page() {
         <video src="/lfccVideo.mp4" loop autoPlay muted playsInline />
       </section>
       <section className="welcomeSection">
-        {/* <div>something goes here to fill void</div> */}
+        <div className="welcomeContentContainer">
+          <div className="welcomeContent">
+            <h3>Experience Faith, Fellowship, and Transformation</h3>
+            <p>
+              Join us for inspiring worship, deep connections, and a caring
+              community that transforms lives.
+            </p>
 
-        <div>
-          <h3>Experience Faith, Fellowship, and Transformation</h3>
-          <p>
-            Join us for inspiring worship, deep connections, and a caring
-            community that transforms lives.
-          </p>
+            <div className="welcomeButtons">
+              <Link href={`/${serviceTime}`} className="welcomeLink">
+                Join Us {serviceTime}
+              </Link>
+              <Link href={`/i-am-new`} className="welcomeLink">
+                I&apos;m new here
+              </Link>
+            </div>
+          </div>
+          <div className="altLogoContainer">
+            <Image
+              src="/loveFirstAltLogo.webp"
+              alt="Love First Christian Center"
+              width={600}
+              height={300}
+            />
+          </div>
         </div>
       </section>
     </div>

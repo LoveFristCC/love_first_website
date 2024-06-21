@@ -425,22 +425,99 @@ video {
 
 .welcomeSection {
   background: linear-gradient(to bottom, rgba(93, 5, 167, 0.7), white);
-  padding: 50px 30px;
+  padding: 50px 10px;
   text-align: center;
   min-height: 50vh;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
 }
 
 .welcomeSection h3 {
   color: #fff;
-  font-size: 2em;
+  font-size: clamp(20px, 3vw, 30px);
   margin-bottom: 20px;
 }
 
 .welcomeSection p {
   color: #333;
-  font-size: 1.2em;
+  font-size: clamp(16px, 2vw, 18px);
+}
+
+.welcomeContent {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  max-width: 500px;
+
+  @media (max-width: 811px) {
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+  }
+}
+
+.altLogoContainer {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 811px) {
+    margin: 0 auto;
+  }
+}
+
+.altLogoContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.welcomeContentContainer {
+  display: flex;
+  max-width: 1380px;
+  width: 100%;
+  gap: 0 30px;
+  justify-content: space-evenly;
+  @media (max-width: 811px) {
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 30px 0;
+    margin: 0 auto;
+  }
+}
+
+.welcomeLink {
+  background: rgba(93, 5, 167, 0.7);
+  border-radius: 5px;
+  box-shadow: var(--shadow-3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: capitalize;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+  @media (max-width: 811px) {
+    max-width: 100%;
+  }
+}
+
+.welcomeButtons {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  gap: 15px;
+
+  @media (max-width: 811px) {
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+  }
 }
