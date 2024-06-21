@@ -7,54 +7,50 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 
 export default async function Page() {
+  const date = new Date();
+  const day = date.getDay();
+
+  const serviceTime = day === 0 || day > 3 ? "sunday" : "wednesday";
+
   return (
     <div className="mainPage">
       <section className="heroContent">
-        <h1>
-          Welcome to
-          <br /> <span>Love First Christian Center!</span>
-        </h1>
+        <div>
+          <h1>
+            Welcome to
+            <br /> <span>Love First Christian Center</span>
+          </h1>
+          <p>Love People, Love God, Love First!</p>
 
-        <div className="heroCardContainer">
-          <div className="cardContainer">
-            <Image
-              src="/in-person.webp"
-              alt="Join Love First In person"
-              height={100}
-              width={90}
-            />
-            <h2>Service Times</h2>
-            <p>Join us in person on Sundays at</p>
-            <p>7:45a | 9:45a | 11:45a</p>
-            <p>Wednesdays at 7:00p</p>
-          </div>
-          <div className="cardContainer">
-            <Image
-              src="/live2.webp"
-              alt="Watch Church Online"
-              height={50}
-              width={60}
-            />
-            <h2>Watch Online</h2>
-            <p>
-              Watch Love First online or watch any of our previous sermons now!
-            </p>
-            <Link href="/watch-online">Watch Now</Link>
-          </div>
-          <div className="cardContainer">
-            <Image
-              src="/location.webp"
-              alt="Watch Church Online"
-              height={50}
-              width={40}
-            />
-            <h2>Location</h2>
-            <p>
-              Join us in person at 12847 Balm Riverview Rd, Riverview, FL 33579.
-            </p>
+          <div className="buttonContainer">
+            <Link href={`/${serviceTime}`} className="serviceButtonContainer">
+              Join Us {serviceTime}
+            </Link>
+
+            <Link href="/prayer" className="prayerLink">
+              Request Prayer
+            </Link>
           </div>
         </div>
+
+        <div className="serviceTimesContainer">
+          <h2>Service Times</h2>
+          <div className="sundays">
+            <p>Sundays:</p>
+            <p> 7:45a | 9:45a (Sign Language Available) | 11:45a</p>
+          </div>
+          <div className="wednesdays">
+            <p>Wednesdays:</p>
+            <p>7:00p</p>
+          </div>
+
+          <Link className="watchOnline" href="/watch-online">
+            Watch us Online
+          </Link>
+        </div>
       </section>
+      <div className="overlay" />
+      <video src="/lfccVideo.mp4" loop autoPlay muted playsInline />
     </div>
   );
 }

@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Nav from "./nav/Nav";
 import HamburgerNav from "./nav/HamburgerNav";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
   const [mobile, setMobile] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -20,7 +22,7 @@ export default function Header() {
     };
   }, []);
   return (
-    <header>
+    <header className={pathname === "/" ? "homeNav" : ""}>
       <div className="logoContainer">
         <Link href="/">
           <Image
