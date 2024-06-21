@@ -11,7 +11,7 @@ header {
   justify-content: space-between;
   box-shadow: var(--shadow-3);
   background: #fff;
-  position: relative;
+  position: absolute;
   top: 0;
   border-radius: 0 0 10px 10px;
   color: #333;
@@ -306,7 +306,7 @@ footer {
 
 .mainPage,
 .heroContent {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   margin: 0;
   padding: 0;
@@ -315,19 +315,23 @@ footer {
 .heroContent {
   position: relative;
   display: flex;
-  justify-content: space-around;
-  padding: 30px;
+  justify-content: space-evenly;
+  padding: 0 30px;
   flex-direction: column;
   /* align-items: center; */
   overflow: hidden;
   z-index: 10;
 
   @media (max-width: 811px) {
-    justify-content: flex-start;
+    justify-content: center;
     text-align: center;
     align-items: center;
     padding: 30px 10px;
   }
+}
+
+.headlineContainer {
+  z-index: 10; /* Ensure content is above the video */
 }
 
 .heroContent h1 {
@@ -338,7 +342,7 @@ footer {
 }
 
 .heroContent p {
-  font-size: var(--font-size-fluid-1);
+  font-size: var(--font-size-fluid-2);
   font-weight: 500;
   color: #fff;
 }
@@ -372,13 +376,14 @@ video {
   display: flex;
   width: 100%;
   max-width: 400px;
-  /* justify-content: space-between; */
   padding: 40px 0;
   gap: 0 20px;
+
   @media (max-width: 811px) {
     justify-content: flex-start;
     flex-direction: column;
     gap: 20px 0;
+    margin: 0 auto;
   }
 }
 
@@ -395,10 +400,17 @@ video {
   text-transform: capitalize;
 }
 
+.serviceButtonContainer:hover,
+.prayerLink:hover {
+  background: rgba(93, 5, 167, 1);
+  box-shadow: var(--shadow-4);
+}
+
 .serviceTimesContainer {
   display: flex;
   flex-direction: column;
   gap: 10px 0;
+  z-index: 11;
 }
 
 .serviceTimesContainer h2 {
@@ -408,11 +420,27 @@ video {
 }
 
 .serviceTimesContainer p {
-  font-size: var(--font-size-fluid-0);
+  font-size: clamp(16px, 2vw, 20px);
 }
 
-.watchOnline {
-  font-size: var(--font-size-fluid-0);
+.welcomeSection {
+  background: linear-gradient(to bottom, rgba(93, 5, 167, 0.7), white);
+  padding: 50px 30px;
+  text-align: center;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.welcomeSection h3 {
   color: #fff;
-  text-decoration: underline;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.welcomeSection p {
+  color: #333;
+  font-size: 1.2em;
 }

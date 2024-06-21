@@ -15,7 +15,7 @@ export default async function Page() {
   return (
     <div className="mainPage">
       <section className="heroContent">
-        <div>
+        <div className="headlineContainer">
           <h1>
             Welcome to
             <br /> <span>Love First Christian Center</span>
@@ -43,14 +43,21 @@ export default async function Page() {
             <p>Wednesdays:</p>
             <p>7:00p</p>
           </div>
+        </div>
+        <div className="overlay" />
+        <video src="/lfccVideo.mp4" loop autoPlay muted playsInline />
+      </section>
+      <section className="welcomeSection">
+        {/* <div>something goes here to fill void</div> */}
 
-          <Link className="watchOnline" href="/watch-online">
-            Watch us Online
-          </Link>
+        <div>
+          <h3>Experience Faith, Fellowship, and Transformation</h3>
+          <p>
+            Join us for inspiring worship, deep connections, and a caring
+            community that transforms lives.
+          </p>
         </div>
       </section>
-      <div className="overlay" />
-      <video src="/lfccVideo.mp4" loop autoPlay muted playsInline />
     </div>
   );
 }
