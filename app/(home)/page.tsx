@@ -43,6 +43,10 @@ export default async function Page() {
             <p>Wednesdays:</p>
             <p>7:00p</p>
           </div>
+
+          <Link href="/watch-online" className="watchOnline">
+            Watch Online
+          </Link>
         </div>
         <div className="overlay" />
         <video src="/lfccVideo.mp4" loop autoPlay muted playsInline />
@@ -142,6 +146,47 @@ export default async function Page() {
         <Link href="/connect" className="viewWhatWeOffer">
           Discover Our Ministries
         </Link>
+      </section>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        className="waveSvg"
+      >
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,32L48,37.3C96,43,192,53,288,90.7C384,128,480,192,576,202.7C672,213,768,171,864,165.3C960,160,1056,192,1152,218.7C1248,245,1344,267,1392,277.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
+      <section className="sermon-section">
+        <h5>Missed a Sermon?</h5>
+        <p>Don&apos;t worry! Catch up on all our messages now.</p>
+        <div className="sermon-content">
+          <div className="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/R0nMUrpTfSg?si=WlrHZEIYRXNVoPzO"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className="sermon-details">
+            <h6>Sermon Series:</h6>
+            <p>Father&apos;s Day</p>
+            <h6>Message Title:</h6>
+            <p>Father&apos;s Day: The P.L.A.N</p>
+            <h6>Speaker:</h6>
+            <p>Dr. Jomo Cousins</p>
+            <Link
+              className="moreSermonsCta"
+              href="/watch-online/previous-sermons"
+            >
+              View all Messages
+            </Link>
+          </div>
+        </div>
       </section>
     </div>
   );
