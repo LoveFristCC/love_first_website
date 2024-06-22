@@ -416,12 +416,17 @@ video {
   color: #fff;
   padding: 10px 20px;
   text-transform: capitalize;
+  transition: background 0.3s;
 }
 
 .serviceButtonContainer:hover,
-.prayerLink:hover,
-.welcomeLink:hover {
+.prayerLink:hover {
   background: rgba(93, 5, 167, 0.85);
+  box-shadow: var(--shadow-4);
+}
+
+.welcomeLink:hover {
+  opacity: 0.9;
   box-shadow: var(--shadow-4);
 }
 
@@ -531,7 +536,7 @@ video {
 }
 
 .welcomeLink {
-  background: rgba(93, 5, 167, 0.7);
+  background: #333;
   border-radius: 5px;
   box-shadow: var(--shadow-3);
   backdrop-filter: blur(5px);
@@ -604,9 +609,6 @@ video {
   @media (max-width: 811px) {
     max-width: 450px;
   }
-}
-
-.viewWhatWeOffer:hover {
 }
 
 .communityContentContainer {
@@ -765,6 +767,12 @@ iframe {
   border: solid 2px rgba(93, 5, 167, 0.7);
   color: #5f04a6;
   border-radius: 10px;
+}
+
+.moreSermonsCta:hover {
+  background: rgba(93, 5, 167, 0.7);
+  border: none;
+  color: #fff;
 }
 
 /* @media (min-width: 768px) {

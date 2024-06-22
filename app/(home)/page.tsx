@@ -144,7 +144,7 @@ export default async function Page() {
           </div>
         </div>
         <Link href="/connect" className="viewWhatWeOffer">
-          Discover Our Ministries
+          Explore Our Ministries
         </Link>
       </section>
       <svg
