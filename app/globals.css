@@ -762,17 +762,69 @@ iframe {
   color: #666;
 }
 
+.moreSermonsCtaContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  @media (max-width: 996px) {
+    justify-content: center;
+  }
+}
+
 .moreSermonsCta {
   padding: 10px;
   border: solid 2px rgba(93, 5, 167, 0.7);
   color: #5f04a6;
   border-radius: 10px;
+  width: 300px;
+  box-shadow: var(--shadow-2);
+  @media (max-width: 996px) {
+    justify-content: center;
+  }
 }
 
 .moreSermonsCta:hover {
   background: rgba(93, 5, 167, 0.7);
-  border: none;
+  /* border: none; */
   color: #fff;
+}
+
+.series-list {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  padding: 30px 10px;
+  /* max-width: 1200px;  */
+  position: relative;
+}
+
+.series-list a {
+  /* flex: 0 0 300px; */
+  margin-right: 20px; /* Adjust as needed for spacing */
+  transition: transform 0.5s ease;
+}
+
+.series-list h6 {
+  text-align: center;
+  margin: 10px auto;
+  font-size: var(--font-size-fluid-1);
+  color: #666;
+}
+
+.series-list p {
+  font-size: var(--font-size-fluid-0);
+  margin-top: 10px;
+}
+
+.series-container {
+  display: flex;
+  width: 100%;
+  @media (max-width: 996px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 /* @media (min-width: 768px) {

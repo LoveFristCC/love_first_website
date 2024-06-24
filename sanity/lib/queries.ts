@@ -26,3 +26,22 @@ export const postQuery = groq`*[_type == "post" && slug.current == $slug] [0] {
   content,
   ${postFields}
 }`;
+
+export const seriesQuery = groq`*[_type == "seriesCollection"] {
+  featuredVideo {
+    title,
+    speaker,
+    serviceTitle,
+    url
+  },
+  series[] {
+    title,
+    route,
+    seriesImage,
+    youtubeVideos[] {
+      title,
+      speaker,
+      url
+    }
+  }
+}`;

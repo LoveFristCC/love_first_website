@@ -21,6 +21,7 @@ import { assistWithPresets } from "@/sanity/plugins/assist";
 import pastors from "@/sanity/schemas/documents/pastors";
 import leaders from "@/sanity/schemas/documents/leaders";
 import staff from "@/sanity/schemas/documents/staff";
+import mainPage from "@/sanity/schemas/collections/mainPage";
 import settings from "@/sanity/schemas/singletons/settings";
 import { resolveHref } from "@/sanity/lib/utils";
 
@@ -37,6 +38,7 @@ export default defineConfig({
     types: [
       // Singletons
       settings,
+      mainPage,
       // Documents
       // post,
       // author,

@@ -291,17 +291,21 @@ export type SanityAssistInstructionTask = {
 
 export type SanityAssistTaskStatus = {
   _type: "sanity.assist.task.status";
-  tasks?: Array<{
-    _key: string;
-  } & SanityAssistInstructionTask>;
+  tasks?: Array<
+    {
+      _key: string;
+    } & SanityAssistInstructionTask
+  >;
 };
 
 export type SanityAssistSchemaTypeAnnotations = {
   _type: "sanity.assist.schemaType.annotations";
   title?: string;
-  fields?: Array<{
-    _key: string;
-  } & SanityAssistSchemaTypeField>;
+  fields?: Array<
+    {
+      _key: string;
+    } & SanityAssistSchemaTypeField
+  >;
 };
 
 export type SanityAssistOutputType = {
@@ -354,18 +358,23 @@ export type SanityAssistInstructionUserInput = {
 };
 
 export type SanityAssistInstructionPrompt = Array<{
-  children?: Array<{
-    marks?: Array<string>;
-    text?: string;
-    _type: "span";
-    _key: string;
-  } | ({
-    _key: string;
-  } & SanityAssistInstructionFieldRef) | ({
-    _key: string;
-  } & SanityAssistInstructionContext) | ({
-    _key: string;
-  } & SanityAssistInstructionUserInput)>;
+  children?: Array<
+    | {
+        marks?: Array<string>;
+        text?: string;
+        _type: "span";
+        _key: string;
+      }
+    | ({
+        _key: string;
+      } & SanityAssistInstructionFieldRef)
+    | ({
+        _key: string;
+      } & SanityAssistInstructionContext)
+    | ({
+        _key: string;
+      } & SanityAssistInstructionUserInput)
+  >;
   style?: "normal";
   listItem?: never;
   markDefs?: null;
@@ -386,19 +395,24 @@ export type SanityAssistInstruction = {
   title?: string;
   userId?: string;
   createdById?: string;
-  output?: Array<({
-    _key: string;
-  } & SanityAssistOutputField) | ({
-    _key: string;
-  } & SanityAssistOutputType)>;
+  output?: Array<
+    | ({
+        _key: string;
+      } & SanityAssistOutputField)
+    | ({
+        _key: string;
+      } & SanityAssistOutputType)
+  >;
 };
 
 export type SanityAssistSchemaTypeField = {
   _type: "sanity.assist.schemaType.field";
   path?: string;
-  instructions?: Array<{
-    _key: string;
-  } & SanityAssistInstruction>;
+  instructions?: Array<
+    {
+      _key: string;
+    } & SanityAssistInstruction
+  >;
 };
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/lib/queries.ts
@@ -608,7 +622,27 @@ export type PostQueryResult = {
     } | null;
   } | null;
 } | null;
-// Source: ./app/(blog)/posts/[slug]/page.tsx
+// Variable: seriesQuery
+// Query: *[_type == "seriesCollection"] {  featuredVideo {    title,    speaker,    serviceTitle,    url  },  series[] {    title,    route,    seriesImage,    youtubeVideos[] {      title,      speaker,      url    }  }}
+export type SeriesQueryResult = Array<{
+  featuredVideo: {
+    title: string;
+    speaker: string;
+    serviceTitle: string;
+    url: string;
+  };
+  series: {
+    title: string;
+    route: string;
+    seriesImage: string;
+    // youtubeVideos: {
+    //   title: string;
+    //   speaker: string;
+    //   url: string;
+    // };
+  };
+}>;
+// Source: ./app/(home)/posts/[slug]/page.tsx
 // Variable: postSlugs
 // Query: *[_type == "post"]{slug}
 export type PostSlugsResult = Array<{
