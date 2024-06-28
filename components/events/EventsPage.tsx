@@ -1,8 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
 import { getPcData } from "@/app/lib/getPcData";
-import DateComponent from "@/app/(home)/date";
-import TimeComponent from "@/app/(home)/time";
+import EventsClient from "./EventsClient";
 
 const EventsPage = async () => {
   const response = await getPcData(
@@ -33,57 +30,7 @@ const EventsPage = async () => {
     <section className="eventsSection">
       <div className="eventsContent">
         <h6 className="eventsHeadline">Upcoming Events at Love First</h6>
-        {Object.keys(groupedEvents).map((date, index) => {
-          if (groupedEvents[date].length > 0)
-            return (
-              <div key={index} className="dateGroup">
-                <h6 className="dateHeader">{date}</h6>
-                {groupedEvents[date].map(
-                  (
-                    el: {
-                      relationships: { event: { data: { id: number } } };
-                      attributes: {
-                        location: string;
-                        starts_at: string;
-                        ends_at: string;
-                      };
-                    },
-                    i: number
-                  ) => {
-                    const headline = eventData.find(
-                      (element: { id: number }) =>
-                        element.id === el.relationships.event.data.id
-                    );
-
-                    if (headline) {
-                      return (
-                        <Link
-                          href={`/events/${headline.id}`}
-                          className="eventContainer"
-                          key={i}
-                        >
-                          <p className="eventHeader">
-                            {headline.attributes.name}
-                          </p>
-                          <p>{el.attributes.location}</p>
-                          <TimeComponent
-                            startTime={el.attributes.starts_at}
-                            endTime={el.attributes.ends_at}
-                            // className="timeComponent"
-                          />
-                          <DateComponent
-                            dateString={el.attributes.starts_at}
-                            // className="dateComponent"
-                          />
-                        </Link>
-                      );
-                    }
-                    return null;
-                  }
-                )}
-              </div>
-            );
-        })}
+        <EventsClient eventData={eventData} groupedEvents={groupedEvents} />
       </div>
     </section>
   );
