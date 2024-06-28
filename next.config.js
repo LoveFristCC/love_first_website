@@ -17,6 +17,10 @@ module.exports = {
         protocol: "https",
         hostname: "groups-production.s3.amazonaws.com",
       },
+      {
+        protocol: "https",
+        hostname: "images.planningcenterusercontent.com",
+      },
     ],
   },
 };

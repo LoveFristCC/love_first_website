@@ -2,7 +2,7 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { seriesQuery } from "@/sanity/lib/queries";
 import type { SeriesQueryResult } from "@/sanity.types";
 import Link from "next/link";
-import SeriesList from "./sermons/SeriesList";
+import SeriesList from "./SeriesList";
 
 type FeaturedVideoProps = {
   featuredVideo: {

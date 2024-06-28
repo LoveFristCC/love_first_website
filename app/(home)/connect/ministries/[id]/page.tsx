@@ -1,6 +1,7 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import DateComponent from "@/app/(home)/date";
 import { getPcData } from "@/app/lib/getPcData";
 
 type Props = {
@@ -90,10 +91,6 @@ export default async function IndividualMinistries({
                 },
                 key: number
               ) => {
-                const date = new Date(el.attributes.starts_at);
-                const easternTime = date.toLocaleString("en-US", {
-                  timeZone: "America/New_York",
-                });
                 return (
                   <div key={key}>
                     <h3>{el.attributes.name}</h3>
@@ -102,10 +99,10 @@ export default async function IndividualMinistries({
                         __html: el.attributes.description,
                       }}
                     />
-                    {easternTime && (
+                    {el.attributes.starts_at && (
                       <>
                         <p>Time</p>
-                        <p>{easternTime}</p>
+                        <DateComponent dateString={el.attributes.starts_at} />
                       </>
                     )}
                   </div>

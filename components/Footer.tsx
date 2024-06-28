@@ -1,19 +1,31 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-export default async function Footer() {
-  // const data = await sanityFetch<SettingsQueryResult>({
-  //   query: settingsQuery,
-  // });
-  // const footer = data?.footer || [];
-
+export default function Footer() {
+  const pathname = usePathname();
   const date = new Date();
   const year = date.getFullYear();
 
+  const getFooterClass = () => {
+    switch (pathname) {
+      case "/":
+        return "home-footer";
+      case "/about":
+        return "about-footer";
+      case "/contact":
+        return "contact-footer";
+      // Add more cases as needed
+      default:
+        return "default-footer";
+    }
+  };
+
   return (
     <>
-      <svg
-        style={{ marginBottom: "-35px", zIndex: -1 }}
+      {/* <svg
+        className={`footerSvg path-${getFooterClass()}`}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
       >
@@ -22,7 +34,7 @@ export default async function Footer() {
           fillOpacity="1"
           d="M0,96L60,101.3C120,107,240,117,360,138.7C480,160,600,192,720,186.7C840,181,960,139,1080,122.7C1200,107,1320,117,1380,122.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
         ></path>
-      </svg>
+      </svg> */}
       <footer>
         <div className="footerContent">
           <div className="footerLogoContainer">

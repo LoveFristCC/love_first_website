@@ -209,7 +209,7 @@ footer {
   color: #eee;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 40px 20px;
   justify-content: space-between;
 }
 
@@ -827,19 +827,104 @@ iframe {
   }
 }
 
-/* @media (min-width: 768px) {
-  .sermon-content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+.eventsSection {
+  padding: 20px;
+  background-color: #eee;
+  width: 100%;
+}
 
-  .video-container {
-    flex: 1;
-    margin-right: 20px;
-  }
+.eventsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
 
-  .sermon-details {
-    flex: 1;
-  }
-} */
+/* Date group */
+.dateGroup {
+  border-left: 5px solid rgba(93, 5, 167, 0.7);
+  padding-left: 15px;
+}
+
+.dateHeader {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.eventsHeadline {
+  text-align: center;
+  font-size: var(--font-size-fluid-2);
+  font-weight: 700;
+}
+
+/* Events row */
+.eventsRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Event container */
+.eventContainer {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.eventContainer p {
+  font-size: 14px;
+  color: #555;
+  max-width: 100%; /* Adjust as needed */
+  overflow: hidden; /* Prevent text from overflowing */
+  text-overflow: ellipsis; /* Optionally, truncate text with ellipsis */
+  white-space: nowrap; /* Ensure text stays on one line */
+}
+
+.eventContainer:hover {
+  transform: translateY(-5px);
+}
+
+/* Event name */
+.eventName {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Event location */
+.eventLocation {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Event details (time and date) */
+.eventDetails {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.eventHeader {
+  font-weight: 700;
+  font-size: 18px !important;
+}
+
+.timeComponent,
+.dateComponent {
+  font-size: 14px;
+  color: #555;
+}
+
+.svgWaveTwo path {
+  fill: rgba(93, 5, 167, 0.7);
+}
