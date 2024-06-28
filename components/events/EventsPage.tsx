@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { getPcData } from "@/app/lib/getPcData";
 import DateComponent from "@/app/(home)/date";
 import TimeComponent from "@/app/(home)/time";
@@ -53,10 +54,16 @@ const EventsPage = async () => {
                       (element: { id: number }) =>
                         element.id === el.relationships.event.data.id
                     );
+                    console.log("🚀 ~ headline:", headline);
+                    console.log("🚀 ~ el:", el);
 
                     if (headline) {
                       return (
-                        <div className="eventContainer" key={i}>
+                        <Link
+                          href={`/events/${headline.id}`}
+                          className="eventContainer"
+                          key={i}
+                        >
                           <p className="eventHeader">
                             {headline.attributes.name}
                           </p>
@@ -70,7 +77,7 @@ const EventsPage = async () => {
                             dateString={el.attributes.starts_at}
                             // className="dateComponent"
                           />
-                        </div>
+                        </Link>
                       );
                     }
                     return null;

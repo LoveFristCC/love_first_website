@@ -1,7 +1,33 @@
+"use client";
+import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
 const CommunitySection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <section className="communitySection">
       <h4>
@@ -17,10 +43,17 @@ const CommunitySection = () => {
             alt="Kids and Youth Ministry"
           />
         </Link>
-        <div className="ministryContainer">
-          <Link
+        <motion.div
+          className="ministryContainer"
+          ref={ref}
+          variants={container}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          <motion.a
             href="/connect/ministries/157955"
             className="ministryImageContainer"
+            variants={item}
           >
             <Image
               src="/MEN.webp"
@@ -28,21 +61,23 @@ const CommunitySection = () => {
               height={100}
               alt="Mens Ministry"
             />
-          </Link>
-          <Link
+          </motion.a>
+          <motion.a
             href="/connect/ministries/158579"
             className="ministryImageContainer"
+            variants={item}
           >
             <Image
               src="/womenMinistry.webp"
               width={300}
               height={100}
-              alt="Womens Ministyr"
+              alt="Womens Ministry"
             />
-          </Link>
-          <Link
+          </motion.a>
+          <motion.a
             href="/connect/ministries/158609"
             className="ministryImageContainer"
+            variants={item}
           >
             <Image
               src="/Singles.webp"
@@ -50,10 +85,11 @@ const CommunitySection = () => {
               height={100}
               alt="Singles Ministry"
             />
-          </Link>
-          <Link
+          </motion.a>
+          <motion.a
             href="/connect/ministries/2220040"
             className="ministryImageContainer"
+            variants={item}
           >
             <Image
               src="/youngAdults.webp"
@@ -61,8 +97,8 @@ const CommunitySection = () => {
               height={100}
               alt="Young Adults Ministry"
             />
-          </Link>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
       <Link href="/connect" className="viewWhatWeOffer">
         Explore Our Ministries

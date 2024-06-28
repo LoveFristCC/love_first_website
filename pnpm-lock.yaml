@@ -41,6 +41,9 @@ dependencies:
   date-fns:
     specifier: ^3.6.0
     version: 3.6.0
+  framer-motion:
+    specifier: ^11.2.12
+    version: 11.2.12(react-dom@18.3.1)(react@18.3.1)
   next:
     specifier: ^14.2.3
     version: 14.2.3(@babel/core@7.24.7)(react-dom@18.3.1)(react@18.3.1)
@@ -5223,6 +5226,25 @@ packages:
       tslib: 2.6.3
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
+    dev: false
+
+  /framer-motion@11.2.12(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-lCjkV4nA9rWOy2bhR4RZzkp2xpB++kFmUZ6D44V9VQaxk+JDmbDd5lq+u58DjJIIllE8AZEXp9OG/TyDN4FB/w==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      tslib: 2.6.3
     dev: false
 
   /from2@2.3.0:

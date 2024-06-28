@@ -878,6 +878,8 @@ iframe {
   width: 100%;
   overflow: hidden;
   margin-top: 10px;
+  text-decoration: none; /* Ensure no underline */
+  display: block;
 }
 
 .eventContainer p {
