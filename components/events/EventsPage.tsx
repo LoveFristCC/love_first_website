@@ -54,8 +54,6 @@ const EventsPage = async () => {
                       (element: { id: number }) =>
                         element.id === el.relationships.event.data.id
                     );
-                    console.log("🚀 ~ headline:", headline);
-                    console.log("🚀 ~ el:", el);
 
                     if (headline) {
                       return (
