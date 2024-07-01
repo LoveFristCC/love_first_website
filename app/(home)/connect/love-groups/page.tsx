@@ -30,7 +30,7 @@ export default async function LoveGroups() {
                 width={200}
                 height={100}
               />
-              <div className="groupContent">
+              <div>
                 <h2>{el.attributes.name}</h2>
 
                 <p>{el.attributes.schedule}</p>

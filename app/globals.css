@@ -211,6 +211,19 @@ footer {
   flex-direction: column;
   padding: 40px 20px;
   justify-content: space-between;
+  position: relative;
+  z-index: 1;
+  margin-top: -5px; /* Added to remove the white line */
+}
+
+.footerSvg {
+  background: #fff;
+  width: 100%;
+  margin-bottom: -5px; /* Added to remove the white line */
+}
+
+.footerSvg.path-home-footer {
+  background: #eee;
 }
 
 .footerContent {

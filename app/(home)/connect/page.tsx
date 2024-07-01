@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { getPcData } from "@/app/lib/getPcData";
 import "./connect.css";
 
@@ -20,29 +19,34 @@ export default async function Connect() {
 
   type GroupKeys =
     | "Love Groups"
-    // | "Life University"
     | "Ministries"
     | "Service Volunteers"
     | "Children and Teens Ministry Volunteers"
     | "Creative Arts Team"
     | "Volunteer Army"
     | "Theatrical Ministry"
-    // | "Virtual Groups"
     | "Media Team";
-
-  // Define the object with the specific keys
 
   const urlMap: { [key in GroupKeys]: string } = {
     "Love Groups": "/connect/love-groups",
-    // "Life University": "/connect/life-university",
     Ministries: "/connect/ministries",
     "Service Volunteers": "/connect/service-volunteers",
     "Children and Teens Ministry Volunteers": "/connect/youth",
     "Creative Arts Team": "/connect/creative-arts",
     "Volunteer Army": "/connect/volunteer-army",
     "Theatrical Ministry": "/connect/theatrical-ministry",
-    // "Virtual Groups": "/connect/virtual-groups",
     "Media Team": "/connect/media-team",
+  };
+
+  const imageMap: { [key in GroupKeys]: string } = {
+    "Love Groups": "/loveGroups.webp",
+    Ministries: "/ministries.webp",
+    "Service Volunteers": "/serviceVolunteers.webp",
+    "Children and Teens Ministry Volunteers": "/teens.webp",
+    "Creative Arts Team": "/creativeArts.webp",
+    "Volunteer Army": "/volunteers.webp",
+    "Theatrical Ministry": "/ministries.webp",
+    "Media Team": "/media.webp",
   };
 
   const isGroupKey = (key: string): key is GroupKeys => {
@@ -51,33 +55,23 @@ export default async function Connect() {
 
   return (
     <div className="connectContainer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160">
-        <path
-          className="connectHeaderPath"
-          fillOpacity="1"
-          d="M0,160L480,144L960,144L1440,80L1440,0L960,0L480,0L0,0Z"
-        ></path>
-      </svg>
       <section className="connectHeroContainer">
-        <h1>Connect and Serve with Love First Today</h1>
-        <p>
-          Looking to find a supportive community and make a difference? Join our
-          church family today! At Love First, we believe in the power of
-          connection and service. Whether you&apos;re seeking fellowship,
-          spiritual growth, or opportunities to volunteer, we have a place for
-          you. Connect with like-minded individuals, participate in meaningful
-          activities, and contribute to our mission of spreading love and
-          kindness. Discover the joy of serving and being part of something
-          greater. Everyone is welcome—come as you are and grow with us!
-        </p>
+        <div className="heroBackground">
+          <h1>Discover Connection Opportunities at Love First</h1>
+          <p>
+            At Love First, we believe in the power of community and the
+            importance of building strong, meaningful relationships. Whether
+            you&apos;re looking to volunteer, join a small group, or participate
+            in our creative arts team, there&apos;s a place for you here.
+            Explore our various connection opportunities and find out how you
+            can get involved today.
+          </p>
+        </div>
       </section>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160">
-        <path
-          className="connectHeaderPath"
-          fillOpacity="1"
-          d="M0,160L480,144L960,144L1440,80L1440,160L960,160L480,160L0,160Z"
-        ></path>
-      </svg>
+
+      <h2 className="connectionHeadline">
+        Join Our Community and Grow in Faith and Fellowship
+      </h2>
       <section className="connectionGroups">
         {groups?.data?.map(
           (
@@ -86,11 +80,14 @@ export default async function Connect() {
           ) => {
             const groupKey = el.attributes.name;
             const url = isGroupKey(groupKey) ? urlMap[groupKey] : "";
+            const imageSrc = isGroupKey(groupKey)
+              ? imageMap[groupKey]
+              : "/images/default.webp";
 
             return (
-              <div className="groupCards" key={key}>
+              <Link href={url} className="groupCards" key={key}>
                 <Image
-                  src="/media.webp"
+                  src={imageSrc}
                   alt={el.attributes.name}
                   width="0"
                   height="0"
@@ -98,15 +95,11 @@ export default async function Connect() {
                   className="w-full h-auto"
                 />
                 <div className="groupContent">
-                  <h2>{el.attributes.name}</h2>
-
+                  <p className="groupContentHeader">{el.attributes.name}</p>
                   <p>{el.attributes.description}</p>
-
-                  <Link href={url} className="groupLinks">
-                    Find Out How You Can Get Involved
-                  </Link>
+                  <p className="ctaText">Discover More</p>
                 </div>
-              </div>
+              </Link>
             );
           }
         )}

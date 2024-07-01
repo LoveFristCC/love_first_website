@@ -52,10 +52,6 @@ export default async function IndividualMinistries({
 
   const groupName = loveGroups.data.attributes.name;
   const groupImage = loveGroups.data.attributes.header_image.original;
-  console.log(
-    "🚀 ~ loveGroups.data.attributes.header_image:",
-    loveGroups.data.attributes.header_image
-  );
   const groupSchedule = loveGroups.data.attributes.schedule;
   const groupDescription = loveGroups.data.attributes.description;
   const groupEmail = loveGroups.data.attributes.contact_email;

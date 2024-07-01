@@ -29,7 +29,7 @@ export default async function Ministries() {
                 width={200}
                 height={100}
               />
-              <div className="groupContent">
+              <div>
                 <h2>{el.attributes.name}</h2>
 
                 {/* <div

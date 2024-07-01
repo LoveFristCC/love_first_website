@@ -22,7 +22,9 @@ export default function Header() {
     };
   }, []);
   return (
-    <header className={pathname === "/" ? "homeNav" : ""}>
+    <header
+      className={pathname === "/" || pathname === "/connect" ? "homeNav" : ""}
+    >
       <div className="logoContainer">
         <Link href="/">
           <Image
