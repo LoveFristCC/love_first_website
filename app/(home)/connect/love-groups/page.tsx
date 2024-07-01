@@ -48,7 +48,6 @@ export default async function LoveGroups() {
             },
             key: number
           ) => {
-            console.log(el.attributes.header_image);
             return (
               <>
                 <Link

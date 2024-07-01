@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
-  console.log("🚀 ~ pathname:", pathname);
   const [mobile, setMobile] = useState<boolean | null>(null);
 
   useEffect(() => {
