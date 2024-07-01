@@ -1,6 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { getPcData } from "@/app/lib/getPcData";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Love Groups - Love First",
+    description:
+      "Join our Love Groups at Love First to build stronger connections within our community. Experience spiritual growth, fellowship, and support through small group gatherings. Sign up today!",
+  };
+}
 
 export default async function LoveGroups() {
   const url =
@@ -9,43 +18,68 @@ export default async function LoveGroups() {
   const loveGroups = await getPcData(url);
 
   return (
-    <div className="loveGroupsContainer">
-      {loveGroups.data.map(
-        (
-          el: {
-            id: string;
-            attributes: {
-              name: string;
-              schedule: string;
-              header_image: { medium: string };
-            };
-          },
-          key: number
-        ) => {
-          return (
-            <div key={key}>
-              <Image
-                src={el.attributes.header_image.medium}
-                alt={el.attributes.name}
-                width={200}
-                height={100}
-              />
-              <div>
-                <h2>{el.attributes.name}</h2>
-
-                <p>{el.attributes.schedule}</p>
-
+    <div className="groupsContainer">
+      <section className="groupsHeroContainer">
+        <div className="groupsBackground loveGroups">
+          <h1>Build Stronger Connections at Love First</h1>
+          <p>
+            Discover the joy of deeper relationships and spiritual growth by
+            joining our Love Groups. These small, supportive gatherings are
+            designed to help you connect with others, share your faith journey,
+            and strengthen your relationship with God. Whether you&apos;re new
+            to our church or have been with us for years, there&apos;s a Love
+            Group for everyone.
+          </p>
+        </div>
+      </section>
+      <h2 className="connectionHeadline lg-subHeader">
+        Join Our Love Groups and Experience Deep, Meaningful Relationships
+      </h2>
+      <section className="groupsList">
+        {loveGroups.data.map(
+          (
+            el: {
+              id: string;
+              attributes: {
+                name: string;
+                schedule: string;
+                header_image: { original: string };
+              };
+            },
+            key: number
+          ) => {
+            console.log(el.attributes.header_image);
+            return (
+              <>
                 <Link
                   href={`/connect/love-groups/${el.id}`}
                   className="groupLinks"
                 >
-                  Learn More
+                  <Image
+                    src={el.attributes.header_image.original}
+                    alt={el.attributes.name}
+                    width={400}
+                    height={200}
+                    className="groupLinksImage"
+                  />
+                  <div className="groupLinksContent">
+                    <p className="groupLinksContentHeader">
+                      {el.attributes.name}
+                    </p>
+                    {el.attributes.schedule && (
+                      <div>
+                        <p className="timeAndWhere">When and where:</p>
+                        <p className="schedule">{el.attributes.schedule}</p>
+                      </div>
+                    )}
+                    <p>Join Today</p>
+                  </div>
                 </Link>
-              </div>
-            </div>
-          );
-        }
-      )}
+              </>
+            );
+          }
+        )}
+      </section>
     </div>
   );
 }

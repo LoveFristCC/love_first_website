@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
+  console.log("🚀 ~ pathname:", pathname);
   const [mobile, setMobile] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -21,9 +22,18 @@ export default function Header() {
       window.removeEventListener("resize", updateMobile);
     };
   }, []);
+
   return (
     <header
-      className={pathname === "/" || pathname === "/connect" ? "homeNav" : ""}
+      className={
+        pathname === "/" ||
+        pathname === "/connect" ||
+        pathname === "/connect/love-groups" ||
+        pathname === "/connect/creative-arts" ||
+        pathname === "/connect/service-volunteers"
+          ? "homeNav"
+          : ""
+      }
     >
       <div className="logoContainer">
         <Link href="/">

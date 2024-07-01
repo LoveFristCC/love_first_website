@@ -126,5 +126,137 @@
   font-size: var(--font-size-fluid-2);
   font-weight: 700;
   color: #5f04a6;
-  padding: 10px 0;
+  padding: 10px;
+  text-align: center;
+}
+
+.lg-subHeader {
+  color: #333;
+}
+
+.groupsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.groupsHeroContainer {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: var(--shadow-3);
+}
+
+.groupsBackground {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.loveGroups {
+  background: url("/loveGroupsBanner.webp") center center/cover no-repeat;
+}
+.creativeArts {
+  background: url("/creativeArtsBanner.webp") center center/cover no-repeat;
+}
+.serviceVolunteers {
+  background: url("/serviceVolunteersBanner.webp") center center/cover no-repeat;
+}
+
+.groupsHeroContainer h1 {
+  z-index: 1;
+  font-size: var(--font-size-fluid-3);
+  margin-bottom: 20px;
+  text-shadow: 2px 4px 6px #333;
+}
+
+.groupsHeroContainer p {
+  z-index: 1;
+  font-size: var(--font-size-fluid-1);
+  line-height: 1.6;
+  max-width: 1300px;
+  padding: 10px;
+  margin: 0 auto;
+  text-align: left;
+  text-shadow: 2px 4px 6px #333;
+}
+
+.groupsBackground:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Section Styling */
+.groupsList {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Responsive grid */
+  gap: 20px; /* Gap between grid items */
+  margin: 20px 0;
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 10px; /* Add padding for better spacing on small screens */
+}
+
+/* Link Styling */
+.groupLinks {
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: var(--shadow-3);
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.groupLinks:hover {
+  box-shadow: var(--shadow-4);
+  /* transform: scale(1.02); Add a subtle hover effect */
+}
+
+/* Image Styling */
+.groupLinksImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensures image fills container */
+}
+
+/* Content Styling */
+.groupLinksContent {
+  padding: 15px;
+  text-align: center;
+}
+
+.groupLinksContentHeader {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.timeAndWhere {
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.schedule {
+  font-size: 14px;
+  font-weight: 200;
+  color: #333;
 }
