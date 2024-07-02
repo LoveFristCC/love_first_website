@@ -1,6 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getPcData } from "@/app/lib/getPcData";
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Ministries - Love First",
+    description:
+      "Discover the diverse ministries at Love First, where each service opportunity helps build a stronger, faith-based community. From youth programs to outreach services, find your place to grow and serve.",
+  };
+}
 
 export default async function Ministries() {
   const url =
@@ -8,49 +17,69 @@ export default async function Ministries() {
   const ministries = await getPcData(url);
 
   return (
-    <div className="ministriesContainer">
-      {ministries.data.map(
-        (
-          el: {
-            id: string;
-            attributes: {
-              name: string;
-              schedule: string;
-              header_image: { medium: string };
-            };
-          },
-          key: number
-        ) => {
-          return (
-            <div key={key}>
-              <Image
-                src={el.attributes.header_image.medium}
-                alt={el.attributes.name}
-                width={200}
-                height={100}
-              />
-              <div>
-                <h2>{el.attributes.name}</h2>
-
-                {/* <div
-                  dangerouslySetInnerHTML={{
-                    __html: el.attributes.description,
-                  }}
-                /> */}
-
-                <p>{el.attributes.schedule}</p>
-
+    <div className="groupsContainer">
+      <section className="groupsHeroContainer">
+        <div className="groupsBackground ministries">
+          <h1>Discover Our Ministries at Love First</h1>
+          <p>
+            At Love First, our ministries are the heartbeat of our community,
+            providing a variety of ways for individuals to connect, serve, and
+            grow in their faith. Whether you are looking to volunteer your time,
+            deepen your spiritual journey, or support others, there is a place
+            for you in our ministries.
+          </p>
+        </div>
+      </section>
+      <h2 className="connectionHeadline lg-subHeader">
+        Engage, Serve, and Grow with Love First Ministries
+      </h2>
+      <section className="groupsList">
+        {ministries.data.map(
+          (
+            el: {
+              id: string;
+              attributes: {
+                name: string;
+                schedule: string;
+                church_center_visible: boolean;
+                header_image: { original: string };
+              };
+            },
+            key: number
+          ) => {
+            // if (el.attributes.church_center_visible) {
+            return (
+              <>
                 <Link
                   href={`/connect/ministries/${el.id}`}
                   className="groupLinks"
                 >
-                  Learn More
+                  <Image
+                    src={el.attributes.header_image.original}
+                    alt={el.attributes.name}
+                    width={400}
+                    height={200}
+                    className="groupLinksImage"
+                  />
+                  <div className="groupLinksContent">
+                    <p className="groupLinksContentHeader">
+                      {el.attributes.name}
+                    </p>
+                    {el.attributes.schedule && (
+                      <div>
+                        <p className="timeAndWhere">When and where:</p>
+                        <p className="schedule">{el.attributes.schedule}</p>
+                      </div>
+                    )}
+                    <p>Join Today</p>
+                  </div>
                 </Link>
-              </div>
-            </div>
-          );
-        }
-      )}
+              </>
+            );
+            // }
+          }
+        )}
+      </section>
     </div>
   );
 }

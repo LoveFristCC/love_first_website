@@ -1,6 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getPcData } from "@/app/lib/getPcData";
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Media Team - Love First",
+    description:
+      "Discover how you can use your media skills to make a difference at Love First. Join our vibrant Media Team and contribute to spreading love and positivity through creative content.",
+  };
+}
 
 export default async function Media() {
   const url =
@@ -8,49 +17,68 @@ export default async function Media() {
   const media = await getPcData(url);
 
   return (
-    <div className="mediaContainer">
-      {media.data.map(
-        (
-          el: {
-            id: string;
-            attributes: {
-              name: string;
-              schedule: string;
-              header_image: { medium: string };
-            };
-          },
-          key: number
-        ) => {
-          return (
-            <div key={key}>
-              <Image
-                src={el.attributes.header_image.medium}
-                alt={el.attributes.name}
-                width={200}
-                height={100}
-              />
-              <div>
-                <h2>{el.attributes.name}</h2>
-
-                {/* <div
-                  dangerouslySetInnerHTML={{
-                    __html: el.attributes.description,
-                  }}
-                /> */}
-
-                <p>{el.attributes.schedule}</p>
-
+    <div className="groupsContainer">
+      <section className="groupsHeroContainer">
+        <div className="groupsBackground media">
+          <h1>Join the Media Team at Love First</h1>
+          <p>
+            At Love First, our Media Team plays a crucial role in spreading our
+            message of love and hope through creative and impactful content. If
+            you have a passion for media and a desire to make a difference, we
+            invite you to join us.
+          </p>
+        </div>
+      </section>
+      <h2 className="connectionHeadline lg-subHeader">
+        Explore Opportunities to Create and Inspire
+      </h2>
+      <section className="groupsList smallerListMedia">
+        {media.data.map(
+          (
+            el: {
+              id: string;
+              attributes: {
+                name: string;
+                schedule: string;
+                church_center_visible: boolean;
+                header_image: { original: string };
+              };
+            },
+            key: number
+          ) => {
+            // if (el.attributes.church_center_visible) {
+            return (
+              <>
                 <Link
                   href={`/connect/media-team/${el.id}`}
                   className="groupLinks"
                 >
-                  Learn More
+                  <Image
+                    src={el.attributes.header_image.original}
+                    alt={el.attributes.name}
+                    width={400}
+                    height={200}
+                    className="groupLinksImage"
+                  />
+                  <div className="groupLinksContent">
+                    <p className="groupLinksContentHeader">
+                      {el.attributes.name}
+                    </p>
+                    {el.attributes.schedule && (
+                      <div>
+                        <p className="timeAndWhere">When and where:</p>
+                        <p className="schedule">{el.attributes.schedule}</p>
+                      </div>
+                    )}
+                    <p>Join Today</p>
+                  </div>
                 </Link>
-              </div>
-            </div>
-          );
-        }
-      )}
+              </>
+            );
+            // }
+          }
+        )}
+      </section>
     </div>
   );
 }

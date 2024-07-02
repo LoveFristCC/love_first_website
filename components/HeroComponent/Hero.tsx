@@ -8,7 +8,7 @@ const Hero = ({ serviceTime }: { serviceTime: string }) => {
           Welcome to
           <br /> <span>Love First Christian Center</span>
         </h1>
-        <p>Love People, Love God, Love First!</p>
+        <p>Love God, Love People, Love First!</p>
 
         <div className="buttonContainer">
           <Link href={`/${serviceTime}`} className="serviceButtonContainer">
@@ -37,7 +37,9 @@ const Hero = ({ serviceTime }: { serviceTime: string }) => {
         </Link>
       </div>
       <div className="overlay" />
-      <video src="/lfccVideo.mp4" loop autoPlay muted playsInline />
+      <video src="/lfccVideo.mp4" loop autoPlay muted playsInline>
+        Your browser does not support the video tag.
+      </video>
     </section>
   );
 };

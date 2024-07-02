@@ -100,7 +100,7 @@ const CommunitySection = () => {
           </motion.a>
         </motion.div>
       </div>
-      <Link href="/connect" className="viewWhatWeOffer">
+      <Link href="/connect/ministries" className="viewWhatWeOffer">
         Explore Our Ministries
       </Link>
 

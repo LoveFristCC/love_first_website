@@ -29,7 +29,11 @@ export default function Header() {
         pathname === "/connect" ||
         pathname === "/connect/love-groups" ||
         pathname === "/connect/creative-arts" ||
-        pathname === "/connect/service-volunteers"
+        pathname === "/connect/service-volunteers" ||
+        pathname === "/connect/ministries" ||
+        pathname === "/connect/volunteer-army" ||
+        pathname === "/connect/media-team" ||
+        pathname === "/connect/youth"
           ? "homeNav"
           : ""
       }

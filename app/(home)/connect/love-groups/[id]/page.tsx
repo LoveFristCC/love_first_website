@@ -41,13 +41,9 @@ export default async function IndividualLoveGroups({
 
   // const futureEventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}/events?filter=upcoming%2Cpublic&order=starts_at&per_page=3&include=location%2Cmy_rsvp`;
 
-  // const loveGroups = await getPcData(url);
-  // const loveGroupsPastEvents = await getPcData(pastEventsUrl);
-  // const loveGroupsFutureEvents = await getPcData(pastEventsUrl);
   const [loveGroups, loveGroupsEvents] = await Promise.all([
     await getPcData(url),
     await getPcData(eventsUrl),
-    // await getPcData(futureEventsUrl),
   ]);
 
   const groupName = loveGroups.data.attributes.name;
@@ -56,55 +52,48 @@ export default async function IndividualLoveGroups({
   const groupDescription = loveGroups.data.attributes.description;
   const groupEmail = loveGroups.data.attributes.contact_email;
   return (
-    <div>
+    <div className="loveGroupContainer">
       {loveGroups && (
-        <div>
+        <div className="loveGroupCard">
           <Image src={groupImage} alt={groupName} width={200} height={100} />
-          <div className="groupContent">
+          <div className="individualGroupContent">
             <h2>{groupName}</h2>
             <p>{groupSchedule}</p>
 
             {groupEmail && (
-              <Link href={`mailto:${groupEmail}`}>contact us</Link>
+              <p>
+                <Link href={`mailto:${groupEmail}`}>Contact us</Link>
+              </p>
             )}
 
             {groupDescription && (
               <div
+                className="groupDescription"
                 dangerouslySetInnerHTML={{
                   __html: groupDescription,
                 }}
               />
             )}
 
-            {loveGroupsEvents.data.map(
-              (
-                el: {
-                  attributes: {
-                    name: string;
-                    description: string;
-                    starts_at: string;
-                  };
-                },
-                key: number
-              ) => {
-                return (
-                  <div key={key}>
-                    <h3>{el.attributes.name}</h3>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: el.attributes.description,
-                      }}
-                    />
-                    {el.attributes.starts_at && (
-                      <>
-                        <p>Time</p>
-                        <DateComponent dateString={el.attributes.starts_at} />
-                      </>
-                    )}
-                  </div>
-                );
-              }
-            )}
+            {/* <div className="loveGroupEvents">
+              {loveGroupsEvents.data.map((el, key) => (
+                <div className="eventItem" key={key}>
+                  <h3>{el.attributes.name}</h3>
+                  <div
+                    className="eventDescription"
+                    dangerouslySetInnerHTML={{
+                      __html: el.attributes.description,
+                    }}
+                  />
+                  {el.attributes.starts_at && (
+                    <>
+                      <p>Time</p>
+                      <DateComponent dateString={el.attributes.starts_at} />
+                    </>
+                  )}
+                </div>
+              ))}
+            </div> */}
           </div>
         </div>
       )}

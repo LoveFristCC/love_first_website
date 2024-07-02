@@ -175,6 +175,18 @@
 .serviceVolunteers {
   background: url("/serviceVolunteersBanner.webp") center center/cover no-repeat;
 }
+.ministries {
+  background: url("/minitriesBanner.webp") center center/cover no-repeat;
+}
+.volunteerArmy {
+  background: url("/volunteersBanner.webp") center center/cover no-repeat;
+}
+.media {
+  background: url("/mediaMinistry.webp") center center/cover no-repeat;
+}
+.youth {
+  background: url("/youthMinistry.webp") center center/cover no-repeat;
+}
 
 .groupsHeroContainer h1 {
   z-index: 1;
@@ -216,6 +228,13 @@
   width: 100%;
   max-width: 1280px;
   padding: 0 10px; /* Add padding for better spacing on small screens */
+}
+
+.groupsList.smallerList {
+  max-width: 750px;
+}
+.groupsList.smallerListMedia {
+  max-width: 1000px;
 }
 
 /* Link Styling */

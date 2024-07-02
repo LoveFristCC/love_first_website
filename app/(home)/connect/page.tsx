@@ -42,11 +42,11 @@ export default async function Connect() {
     "Love Groups": "/loveGroups.webp",
     Ministries: "/ministries.webp",
     "Service Volunteers": "/serviceVolunteers.webp",
-    "Children and Teens Ministry Volunteers": "/teens.webp",
+    "Children and Teens Ministry Volunteers": "/youthMinistry.webp",
     "Creative Arts Team": "/creativeArts.webp",
     "Volunteer Army": "/volunteers.webp",
     "Theatrical Ministry": "/ministries.webp",
-    "Media Team": "/media.webp",
+    "Media Team": "/mediaMinistry.webp",
   };
 
   const isGroupKey = (key: string): key is GroupKeys => {
@@ -95,7 +95,7 @@ export default async function Connect() {
                   className="w-full h-auto"
                 />
                 <div className="groupContent">
-                  <p className="groupContentHeader">{el.attributes.name}</p>
+                  <h3 className="groupContentHeader">{el.attributes.name}</h3>
                   <p>{el.attributes.description}</p>
                   <p className="ctaText">Discover More</p>
                 </div>
