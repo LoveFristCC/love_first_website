@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Youth() {
   const url =
-    "https://api.planningcenteronline.com/groups/v2/group_types/30699/groups?filter=enrollment&enrollment=open_signup%2Crequest_to_join&per_page=42&include=location";
+    "https://api.planningcenteronline.com/groups/v2/group_types/30699/groups?include=enrollment";
   const youth = await getPcData(url);
 
   return (
@@ -46,10 +46,19 @@ export default async function Youth() {
             },
             key: number
           ) => {
-            // if (el.attributes.church_center_visible) {
-            return (
-              <>
-                <Link href={`/connect/youth/${el.id}`} className="groupLinks">
+            const shouldShowGroupArray = youth.included.filter(
+              (element: { id: string }) => element.id === el.id
+            );
+
+            const shouldShowGroup =
+              shouldShowGroupArray[0]?.attributes?.status === "open";
+            if (shouldShowGroup) {
+              return (
+                <Link
+                  href={`/connect/youth/${el.id}`}
+                  className="groupLinks"
+                  key={key}
+                >
                   <Image
                     src={el.attributes.header_image.original}
                     alt={el.attributes.name}
@@ -70,9 +79,8 @@ export default async function Youth() {
                     <p>Join Today</p>
                   </div>
                 </Link>
-              </>
-            );
-            // }
+              );
+            }
           }
         )}
       </section>

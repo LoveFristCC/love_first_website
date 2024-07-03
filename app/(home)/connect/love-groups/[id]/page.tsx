@@ -35,9 +35,9 @@ export default async function IndividualLoveGroups({
 }: {
   params: { id: string };
 }) {
-  const url = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}`;
+  const url = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}?include=location`;
 
-  const eventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}/events?filter=past%2Cpublic&order=-starts_at&per_page=3&include=location%2Cmy_rsvp`;
+  const eventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/27871/events?include=group&filter=upcoming`;
 
   // const futureEventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}/events?filter=upcoming%2Cpublic&order=starts_at&per_page=3&include=location%2Cmy_rsvp`;
 
@@ -45,58 +45,58 @@ export default async function IndividualLoveGroups({
     await getPcData(url),
     await getPcData(eventsUrl),
   ]);
+  // console.log("🚀 ~ loveGroupsEvents:", loveGroupsEvents.included);
 
   const groupName = loveGroups.data.attributes.name;
-  const groupImage = loveGroups.data.attributes.header_image.medium;
+  const groupImage = loveGroups.data.attributes.header_image.original;
   const groupSchedule = loveGroups.data.attributes.schedule;
   const groupDescription = loveGroups.data.attributes.description;
   const groupEmail = loveGroups.data.attributes.contact_email;
+
+  const location = loveGroups?.included[0]?.attributes;
   return (
-    <div className="loveGroupContainer">
-      {loveGroups && (
-        <div className="loveGroupCard">
+    loveGroups && (
+      <div className="individualContainer">
+        <div>
+          <h1>{groupName}</h1>
           <Image src={groupImage} alt={groupName} width={200} height={100} />
+        </div>
+        <div className="individualGroupCard">
+          {groupEmail && (
+            <p>
+              <Link href={`mailto:${groupEmail}`}>Contact us</Link>
+            </p>
+          )}
           <div className="individualGroupContent">
-            <h2>{groupName}</h2>
-            <p>{groupSchedule}</p>
-
-            {groupEmail && (
-              <p>
-                <Link href={`mailto:${groupEmail}`}>Contact us</Link>
-              </p>
+            <div>
+              <h2>About {groupName}</h2>
+              {groupDescription && (
+                <div
+                  className="groupDescription"
+                  dangerouslySetInnerHTML={{
+                    __html: groupDescription,
+                  }}
+                />
+              )}
+            </div>
+            {groupSchedule && (
+              <div>
+                <h3>Schedule</h3>
+                <p>{groupSchedule}</p>
+              </div>
             )}
 
-            {groupDescription && (
-              <div
-                className="groupDescription"
-                dangerouslySetInnerHTML={{
-                  __html: groupDescription,
-                }}
-              />
+            {location && (
+              <div>
+                <h4>Location</h4>
+                <p>{location.name}</p>
+                <p>{location.full_formatted_address}</p>
+              </div>
             )}
-
-            {/* <div className="loveGroupEvents">
-              {loveGroupsEvents.data.map((el, key) => (
-                <div className="eventItem" key={key}>
-                  <h3>{el.attributes.name}</h3>
-                  <div
-                    className="eventDescription"
-                    dangerouslySetInnerHTML={{
-                      __html: el.attributes.description,
-                    }}
-                  />
-                  {el.attributes.starts_at && (
-                    <>
-                      <p>Time</p>
-                      <DateComponent dateString={el.attributes.starts_at} />
-                    </>
-                  )}
-                </div>
-              ))}
-            </div> */}
           </div>
         </div>
-      )}
-    </div>
+      </div>
+    )
+    // );
   );
 }

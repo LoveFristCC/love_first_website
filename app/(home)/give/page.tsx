@@ -13,5 +13,5 @@ export default async function Give() {
     sanityFetch<HeroQueryResult>({ query: heroQuery }),
   ]);
 
-  return <div className="container mx-auto px-5">Give Page</div>;
+  return <div className="container mx-auto px-5">give page</div>;
 }

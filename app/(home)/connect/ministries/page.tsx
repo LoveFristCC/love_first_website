@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Ministries() {
   const url =
-    "https://api.planningcenteronline.com/groups/v2/group_types/27876/groups?filter=enrollment&enrollment=open_signup%2Crequest_to_join&per_page=42&include=location";
+    "https://api.planningcenteronline.com/groups/v2/group_types/27876/groups?include=enrollment";
   const ministries = await getPcData(url);
 
   return (
@@ -47,12 +47,18 @@ export default async function Ministries() {
             },
             key: number
           ) => {
-            // if (el.attributes.church_center_visible) {
-            return (
-              <>
+            const shouldShowGroupArray = ministries.included.filter(
+              (element: { id: string }) => element.id === el.id
+            );
+
+            const shouldShowGroup =
+              shouldShowGroupArray[0]?.attributes?.status === "open";
+            if (shouldShowGroup) {
+              return (
                 <Link
                   href={`/connect/ministries/${el.id}`}
                   className="groupLinks"
+                  key={key}
                 >
                   <Image
                     src={el.attributes.header_image.original}
@@ -74,9 +80,8 @@ export default async function Ministries() {
                     <p>Join Today</p>
                   </div>
                 </Link>
-              </>
-            );
-            // }
+              );
+            }
           }
         )}
       </section>

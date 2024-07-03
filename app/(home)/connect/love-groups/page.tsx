@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function LoveGroups() {
   const url =
-    "https://api.planningcenteronline.com/groups/v2/group_types/27871/groups?filter=enrollment&enrollment=closed&per_page=42&include=location";
+    "https://api.planningcenteronline.com/groups/v2/group_types/27871/groups?include=enrollment";
 
   const loveGroups = await getPcData(url);
 
@@ -48,11 +48,19 @@ export default async function LoveGroups() {
             },
             key: number
           ) => {
-            return (
-              <>
+            const shouldShowGroupArray = loveGroups.included.filter(
+              (element: { id: string }) => element.id === el.id
+            );
+
+            const shouldShowGroup =
+              shouldShowGroupArray[0]?.attributes?.status === "open";
+
+            if (shouldShowGroup) {
+              return (
                 <Link
                   href={`/connect/love-groups/${el.id}`}
                   className="groupLinks"
+                  key={key}
                 >
                   <Image
                     src={el.attributes.header_image.original}
@@ -74,8 +82,8 @@ export default async function LoveGroups() {
                     <p>Join Today</p>
                   </div>
                 </Link>
-              </>
-            );
+              );
+            }
           }
         )}
       </section>

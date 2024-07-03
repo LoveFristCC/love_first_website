@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function CreativeArts() {
   const url =
-    "https://api.planningcenteronline.com/groups/v2/group_types/30700/groups?filter=enrollment&enrollment=open_signup%2Crequest_to_join&per_page=42&include=location";
+    "https://api.planningcenteronline.com/groups/v2/group_types/30700/groups?include=enrollment";
   const creativeArts = await getPcData(url);
 
   return (
@@ -35,7 +35,7 @@ export default async function CreativeArts() {
       <h2 className="connectionHeadline lg-subHeader">
         Discover Our Creative Arts Programs and Events
       </h2>
-      <section className="groupsList">
+      <section className="groupsList smallerList">
         {creativeArts.data.map(
           (
             el: {
@@ -49,12 +49,18 @@ export default async function CreativeArts() {
             },
             key: number
           ) => {
-            // if (el.attributes.church_center_visible) {
-            return (
-              <>
+            const shouldShowGroupArray = creativeArts.included.filter(
+              (element: { id: string }) => element.id === el.id
+            );
+
+            const shouldShowGroup =
+              shouldShowGroupArray[0]?.attributes?.status === "open";
+            if (shouldShowGroup) {
+              return (
                 <Link
                   href={`/connect/creative-arts/${el.id}`}
                   className="groupLinks"
+                  key={key}
                 >
                   <Image
                     src={el.attributes.header_image.original}
@@ -76,9 +82,8 @@ export default async function CreativeArts() {
                     <p>Join Today</p>
                   </div>
                 </Link>
-              </>
-            );
-            // }
+              );
+            }
           }
         )}
       </section>
