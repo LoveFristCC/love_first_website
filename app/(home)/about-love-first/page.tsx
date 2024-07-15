@@ -1,5 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "About Love First Christian Center",
+    description:
+      "Discover the inspiring story and vision of Love First Christian Center. Learn about our history, meet our leadership, and find your purpose here.",
+  };
+}
 
 export default async function AboutLoveFirst() {
   return (
