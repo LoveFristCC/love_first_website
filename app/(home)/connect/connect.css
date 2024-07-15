@@ -279,3 +279,85 @@
   font-weight: 200;
   color: #333;
 }
+
+.individualContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.individualHeroHeader {
+  position: relative;
+  width: 100%;
+  min-height: 50vh; /* Take up 50% of the viewport height */
+  background: linear-gradient(to bottom, rgba(93, 5, 167, 0.7), #ffffff);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white; /* Text color */
+}
+
+.individualHeroHeader h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better readability */
+  margin: 0;
+}
+
+.individualGroupCard {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: var(--shadow-3);
+  max-width: 900px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.individualGroupContent {
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+.individualGroupContent h2 {
+  font-size: 24px;
+  color: rgba(93, 5, 167, 0.7);
+  margin-bottom: 10px;
+}
+
+.individualGroupContent h3 {
+  font-size: 20px;
+  color: rgba(93, 5, 167, 0.7);
+  margin-bottom: 8px;
+}
+
+.individualGroupContent h4 {
+  font-size: 18px;
+  color: rgba(93, 5, 167, 0.7);
+  margin-bottom: 6px;
+}
+
+.individualGroupContent p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.groupDescription {
+  margin-bottom: 20px;
+}
+
+.individualGroupContent a {
+  color: rgba(93, 5, 167, 0.7);
+  text-decoration: none;
+}
+
+.individualGroupContent a:hover {
+  text-decoration: underline;
+}

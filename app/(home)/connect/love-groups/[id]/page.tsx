@@ -1,7 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import DateComponent from "@/app/(home)/date";
 import { getPcData } from "@/app/lib/getPcData";
 
 type Props = {
@@ -15,18 +14,20 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   // read route params
   const id = params.id;
+  const url = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${id}?include=location`;
+  const data = await getPcData(url);
+  const groupName = data.data.attributes.name;
+  const groupImage = data.data.attributes.header_image.original;
 
-  // fetch data
-  // const product = await fetch(`https://.../${id}`).then((res) => res.json());
-
-  // // optionally access and extend (rather than replace) parent metadata
-  // const previousImages = (await parent).openGraph?.images || [];
+  const previousImages = (await parent).openGraph?.images || [];
+  console.log("🚀 ~ previousImages:", previousImages);
 
   return {
-    title: id,
-    // openGraph: {
-    //   images: ["/some-specific-page-image.jpg", ...previousImages],
-    // },
+    title: `${groupName} - Love First`,
+    description: "",
+    openGraph: {
+      images: [groupImage, ...previousImages],
+    },
   };
 }
 
@@ -41,44 +42,38 @@ export default async function IndividualLoveGroups({
 
   // const futureEventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}/events?filter=upcoming%2Cpublic&order=starts_at&per_page=3&include=location%2Cmy_rsvp`;
 
-  const [loveGroups, loveGroupsEvents] = await Promise.all([
+  const [groups, groupsEvents] = await Promise.all([
     await getPcData(url),
     await getPcData(eventsUrl),
   ]);
-  // console.log("🚀 ~ loveGroupsEvents:", loveGroupsEvents.included);
 
-  const groupName = loveGroups.data.attributes.name;
-  const groupImage = loveGroups.data.attributes.header_image.original;
-  const groupSchedule = loveGroups.data.attributes.schedule;
-  const groupDescription = loveGroups.data.attributes.description;
-  const groupEmail = loveGroups.data.attributes.contact_email;
+  const groupName = groups.data.attributes.name;
+  const groupImage = groups.data.attributes.header_image.original;
+  const groupSchedule = groups.data.attributes.schedule;
+  const groupDescription = groups.data.attributes.description;
+  const groupEmail = groups.data.attributes.contact_email;
 
-  const location = loveGroups?.included[0]?.attributes;
+  const location = groups?.included[0]?.attributes;
   return (
-    loveGroups && (
+    groups && (
       <div className="individualContainer">
-        <div>
+        <div className="individualHeroHeader">
           <h1>{groupName}</h1>
-          <Image src={groupImage} alt={groupName} width={200} height={100} />
         </div>
         <div className="individualGroupCard">
-          {groupEmail && (
-            <p>
-              <Link href={`mailto:${groupEmail}`}>Contact us</Link>
-            </p>
-          )}
+          <Image src={groupImage} alt={groupName} width={200} height={100} />
           <div className="individualGroupContent">
-            <div>
-              <h2>About {groupName}</h2>
-              {groupDescription && (
+            {groupDescription && (
+              <div>
+                <h2>About {groupName}</h2>
                 <div
                   className="groupDescription"
                   dangerouslySetInnerHTML={{
                     __html: groupDescription,
                   }}
                 />
-              )}
-            </div>
+              </div>
+            )}
             {groupSchedule && (
               <div>
                 <h3>Schedule</h3>
@@ -91,6 +86,14 @@ export default async function IndividualLoveGroups({
                 <h4>Location</h4>
                 <p>{location.name}</p>
                 <p>{location.full_formatted_address}</p>
+              </div>
+            )}
+
+            {groupEmail && (
+              <div>
+                <p>
+                  <Link href={`mailto:${groupEmail}`}>Contact us</Link>
+                </p>
               </div>
             )}
           </div>

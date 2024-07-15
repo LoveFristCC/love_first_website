@@ -23,21 +23,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header
-      className={
-        pathname === "/" ||
-        pathname === "/connect" ||
-        pathname === "/connect/love-groups" ||
-        pathname === "/connect/creative-arts" ||
-        pathname === "/connect/service-volunteers" ||
-        pathname === "/connect/ministries" ||
-        pathname === "/connect/volunteer-army" ||
-        pathname === "/connect/media-team" ||
-        pathname === "/connect/youth"
-          ? "homeNav"
-          : ""
-      }
-    >
+    <header className={"homeNav"}>
       <div className="logoContainer">
         <Link href="/">
           <Image
