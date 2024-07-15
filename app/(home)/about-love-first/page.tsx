@@ -1,18 +1,52 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function AboutLoveFirst() {
   return (
     <div className="aboutContainer">
       <div className="aboutHeader">
         <Image
-          src="/DNA-5.webp"
+          src="/aboutUs.webp"
           alt="Love First History and Beliefs"
           layout="fill"
           objectFit="cover"
         />
+        <div className="loveFirstAboutHeader">
+          <h1>Learn More About Love First</h1>
+          <p>Find Your Purpose Here</p>
+        </div>
       </div>
+      <section className="visitSection">
+        <div className="visitOption">
+          <Link href="/about-love-first/location" className="visitLink">
+            Visit us in person
+          </Link>
+          <p className="visitDescription">
+            Discover our church&apos;s location and join us for in-person
+            services.
+          </p>
+        </div>
+        <div className="visitOption">
+          <Link href="/watch-online" className="visitLink">
+            Visit us online
+          </Link>
+          <p className="visitDescription">
+            Watch our services online and be part of our community from
+            anywhere.
+          </p>
+        </div>
+        <div className="visitOption">
+          <Link href="/about-love-first/pastors" className="visitLink">
+            Meet Our Leadership
+          </Link>
+          <p className="visitDescription">
+            Get to know our pastors and church leaders who guide our
+            congregation.
+          </p>
+        </div>
+      </section>
       <section className="historySection">
-        <h1 className="sectionTitle">History</h1>
+        <h2 className="sectionTitle">History</h2>
         <div className="historyContent">
           <p>
             Pastor Jomo Cousins dreamed of planting a church with a simple goal:
@@ -65,7 +99,7 @@ export default async function AboutLoveFirst() {
         </div>
       </section>
       <section className="visionSection">
-        <h1 className="sectionTitle">Vision</h1>
+        <h3 className="sectionTitle">Vision</h3>
         <div className="visionContent">
           <p>
             To&nbsp;<strong>Equip</strong>&nbsp;people with the knowledge of
@@ -93,7 +127,7 @@ export default async function AboutLoveFirst() {
         </div>
       </section>
       <section className="beliefsSection">
-        <h1 className="sectionTitle">What we believe</h1>
+        <h3 className="sectionTitle">What we believe</h3>
         <div className="beliefsContent">
           <strong>WE BELIEVE</strong>…the entire Bible is inspired by God,
           without error and the authority on which we base our faith, conduct
