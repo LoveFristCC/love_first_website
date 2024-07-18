@@ -232,7 +232,6 @@
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  box-shadow: var(--shadow-2); /* Add shadow for better design */
   margin-right: 10px;
   @media (max-width: 1030px) {
     margin: 10px auto;
@@ -290,4 +289,117 @@
   @media (max-width: 1030px) {
     min-height: 40vh;
   }
+}
+
+.leadersHeroSection {
+  width: 100%;
+  min-height: 60vh;
+  background: #333;
+}
+
+/* .leadersHeroSection {
+  text-align: center;
+  padding: 2rem;
+  background: #1a1a1a;
+  color: #fff;
+} */
+
+.leadersHeroSection h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.leadersHeroSection p {
+  font-size: 1.2rem;
+}
+
+.pastorsSection,
+.staffSection,
+.ministerSection {
+  padding: 2rem;
+  background: #fff;
+}
+
+.pastorsSection h2,
+.staffSection h2,
+.ministerSection h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Flexbox for leader cards layout */
+.leaderCard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+/* Flex properties to ensure even spacing */
+.leaderImage,
+.leaderContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leaderImage {
+  flex: 1;
+  max-width: 300px;
+  margin: 0 1rem;
+}
+
+.leaderImage img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.leaderContent {
+  flex: 2;
+  max-width: calc(100% - 320px); /* Adjust based on image width + margin */
+  flex-direction: column;
+}
+
+/* Alternating layout with nth-child selectors */
+.leaderCard:nth-child(odd) .leaderImage {
+  order: 1;
+}
+
+.leaderCard:nth-child(odd) .leaderContent {
+  order: 2;
+}
+
+.leaderCard:nth-child(even) .leaderImage {
+  order: 2;
+}
+
+.leaderCard:nth-child(even) .leaderContent {
+  order: 1;
+}
+
+/* Styling for leader content */
+.leaderContent h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.leaderContent p {
+  margin: 0;
+  text-align: center;
+}
+
+.leaderContent a {
+  color: #5d5dff;
+  text-decoration: none;
+}
+
+.leaderContent a:hover {
+  text-decoration: underline;
 }

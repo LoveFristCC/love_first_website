@@ -17,39 +17,39 @@ export default defineType({
       name: "email",
       title: "Email",
       type: "string",
-      validation: (rule) => rule.required(),
+      // validation: (rule) => rule.required(),
     }),
     defineField({
-      name: "title",
+      name: "pastorTitle",
       title: "Title",
       type: "string",
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "role",
+      title: "Role",
+      type: "string",
+      options: {
+        list: [
+          { title: "Pastor", value: "pastor" },
+          { title: "Minister", value: "minister" },
+          { title: "Staff", value: "staff" },
+        ],
+      },
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "order",
+      title: "Display Order",
+      type: "number",
+      validation: (rule) => rule.required().integer().min(1),
+    }),
+    defineField({
       name: "picture",
       title: "Picture",
       type: "image",
-      // fields: [
-      //   {
-      //     name: "alt",
-      //     type: "string",
-      //     title: "Alternative text",
-      //     description: "Important for SEO and accessiblity.",
-      //     validation: (rule) => {
-      //       return rule.custom((alt, context) => {
-      //         if ((context.document?.picture as any)?.asset?._ref && !alt) {
-      //           return "Required";
-      //         }
-      //         return true;
-      //       });
-      //     },
-      //   },
-      // ],
       options: {
         hotspot: true,
-        // aiAssist: {
-        //   imageDescriptionField: "alt",
-        // },
       },
       validation: (rule) => rule.required(),
     }),

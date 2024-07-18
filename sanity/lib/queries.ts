@@ -45,3 +45,27 @@ export const seriesQuery = groq`*[_type == "seriesCollection"] {
     }
   }
 }`;
+
+export const leadershipQuery = `{
+  "pastors": *[_type == "leaders" && role == "pastor"] | order(order asc) {
+    name,
+    email,
+    pastorTitle,
+    picture,
+    order
+  },
+  "ministers": *[_type == "leaders" && role == "minister"] | order(order asc) {
+    name,
+    email,
+    pastorTitle,
+    picture,
+    order
+  },
+  "staff": *[_type == "leaders" && role == "staff"] | order(order asc) {
+    name,
+    email,
+    pastorTitle,
+    picture,
+    order
+  }
+}`;

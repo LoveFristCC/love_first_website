@@ -35,17 +35,7 @@ export default defineConfig({
   projectId,
   dataset,
   schema: {
-    types: [
-      // Singletons
-      settings,
-      mainPage,
-      // Documents
-      // post,
-      // author,
-      pastors,
-      leaders,
-      staff,
-    ],
+    types: [settings, mainPage, leaders],
   },
   plugins: [
     presentationTool({
