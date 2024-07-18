@@ -1,5 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Visit Love First Christian Center - Riverview, FL",
+    description:
+      "Discover Love First Christian Center in Riverview, FL. Find our address, contact information, service times, and accessibility details. Plan your visit today!",
+  };
+}
 
 export default function LocationPage() {
   return (
@@ -8,8 +17,7 @@ export default function LocationPage() {
         <div className="locationHeaderContainer">
           <h1 className="title">Visit Love First Christian Center</h1>
           <p className="welcomeMessage">
-            Welcome to Love First Christian Center! We look forward to having
-            you join us.
+            We look forward to having you join us.
           </p>
         </div>
         <Image
