@@ -197,6 +197,7 @@
   width: calc(100% - 20px);
   text-align: center;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  white-space: balance;
 }
 
 .locationHeaderContainer h1 {
