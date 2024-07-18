@@ -48,6 +48,7 @@ export default async function LoveGroups() {
             },
             key: number
           ) => {
+            console.log("🚀 ~ el:", el);
             const shouldShowGroupArray = loveGroups.included.filter(
               (element: { id: string }) => element.id === el.id
             );
@@ -70,9 +71,9 @@ export default async function LoveGroups() {
                     className="groupLinksImage"
                   />
                   <div className="groupLinksContent">
-                    <p className="groupLinksContentHeader">
+                    <h3 className="groupLinksContentHeader">
                       {el.attributes.name}
-                    </p>
+                    </h3>
                     {el.attributes.schedule && (
                       <div>
                         <p className="timeAndWhere">When and where:</p>

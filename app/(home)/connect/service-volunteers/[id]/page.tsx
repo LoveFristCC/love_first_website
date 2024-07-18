@@ -82,7 +82,7 @@ export default async function IndividualLifeClass({
 
             {location && (
               <div>
-                <h4>Location</h4>
+                <h3>Location</h3>
                 <p>{location.name}</p>
                 <p>{location.full_formatted_address}</p>
               </div>

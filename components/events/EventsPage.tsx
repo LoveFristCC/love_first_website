@@ -29,7 +29,7 @@ const EventsPage = async () => {
   return (
     <section className="eventsSection">
       <div className="eventsContent">
-        <h6 className="eventsHeadline">Upcoming Events at Love First</h6>
+        <h2 className="eventsHeadline">Upcoming Events at Love First</h2>
         <EventsClient eventData={eventData} groupedEvents={groupedEvents} />
       </div>
     </section>

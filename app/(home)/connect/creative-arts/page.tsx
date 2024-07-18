@@ -70,9 +70,9 @@ export default async function CreativeArts() {
                     className="groupLinksImage"
                   />
                   <div className="groupLinksContent">
-                    <p className="groupLinksContentHeader">
+                    <h3 className="groupLinksContentHeader">
                       {el.attributes.name}
-                    </p>
+                    </h3>
                     {el.attributes.schedule && (
                       <div>
                         <p className="timeAndWhere">When and where:</p>

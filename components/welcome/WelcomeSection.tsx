@@ -6,7 +6,7 @@ const WelcomeSection = ({ serviceTime }: { serviceTime: string }) => {
     <section className="welcomeSection">
       <div className="welcomeContentContainer">
         <div className="welcomeContent">
-          <h3>Experience Faith, Fellowship, and Transformation</h3>
+          <h2>Experience Faith, Fellowship, and Transformation</h2>
           <p>
             Join us for inspiring worship, deep connections, and a caring
             community that transforms lives.

@@ -26,11 +26,11 @@ const FeaturedVideo: React.FC<FeaturedVideoProps> = ({ featuredVideo }) => (
       ></iframe>
     </div>
     <div className="sermon-details">
-      <h6>Sermon Series:</h6>
+      <h3>Sermon Series:</h3>
       <p>{featuredVideo.title}</p>
-      <h6>Message Title:</h6>
+      <h3>Message Title:</h3>
       <p>{featuredVideo.serviceTitle}</p>
-      <h6>Speaker:</h6>
+      <h3>Speaker:</h3>
       <p>{featuredVideo.speaker}</p>
     </div>
   </div>
@@ -48,7 +48,7 @@ const SermonSection = async () => {
 
   return (
     <section className="sermon-section">
-      <h5>Missed a Sermon?</h5>
+      <h2>Missed a Sermon?</h2>
       <p>Don&apos;t worry! Catch up on all our messages now.</p>
 
       <FeaturedVideo featuredVideo={featuredVideo} />

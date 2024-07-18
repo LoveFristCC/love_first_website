@@ -54,6 +54,8 @@ export default async function IndividualLoveGroups({
   const groupEmail = groups.data.attributes.contact_email;
 
   const location = groups?.included[0]?.attributes;
+
+  console.log("🚀 ~ getPcData:", getPcData);
   return (
     groups && (
       <div className="individualContainer">
@@ -83,7 +85,7 @@ export default async function IndividualLoveGroups({
 
             {location && (
               <div>
-                <h4>Location</h4>
+                <h3>Location</h3>
                 <p>{location.name}</p>
                 <p>{location.full_formatted_address}</p>
               </div>

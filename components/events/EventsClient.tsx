@@ -47,7 +47,7 @@ const EventsClient = ({
               viewport={{ once: true, amount: 0.5 }}
               transition={{ ease: "easeInOut", duration: 0.5 }}
             >
-              <h6 className="dateHeader">{date}</h6>
+              <h3 className="dateHeader">{date}</h3>
               {groupedEvents[date].map(
                 (
                   el: {

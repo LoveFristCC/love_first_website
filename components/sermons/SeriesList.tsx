@@ -21,7 +21,7 @@ const SeriesList: React.FC<SeriesListProps> = ({ series }) => {
 
   return (
     <div className="series-list">
-      <h6>Previous Series</h6>
+      <h3>Previous Series</h3>
       <div className="series-container">
         {series.map(
           (

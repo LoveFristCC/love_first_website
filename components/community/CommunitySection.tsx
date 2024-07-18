@@ -30,10 +30,10 @@ const CommunitySection = () => {
 
   return (
     <section className="communitySection">
-      <h4>
+      <h2>
         Join us for valuable ministries designed for children, youth, adults,
         and seniors.
-      </h4>
+      </h2>
       <div className="communityContentContainer">
         <Link href="/connect/ministries/254955" className="mainImageContainer">
           <Image
