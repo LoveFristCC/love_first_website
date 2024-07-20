@@ -48,6 +48,7 @@ export default async function Pastors() {
             alt="Jomo and Charmaine Cousins"
             height={400}
             width={400}
+            priority
           />
         </div>
       </section>
