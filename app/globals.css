@@ -260,6 +260,9 @@ footer {
 .footerSvg.path-home-footer {
   background: #eee;
 }
+.footerSvg.path-pastors-footer {
+  background: #f9f9f9;
+}
 
 .footerContent {
   display: flex;

@@ -1,9 +1,18 @@
 import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/utils";
 import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
-
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { leadershipQuery } from "@/sanity/lib/queries";
+
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Meet the Team at Love First - Pastors, Staff, & Ministers",
+    description:
+      "Meet the dedicated team at Love First Christian Center. Discover our pastors, staff, and ministers and learn how they support and lead our community with passion.",
+  };
+}
 
 export default async function Pastors() {
   const [leaders] = await Promise.all([
@@ -19,11 +28,28 @@ export default async function Pastors() {
   return (
     <div>
       <section className="leadersHeroSection">
-        <div>
-          <h1>Meet our staff</h1>
-          <p>message about pastor here</p>
+        <div className="leadersHeroContent">
+          <h1>
+            Get to Know the Dedicated Team Behind Love First Christian Center
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
         </div>
-        {/* <img/> */}
+        <div className="leadersHeroImage">
+          <Image
+            src="/Jomo-Charmaine-Leadership.webp"
+            alt="Jomo and Charmaine Cousins"
+            height={400}
+            width={400}
+          />
+        </div>
       </section>
       <section className="pastorsSection">
         <h2>Meet Our Pastors</h2>
@@ -31,8 +57,8 @@ export default async function Pastors() {
           pastors.map(
             (
               el: {
-                picture: string;
                 name: string;
+                picture: string;
                 pastorTitle: string;
                 email: string;
               },
@@ -43,26 +69,25 @@ export default async function Pastors() {
                 .width(300)
                 .url();
               return (
-                <div key={i} className="leaderCard">
+                <article key={i} className="leaderCard">
                   <div className="leaderImage">
                     <Image
                       src={imageUrl as string}
-                      alt={`${el.name} - Love First`}
+                      alt={`${el.name} - Pastor at Love First Christian Center`}
                       height={300}
                       width={300}
                     />
                   </div>
                   <div className="leaderContent">
                     <h3>{el.name}</h3>
-                    <h3>{el.pastorTitle}</h3>
+                    <h4>{el.pastorTitle}</h4>
                     {el.email && (
                       <p>
-                        Email: <br />
-                        <a href={`mailto:${el.email}`}>{el.email}</a>
+                        <a href={`mailto:${el.email}`}>Email {el.name}</a>
                       </p>
                     )}
                   </div>
-                </div>
+                </article>
               );
             }
           )}
@@ -73,8 +98,8 @@ export default async function Pastors() {
           staff.map(
             (
               el: {
-                picture: string;
                 name: string;
+                picture: string;
                 pastorTitle: string;
                 email: string;
               },
@@ -85,26 +110,25 @@ export default async function Pastors() {
                 .width(300)
                 .url();
               return (
-                <div key={i} className="leaderCard">
+                <article key={i} className="leaderCard">
                   <div className="leaderImage">
                     <Image
                       src={imageUrl as string}
-                      alt={`${el.name} - Love First`}
+                      alt={`${el.name} - Staff at Love First Christian Center`}
                       height={300}
                       width={300}
                     />
                   </div>
                   <div className="leaderContent">
                     <h3>{el.name}</h3>
-                    <h3>{el.pastorTitle}</h3>
+                    <h4>{el.pastorTitle}</h4>
                     {el.email && (
                       <p>
-                        Email: <br />
-                        <a href={`mailto:${el.email}`}>{el.email}</a>
+                        <a href={`mailto:${el.email}`}>Email {el.name}</a>
                       </p>
                     )}
                   </div>
-                </div>
+                </article>
               );
             }
           )}
@@ -115,8 +139,8 @@ export default async function Pastors() {
           ministers.map(
             (
               el: {
-                picture: string;
                 name: string;
+                picture: string;
                 pastorTitle: string;
                 email: string;
               },
@@ -127,26 +151,25 @@ export default async function Pastors() {
                 .width(300)
                 .url();
               return (
-                <div key={i} className="leaderCard">
+                <article key={i} className="leaderCard">
                   <div className="leaderImage">
                     <Image
                       src={imageUrl as string}
-                      alt={`${el.name} - Love First`}
+                      alt={`${el.name} - Minister at Love First Christian Center`}
                       height={300}
                       width={300}
                     />
                   </div>
                   <div className="leaderContent">
                     <h3>{el.name}</h3>
-                    <h3>{el.pastorTitle}</h3>
+                    <h4>{el.pastorTitle}</h4>
                     {el.email && (
                       <p>
-                        Email: <br />
-                        <a href={`mailto:${el.email}`}>{el.email}</a>
+                        <a href={`mailto:${el.email}`}>Email {el.name}</a>
                       </p>
                     )}
                   </div>
-                </div>
+                </article>
               );
             }
           )}

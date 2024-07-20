@@ -16,6 +16,8 @@ export default function Footer() {
         return "about-footer";
       case "/contact":
         return "contact-footer";
+      case "/about-love-first/pastors":
+        return "pastors-footer";
       // Add more cases as needed
       default:
         return "default-footer";

@@ -292,114 +292,203 @@
 }
 
 .leadersHeroSection {
-  width: 100%;
-  min-height: 60vh;
-  background: #333;
-}
-
-/* .leadersHeroSection {
-  text-align: center;
-  padding: 2rem;
-  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 65vh;
+  padding: 75px 40px;
+  background: linear-gradient(to right, rgba(93, 5, 167, 0.7), #333);
   color: #fff;
-} */
+  gap: 2rem;
 
-.leadersHeroSection h1 {
+  @media (max-width: 840px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.leadersHeroSection div {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leadersHeroContent {
+  flex-direction: column;
+  max-width: 50%;
+  @media (max-width: 840px) {
+    max-width: 100%;
+  }
+}
+
+.leadersHeroContent h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  @media (max-width: 840px) {
+    text-align: center;
+  }
 }
 
-.leadersHeroSection p {
-  font-size: 1.2rem;
+.leadersHeroContent p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #fff;
 }
 
+.leadersHeroImage {
+  max-width: 50%;
+  @media (max-width: 840px) {
+    max-width: 100%;
+  }
+}
+
+.leadersHeroImage img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow-4);
+}
+
+/* Section styling */
 .pastorsSection,
 .staffSection,
 .ministerSection {
-  padding: 2rem;
-  background: #fff;
+  padding: 3rem 2rem;
+  background: #f9f9f9;
+  @media (max-width: 777px) {
+    padding: 3rem 1rem;
+  }
 }
 
 .pastorsSection h2,
 .staffSection h2,
 .ministerSection h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
   text-align: center;
+  color: #5d05a7;
+  text-transform: uppercase;
 }
 
-/* Flexbox for leader cards layout */
+/* Leader card styling */
 .leaderCard {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 2rem;
+  margin: 0 auto 2.5rem;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 12px;
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  flex-wrap: wrap;
+  max-width: 1080px;
+
+  @media (max-width: 777px) {
+    justify-content: center;
+  }
 }
 
-/* Flex properties to ensure even spacing */
-.leaderImage,
-.leaderContent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.leaderCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Flex properties for images and content */
 .leaderImage {
   flex: 1;
   max-width: 300px;
-  margin: 0 1rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.leaderCard:hover .leaderImage {
+  transform: scale(1.05);
 }
 
 .leaderImage img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .leaderContent {
   flex: 2;
-  max-width: calc(100% - 320px); /* Adjust based on image width + margin */
+  margin: 1rem;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  max-width: calc(100% - 320px); /* Adjust based on image width + margin */
+  text-align: center;
 }
 
-/* Alternating layout with nth-child selectors */
-.leaderCard:nth-child(odd) .leaderImage {
-  order: 1;
-}
-
-.leaderCard:nth-child(odd) .leaderContent {
-  order: 2;
-}
-
-.leaderCard:nth-child(even) .leaderImage {
-  order: 2;
-}
-
-.leaderCard:nth-child(even) .leaderContent {
-  order: 1;
-}
-
-/* Styling for leader content */
 .leaderContent h3 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+  white-space: balance;
+  text-align: center;
+}
+
+.leaderContent h4 {
+  font-size: 1.4rem;
   margin-bottom: 0.5rem;
+  color: #666;
 }
 
 .leaderContent p {
-  margin: 0;
+  margin: 0.5rem 0;
+  color: #666;
   text-align: center;
 }
 
 .leaderContent a {
-  color: #5d5dff;
+  color: #5d05a7;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .leaderContent a:hover {
   text-decoration: underline;
+  color: #333;
+}
+
+/* Ensure even spacing regardless of order */
+.leaderCard .leaderImage,
+.leaderCard .leaderContent {
+  flex: 1;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px; /* Ensure minimum width for better layout */
+}
+
+/* Alternating layout */
+.leaderCard:nth-child(odd) .leaderImage {
+  order: 1;
+  /* margin-right: 2rem; */
+}
+
+.leaderCard:nth-child(odd) .leaderContent {
+  order: 2;
+  /* margin-left: 2rem; */
+}
+
+.leaderCard:nth-child(even) .leaderImage {
+  order: 2;
+  /* margin-left: 2rem; */
+}
+
+.leaderCard:nth-child(even) .leaderContent {
+  order: 1;
+  /* margin-right: 2rem; */
 }
