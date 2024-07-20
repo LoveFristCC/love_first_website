@@ -18,6 +18,8 @@ export default function Footer() {
         return "contact-footer";
       case "/about-love-first/pastors":
         return "pastors-footer";
+      case "/prayer":
+        return "prayer-footer";
       // Add more cases as needed
       default:
         return "default-footer";

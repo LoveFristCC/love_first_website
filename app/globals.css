@@ -260,7 +260,8 @@ footer {
 .footerSvg.path-home-footer {
   background: #eee;
 }
-.footerSvg.path-pastors-footer {
+.footerSvg.path-pastors-footer,
+.footerSvg.path-prayer-footer {
   background: #f9f9f9;
 }
 

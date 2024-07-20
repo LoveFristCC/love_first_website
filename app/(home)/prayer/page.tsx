@@ -1,17 +1,148 @@
-import Link from "next/link";
-import { Suspense } from "react";
-import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
+import Image from "next/image";
+import "./prayer.css";
+import type { Metadata } from "next";
 
-import { sanityFetch } from "@/sanity/lib/fetch";
-import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title:
+      "Seek Prayer & Support - Love First Christian Center Daily Prayer Line",
+    description:
+      "Find spiritual support at Love First Christian Center. Join daily prayer sessions with Pastor Jomo, submit your prayer requests, and connect with our community.",
+  };
+}
 
 export default async function Prayer() {
-  const [settings, heroPost] = await Promise.all([
-    sanityFetch<SettingsQueryResult>({
-      query: settingsQuery,
-    }),
-    sanityFetch<HeroQueryResult>({ query: heroQuery }),
-  ]);
+  return (
+    <div>
+      <section className="headerHero">
+        <div className="headerContent">
+          <h1>
+            Seeking Prayer? Discover the Power of Prayer and Find Support Here
+          </h1>
+        </div>
+        <Image
+          src="/prayerHeader.webp"
+          alt="A serene prayer setting to inspire spiritual reflection"
+          layout="fill"
+          objectFit="cover"
+          priority
+        />
+      </section>
 
-  return <div className="container mx-auto px-5">Prayer Page</div>;
+      <section className="infoAndVideoSection">
+        <div className="videoContent">
+          <h2>Need Immediate Prayer? Watch and Pray with Us Now</h2>
+          <iframe
+            width="426"
+            height="240"
+            src="https://www.youtube.com/embed/SSFmp-0bXf0"
+            title="Join Our Prayer Session with Pastor Jomo"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <div className="infoContent">
+          <h3>Experience the Transformative Power of Prayer</h3>
+          <p>
+            Elit at imperdiet dui accumsan sit amet nulla. Venenatis urna cursus
+            eget nunc scelerisque viverra mauris in aliquam. Ut enim blandit
+            volutpat maecenas volutpat blandit aliquam. Odio facilisis mauris
+            sit amet massa. Diam quam nulla porttitor massa id neque aliquam.
+            Egestas tellus rutrum tellus pellentesque eu. Vulputate ut pharetra
+            sit amet. Morbi non arcu risus quis. Massa enim nec dui nunc. At
+            tellus at urna condimentum mattis pellentesque id. Suspendisse
+            potenti nullam ac tortor. Sollicitudin nibh sit amet commodo.
+            Vulputate enim nulla aliquet porttitor lacus. Viverra mauris in
+            aliquam sem fringilla ut morbi. Posuere sollicitudin aliquam
+            ultrices sagittis orci a scelerisque purus. Convallis tellus id
+            interdum velit laoreet id.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </section>
+
+      <section className="prayerRequestSection">
+        <div className="textContent">
+          <h2>Submit Your Prayer Requests and Find Support</h2>
+          <p>
+            At Love First Christian Center, we believe in the power of prayer.
+            Let us join you in prayer for your needs, big or small. Submit your
+            prayer request, and our team will stand in agreement with you,
+            offering spiritual support and encouragement.
+          </p>
+        </div>
+        <div className="formContent">
+          <form className="prayerForm">
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+
+            <label htmlFor="phone">Phone:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Your Phone Number"
+            />
+
+            <label htmlFor="prayerRequest">Prayer Request:</label>
+            <textarea
+              id="prayerRequest"
+              name="prayerRequest"
+              rows={6}
+              placeholder="Your Prayer Request"
+              required
+            ></textarea>
+
+            <button type="submit">Submit Prayer Request</button>
+          </form>
+        </div>
+      </section>
+
+      <section className="dailyPrayerSection">
+        <h2>
+          Join Our Daily Prayer Line with Pastor Jomo: Monday – Friday at 6:30
+          AM
+        </h2>
+        <p>
+          Join us every weekday morning for uplifting prayer sessions with
+          Pastor Jomo. Whether you seek spiritual support, guidance, or a sense
+          of community, our daily prayer line provides a meaningful start to
+          your day.
+        </p>
+        <p>
+          Call{" "}
+          <strong>
+            <a href="tel:6677701523">(667) 770-1523</a>
+          </strong>{" "}
+          and use Access Code: <strong>101804#</strong> to participate. Everyone
+          is welcome.
+        </p>
+      </section>
+    </div>
+  );
 }
