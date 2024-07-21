@@ -23,6 +23,7 @@ const FeaturedVideo: React.FC<FeaturedVideoProps> = ({ featuredVideo }) => (
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
+        loading="lazy"
       ></iframe>
     </div>
     <div className="sermon-details">
