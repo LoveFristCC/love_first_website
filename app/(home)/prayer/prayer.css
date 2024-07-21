@@ -162,6 +162,12 @@
   text-align: center;
 }
 
+.youTubeThumbImage {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
 .videoContent h2 {
   font-size: 1.8rem;
   color: #333;
@@ -170,7 +176,8 @@
   font-weight: 700;
 }
 
-.videoContent iframe {
+.videoContent iframe,
+.videoContent image {
   border: none;
   max-width: 100%;
   height: auto;

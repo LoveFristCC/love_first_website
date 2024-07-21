@@ -1,6 +1,7 @@
 import Image from "next/image";
 import "./prayer.css";
 import type { Metadata } from "next";
+import YoutubeVideo from "./Youtube";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -30,7 +31,8 @@ export default async function Prayer() {
       </section>
 
       <section className="infoAndVideoSection">
-        <div className="videoContent">
+        <YoutubeVideo />
+        {/* <div className="videoContent">
           <h2>Need Immediate Prayer? Watch and Pray with Us Now</h2>
           <iframe
             width="426"
@@ -42,7 +44,7 @@ export default async function Prayer() {
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>
-        </div>
+        </div> */}
         <div className="infoContent">
           <h3>Experience the Transformative Power of Prayer</h3>
           <p>
