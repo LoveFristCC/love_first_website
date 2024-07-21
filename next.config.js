@@ -21,6 +21,10 @@ module.exports = {
         protocol: "https",
         hostname: "images.planningcenterusercontent.com",
       },
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+      },
     ],
   },
 };

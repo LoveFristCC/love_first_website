@@ -786,6 +786,8 @@ video {
 .video-container {
   width: 100%;
   max-width: 700px;
+  position: relative;
+  cursor: pointer;
 }
 iframe {
   width: 100%;
@@ -981,4 +983,19 @@ iframe {
 
 .svgWaveTwo path {
   fill: rgba(93, 5, 167, 0.7);
+}
+
+.youtube-thumbnail {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: url("/live2.webp") no-repeat center center;
+  background-size: contain;
 }
