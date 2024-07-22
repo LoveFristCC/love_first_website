@@ -1,6 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import "./give.css";
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title:
+      "Ways to Give - Love First Christian Center | Online, Text, Cash App & Mail",
+    description:
+      "Explore how you can support Love First Christian Center through online donations, text, Cash App, Zelle, or mail. Your contributions help fund community programs and outreach. Learn more and make a difference today.",
+  };
+}
 
 export default async function Give() {
   return (
