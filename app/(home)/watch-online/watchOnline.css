@@ -1,0 +1,239 @@
+.watch-online {
+  position: relative;
+  overflow: hidden;
+}
+
+.watch-online-hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: left;
+}
+
+.watch-online-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.watch-online-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.watch-online-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.watch-online-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  white-space: balance;
+}
+
+.watch-online-description {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .watch-online-title {
+    font-size: 2.5rem;
+  }
+
+  .watch-online-description {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .watch-online-title {
+    font-size: 2.25rem;
+  }
+
+  .watch-online-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .watch-online-title {
+    font-size: 2rem;
+  }
+
+  .watch-online-description {
+    font-size: 1rem;
+  }
+
+  .watch-online-hero {
+    min-height: 40vh;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .watch-online-hero-content {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .watch-online-hero-content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .watch-online-hero {
+    padding: 40px 10px;
+  }
+}
+
+.watch-online-info {
+  background: rgba(93, 5, 167, 0.7);
+  color: white;
+  padding: 40px 20px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.watch-online-info-block {
+  padding: 20px;
+}
+
+.watch-online-info-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.watch-online-info-content {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.watch-online-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.watch-online-button {
+  display: inline-block;
+  background-color: #eee;
+  color: #333;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 10px;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    color 0.2s ease;
+  box-shadow: var(--shadow-3);
+}
+
+.watch-online-button:hover {
+  /* background-color: rgba(93, 5, 167, 0.7); */
+  transform: scale(1.05);
+  /* color: #fff; */
+}
+
+@media (max-width: 600px) {
+  .watch-online-info-title {
+    font-size: 2em;
+  }
+
+  .watch-online-info-content {
+    font-size: 1em;
+  }
+
+  .watch-online-button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    width: 100%;
+  }
+}
+
+.on-demand-services {
+  /* background: linear-gradient(135deg, #5d05a7, #333); */
+  color: #333;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 40px 0;
+}
+
+.on-demand-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.on-demand-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #5d05a7;
+}
+
+.on-demand-description {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+.on-demand-button {
+  display: inline-block;
+  background-color: rgba(93, 5, 167, 0.7);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+  box-shadow: var(--shadow-3);
+}
+
+.on-demand-button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .on-demand-title {
+    font-size: 2rem;
+  }
+
+  .on-demand-description {
+    font-size: 1rem;
+  }
+
+  .on-demand-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+}

@@ -32,7 +32,7 @@ export const seriesQuery = groq`*[_type == "seriesCollection"] {
     title,
     speaker,
     serviceTitle,
-    url
+    youtubeId
   },
   series[] {
     title,
@@ -41,7 +41,7 @@ export const seriesQuery = groq`*[_type == "seriesCollection"] {
     youtubeVideos[] {
       title,
       speaker,
-      url
+      youtubeId
     }
   }
 }`;

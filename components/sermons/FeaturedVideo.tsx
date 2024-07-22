@@ -12,6 +12,7 @@ type FeaturedVideoProps = {
 };
 
 const FeaturedVideo: React.FC<any> = ({ featuredVideo }) => {
+  console.log("🚀 ~ featuredVideo:", featuredVideo);
   const [loadVideo, setLoadVideo] = useState(false);
   const handleLoadVideo = () => {
     setLoadVideo(true);
@@ -21,20 +22,20 @@ const FeaturedVideo: React.FC<any> = ({ featuredVideo }) => {
       <div className="video-container" onClick={handleLoadVideo}>
         {loadVideo ? (
           <iframe
-            src={`https://www.youtube.com/embed/cqapy1WaAk0?autoplay=1&rel=0&modestbranding=1`}
+            src={`https://www.youtube.com/embed/${featuredVideo.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
-            loading="lazy"
+            // loading="lazy"
           ></iframe>
         ) : (
           <>
             <Image
-              src={`https://img.youtube.com/vi/cqapy1WaAk0/maxresdefault.jpg`}
+              src={`https://img.youtube.com/vi/${featuredVideo.youtubeId}/maxresdefault.jpg`}
               alt="YouTube Video Thumbnail"
-              className="youtube-thumbnail"
+              className={`${featuredVideo.title} - Love First`}
               height={1000}
               width={1000}
             />

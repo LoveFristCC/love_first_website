@@ -2,7 +2,7 @@ import { defineField, defineType } from "sanity";
 
 export default defineType({
   name: "seriesCollection",
-  title: "Main Page Content",
+  title: "Sermon youtube videos",
   type: "document",
   fields: [
     defineField({
@@ -29,15 +29,11 @@ export default defineType({
           description: "Title of the service",
         }),
         defineField({
-          name: "url",
-          title: "URL",
-          type: "url",
+          name: "youtubeId",
+          title: "Youtube Id",
+          type: "string",
           description: "URL of the featured video",
-          validation: (Rule) =>
-            Rule.uri({
-              scheme: ["http", "https"],
-              allowRelative: false,
-            }),
+          validation: (rule) => rule.required(),
         }),
       ],
       description: "Details of the featured video",
@@ -92,15 +88,11 @@ export default defineType({
                       description: "Speaker for the service",
                     }),
                     defineField({
-                      name: "url",
-                      title: "URL",
-                      type: "url",
-                      description: "URL of the YouTube video",
-                      validation: (Rule) =>
-                        Rule.uri({
-                          scheme: ["http", "https"],
-                          allowRelative: false,
-                        }),
+                      name: "youtubeId",
+                      title: "Youtube Id",
+                      type: "string",
+                      description: "URL of the featured video",
+                      validation: (rule) => rule.required(),
                     }),
                   ],
                 },
