@@ -30,7 +30,7 @@ export default async function Page() {
         ></path>
       </svg>
       <Suspense>
-        <SermonSection />
+        <SermonSection path="home" />
         <EventsPage />
       </Suspense>
     </div>

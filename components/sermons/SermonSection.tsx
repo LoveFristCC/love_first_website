@@ -5,7 +5,7 @@ import Link from "next/link";
 import SeriesList from "./SeriesList";
 import FeaturedVideo from "./FeaturedVideo";
 
-const SermonSection = async () => {
+const SermonSection = async ({ path }: { path: string }) => {
   const mainData = await sanityFetch<SeriesQueryResult>({
     query: seriesQuery,
     stega: false,
@@ -17,11 +17,20 @@ const SermonSection = async () => {
 
   return (
     <section className="sermon-section">
-      <h2>Missed a Sermon?</h2>
-      <p>Don&apos;t worry! Catch up on all our messages now.</p>
+      {path === "home" ? (
+        <>
+          <h2>Missed The Last Sermon?</h2>
+          <p>Don&apos;t worry! Catch up on all our messages now.</p>
+        </>
+      ) : (
+        <>
+          <h2>Latest Sermon</h2>
+          <p>Catch up on the most recent sermon from our latest service.</p>
+        </>
+      )}
 
       <FeaturedVideo featuredVideo={featuredVideo} />
-      <SeriesList series={series} />
+      {path === "home" && <SeriesList series={series} />}
     </section>
   );
 };

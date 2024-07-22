@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SermonSection from "@/components/sermons/SermonSection";
 import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -57,6 +58,8 @@ const WatchOnline = () => {
           </div>
         </div>
       </section>
+
+      <SermonSection path="online" />
 
       <section className="on-demand-services">
         <div className="on-demand-content">
