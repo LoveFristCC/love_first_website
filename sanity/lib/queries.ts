@@ -46,6 +46,19 @@ export const seriesQuery = groq`*[_type == "seriesCollection"] {
   }
 }`;
 
+export const pastSeries = groq`*[_type == "seriesCollection"] {
+  series[] {
+    title,
+    route,
+    seriesImage,
+    youtubeVideos[] {
+      title,
+      speaker,
+      youtubeId
+    }
+  }
+}`;
+
 export const leadershipQuery = `{
   "pastors": *[_type == "leaders" && role == "pastor"] | order(order asc) {
     name,

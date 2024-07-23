@@ -11,7 +11,10 @@ type FeaturedVideoProps = {
   };
 };
 
-const FeaturedVideo: React.FC<any> = ({ featuredVideo }) => {
+const PreviousSermonYouTubePlayer: React.FC<any> = ({
+  featuredVideo,
+  seriesTitle,
+}) => {
   const [loadVideo, setLoadVideo] = useState(false);
   const handleLoadVideo = () => {
     setLoadVideo(true);
@@ -33,8 +36,8 @@ const FeaturedVideo: React.FC<any> = ({ featuredVideo }) => {
           <>
             <Image
               src={`https://img.youtube.com/vi/${featuredVideo.youtubeId}/maxresdefault.jpg`}
-              alt={`${featuredVideo.serviceTitle} - Love First`}
-              className={`${featuredVideo.title} - Love First`}
+              alt={`${featuredVideo.title} - Love First`}
+              className="featuredImage"
               height={1000}
               width={1000}
             />
@@ -44,9 +47,9 @@ const FeaturedVideo: React.FC<any> = ({ featuredVideo }) => {
       </div>
       <div className="sermon-details">
         <h3>Sermon Series:</h3>
-        <p>{featuredVideo.title}</p>
+        <p>{seriesTitle}</p>
         <h3>Message Title:</h3>
-        <p>{featuredVideo.serviceTitle}</p>
+        <p>{featuredVideo.title}</p>
         <h3>Speaker:</h3>
         <p>{featuredVideo.speaker}</p>
       </div>
@@ -54,4 +57,4 @@ const FeaturedVideo: React.FC<any> = ({ featuredVideo }) => {
   );
 };
 
-export default FeaturedVideo;
+export default PreviousSermonYouTubePlayer;

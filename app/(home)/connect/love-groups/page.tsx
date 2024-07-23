@@ -48,7 +48,6 @@ export default async function LoveGroups() {
             },
             key: number
           ) => {
-            console.log("🚀 ~ el:", el);
             const shouldShowGroupArray = loveGroups.included.filter(
               (element: { id: string }) => element.id === el.id
             );

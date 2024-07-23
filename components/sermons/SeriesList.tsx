@@ -9,21 +9,21 @@ interface SeriesListProps {
 }
 
 const SeriesList: React.FC<SeriesListProps> = ({ series }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const getLastFiveItems = (array: any) => {
+    if (!Array.isArray(array)) {
+      throw new TypeError("The provided argument is not an array.");
+    }
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % series.length);
-    }, 3000); // Change every 3 seconds
+    // Return the last 5 items, or all items if the array has fewer than 5 elements.
+    return array.slice(-5);
+  };
 
-    return () => clearInterval(interval);
-  }, [series.length]);
-
+  const lastFiveSeries = getLastFiveItems(series);
   return (
     <div className="series-list">
       <h3>Previous Series</h3>
       <div className="series-container">
-        {series.map(
+        {lastFiveSeries.map(
           (
             item: { seriesImage: string; route: string; title: string },
             index: number

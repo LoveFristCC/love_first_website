@@ -20,7 +20,6 @@ export async function generateMetadata(
   const groupImage = data.data.attributes.header_image.original;
 
   const previousImages = (await parent).openGraph?.images || [];
-  console.log("🚀 ~ previousImages:", previousImages);
 
   return {
     title: `${groupName} - Love First`,

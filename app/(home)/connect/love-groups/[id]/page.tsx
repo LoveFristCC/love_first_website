@@ -20,7 +20,6 @@ export async function generateMetadata(
   const groupImage = data.data.attributes.header_image.original;
 
   const previousImages = (await parent).openGraph?.images || [];
-  console.log("🚀 ~ previousImages:", previousImages);
 
   return {
     title: `${groupName} - Love First`,
@@ -55,7 +54,6 @@ export default async function IndividualLoveGroups({
 
   const location = groups?.included[0]?.attributes;
 
-  console.log("🚀 ~ getPcData:", getPcData);
   return (
     groups && (
       <div className="individualContainer">
