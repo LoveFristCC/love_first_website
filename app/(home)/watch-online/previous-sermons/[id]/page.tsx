@@ -47,7 +47,6 @@ export default async function IndividualSermons({
     params: { slug: params.id },
   });
 
-  console.log(seriesData[0].series);
   const currentSeries = seriesData[0]?.series[0];
   const image = urlForImage(currentSeries.seriesImage)
     ?.height(1000)
