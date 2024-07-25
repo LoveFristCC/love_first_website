@@ -428,6 +428,7 @@ body {
   gap: 20px; /* Space between video and details */
   padding: 20px;
   background: #f9f9f9;
+  min-height: 60vh;
   /* box-shadow: var(--shadow-2); */
   width: 100%;
 
