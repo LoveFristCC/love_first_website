@@ -4,6 +4,15 @@ import Image from "next/image";
 import PreviousSermonYouTubePlayer from "@/components/previousSermonYouTubePlayer/PreviousSermonYouTubePlayer";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { pastSeries } from "@/sanity/lib/queries";
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Previous Sermons - Love First Christian Center",
+    description:
+      "Explore past sermons at Love First Christian Center. Listen to inspiring messages and teachings that uplift and strengthen your faith journey. Stay connected with our community and spiritual growth through our archive of previous sermons.",
+  };
+}
 
 export default async function PreviousSermons() {
   const seriesData: any = await sanityFetch({ query: pastSeries });

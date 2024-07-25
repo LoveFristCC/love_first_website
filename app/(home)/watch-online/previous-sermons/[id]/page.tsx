@@ -1,10 +1,10 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
-import { Suspense } from "react";
-import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
-
+import Image from "next/image";
+import { urlForImage } from "@/sanity/lib/utils";
 import { sanityFetch } from "@/sanity/lib/fetch";
-import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
+import { individualPastSeries } from "@/sanity/lib/queries";
+import IndividualYouTubePlayer from "./IndividualYouTubePlayer";
 
 type Props = {
   params: { id: string };
@@ -15,20 +15,25 @@ export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  // read route params
-  const id = params.id;
+  const seriesData: any = await sanityFetch({
+    query: individualPastSeries,
+    params: { slug: params.id },
+  });
+  const currentSeries = seriesData[0]?.series[0];
+  const image = urlForImage(currentSeries.seriesImage)
+    ?.height(1000)
+    .width(2000)
+    .url();
 
-  // fetch data
-  // const product = await fetch(`https://.../${id}`).then((res) => res.json());
-
-  // // optionally access and extend (rather than replace) parent metadata
-  // const previousImages = (await parent).openGraph?.images || [];
+  const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    title: id,
-    // openGraph: {
-    //   images: ["/some-specific-page-image.jpg", ...previousImages],
-    // },
+    title: `${currentSeries.title} - Love First`,
+    description: `Explore our series, ${currentSeries.title}, and discover insightful messages that we hope will enrich and inspire your life.`,
+    openGraph: {
+      // @ts-ignore
+      images: [image, ...previousImages],
+    },
   };
 }
 
@@ -37,12 +42,33 @@ export default async function IndividualSermons({
 }: {
   params: { id: string };
 }) {
-  const [settings, heroPost] = await Promise.all([
-    sanityFetch<SettingsQueryResult>({
-      query: settingsQuery,
-    }),
-    sanityFetch<HeroQueryResult>({ query: heroQuery }),
-  ]);
+  const seriesData: any = await sanityFetch({
+    query: individualPastSeries,
+    params: { slug: params.id },
+  });
 
-  return <div className="container mx-auto px-5">{params.id}</div>;
+  console.log(seriesData[0].series);
+  const currentSeries = seriesData[0]?.series[0];
+  const image = urlForImage(currentSeries.seriesImage)
+    ?.height(1000)
+    .width(2000)
+    .url();
+
+  return (
+    <div>
+      <section className="individual-series-header">
+        <Image
+          src={image as string}
+          alt={`${currentSeries.title} - Love First Christian Center`}
+          layout="fill"
+          objectFit="fill"
+          quality={100}
+          priority
+        />
+        <h1>{currentSeries.title}</h1>
+      </section>
+      <h2 className="individualSubHead">Watch Our Latest Sermons</h2>
+      <IndividualYouTubePlayer currentSeries={currentSeries} />
+    </div>
+  );
 }
