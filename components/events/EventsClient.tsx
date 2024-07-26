@@ -3,7 +3,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import DateComponent from "@/app/(home)/date";
 import TimeComponent from "@/app/(home)/time";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -25,6 +25,24 @@ const item = {
   },
 };
 
+const cardVariants: Variants = {
+  offscreen: {
+    opacity: 0,
+    y: 300,
+    rotate: -20,
+  },
+  onscreen: {
+    y: 50,
+    opacity: 1,
+    rotate: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
+
 const EventsClient = ({
   groupedEvents,
   eventData,
@@ -42,10 +60,10 @@ const EventsClient = ({
             <motion.div
               key={index}
               className="dateGroup"
-              initial={{ y: 200, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ ease: "easeInOut", duration: 0.5 }}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.8 }}
+              variants={cardVariants}
             >
               <h3 className="dateHeader">{date}</h3>
               {groupedEvents[date].map(

@@ -295,7 +295,7 @@
 .latest-sermon-section iframe {
   width: 100%;
   max-width: 800px; /* Adjust this value based on your design */
-  height: 450px; /* Adjust this value based on your design */
+
   border: none;
   border-radius: 8px;
   margin: 0 auto;
@@ -374,36 +374,26 @@ body {
 
 .individual-series-header {
   position: relative;
+  min-height: 60vh;
   height: 60vh;
   overflow: hidden;
-}
-
-.individual-series-header::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.individual-series-header img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure the image covers the header area without distortion */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(93, 5, 167, 0.7), #333);
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 .individual-series-header h1 {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px 20px;
-  border-radius: 5px;
-  z-index: 2;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin: 10px auto 0;
+  padding: 0;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 6px #000;
 }
 
 .individual-sermon-content {
@@ -429,7 +419,7 @@ body {
   padding: 20px;
   background: #f9f9f9;
   min-height: 60vh;
-  /* box-shadow: var(--shadow-2); */
+
   width: 100%;
 
   border-radius: 10px;
@@ -443,7 +433,7 @@ body {
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  background: #000; /* Fallback background color */
+
   border-radius: 8px;
 }
 
@@ -452,8 +442,10 @@ body {
   width: 100%;
   height: auto;
   border: none;
+  border-radius: 8px;
   aspect-ratio: 16 / 9;
   object-fit: cover; /* Ensure the video/image covers the container */
+  box-shadow: var(--shadow-3);
 }
 
 .individual-play-button {
@@ -544,6 +536,7 @@ body {
   width: 100%;
   height: auto;
   border-radius: 5px;
+  box-shadow: var(--shadow-2);
 }
 
 .individual-video-item h3 {
@@ -582,4 +575,10 @@ body {
   color: #5d05a7;
   padding: 30px 0;
   /* background: #f9f9f9; */
+}
+
+.individual-series-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

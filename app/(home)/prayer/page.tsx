@@ -32,19 +32,6 @@ export default async function Prayer() {
 
       <section className="infoAndVideoSection">
         <YoutubeVideo />
-        {/* <div className="videoContent">
-          <h2>Need Immediate Prayer? Watch and Pray with Us Now</h2>
-          <iframe
-            width="426"
-            height="240"
-            src="https://www.youtube.com/embed/SSFmp-0bXf0"
-            title="Join Our Prayer Session with Pastor Jomo"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-        </div> */}
         <div className="infoContent">
           <h3>Experience the Transformative Power of Prayer</h3>
           <p>
