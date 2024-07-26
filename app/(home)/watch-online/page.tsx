@@ -30,16 +30,6 @@ const WatchOnline = () => {
             services are available for you to watch and participate in our
             worship experience.
           </p>
-        </div>
-      </section>
-      <section className="watch-online-info">
-        <div className="watch-online-info-block">
-          <h2 className="watch-online-info-title">Live Stream Schedule</h2>
-          <p className="watch-online-info-content">
-            Our live services are streamed every Sunday at 7:45 AM, 9:45 AM,
-            11:45 AM and Wednesday at 7 PM. Don&apos;t miss out on our engaging
-            and uplifting services.
-          </p>
           <div className="watch-online-buttons">
             <Link
               href="https://lovefirstcc.online.church/"
@@ -56,6 +46,16 @@ const WatchOnline = () => {
               Watch Live on YouTube
             </Link>
           </div>
+        </div>
+      </section>
+      <section className="watch-online-info">
+        <div className="watch-online-info-block">
+          <h2 className="watch-online-info-title">Live Stream Schedule</h2>
+          <p className="watch-online-info-content">
+            Our live services are streamed every Sunday at 7:45 AM, 9:45 AM,
+            11:45 AM and Wednesday at 7 PM. Don&apos;t miss out on our engaging
+            and uplifting services.
+          </p>
         </div>
       </section>
 

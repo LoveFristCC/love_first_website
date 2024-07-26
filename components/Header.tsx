@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Nav from "./nav/Nav";
-import HamburgerNav from "./nav/HamburgerNav";
+import MobileNav from "./nav/MobileNav";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
@@ -35,7 +35,7 @@ export default function Header() {
           />
         </Link>
       </div>
-      {mobile ? <HamburgerNav /> : <Nav />}
+      {mobile ? <MobileNav /> : <Nav />}
     </header>
   );
 }
