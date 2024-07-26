@@ -13,10 +13,10 @@ const WelcomeSection = ({ serviceTime }: { serviceTime: string }) => {
           </p>
 
           <div className="welcomeButtons">
-            <Link href={`/${serviceTime}`} className="welcomeLink">
+            <Link href={`/about-love-first/location}`} className="welcomeLink">
               Join Us {serviceTime}
             </Link>
-            <Link href={`/i-am-new`} className="welcomeLink">
+            <Link href={`/about-love-first`} className="welcomeLink">
               I&apos;m new here
             </Link>
           </div>

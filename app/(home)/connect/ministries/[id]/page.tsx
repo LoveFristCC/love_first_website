@@ -41,9 +41,9 @@ export default async function IndividualMinistries({
 
   // const futureEventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}/events?filter=upcoming%2Cpublic&order=starts_at&per_page=3&include=location%2Cmy_rsvp`;
 
-  const [groups, groupsEvents] = await Promise.all([
+  const [groups] = await Promise.all([
     await getPcData(url),
-    await getPcData(eventsUrl),
+    // await getPcData(eventsUrl),
   ]);
 
   const groupName = groups.data.attributes.name;
@@ -51,13 +51,25 @@ export default async function IndividualMinistries({
   const groupSchedule = groups.data.attributes.schedule;
   const groupDescription = groups.data.attributes.description;
   const groupEmail = groups.data.attributes.contact_email;
+  const redirectLink = groups.data.attributes.public_church_center_web_url;
 
   const location = groups?.included[0]?.attributes;
   return (
     groups && (
       <div className="individualContainer">
         <div className="individualHeroHeader">
-          <h1>{groupName}</h1>
+          <div className="individualHeroHeaderContent">
+            <div className="altLogoContainer">
+              <Image
+                src="/loveFirstAltLogo.webp"
+                alt="Love First Christian Center"
+                width={600}
+                height={300}
+                priority
+              />
+            </div>
+            <h1>{groupName}</h1>
+          </div>
         </div>
         <div className="individualGroupCard">
           <Image src={groupImage} alt={groupName} width={200} height={100} />
@@ -92,6 +104,9 @@ export default async function IndividualMinistries({
               <div>
                 <p>
                   <Link href={`mailto:${groupEmail}`}>Contact us</Link>
+                  <Link href={redirectLink} rel="noreferrer noopener">
+                    Register to Join
+                  </Link>
                 </p>
               </div>
             )}
@@ -99,6 +114,5 @@ export default async function IndividualMinistries({
         </div>
       </div>
     )
-    // );
   );
 }

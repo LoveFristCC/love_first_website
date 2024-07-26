@@ -62,7 +62,7 @@ const EventsClient = ({
               className="dateGroup"
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ once: true, amount: 0.8 }}
+              viewport={{ once: true, amount: 0.4 }}
               variants={cardVariants}
             >
               <h3 className="dateHeader">{date}</h3>
