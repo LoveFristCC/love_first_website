@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const IndividualSermonYouTubePlayer = ({
@@ -13,13 +13,21 @@ const IndividualSermonYouTubePlayer = ({
     currentSeries.youtubeVideos[0]
   );
 
+  const videoSectionRef = useRef<HTMLDivElement>(null);
+
   const handleLoadVideo = () => {
     setLoadVideo(true);
   };
 
+  const handleVideoClick = (el: any) => {
+    setFeaturedVideo(el);
+    setLoadVideo(false);
+    videoSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="individual-sermon-content">
-      <div className="individual-video-section">
+      <div className="individual-video-section" ref={videoSectionRef}>
         {featuredVideo.youtubeId && (
           <>
             <AnimatePresence>
@@ -105,10 +113,7 @@ const IndividualSermonYouTubePlayer = ({
             <div
               key={i}
               className="individual-video-item"
-              onClick={() => {
-                setFeaturedVideo(el);
-                setLoadVideo(false);
-              }}
+              onClick={() => handleVideoClick(el)}
             >
               <Image
                 src={`https://img.youtube.com/vi/${el.youtubeId}/maxresdefault.jpg`}

@@ -79,7 +79,7 @@ export default async function LoveGroups() {
                         <p className="schedule">{el.attributes.schedule}</p>
                       </div>
                     )}
-                    <p>Join Today</p>
+                    <p className="groupCtaText">Join Today →</p>
                   </div>
                 </Link>
               );

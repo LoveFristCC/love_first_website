@@ -28,9 +28,14 @@ export const Navigation = ({
 );
 
 const itemIds = [
+  { linkTitle: "Watch Online", location: "", header: true },
+  { linkTitle: "Online", location: "/watch-online" },
+  { linkTitle: "Previous Sermons", location: "/watch-online/previous-sermons" },
+  { linkTitle: "About Us", location: "", header: true },
   { linkTitle: "History", location: "/about-love-first" },
   { linkTitle: "Location", location: "/about-love-first/location" },
   { linkTitle: "Our Pastors", location: "/about-love-first/pastors" },
+  { linkTitle: "Our Groups", location: "", header: true },
   { linkTitle: "All Groups", location: "/connect" },
   { linkTitle: "Creative Arts", location: "/connect/creative-arts" },
   { linkTitle: "Love Groups", location: "/connect/love-groups" },
@@ -39,10 +44,12 @@ const itemIds = [
   { linkTitle: "Service Volunteers", location: "/connect/service-volunteers" },
   { linkTitle: "Volunteer Army", location: "/connect/volunteer-army" },
   { linkTitle: "Youth Group", location: "/connect/youth" },
-  { linkTitle: "Prayer", location: "/prayer" },
-  { linkTitle: "Give", location: "/give" },
+  { linkTitle: "Prayer", location: "", header: true },
+  { linkTitle: "Submit A Prayer Request", location: "/prayer" },
+  { linkTitle: "Give", location: "", header: true },
+  { linkTitle: "Give To Love First", location: "/give" },
+  { linkTitle: "Have Questions", location: "", header: true },
   { linkTitle: "Contact", location: "/contact" },
-  { linkTitle: "Online", location: "/watch-online" },
 ];
 
 export default Navigation;

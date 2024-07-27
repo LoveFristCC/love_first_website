@@ -45,7 +45,6 @@ export default async function IndividualEvents({
     await getPcData(url),
     // await getPcData(eventsUrl),
   ]);
-  // console.log("🚀 ~ groups:", groups);
 
   const groupName = groups.data.attributes.name;
   const groupImage = groups.data.attributes.header_image.original;

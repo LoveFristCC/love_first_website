@@ -379,3 +379,8 @@
     font-size: 3rem;
   }
 }
+
+.groupCtaText {
+  color: #5d05a7;
+  font-weight: 600;
+}

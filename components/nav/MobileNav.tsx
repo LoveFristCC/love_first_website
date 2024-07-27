@@ -17,7 +17,7 @@ const sidebar = {
   closed: {
     clipPath: "circle(30px at 85% 40px)", // Circle at the top-right
     transition: {
-      delay: 0.5,
+      delay: 0,
       type: "spring",
       stiffness: 400,
       damping: 40,
@@ -38,8 +38,9 @@ export const MobileNav = () => {
       ref={containerRef}
       className="mobileNav"
     >
-      <motion.div className="background" variants={sidebar} />
-      <Navigation toggleOpen={toggleOpen} isOpen={isOpen} />
+      <motion.div className="background" variants={sidebar}>
+        <Navigation toggleOpen={toggleOpen} isOpen={isOpen} />
+      </motion.div>
       <MenuToggle toggle={() => toggleOpen()} />
     </motion.nav>
   );

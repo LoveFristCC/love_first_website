@@ -76,7 +76,7 @@ export default async function Media() {
                         <p className="schedule">{el.attributes.schedule}</p>
                       </div>
                     )}
-                    <p>Join Today</p>
+                    <p className="groupCtaText">Join Today →</p>
                   </div>
                 </Link>
               );

@@ -24,12 +24,6 @@ header {
   z-index: 99;
 }
 
-.homeNav {
-  background: transparent;
-  box-shadow: none;
-  color: #fff;
-}
-
 main {
   min-height: 100vh;
 }
@@ -41,6 +35,12 @@ main {
 
 nav {
   width: 75%;
+}
+
+.homeNav {
+  background: transparent;
+  box-shadow: none;
+  color: #fff;
 }
 
 nav ul {
@@ -56,21 +56,9 @@ nav ul li {
   text-align: center;
   width: 100%;
 }
+
 nav ul li span {
   cursor: pointer;
-}
-
-.homeNav .online {
-  color: #fff;
-  text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #5e05a4,
-    0 0 82px #5e05a4,
-    0 0 92px #5e05a4,
-    0 0 102px #5e05a4,
-    0 0 151px #5e05a4;
 }
 
 nav ul li ul {
@@ -96,7 +84,6 @@ nav ul li ul {
 }
 
 nav ul li:hover ul {
-  /* display: block; */
   min-height: 50px;
   opacity: 1;
   visibility: visible;
@@ -110,6 +97,45 @@ nav ul li ul li {
 
 nav ul li ul li a {
   color: #333;
+  font-weight: 600;
+}
+
+nav ul li ul li a:hover {
+  color: #5f04a6;
+  text-shadow: none;
+}
+
+nav ul li ul li .activeDropdownLink {
+  color: #5f04a6;
+  text-shadow: none;
+}
+
+nav ul li .desktopNavSpan {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  position: relative;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li .desktopNavSpan:hover,
+nav ul li.active > a,
+nav ul li.active > span {
+  color: #fff;
+  text-shadow:
+    0 0 7px rgba(255, 255, 255, 0.7),
+    0 0 10px rgba(255, 255, 255, 0.7),
+    0 0 21px rgba(255, 255, 255, 0.7),
+    0 0 42px rgba(255, 255, 255, 0.7);
+  transform: scale(1.05);
+}
+
+.navDropdown li {
+  color: #5f04a6;
 }
 
 /* mobile nav */
@@ -125,11 +151,12 @@ nav ul li ul li a {
 .background {
   position: absolute;
   top: 0;
-  right: 0;
+  /* right: 0; */
   bottom: 0;
   width: 300px;
   background: #fff;
   min-height: 100vh;
+  overflow: scroll;
 }
 
 .navToggle {
@@ -149,7 +176,8 @@ nav ul li ul li a {
 }
 
 .mobileList,
-.mobileListItem {
+.mobileListItem,
+.mobileListHeader {
   margin: 0;
   padding: 0;
 }
@@ -167,15 +195,20 @@ nav ul li ul li a {
   /* visibility: hidden; */
 }
 
-.mobileListItem {
+.mobileListItem,
+.mobileListHeader {
   list-style: none;
   margin-bottom: 25px;
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: #333;
+  color: rgba(93, 5, 167, 0.7);
   text-align: left;
-  border-bottom: #5e05a4 solid 2px;
+}
+
+.mobileListHeader {
+  font-weight: 700;
+  color: #333;
 }
 
 .icon-placeholder {
@@ -191,6 +224,7 @@ nav ul li ul li a {
   width: 200px;
   height: 20px;
   flex: 1;
+  color: rgba(93, 5, 167, 0.7);
 }
 
 .refresh {
@@ -760,10 +794,17 @@ video {
   max-width: 700px;
   position: relative;
   cursor: pointer;
+  box-shadow: var(--shadow-3);
+  border-radius: 10px;
 }
-iframe {
+.video-container iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
+  border-radius: 10px;
+}
+
+.video-container img {
+  border-radius: 10px;
 }
 
 .sermon-details {
@@ -852,6 +893,15 @@ iframe {
     flex-wrap: wrap;
     justify-content: center;
   }
+}
+
+.series-container img {
+  box-shadow: var(--shadow-3);
+  border-radius: 8px;
+}
+
+.series-container img:hover {
+  box-shadow: var(--shadow-1);
 }
 
 .eventsSection {

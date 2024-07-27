@@ -97,7 +97,7 @@ export default async function Connect() {
                 <div className="groupContent">
                   <h3 className="groupContentHeader">{el.attributes.name}</h3>
                   <p>{el.attributes.description}</p>
-                  <p className="ctaText">Discover More</p>
+                  <p className="ctaText">Take the Next Step →</p>
                 </div>
               </Link>
             );

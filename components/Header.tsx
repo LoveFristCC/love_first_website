@@ -4,10 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Nav from "./nav/Nav";
 import MobileNav from "./nav/MobileNav";
-import { usePathname } from "next/navigation";
 
 export default function Header() {
-  const pathname = usePathname();
   const [mobile, setMobile] = useState<boolean | null>(null);
 
   useEffect(() => {

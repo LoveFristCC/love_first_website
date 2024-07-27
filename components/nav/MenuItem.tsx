@@ -18,8 +18,6 @@ const variants = {
   },
 };
 
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
-
 export const MenuItem = ({
   link,
   toggleOpen,
@@ -27,8 +25,16 @@ export const MenuItem = ({
   link: any;
   toggleOpen: any;
 }) => {
-  // const style = { border: `2px solid ${colors[i]}` };
-  return (
+  return link.header ? (
+    <motion.li
+      className="mobileListHeader"
+      variants={variants}
+      // whileHover={{ scale: 1.1 }}
+      // whileTap={{ scale: 0.95 }}
+    >
+      <span className="header-placeholder">{link.linkTitle}</span>
+    </motion.li>
+  ) : (
     <motion.li
       className="mobileListItem"
       variants={variants}
@@ -42,8 +48,6 @@ export const MenuItem = ({
       >
         {link.linkTitle}
       </Link>
-      {/* <div className="icon-placeholder" style={style} />
-      <div className="text-placeholder" style={style} /> */}
     </motion.li>
   );
 };

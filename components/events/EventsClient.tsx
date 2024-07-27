@@ -66,6 +66,7 @@ const EventsClient = ({
               variants={cardVariants}
             >
               <h3 className="dateHeader">{date}</h3>
+              {console.log(groupedEvents[date])}
               {groupedEvents[date].map(
                 (
                   el: {

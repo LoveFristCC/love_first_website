@@ -7,64 +7,181 @@ export default function Nav() {
 
   return (
     <nav className="links">
-      <ul>
-        <li className={pathname === "/about-love-first" ? "active" : ""}>
-          <span>About &darr;</span>
+      <ul className="navDropdown">
+        <li className={pathname.includes("about-love-first") ? "active" : ""}>
+          <span className="desktopNavSpan">About ▼ </span>
           <ul>
             <li>
-              <Link href="/about-love-first">Our History</Link>
+              <Link
+                className={
+                  pathname === "/about-love-first" ? "activeDropdownLink" : ""
+                }
+                href="/about-love-first"
+              >
+                Our History
+              </Link>
             </li>
             <li>
-              <Link href="/about-love-first/location">Location</Link>
+              <Link
+                className={
+                  pathname === "/about-love-first/location"
+                    ? "activeDropdownLink"
+                    : ""
+                }
+                href="/about-love-first/location"
+              >
+                Location
+              </Link>
             </li>
             <li>
-              <Link href="/about-love-first/pastors">Our Pastors</Link>
+              <Link
+                className={
+                  pathname === "/about-love-first/pastors"
+                    ? "activeDropdownLink"
+                    : ""
+                }
+                href="/about-love-first/pastors"
+              >
+                Our Pastors
+              </Link>
             </li>
           </ul>
         </li>
-        <li className={pathname === "/connect" ? "active" : ""}>
-          <span>Connect &darr;</span>
-          <ul>
+        <li className={pathname.includes("connect") ? "active" : ""}>
+          <span className="desktopNavSpan">Connect ▼</span>
+          <ul className="navDropdown">
             <li>
-              <Link href="/connect">All Groups</Link>
+              <Link
+                className={pathname === "/connect" ? "activeDropdownLink" : ""}
+                href="/connect"
+              >
+                All Groups
+              </Link>
             </li>
             <li>
-              <Link href="/connect/creative-arts">Creative Arts</Link>
+              <Link
+                className={
+                  pathname === "/connect/creative-arts"
+                    ? "activeDropdownLink"
+                    : ""
+                }
+                href="/connect/creative-arts"
+              >
+                Creative Arts
+              </Link>
             </li>
             <li>
-              <Link href="/connect/love-groups">Love Groups</Link>
+              <Link
+                className={
+                  pathname === "/connect/love-groups"
+                    ? "activeDropdownLink"
+                    : ""
+                }
+                href="/connect/love-groups"
+              >
+                Love Groups
+              </Link>
             </li>
             <li>
-              <Link href="/connect/media-team">Media Team</Link>
+              <Link
+                className={
+                  pathname === "/connect/media-team" ? "activeDropdownLink" : ""
+                }
+                href="/connect/media-team"
+              >
+                Media Team
+              </Link>
             </li>
             <li>
-              <Link href="/connect/ministries">Ministries</Link>
+              <Link
+                className={
+                  pathname === "/connect/ministries" ? "activeDropdownLink" : ""
+                }
+                href="/connect/ministries"
+              >
+                Ministries
+              </Link>
             </li>
             <li>
-              <Link href="/connect/service-volunteers">Service Volunteers</Link>
+              <Link
+                className={
+                  pathname === "/connect/service-volunteers"
+                    ? "activeDropdownLink"
+                    : ""
+                }
+                href="/connect/service-volunteers"
+              >
+                Service Volunteers
+              </Link>
             </li>
             <li>
-              <Link href="/connect/volunteer-army">Volunteer Army</Link>
+              <Link
+                className={
+                  pathname === "/connect/volunteer-army"
+                    ? "activeDropdownLink"
+                    : ""
+                }
+                href="/connect/volunteer-army"
+              >
+                Volunteer Army
+              </Link>
             </li>
             <li>
-              <Link href="/connect/youth">Youth Group</Link>
+              <Link
+                className={
+                  pathname === "/connect/youth" ? "activeDropdownLink" : ""
+                }
+                href="/connect/youth"
+              >
+                Youth Group
+              </Link>
             </li>
           </ul>
         </li>
         <li className={pathname === "/prayer" ? "active" : ""}>
-          <Link href="/prayer">Prayer</Link>
+          <Link className="desktopNavSpan" href="/prayer">
+            Prayer
+          </Link>
         </li>
-        <li className={pathname === "/give" ? "active" : ""}>
-          <Link href="/give">Give</Link>
+        <li className={pathname === "/give" ? "active" : "desktopNavSpan"}>
+          <Link className="desktopNavSpan" href="/give">
+            Give
+          </Link>
         </li>
-        <li className={pathname === "/contact" ? "active" : ""}>
-          <Link href="/contact">Contact</Link>
+        <li className={pathname === "/contact" ? "active" : "desktopNavSpan"}>
+          <Link className="desktopNavSpan" href="/contact">
+            Contact
+          </Link>
         </li>
 
         <li
-          className={`online ${pathname === "/watch-online" ? "active" : ""}`}
+          className={`online ${pathname.includes("watch-online") ? "active" : ""}`}
         >
-          <Link href="/watch-online">Online</Link>
+          <span className="desktopNavSpan">Online ▼ </span>
+          <ul className="navDropdown">
+            <li>
+              <Link
+                className={
+                  pathname === "/watch-online" ? "activeDropdownLink" : ""
+                }
+                href="/watch-online"
+              >
+                Watch Online
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={
+                  pathname === "/watch-online/previous-sermons"
+                    ? "activeDropdownLink"
+                    : ""
+                }
+                href="/watch-online/previous-sermons"
+              >
+                Previous Sermons
+              </Link>
+            </li>
+          </ul>
         </li>
       </ul>
     </nav>
