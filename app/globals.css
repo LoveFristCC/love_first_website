@@ -134,6 +134,13 @@ nav ul li.active > span {
   transform: scale(1.05);
 }
 
+@media (max-width: 801px) {
+  nav ul li a:hover,
+  nav ul li .desktopNavSpan:hover {
+    text-shadow: none;
+  }
+}
+
 .navDropdown li {
   color: #5f04a6;
 }
@@ -227,19 +234,10 @@ nav ul li.active > span {
   color: rgba(93, 5, 167, 0.7);
 }
 
-.refresh {
-  padding: 10px;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  width: 20px;
-  height: 20px;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+@media (max-width: 801px) {
+  .text-placeholder:hover {
+    color: rgba(93, 5, 167, 0.7);
+  }
 }
 
 /* Footer */

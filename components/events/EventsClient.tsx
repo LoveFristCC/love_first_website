@@ -66,7 +66,6 @@ const EventsClient = ({
               variants={cardVariants}
             >
               <h3 className="dateHeader">{date}</h3>
-              {console.log(groupedEvents[date])}
               {groupedEvents[date].map(
                 (
                   el: {
@@ -75,6 +74,7 @@ const EventsClient = ({
                       location: string;
                       starts_at: string;
                       ends_at: string;
+                      church_center_url: string;
                     };
                   },
                   i: number
@@ -87,9 +87,11 @@ const EventsClient = ({
                   if (headline) {
                     return (
                       <Link
-                        href={`/events/${headline.id}`}
+                        href={el.attributes.church_center_url}
                         className="eventContainer"
                         key={i}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <p className="eventHeader">
                           {headline.attributes.name}
