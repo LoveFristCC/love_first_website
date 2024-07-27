@@ -149,7 +149,7 @@ nav ul li.active > span {
 }
 
 .background {
-  position: absolute;
+  position: fixed;
   top: 0;
   /* right: 0; */
   bottom: 0;
@@ -166,7 +166,7 @@ nav ul li.active > span {
   -moz-user-select: none;
   -ms-user-select: none;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: 17px;
   right: 6px;
   width: 50px;
@@ -185,7 +185,7 @@ nav ul li.active > span {
 .mobileList {
   padding: 0 25px 25px;
   position: absolute;
-  top: 100px;
+  top: 50px;
   width: 100%;
   flex-direction: column;
 }

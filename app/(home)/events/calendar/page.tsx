@@ -5,7 +5,7 @@ import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 
-export default async function Events() {
+export default async function Calendar() {
   const [settings, heroPost] = await Promise.all([
     sanityFetch<SettingsQueryResult>({
       query: settingsQuery,
@@ -14,11 +14,13 @@ export default async function Events() {
   ]);
 
   return (
-    <div>
+    <div className="container mx-auto px-5">
       <iframe
-        src="https://lovefirst.churchcenter.com/registrations/events"
+        src="https://lovefirst.churchcenter.com/calendar?embed=true&view=month"
+        width="100%"
+        height="600px"
+        className="planning-center-calender-embed"
         frameBorder="0"
-        allowFullScreen
       ></iframe>
     </div>
   );
