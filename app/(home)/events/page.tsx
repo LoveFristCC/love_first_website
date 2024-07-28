@@ -1,25 +1,9 @@
 import Link from "next/link";
-import { Suspense } from "react";
-import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
-
-import { sanityFetch } from "@/sanity/lib/fetch";
-import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 
 export default async function Events() {
-  const [settings, heroPost] = await Promise.all([
-    sanityFetch<SettingsQueryResult>({
-      query: settingsQuery,
-    }),
-    sanityFetch<HeroQueryResult>({ query: heroQuery }),
-  ]);
-
   return (
-    <div>
-      <iframe
-        src="https://lovefirst.churchcenter.com/registrations/events"
-        frameBorder="0"
-        allowFullScreen
-      ></iframe>
+    <div className="underConstruction">
+      <h1>Under Construction</h1>
     </div>
   );
 }

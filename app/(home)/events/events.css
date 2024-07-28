@@ -1,0 +1,70 @@
+.calendarHero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: var(--shadow-3);
+}
+
+.calendarHero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.calendarHero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.calendarHeaderContent {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  text-shadow: 2px 4px 6px #333;
+  border-radius: 10px;
+  z-index: 2;
+  max-width: 1300px;
+  width: calc(100% - 10px);
+}
+
+.calendarHeaderContent h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 10px;
+}
+
+.calendarHeaderContent p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.calendarSection {
+  padding: 20px;
+  width: calc(100% - 20px);
+  max-width: 1300px;
+  margin: 10px auto;
+}
+
+.planning-center-calender-embed {
+  border: none;
+  border-radius: 10px;
+}
+.underConstruction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background: #333;
+  color: #fff;
+  font-size: 30px;
+}

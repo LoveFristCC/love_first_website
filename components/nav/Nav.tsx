@@ -154,6 +154,29 @@ export default function Nav() {
           </Link>
         </li>
 
+        <li className={`online ${pathname.includes("events") ? "active" : ""}`}>
+          <span className="desktopNavSpan">Events ▼ </span>
+          <ul className="navDropdown">
+            <li>
+              <Link
+                className={pathname === "/events" ? "activeDropdownLink" : ""}
+                href="/events"
+              >
+                Upcoming Events
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={
+                  pathname === "/events/calendar" ? "activeDropdownLink" : ""
+                }
+                href="/events/calendar"
+              >
+                Calendar
+              </Link>
+            </li>
+          </ul>
+        </li>
         <li
           className={`online ${pathname.includes("watch-online") ? "active" : ""}`}
         >

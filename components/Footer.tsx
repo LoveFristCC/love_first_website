@@ -78,6 +78,11 @@ export default function Footer() {
             <Link href="/watch-online/previous-sermons">Previous Sermons</Link>
           </div>
           <div className="footerLinks">
+            <p>Events</p>
+            <Link href="/events">Upcoming Events</Link>
+            <Link href="/events/calendar">Calendar</Link>
+          </div>
+          <div className="footerLinks">
             <p>Support</p>
             <Link href="/give">Give</Link>
             <Link href="/prayer">Need Prayer</Link>
