@@ -208,7 +208,7 @@ nav ul li.active > span {
 .mobileListItem,
 .mobileListHeader {
   list-style: none;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   cursor: pointer;
