@@ -5,7 +5,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Events Calendar - Love First Christian Center",
     description:
-      "Stay updated with all upcoming events and activities at Love First Christian Center. Explore our calendar and join us in community, worship, and fellowship",
+      "Stay updated with all upcoming events and activities at Love First Christian Center. Explore our calendar and join us in community, worship, and fellowship.",
   };
 }
 

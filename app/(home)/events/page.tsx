@@ -3,6 +3,15 @@ import Image from "next/image";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { eventsQuery } from "@/sanity/lib/queries";
 import { urlForImage } from "@/sanity/lib/utils";
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Upcoming Events & Life Classes - Love First Christian Center",
+    description:
+      "Explore upcoming events and Life University classes at Love First Christian Center. Stay connected and engaged with our community. Discover how you can participate and make a difference.",
+  };
+}
 
 export default async function Events() {
   const [events] = await Promise.all([
