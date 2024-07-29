@@ -1,22 +1,24 @@
 import Link from "next/link";
-import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <nav className="links">
+    <nav className="links" aria-label="Main Navigation">
       <ul className="navDropdown">
         <li className={pathname.includes("about-love-first") ? "active" : ""}>
           <span className="desktopNavSpan">About ▼ </span>
-          <ul>
+          <ul aria-label="About Love First">
             <li>
               <Link
                 className={
                   pathname === "/about-love-first" ? "activeDropdownLink" : ""
                 }
                 href="/about-love-first"
+                aria-current={
+                  pathname === "/about-love-first" ? "page" : undefined
+                }
               >
                 Our History
               </Link>
@@ -29,6 +31,9 @@ export default function Nav() {
                     : ""
                 }
                 href="/about-love-first/location"
+                aria-current={
+                  pathname === "/about-love-first/location" ? "page" : undefined
+                }
               >
                 Location
               </Link>
@@ -41,6 +46,9 @@ export default function Nav() {
                     : ""
                 }
                 href="/about-love-first/pastors"
+                aria-current={
+                  pathname === "/about-love-first/pastors" ? "page" : undefined
+                }
               >
                 Our Pastors
               </Link>
@@ -49,11 +57,12 @@ export default function Nav() {
         </li>
         <li className={pathname.includes("connect") ? "active" : ""}>
           <span className="desktopNavSpan">Connect ▼</span>
-          <ul className="navDropdown">
+          <ul aria-label="Connect with Us">
             <li>
               <Link
                 className={pathname === "/connect" ? "activeDropdownLink" : ""}
                 href="/connect"
+                aria-current={pathname === "/connect" ? "page" : undefined}
               >
                 All Groups
               </Link>
@@ -66,6 +75,9 @@ export default function Nav() {
                     : ""
                 }
                 href="/connect/creative-arts"
+                aria-current={
+                  pathname === "/connect/creative-arts" ? "page" : undefined
+                }
               >
                 Creative Arts
               </Link>
@@ -78,6 +90,9 @@ export default function Nav() {
                     : ""
                 }
                 href="/connect/love-groups"
+                aria-current={
+                  pathname === "/connect/love-groups" ? "page" : undefined
+                }
               >
                 Love Groups
               </Link>
@@ -88,6 +103,9 @@ export default function Nav() {
                   pathname === "/connect/media-team" ? "activeDropdownLink" : ""
                 }
                 href="/connect/media-team"
+                aria-current={
+                  pathname === "/connect/media-team" ? "page" : undefined
+                }
               >
                 Media Team
               </Link>
@@ -98,6 +116,9 @@ export default function Nav() {
                   pathname === "/connect/ministries" ? "activeDropdownLink" : ""
                 }
                 href="/connect/ministries"
+                aria-current={
+                  pathname === "/connect/ministries" ? "page" : undefined
+                }
               >
                 Ministries
               </Link>
@@ -110,6 +131,11 @@ export default function Nav() {
                     : ""
                 }
                 href="/connect/service-volunteers"
+                aria-current={
+                  pathname === "/connect/service-volunteers"
+                    ? "page"
+                    : undefined
+                }
               >
                 Service Volunteers
               </Link>
@@ -122,6 +148,9 @@ export default function Nav() {
                     : ""
                 }
                 href="/connect/volunteer-army"
+                aria-current={
+                  pathname === "/connect/volunteer-army" ? "page" : undefined
+                }
               >
                 Volunteer Army
               </Link>
@@ -132,35 +161,23 @@ export default function Nav() {
                   pathname === "/connect/youth" ? "activeDropdownLink" : ""
                 }
                 href="/connect/youth"
+                aria-current={
+                  pathname === "/connect/youth" ? "page" : undefined
+                }
               >
                 Youth Group
               </Link>
             </li>
           </ul>
         </li>
-        <li className={pathname === "/prayer" ? "active" : ""}>
-          <Link className="desktopNavSpan" href="/prayer">
-            Prayer
-          </Link>
-        </li>
-        <li className={pathname === "/give" ? "active" : "desktopNavSpan"}>
-          <Link className="desktopNavSpan" href="/give">
-            Give
-          </Link>
-        </li>
-        <li className={pathname === "/contact" ? "active" : "desktopNavSpan"}>
-          <Link className="desktopNavSpan" href="/contact">
-            Contact
-          </Link>
-        </li>
-
         <li className={`online ${pathname.includes("events") ? "active" : ""}`}>
           <span className="desktopNavSpan">Events ▼ </span>
-          <ul className="navDropdown">
+          <ul aria-label="Upcoming Events">
             <li>
               <Link
                 className={pathname === "/events" ? "activeDropdownLink" : ""}
                 href="/events"
+                aria-current={pathname === "/events" ? "page" : undefined}
               >
                 Upcoming Events
               </Link>
@@ -171,6 +188,9 @@ export default function Nav() {
                   pathname === "/events/calendar" ? "activeDropdownLink" : ""
                 }
                 href="/events/calendar"
+                aria-current={
+                  pathname === "/events/calendar" ? "page" : undefined
+                }
               >
                 Calendar
               </Link>
@@ -181,13 +201,14 @@ export default function Nav() {
           className={`online ${pathname.includes("watch-online") ? "active" : ""}`}
         >
           <span className="desktopNavSpan">Online ▼ </span>
-          <ul className="navDropdown">
+          <ul aria-label="Watch Online">
             <li>
               <Link
                 className={
                   pathname === "/watch-online" ? "activeDropdownLink" : ""
                 }
                 href="/watch-online"
+                aria-current={pathname === "/watch-online" ? "page" : undefined}
               >
                 Watch Online
               </Link>
@@ -200,11 +221,43 @@ export default function Nav() {
                     : ""
                 }
                 href="/watch-online/previous-sermons"
+                aria-current={
+                  pathname === "/watch-online/previous-sermons"
+                    ? "page"
+                    : undefined
+                }
               >
                 Previous Sermons
               </Link>
             </li>
           </ul>
+        </li>
+        <li className={pathname === "/prayer" ? "active" : ""}>
+          <Link
+            className="desktopNavSpan"
+            href="/prayer"
+            aria-current={pathname === "/prayer" ? "page" : undefined}
+          >
+            Prayer
+          </Link>
+        </li>
+        <li className={pathname === "/give" ? "active" : ""}>
+          <Link
+            className="desktopNavSpan"
+            href="/give"
+            aria-current={pathname === "/give" ? "page" : undefined}
+          >
+            Give
+          </Link>
+        </li>
+        <li className={pathname === "/contact" ? "active" : ""}>
+          <Link
+            className="desktopNavSpan"
+            href="/contact"
+            aria-current={pathname === "/contact" ? "page" : undefined}
+          >
+            Contact
+          </Link>
         </li>
       </ul>
     </nav>
