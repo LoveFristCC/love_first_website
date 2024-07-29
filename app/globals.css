@@ -164,7 +164,6 @@ nav ul li.active > span {
   width: 100%;
   background: #fff;
   min-height: 150vh;
-  overflow: scroll;
   z-index: 2;
 }
 
@@ -198,6 +197,7 @@ nav ul li.active > span {
   top: 100px;
   width: 100%;
   flex-direction: column;
+  /* overflow-y: scroll; */
 }
 
 .mobileList.hidden {
