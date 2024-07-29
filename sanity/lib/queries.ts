@@ -72,6 +72,13 @@ export const individualPastSeries = groq`*[_type == "seriesCollection"] {
   }
 }`;
 
+export const eventsQuery = groq`*[_type == "events"] | order(order asc) {
+  name,
+  description,
+  order,
+  eventImage
+}`;
+
 export const leadershipQuery = `{
   "pastors": *[_type == "leaders" && role == "pastor"] | order(order asc) {
     name,

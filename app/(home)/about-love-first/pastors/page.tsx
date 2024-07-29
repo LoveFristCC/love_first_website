@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/utils";
-import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { leadershipQuery } from "@/sanity/lib/queries";
 

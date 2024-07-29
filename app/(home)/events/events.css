@@ -1,4 +1,5 @@
-.calendarHero {
+.calendarHero,
+.eventHero {
   position: relative;
   width: 100%;
   height: 60vh;
@@ -9,7 +10,8 @@
   box-shadow: var(--shadow-3);
 }
 
-.calendarHero::after {
+.calendarHero::after,
+.eventHero::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -17,7 +19,8 @@
   z-index: 1;
 }
 
-.calendarHero img {
+.calendarHero img,
+.eventrHero img {
   position: absolute;
   top: 0;
   left: 0;
@@ -27,7 +30,8 @@
   z-index: -1;
 }
 
-.calendarHeaderContent {
+.calendarHeaderContent,
+.eventHeaderContent {
   color: #fff;
   text-align: center;
   padding: 20px;
@@ -38,12 +42,14 @@
   width: calc(100% - 10px);
 }
 
-.calendarHeaderContent h1 {
+.calendarHeaderContent h1,
+.eventHeaderContent h1 {
   font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 10px;
 }
 
-.calendarHeaderContent p {
+.calendarHeaderContent p,
+.eventHeaderContent p {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
 
@@ -67,4 +73,171 @@
   background: #333;
   color: #fff;
   font-size: 30px;
+}
+
+.lifeSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+}
+
+.lifeContent {
+  flex: 1;
+  max-width: 50%;
+}
+
+.lifeContent h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.lifeContent p {
+  font-size: 1.125rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.lifeContent a {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: rgba(93, 5, 167, 0.7);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.lifeContent a:hover {
+  background-color: #5d05a7;
+}
+
+.lifeUniversityImageContainer {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.lifeUniversityImageContainer img {
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .lifeSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .lifeContent,
+  .lifeUniversityImageContainer {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .lifeContent {
+    padding-bottom: 20px;
+  }
+}
+
+/* new section */
+
+.individualEventSection {
+  padding: 40px 20px;
+  /* background-color: #f7f7f7; */
+  border-radius: 10px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.individualEventSection h2 {
+  font-size: 2.5rem;
+  color: #5d05a7;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.individualEventContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.individualEventImageContainer {
+  flex: 1;
+  max-width: 300px;
+}
+.individualEventImageContainer img {
+  box-shadow: var(--shadow-3);
+  border-radius: 5px;
+}
+
+.individualEventContent {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.individualEventContent h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.individualEventContent p {
+  font-size: 1.125rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.individualEventContent a {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: rgba(93, 5, 167, 0.7);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.individualEventContent a:hover {
+  background-color: #5d05a7;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .individualEventContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .individualEventImageContainer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .individualEventContent {
+    padding-left: 0;
+  }
 }
