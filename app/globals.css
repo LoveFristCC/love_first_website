@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+.noScroll {
+  overflow: hidden;
+}
+
 header {
   width: 100%;
   padding: 15px 50px;
@@ -148,33 +152,32 @@ nav ul li.active > span {
 
 /* mobile nav */
 
+/* Mobile nav */
 .mobileNav {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   width: 100%;
+  overflow: hidden; /* Ensure nav doesn't overflow outside */
 }
 
 .background {
-  position: absolute;
+  position: fixed;
   top: 0;
-  /* right: 0; */
   bottom: 0;
   width: 100%;
   background: #fff;
   min-height: 150vh;
   z-index: 2;
+  overflow: hidden; /* Prevent scroll here if not needed */
 }
 
 .navToggle {
   outline: none;
   border: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: 17px;
   right: 24px;
   width: 50px;
@@ -184,25 +187,19 @@ nav ul li.active > span {
   z-index: 3;
 }
 
-.mobileList,
-.mobileListItem,
-.mobileListHeader {
-  margin: 0;
-  padding: 0;
-}
-
 .mobileList {
   padding: 0 25px 25px;
   position: absolute;
   top: 100px;
   width: 100%;
   flex-direction: column;
-  /* overflow-y: scroll; */
+  overflow: auto; /* Changed to auto for better scrolling */
+  height: calc(100vh - 200px); /* Ensure height for scrolling */
 }
 
 .mobileList.hidden {
   pointer-events: none;
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 .mobileListItem,

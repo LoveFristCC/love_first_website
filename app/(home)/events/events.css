@@ -234,7 +234,8 @@
 
   .individualEventImageContainer {
     width: 100%;
-    max-width: 100%;
+    margin-bottom: 10px;
+    /* max-width: 100%; */
   }
 
   .individualEventContent {
