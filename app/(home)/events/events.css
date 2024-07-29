@@ -179,7 +179,8 @@
   margin-bottom: 40px;
   padding: 20px;
   background-color: #fff;
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  border-bottom: 2px solid rgba(93, 5, 167, 0.7);
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
