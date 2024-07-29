@@ -31,6 +31,7 @@ main {
 .logoContainer {
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 nav {
@@ -152,18 +153,19 @@ nav ul li.active > span {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 300px;
+  width: 100%;
 }
 
 .background {
-  position: fixed;
+  position: absolute;
   top: 0;
   /* right: 0; */
   bottom: 0;
-  width: 300px;
+  width: 100%;
   background: #fff;
-  min-height: 100vh;
+  min-height: 150vh;
   overflow: scroll;
+  z-index: 2;
 }
 
 .navToggle {
@@ -173,13 +175,14 @@ nav ul li.active > span {
   -moz-user-select: none;
   -ms-user-select: none;
   cursor: pointer;
-  position: fixed;
+  position: absolute;
   top: 17px;
-  right: 6px;
+  right: 24px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background: transparent;
+  z-index: 3;
 }
 
 .mobileList,
@@ -192,7 +195,7 @@ nav ul li.active > span {
 .mobileList {
   padding: 0 25px 25px;
   position: absolute;
-  top: 50px;
+  top: 100px;
   width: 100%;
   flex-direction: column;
 }
@@ -211,6 +214,13 @@ nav ul li.active > span {
   cursor: pointer;
   color: rgba(93, 5, 167, 0.7);
   text-align: left;
+}
+
+.mobileListItem {
+  border: 1px solid #eee;
+  padding: 10px;
+  box-shadow: var(--shadow-1);
+  border-radius: 3px;
 }
 
 .mobileListHeader {
