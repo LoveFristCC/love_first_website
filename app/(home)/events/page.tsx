@@ -84,10 +84,11 @@ export default async function Events() {
               i: number
             ) => {
               const imageUrl = urlForImage(el.eventImage)
-                ?.height(1000)
-                .width(1000)
+                ?.height(627)
+                .width(1200)
                 .url();
 
+              console.log("🚀 ~ imageUrl:", imageUrl);
               return (
                 <div className="individualEventContainer" key={i}>
                   <div className="individualEventImageContainer">
