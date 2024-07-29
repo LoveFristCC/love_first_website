@@ -141,6 +141,10 @@
     text-align: center;
   }
 
+  .lifeContent p {
+    text-align: left;
+  }
+
   .lifeContent,
   .lifeUniversityImageContainer {
     max-width: 100%;
@@ -230,7 +234,7 @@
 @media (max-width: 768px) {
   .individualEventContainer {
     flex-direction: column;
-    text-align: center;
+    /* text-align: center; */
   }
 
   .individualEventImageContainer {
@@ -241,5 +245,14 @@
 
   .individualEventContent {
     padding-left: 0;
+  }
+
+  .individualEventContent h3,
+  .individualEventContent a {
+    text-align: center;
+  }
+
+  .individualEventContent a {
+    width: 100%;
   }
 }
