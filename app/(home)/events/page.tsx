@@ -88,7 +88,6 @@ export default async function Events() {
                 .width(1200)
                 .url();
 
-              console.log("🚀 ~ imageUrl:", imageUrl);
               return (
                 <div className="individualEventContainer" key={i}>
                   <div className="individualEventImageContainer">

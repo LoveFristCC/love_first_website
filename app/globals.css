@@ -947,6 +947,7 @@ video {
   padding: 20px;
   background-color: #eee;
   width: 100%;
+  overflow: hidden;
 }
 
 .eventsContent {
@@ -994,17 +995,19 @@ video {
   width: 100%;
   overflow: hidden;
   margin-top: 10px;
-  text-decoration: none; /* Ensure no underline */
+  text-decoration: none;
   display: block;
 }
 
 .eventContainer p {
   font-size: 14px;
   color: #555;
-  max-width: 100%; /* Adjust as needed */
+  max-width: 100%;
   overflow: hidden; /* Prevent text from overflowing */
   text-overflow: ellipsis; /* Optionally, truncate text with ellipsis */
-  white-space: nowrap; /* Ensure text stays on one line */
+  white-space: pre-wrap; /* Ensure text stays on one line */
+  overflow-wrap: break-word;
+  overflow: hidden;
 }
 
 .eventContainer:hover {
