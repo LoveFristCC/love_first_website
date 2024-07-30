@@ -23,7 +23,7 @@ export async function generateMetadata(
 
   return {
     title: `${groupName} - Love First`,
-    description: "",
+    description: `Join our ${groupName} community at Love First Christian Center. Connect, grow, and engage with others. We can't wait to welcome you`,
     openGraph: {
       images: [groupImage, ...previousImages],
     },
