@@ -34,6 +34,12 @@ export async function generateMetadata(): Promise<Metadata> {
   } catch {
     // ignore
   }
+
+  const siteName = "Love First Christian Center";
+  const ogUrl = metadataBase
+    ? `${metadataBase.origin}${metadataBase.pathname}`
+    : undefined;
+
   return {
     metadataBase,
     title: {
@@ -43,6 +49,8 @@ export async function generateMetadata(): Promise<Metadata> {
     description: toPlainText(description),
     openGraph: {
       images: ogImage ? [ogImage] : [],
+      siteName: siteName,
+      url: ogUrl,
     },
   };
 }
