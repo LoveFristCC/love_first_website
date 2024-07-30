@@ -38,8 +38,8 @@ export const MenuItem = ({
     <motion.li
       className="mobileListItem"
       variants={variants}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
+      // whileHover={{ scale: 1.1 }}
+      // whileTap={{ scale: 0.95 }}
     >
       <Link
         className="text-placeholder"

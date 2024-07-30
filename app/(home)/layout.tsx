@@ -54,7 +54,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       images: ogImage ? [ogImage] : [],
       siteName: siteName,
-      url: ogUrl,
+      // url: "https://www.lfcc.tv.com",
     },
   };
 }

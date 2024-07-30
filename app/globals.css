@@ -139,10 +139,12 @@ nav ul li.active > span {
   transform: scale(1.05);
 }
 
-@media (max-width: 801px) {
+@media (max-width: 1000px) {
   nav ul li a:hover,
   nav ul li .desktopNavSpan:hover {
     text-shadow: none;
+    color: rgba(93, 5, 167, 0.7);
+    transform: none;
   }
 }
 
