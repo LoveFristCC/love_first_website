@@ -1,5 +1,9 @@
 import { getPcData } from "@/app/lib/getPcData";
-import EventsClient from "./EventsClient";
+import dynamic from "next/dynamic";
+
+const EventsClient = dynamic(() => import("./EventsClient"), {
+  loading: () => <p>Loading...</p>,
+});
 
 const EventsPage = async () => {
   const response = await getPcData(

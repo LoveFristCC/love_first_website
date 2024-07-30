@@ -1,9 +1,16 @@
+import dynamic from "next/dynamic";
 import Hero from "@/components/HeroComponent/Hero";
 import SermonSection from "@/components/sermons/SermonSection";
-import CommunitySection from "@/components/community/CommunitySection";
 import WelcomeSection from "@/components/welcome/WelcomeSection";
 import EventsPage from "@/components/events/EventsPage";
 import { Suspense } from "react";
+
+const CommunitySection = dynamic(
+  () => import("@/components/community/CommunitySection"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
 
 export default async function Page() {
   const date = new Date();
