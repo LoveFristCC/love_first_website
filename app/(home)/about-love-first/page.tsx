@@ -140,9 +140,11 @@ export default async function AboutLoveFirst() {
       <section className="beliefsSection">
         <h2 className="sectionTitle">What we believe</h2>
         <div className="beliefsContent">
-          <strong>WE BELIEVE</strong>…the entire Bible is inspired by God,
-          without error and the authority on which we base our faith, conduct
-          and doctrine.<p></p>
+          <p>
+            <strong>WE BELIEVE</strong>…the entire Bible is inspired by God,
+            without error and the authority on which we base our faith, conduct
+            and doctrine.
+          </p>
           <p>
             <strong>WE BELIEVE</strong>…in one God who exists in three distinct
             persons: Father, Son and Holy Spirit. We believe Jesus Christ is the
