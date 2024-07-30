@@ -855,7 +855,8 @@ video {
   border-radius: 10px; */
 }
 
-.sermon-details h3 {
+.sermon-details h3,
+.sermon-details h2 {
   font-size: var(--font-size-fluid-1);
   font-weight: 600;
   margin-bottom: 5px;

@@ -25,7 +25,7 @@ const PreviousSermonYouTubePlayer: React.FC<any> = ({
         {loadVideo ? (
           <iframe
             src={`https://www.youtube.com/embed/${featuredVideo.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
-            title="YouTube video player"
+            title={`${featuredVideo.title} Sermon`}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
@@ -46,11 +46,11 @@ const PreviousSermonYouTubePlayer: React.FC<any> = ({
         )}
       </div>
       <div className="sermon-details">
-        <h3>Sermon Series:</h3>
+        <h2>Sermon Series:</h2>
         <p>{seriesTitle}</p>
-        <h3>Message Title:</h3>
+        <h2>Message Title:</h2>
         <p>{featuredVideo.title}</p>
-        <h3>Speaker:</h3>
+        <h2>Speaker:</h2>
         <p>{featuredVideo.speaker}</p>
       </div>
     </div>

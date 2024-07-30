@@ -116,6 +116,7 @@ export default function LocationPage() {
             aria-hidden="false"
             tabIndex={0}
             className="map"
+            title="Love First Christian Center Map"
           ></iframe>
         </section>
       </div>

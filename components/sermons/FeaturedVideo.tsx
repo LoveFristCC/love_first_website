@@ -22,7 +22,7 @@ const FeaturedVideo: React.FC<any> = ({ featuredVideo }) => {
         {loadVideo ? (
           <iframe
             src={`https://www.youtube.com/embed/${featuredVideo.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
-            title="YouTube video player"
+            title={`${featuredVideo.title} Sermon`}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"

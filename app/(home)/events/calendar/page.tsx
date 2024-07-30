@@ -35,6 +35,7 @@ export default async function Calendar() {
           width="100%"
           height="600px"
           className="planning-center-calender-embed"
+          title="Love First Christian Center Calendar"
           frameBorder="0"
         ></iframe>
       </section>
