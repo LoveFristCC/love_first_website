@@ -13,7 +13,7 @@ export const urlForImage = (source: any) => {
     return undefined;
   }
 
-  return imageBuilder?.image(source).auto("format").fit("max");
+  return imageBuilder?.image(source);
 };
 
 export function resolveOpenGraphImage(image: any, width = 1200, height = 627) {

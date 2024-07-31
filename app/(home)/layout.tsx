@@ -29,6 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const description = settings?.description || demo.description;
 
   const ogImage = resolveOpenGraphImage(settings?.ogImage);
+
   let metadataBase: URL | undefined = undefined;
   try {
     metadataBase = settings?.ogImage?.metadataBase
