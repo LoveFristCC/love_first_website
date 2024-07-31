@@ -25,8 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
     // Metadata should never contain stega
     stega: false,
   });
-  const title =
-    settings?.title || "Love First Christian Center - Riverview, Florida";
+  const title = settings?.title || "Love First Christian Center";
   const description = settings?.description || demo.description;
 
   const ogImage = resolveOpenGraphImage(settings?.ogImage);
@@ -40,9 +39,6 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   const siteName = "Love First Christian Center";
-  const ogUrl = metadataBase
-    ? `${metadataBase.origin}${metadataBase.pathname}`
-    : undefined;
 
   return {
     metadataBase,
@@ -54,7 +50,6 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       images: ogImage ? [ogImage] : [],
       siteName: siteName,
-      // url: "https://www.lfcc.tv.com",
     },
   };
 }
