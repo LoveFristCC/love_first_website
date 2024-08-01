@@ -35,11 +35,11 @@ const EventsPage = async () => {
     <section className="eventsSection">
       <div className="eventsContent">
         <h2 className="eventsHeadline">Upcoming Events at Love First</h2>
-        <Suspense fallback={<p>Loading Events....</p>}>
+        {/* <Suspense fallback={<p>Loading Events....</p>}>
           {groupedEvents && (
             <EventsClient eventData={eventData} groupedEvents={groupedEvents} />
           )}
-        </Suspense>
+        </Suspense> */}
       </div>
     </section>
   );
