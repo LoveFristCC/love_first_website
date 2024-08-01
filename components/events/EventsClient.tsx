@@ -1,5 +1,4 @@
 "use client";
-import { useRef } from "react";
 import Link from "next/link";
 import DateComponent from "@/app/(home)/date";
 import TimeComponent from "@/app/(home)/time";
@@ -50,9 +49,6 @@ const EventsClient = ({
   groupedEvents: any;
   eventData: any;
 }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
   return (
     <>
       {Object.keys(groupedEvents).map((date, index) => {
