@@ -36,7 +36,9 @@ const EventsPage = async () => {
       <div className="eventsContent">
         <h2 className="eventsHeadline">Upcoming Events at Love First</h2>
         <Suspense fallback={<p>Loading Events....</p>}>
-          <EventsClient eventData={eventData} groupedEvents={groupedEvents} />
+          {groupedEvents && (
+            <EventsClient eventData={eventData} groupedEvents={groupedEvents} />
+          )}
         </Suspense>
       </div>
     </section>
