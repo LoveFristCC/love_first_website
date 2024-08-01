@@ -52,6 +52,7 @@ const EventsClient = ({
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+
   return (
     <>
       {Object.keys(groupedEvents).map((date, index) => {
@@ -100,12 +101,8 @@ const EventsClient = ({
                         <TimeComponent
                           startTime={el.attributes.starts_at}
                           endTime={el.attributes.ends_at}
-                          // className="timeComponent"
                         />
-                        <DateComponent
-                          dateString={el.attributes.starts_at}
-                          // className="dateComponent"
-                        />
+                        <DateComponent dateString={el.attributes.starts_at} />
                       </Link>
                     );
                   }
@@ -114,6 +111,7 @@ const EventsClient = ({
               )}
             </motion.div>
           );
+        return null;
       })}
     </>
   );

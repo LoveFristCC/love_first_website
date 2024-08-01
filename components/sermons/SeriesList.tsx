@@ -38,14 +38,13 @@ const SeriesList: React.FC<SeriesListProps> = ({ series }) => {
                 href={`/watch-online/previous-sermons/${item.route}`}
                 key={index}
               >
-                <div>
-                  <Image
-                    src={imageUrl as string}
-                    height={300}
-                    width={300}
-                    alt={`${item.title} - Love First`}
-                  />
-                </div>
+                <Image
+                  src={imageUrl as string}
+                  height={300}
+                  width={300}
+                  alt={`${item.title} - Love First`}
+                />
+
                 <p>{item.title}</p>
               </Link>
             );

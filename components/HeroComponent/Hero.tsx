@@ -3,6 +3,10 @@ import Link from "next/link";
 const Hero = ({ serviceTime }: { serviceTime: string }) => {
   return (
     <section className="heroContent">
+      <div className="overlay" />
+      <video src="/lfccVideo.mp4" loop autoPlay muted playsInline>
+        Your browser does not support the video tag.
+      </video>
       <div className="headlineContainer">
         <h1>
           Welcome to
@@ -39,10 +43,6 @@ const Hero = ({ serviceTime }: { serviceTime: string }) => {
           Watch Online
         </Link>
       </div>
-      <div className="overlay" />
-      <video src="/lfccVideo.mp4" loop autoPlay muted playsInline>
-        Your browser does not support the video tag.
-      </video>
     </section>
   );
 };
