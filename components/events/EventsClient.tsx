@@ -81,28 +81,28 @@ const EventsClient = ({
                       element.id === el.relationships.event.data.id
                   );
 
-                  if (headline) {
-                    return (
-                      <Link
-                        href={el.attributes.church_center_url}
-                        className="eventContainer"
-                        key={i}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <p className="eventHeader">
-                          {headline.attributes.name}
-                        </p>
-                        <p>{el.attributes.location}</p>
-                        <TimeComponent
-                          startTime={el.attributes.starts_at}
-                          endTime={el.attributes.ends_at}
-                        />
-                        <DateComponent dateString={el.attributes.starts_at} />
-                      </Link>
-                    );
-                  }
-                  return null;
+                  // if (headline) {
+                  //   return (
+                  //     <Link
+                  //       href={el.attributes.church_center_url}
+                  //       className="eventContainer"
+                  //       key={i}
+                  //       target="_blank"
+                  //       rel="noopener noreferrer"
+                  //     >
+                  //       <p className="eventHeader">
+                  //         {headline.attributes.name}
+                  //       </p>
+                  //       <p>{el.attributes.location}</p>
+                  //       <TimeComponent
+                  //         startTime={el.attributes.starts_at}
+                  //         endTime={el.attributes.ends_at}
+                  //       />
+                  //       <DateComponent dateString={el.attributes.starts_at} />
+                  //     </Link>
+                  //   );
+                  // }
+                  // return null;
                 }
               )}
             </motion.div>
