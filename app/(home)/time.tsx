@@ -1,20 +1,23 @@
 import { format } from "date-fns";
 
-const TimeComponent = ({
+export default function TimeComponent({
   startTime,
   endTime,
 }: {
   startTime: string;
   endTime: string;
-}) => {
-  return (
-    <div className="timeComponent">
-      <p>
-        {format(new Date(startTime), "h:mm a")} -{" "}
-        {format(new Date(endTime), "h:mm a")}
-      </p>
-    </div>
-  );
-};
+}) {
+  // Formatted times using date-fns
+  const formattedStartTime = format(new Date(startTime), "h:mm a");
+  const formattedEndTime = format(new Date(endTime), "h:mm a");
 
-export default TimeComponent;
+  return (
+    <time
+      dateTime={`${startTime} - ${endTime}`}
+      className="timeComponent"
+      suppressHydrationWarning
+    >
+      {formattedStartTime} - {formattedEndTime}
+    </time>
+  );
+}

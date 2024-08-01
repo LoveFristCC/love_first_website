@@ -94,10 +94,10 @@ const EventsClient = ({
                           {headline.attributes.name}
                         </p>
                         <p>{el.attributes.location}</p>
-                        {/* <TimeComponent
+                        <TimeComponent
                           startTime={el.attributes.starts_at}
                           endTime={el.attributes.ends_at}
-                        /> */}
+                        />
                         <DateComponent dateString={el.attributes.starts_at} />
                       </Link>
                     );

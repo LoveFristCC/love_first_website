@@ -1047,6 +1047,7 @@ video {
 .dateComponent {
   font-size: 14px;
   color: #555;
+  display: block;
 }
 
 .svgWaveTwo path {
