@@ -295,6 +295,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: var(--shadow-3);
 }
 
 .individualHeroHeaderContent {
@@ -316,19 +317,20 @@
   background: white;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  justify-content: center;
+  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); */
   width: calc(100% - 10px);
-  max-width: 1200px;
+  max-width: 1500px;
   margin: auto;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
-.individualGroupCard:hover {
+/* .individualGroupCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
+} */
 
 .individualGroupCard img {
   align-self: center;
@@ -365,14 +367,20 @@
   text-decoration: underline;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 986px) {
   .individualGroupCard {
     flex-direction: row;
     gap: 40px;
   }
 
   .individualGroupContent {
-    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 0 10px;
+    max-width: 700px;
   }
 
   .individualHeroHeader h1 {

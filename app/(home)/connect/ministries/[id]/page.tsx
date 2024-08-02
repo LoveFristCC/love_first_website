@@ -55,9 +55,12 @@ export default async function IndividualMinistries({
   }
 
   const [groups, highlightData] = await Promise.all(promises);
+  console.log("🚀 ~ groups:", groups);
 
   const groupName = groups?.data?.attributes.name;
-  const groupImage = groups?.data?.attributes?.header_image.original;
+  const groupImage =
+    groups?.data?.attributes?.header_image.original ||
+    groups?.data?.attributes?.header_image.medium;
   const groupSchedule = groups?.data?.attributes?.schedule;
   const groupDescription = groups?.data?.attributes?.description;
   const groupEmail = groups?.data?.attributes?.contact_email;
@@ -82,7 +85,7 @@ export default async function IndividualMinistries({
           </div>
         </div>
         <div className="individualGroupCard">
-          <Image src={groupImage} alt={groupName} width={200} height={100} />
+          <Image src={groupImage} alt={groupName} width={500} height={500} />
           <div className="individualGroupContent">
             {groupDescription && (
               <div>

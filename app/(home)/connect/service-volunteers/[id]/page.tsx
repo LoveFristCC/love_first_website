@@ -46,12 +46,14 @@ export default async function IndividualLifeClass({
     // await getPcData(eventsUrl),
   ]);
 
-  const groupName = groups.data.attributes.name;
-  const groupImage = groups.data.attributes.header_image.original;
-  const groupSchedule = groups.data.attributes.schedule;
-  const groupDescription = groups.data.attributes.description;
-  const groupEmail = groups.data.attributes.contact_email;
-  const redirectLink = groups.data.attributes.public_church_center_web_url;
+  const groupName = groups?.data?.attributes.name;
+  const groupImage =
+    groups?.data?.attributes?.header_image.original ||
+    groups?.data?.attributes?.header_image.medium;
+  const groupSchedule = groups?.data?.attributes?.schedule;
+  const groupDescription = groups?.data?.attributes?.description;
+  const groupEmail = groups?.data?.attributes?.contact_email;
+  const redirectLink = groups?.data.attributes.public_church_center_web_url;
 
   const location = groups?.included[0]?.attributes;
   return (
@@ -72,7 +74,7 @@ export default async function IndividualLifeClass({
           </div>
         </div>
         <div className="individualGroupCard">
-          <Image src={groupImage} alt={groupName} width={200} height={100} />
+          <Image src={groupImage} alt={groupName} width={400} height={400} />
           <div className="individualGroupContent">
             {groupDescription && (
               <div>
