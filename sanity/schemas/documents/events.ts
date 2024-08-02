@@ -26,6 +26,24 @@ export default defineType({
       validation: (rule) => rule.required().integer().min(1),
     }),
     defineField({
+      name: "isActive",
+      title: "Is Active",
+      type: "boolean",
+      initialValue: true,
+    }),
+    defineField({
+      name: "redirectUrl",
+      title: "Redirect URL",
+      type: "url",
+      validation: (rule) =>
+        rule
+          .uri({
+            scheme: ["http", "https"],
+            allowRelative: true,
+          })
+          .required(),
+    }),
+    defineField({
       name: "eventImage",
       title: "Event Image",
       type: "image",

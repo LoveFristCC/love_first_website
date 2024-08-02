@@ -19,6 +19,14 @@ const WelcomeSection = ({ serviceTime }: { serviceTime: string }) => {
             <Link href={`/about-love-first`} className="welcomeLink">
               I&apos;m new here
             </Link>
+            <Link
+              href="https://lovefirst.churchcenter.com/registrations/events"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="welcomeLink"
+            >
+              Register for upcoming events
+            </Link>
           </div>
         </div>
         <div className="altLogoContainer">

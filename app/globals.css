@@ -588,7 +588,7 @@ video {
   max-width: 600px;
 }
 
-@media (max-width: 811px) {
+@media (max-width: 1114px) {
   .welcomeContent {
     text-align: center;
     justify-content: center;
@@ -646,9 +646,12 @@ video {
   text-align: center;
   width: 100%;
   max-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (max-width: 811px) {
+@media (max-width: 1114px) {
   .welcomeLink {
     max-width: 100%;
   }
@@ -661,7 +664,7 @@ video {
   gap: 0 20px;
 }
 
-@media (max-width: 811px) {
+@media (max-width: 1114px) {
   .welcomeButtons {
     flex-direction: column;
     align-items: center;

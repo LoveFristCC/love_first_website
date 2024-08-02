@@ -137,7 +137,7 @@
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .lifeSection {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
   }
 

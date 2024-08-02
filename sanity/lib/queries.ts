@@ -72,11 +72,12 @@ export const individualPastSeries = groq`*[_type == "seriesCollection"] {
   }
 }`;
 
-export const eventsQuery = groq`*[_type == "events"] | order(order asc) {
+export const eventsQuery = groq`*[_type == "events" && isActive == true] | order(order asc) {
   name,
   description,
   order,
-  eventImage
+  eventImage,
+  redirectUrl
 }`;
 
 export const leadershipQuery = `{

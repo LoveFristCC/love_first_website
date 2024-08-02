@@ -80,9 +80,15 @@ export default async function Events() {
         {events &&
           events.map(
             (
-              el: { eventImage: string; name: string; description: string },
+              el: {
+                eventImage: string;
+                name: string;
+                description: string;
+                redirectUrl: string;
+              },
               i: number
             ) => {
+              console.log("🚀 ~ el:", el);
               const imageUrl = urlForImage(el.eventImage)
                 ?.height(627)
                 .width(1200)
@@ -104,7 +110,7 @@ export default async function Events() {
                     <h3>{el.name}</h3>
                     <p>{el.description}</p>
                     <Link
-                      href="https://lovefirst.churchcenter.com/registrations/events"
+                      href={el.redirectUrl}
                       rel="noreferrer noopener"
                       target="_blank"
                     >

@@ -4,14 +4,7 @@ const Hero = ({ serviceTime }: { serviceTime: string }) => {
   return (
     <section className="heroContent">
       <div className="overlay" />
-      <video
-        src="/lfccVideo.mp4"
-        loop
-        autoPlay
-        muted
-        playsInline
-        onError={() => {}}
-      >
+      <video src="/lfccVideo.mp4" loop autoPlay muted playsInline>
         Your browser does not support the video tag.
       </video>
       <div className="headlineContainer">

@@ -74,6 +74,14 @@ export default async function Give() {
             </p>
           </div>
           <div className="givingOption">
+            <h3>Give with Zelle</h3>
+            <p>
+              To give via Zelle, use our email address:{" "}
+              <strong>give@lovefirstchristiancenter.com</strong>. Your
+              generosity is greatly appreciated.
+            </p>
+          </div>
+          <div className="givingOption">
             <h3>Text to Give</h3>
             <p>
               Simply text the amount to{" "}
@@ -99,14 +107,7 @@ export default async function Give() {
               . Your support helps us continue our mission.
             </p>
           </div>
-          <div className="givingOption">
-            <h3>Give with Zelle</h3>
-            <p>
-              To give via Zelle, use our email address:{" "}
-              <strong>give@lovefirstchristiancenter.com</strong>. Your
-              generosity is greatly appreciated.
-            </p>
-          </div>
+
           <div className="givingOption">
             <h3>Give by Mail</h3>
             <p>
