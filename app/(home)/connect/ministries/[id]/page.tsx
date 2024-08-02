@@ -19,7 +19,6 @@ export async function generateMetadata(
   const id = params.id;
   const url = `https://api.planningcenteronline.com/groups/v2/group_types/27876/groups/${id}?include=location`;
   const data = await getPcData(url);
-  console.log("🚀 ~ data:", data);
   const groupName = data?.data?.attributes.name;
   const groupImage = data?.data?.attributes?.header_image.original;
 
