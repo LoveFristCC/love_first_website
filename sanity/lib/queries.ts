@@ -80,6 +80,35 @@ export const eventsQuery = groq`*[_type == "events" && isActive == true] | order
   redirectUrl
 }`;
 
+export const teenMinistryHighlightsQuery = groq`
+  *[_type == "teenMinistryEvents"] {
+    title,
+    description,
+    eventImages
+  }
+`;
+export const childrenMinistryHighlightsQuery = groq`
+{
+"childrenLessons": *[_type == "childrenBibleStudy"] | order(_createdAt desc) [0...3] {
+  title,
+  leaderLesson {
+    "file": asset->url
+  },
+  parentLesson {
+    "file": asset->url
+  },
+  lessonActivity {
+    "file": asset->url
+  }
+},
+"childrenMinistryEvents": *[_type == "childrenMinistryEvents"] {
+    title,
+    description,
+    eventImages
+  }
+}
+`;
+
 export const leadershipQuery = `{
   "pastors": *[_type == "leaders" && role == "pastor"] | order(order asc) {
     name,

@@ -384,3 +384,223 @@
   color: #5d05a7;
   font-weight: 600;
 }
+
+/* Overall section styling */
+.ministry-highlights {
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-content {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.highlight-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #5d3f6a;
+}
+
+.highlight-description {
+  font-size: 1.125rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Carousel container styling */
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 1rem 0;
+  scrollbar-width: thin;
+}
+
+.carousel-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+  background: rgba(93, 5, 167, 0.7);
+  border-radius: 4px;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+}
+
+.carousel-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .ministry-highlights {
+    padding: 2rem 1rem;
+  }
+
+  .highlight-title {
+    font-size: 2rem;
+  }
+
+  .highlight-description {
+    font-size: 1rem;
+  }
+
+  .carousel-container {
+    gap: 0.5rem;
+  }
+
+  .carousel-item {
+    max-width: 300px;
+  }
+
+  .carousel-item img {
+    height: auto;
+  }
+}
+
+/* General section styling */
+.lesson-plan-highlights {
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e1e9f0 100%);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-plan-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.lesson-plan-content {
+  text-align: center;
+}
+
+.lesson-plan-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.lesson-plan-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.lesson-plan-individual-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.lesson-plan-individual-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.lesson-plan-individual-container h3 {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.lesson-plan-link-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lesson-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #6d28d9;
+  color: #6d28d9;
+  background: transparent;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.lesson-button:hover {
+  background: #6d28d9;
+  color: #fff;
+}
+
+.lesson-button:active {
+  background: #4c1d95;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .lesson-plan-title {
+    font-size: 2rem;
+  }
+
+  .lesson-plan-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lesson-plan-individual-container {
+    width: 90%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lesson-plan-title {
+    font-size: 1.5rem;
+  }
+
+  .lesson-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}

@@ -20,6 +20,9 @@ import { assistWithPresets } from "@/sanity/plugins/assist";
 // import post from "@/sanity/schemas/documents/post";
 import events from "@/sanity/schemas/documents/events";
 import leaders from "@/sanity/schemas/documents/leaders";
+import teenHighlights from "@/sanity/schemas/documents/teenMinistry";
+import childrenHighlights from "@/sanity/schemas/documents/childrensMinistry";
+import childrenLessons from "@/sanity/schemas/documents/childrenLessons";
 
 import mainPage from "@/sanity/schemas/collections/mainPage";
 import settings from "@/sanity/schemas/singletons/settings";
@@ -35,7 +38,15 @@ export default defineConfig({
   projectId,
   dataset,
   schema: {
-    types: [settings, mainPage, leaders, events],
+    types: [
+      settings,
+      mainPage,
+      leaders,
+      events,
+      teenHighlights,
+      childrenHighlights,
+      childrenLessons,
+    ],
   },
   plugins: [
     presentationTool({

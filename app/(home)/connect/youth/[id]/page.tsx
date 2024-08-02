@@ -2,6 +2,10 @@ import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getPcData } from "@/app/lib/getPcData";
+import { sanityFetch } from "@/sanity/lib/fetch";
+import { childrenMinistryHighlightsQuery } from "@/sanity/lib/queries";
+import MinistryHighlights from "@/components/ministryHighlights/MinistryHighlight";
+import ChildrenLessonPlans from "@/components/ministryHighlights/ChildrenLessonPlans";
 
 type Props = {
   params: { id: string };
@@ -41,10 +45,18 @@ export default async function IndividualOutreach({
 
   // const futureEventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}/events?filter=upcoming%2Cpublic&order=starts_at&per_page=3&include=location%2Cmy_rsvp`;
 
-  const [groups] = await Promise.all([
-    await getPcData(url),
-    // await getPcData(eventsUrl),
-  ]);
+  const promises = [getPcData(url)];
+
+  if (params?.id == "158867") {
+    promises.push(
+      sanityFetch<any>({
+        query: childrenMinistryHighlightsQuery,
+      })
+    );
+  }
+
+  const [groups, highlightData] = await Promise.all(promises);
+  console.log("🚀 ~ highlightData:", highlightData);
 
   const groupName = groups.data.attributes.name;
   const groupImage = groups.data.attributes.header_image.original;
@@ -112,6 +124,14 @@ export default async function IndividualOutreach({
             )}
           </div>
         </div>
+        {params?.id == "158867" && highlightData?.childrenMinistryEvents[0] && (
+          <MinistryHighlights
+            highlightData={highlightData?.childrenMinistryEvents[0]}
+          />
+        )}
+        {params?.id == "158867" && highlightData?.childrenLessons[0] && (
+          <ChildrenLessonPlans lessonPlans={highlightData?.childrenLessons} />
+        )}
       </div>
     )
   );

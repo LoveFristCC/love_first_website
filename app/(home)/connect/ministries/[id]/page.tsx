@@ -2,6 +2,9 @@ import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getPcData } from "@/app/lib/getPcData";
+import MinistryHighlights from "@/components/ministryHighlights/MinistryHighlight";
+import { sanityFetch } from "@/sanity/lib/fetch";
+import { teenMinistryHighlightsQuery } from "@/sanity/lib/queries";
 
 type Props = {
   params: { id: string };
@@ -16,8 +19,9 @@ export async function generateMetadata(
   const id = params.id;
   const url = `https://api.planningcenteronline.com/groups/v2/group_types/27876/groups/${id}?include=location`;
   const data = await getPcData(url);
-  const groupName = data.data.attributes.name;
-  const groupImage = data.data.attributes.header_image.original;
+  console.log("🚀 ~ data:", data);
+  const groupName = data?.data?.attributes.name;
+  const groupImage = data?.data?.attributes?.header_image.original;
 
   const previousImages = (await parent).openGraph?.images || [];
 
@@ -41,17 +45,24 @@ export default async function IndividualMinistries({
 
   // const futureEventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}/events?filter=upcoming%2Cpublic&order=starts_at&per_page=3&include=location%2Cmy_rsvp`;
 
-  const [groups] = await Promise.all([
-    await getPcData(url),
-    // await getPcData(eventsUrl),
-  ]);
+  const promises = [getPcData(url)];
 
-  const groupName = groups.data.attributes.name;
-  const groupImage = groups.data.attributes.header_image.original;
-  const groupSchedule = groups.data.attributes.schedule;
-  const groupDescription = groups.data.attributes.description;
-  const groupEmail = groups.data.attributes.contact_email;
-  const redirectLink = groups.data.attributes.public_church_center_web_url;
+  if (params?.id == "254955") {
+    promises.push(
+      sanityFetch<any>({
+        query: teenMinistryHighlightsQuery,
+      })
+    );
+  }
+
+  const [groups, highlightData] = await Promise.all(promises);
+
+  const groupName = groups?.data?.attributes.name;
+  const groupImage = groups?.data?.attributes?.header_image.original;
+  const groupSchedule = groups?.data?.attributes?.schedule;
+  const groupDescription = groups?.data?.attributes?.description;
+  const groupEmail = groups?.data?.attributes?.contact_email;
+  const redirectLink = groups?.data.attributes.public_church_center_web_url;
 
   const location = groups?.included[0]?.attributes;
   return (
@@ -112,6 +123,10 @@ export default async function IndividualMinistries({
             )}
           </div>
         </div>
+
+        {params?.id == "254955" && highlightData[0] && (
+          <MinistryHighlights highlightData={highlightData[0]} />
+        )}
       </div>
     )
   );

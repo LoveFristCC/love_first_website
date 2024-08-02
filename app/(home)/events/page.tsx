@@ -88,7 +88,6 @@ export default async function Events() {
               },
               i: number
             ) => {
-              console.log("🚀 ~ el:", el);
               const imageUrl = urlForImage(el.eventImage)
                 ?.height(627)
                 .width(1200)
