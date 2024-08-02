@@ -8,7 +8,7 @@ const ChildrenLessonPlans = async ({ lessonPlans }: { lessonPlans: any }) => {
       <div className="lesson-plan-wrapper">
         <div className="lesson-plan-content">
           <h2 className="lesson-plan-title">
-            Latest Lesson Plans for Children: What They’re Learning and How to
+            Latest Children Lesson Plans: What They’re Learning and How to
             Engage
           </h2>
         </div>
