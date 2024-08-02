@@ -74,6 +74,13 @@ export default function Footer() {
             <Link href="/give">Give</Link>
             <Link href="/prayer">Need Prayer</Link>
             <Link href="/contact">Contact</Link>
+            <Link
+              href="https://docs.google.com/forms/d/e/1FAIpQLSd6ZCSKtE1leLhUPuvyAoUNXwxRWq2HpY4F9oBiRJ8eWhkaTA/viewform"
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Share an Update
+            </Link>
           </div>
         </div>
         <div className="footerHeader">
