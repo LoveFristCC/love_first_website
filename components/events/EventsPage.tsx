@@ -4,6 +4,7 @@ import { Suspense } from "react";
 
 const EventsClient = dynamic(() => import("./EventsClient"), {
   loading: () => <p>Loading...</p>,
+  ssr: false,
 });
 
 const EventsPage = async () => {

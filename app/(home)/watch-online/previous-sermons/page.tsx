@@ -13,6 +13,7 @@ const PreviousSermonYouTubePlayer = dynamic(
     ),
   {
     loading: () => <p>Loading...</p>,
+    ssr: false,
   }
 );
 

@@ -9,6 +9,7 @@ const IndividualYouTubePlayer = dynamic(
   () => import("./IndividualYouTubePlayer"),
   {
     loading: () => <p>Loading...</p>,
+    ssr: false,
   }
 );
 

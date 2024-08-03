@@ -6,9 +6,11 @@ import Link from "next/link";
 
 const SeriesList = dynamic(() => import("./SeriesList"), {
   loading: () => <p>Loading...</p>,
+  ssr: false,
 });
 const FeaturedVideo = dynamic(() => import("./FeaturedVideo"), {
   loading: () => <p>Loading...</p>,
+  ssr: false,
 });
 
 const SermonSection = async ({ path }: { path: string }) => {

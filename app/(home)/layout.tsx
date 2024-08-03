@@ -17,6 +17,7 @@ import Header from "@/components/Header";
 
 const Footer = dynamic(() => import("@/components/Footer"), {
   loading: () => <p>Loading...</p>,
+  ssr: false,
 });
 
 export async function generateMetadata(): Promise<Metadata> {

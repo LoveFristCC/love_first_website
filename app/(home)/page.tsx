@@ -9,6 +9,7 @@ const CommunitySection = dynamic(
   () => import("@/components/community/CommunitySection"),
   {
     loading: () => <p>Loading...</p>,
+    ssr: false,
   }
 );
 
