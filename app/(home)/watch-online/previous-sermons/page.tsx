@@ -1,10 +1,20 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/utils";
 import Image from "next/image";
-import PreviousSermonYouTubePlayer from "@/components/previousSermonYouTubePlayer/PreviousSermonYouTubePlayer";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { pastSeries } from "@/sanity/lib/queries";
 import type { Metadata } from "next";
+
+const PreviousSermonYouTubePlayer = dynamic(
+  () =>
+    import(
+      "@/components/previousSermonYouTubePlayer/PreviousSermonYouTubePlayer"
+    ),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

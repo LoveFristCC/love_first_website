@@ -22,8 +22,11 @@ export default async function Page() {
     <div className="mainPage">
       <Hero serviceTime={serviceTime} />
 
-      <WelcomeSection serviceTime={serviceTime} />
-      <CommunitySection />
+      <Suspense>
+        <WelcomeSection serviceTime={serviceTime} />
+        <CommunitySection />
+      </Suspense>
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
@@ -36,8 +39,10 @@ export default async function Page() {
         ></path>
       </svg>
 
-      <SermonSection path="home" />
-      <EventsPage />
+      <Suspense>
+        <SermonSection path="home" />
+        <EventsPage />
+      </Suspense>
     </div>
   );
 }
