@@ -14,11 +14,16 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-const Footer = dynamic(() => import("@/components/Footer"), {
-  loading: () => <p>Loading...</p>,
-  ssr: false,
-});
+// const Footer = dynamic(() => import("@/components/Footer"), {
+//   // loading: () => <p>Loading...</p>,
+//   ssr: false,
+// });
+// const Header = dynamic(() => import("@/components/Header"), {
+//   // loading: () => <p>Loading...</p>,
+//   ssr: false,
+// });
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch<SettingsQueryResult>({
@@ -74,9 +79,9 @@ export default function RootLayout({
           {draftMode().isEnabled && <AlertBanner />}
           <Header />
           <main>{children}</main>
-          <Suspense>
-            <Footer />
-          </Suspense>
+          {/* <Suspense> */}
+          <Footer />
+          {/* </Suspense> */}
         </section>
         {draftMode().isEnabled && <VisualEditing />}
         <SpeedInsights />

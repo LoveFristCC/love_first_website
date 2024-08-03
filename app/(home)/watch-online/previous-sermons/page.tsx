@@ -5,17 +5,18 @@ import Image from "next/image";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { pastSeries } from "@/sanity/lib/queries";
 import type { Metadata } from "next";
+import PreviousSermonYouTubePlayer from "@/components/previousSermonYouTubePlayer/PreviousSermonYouTubePlayer";
 
-const PreviousSermonYouTubePlayer = dynamic(
-  () =>
-    import(
-      "@/components/previousSermonYouTubePlayer/PreviousSermonYouTubePlayer"
-    ),
-  {
-    loading: () => <p>Loading...</p>,
-    ssr: false,
-  }
-);
+// const PreviousSermonYouTubePlayer = dynamic(
+//   () =>
+//     import(
+//       "@/components/previousSermonYouTubePlayer/PreviousSermonYouTubePlayer"
+//     ),
+//   {
+//     loading: () => <p>Loading...</p>,
+//     ssr: false,
+//   }
+// );
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

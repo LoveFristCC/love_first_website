@@ -4,14 +4,15 @@ import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/utils";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { individualPastSeries } from "@/sanity/lib/queries";
+import IndividualYouTubePlayer from "./IndividualYouTubePlayer";
 
-const IndividualYouTubePlayer = dynamic(
-  () => import("./IndividualYouTubePlayer"),
-  {
-    loading: () => <p>Loading...</p>,
-    ssr: false,
-  }
-);
+// const IndividualYouTubePlayer = dynamic(
+//   () => import("./IndividualYouTubePlayer"),
+//   {
+//     loading: () => <p>Loading...</p>,
+//     ssr: false,
+//   }
+// );
 
 type Props = {
   params: { id: string };

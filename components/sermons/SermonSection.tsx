@@ -3,15 +3,17 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { seriesQuery } from "@/sanity/lib/queries";
 import type { SeriesQueryResult } from "@/sanity.types";
 import Link from "next/link";
+import SeriesList from "./SeriesList";
+import FeaturedVideo from "./FeaturedVideo";
 
-const SeriesList = dynamic(() => import("./SeriesList"), {
-  loading: () => <p>Loading...</p>,
-  ssr: false,
-});
-const FeaturedVideo = dynamic(() => import("./FeaturedVideo"), {
-  loading: () => <p>Loading...</p>,
-  ssr: false,
-});
+// const SeriesList = dynamic(() => import("./SeriesList"), {
+//   loading: () => <p>Loading...</p>,
+//   ssr: false,
+// });
+// const FeaturedVideo = dynamic(() => import("./FeaturedVideo"), {
+//   loading: () => <p>Loading...</p>,
+//   ssr: false,
+// });
 
 const SermonSection = async ({ path }: { path: string }) => {
   const mainData = await sanityFetch<SeriesQueryResult>({
