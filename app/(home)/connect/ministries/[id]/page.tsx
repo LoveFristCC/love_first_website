@@ -2,7 +2,7 @@ import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getPcData } from "@/app/lib/getPcData";
-import MinistryHighlights from "@/components/ministryHighlights/MinistryHighlight";
+// import MinistryHighlights from "@/components/ministryHighlights/MinistryHighlight";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { teenMinistryHighlightsQuery } from "@/sanity/lib/queries";
 
@@ -46,13 +46,13 @@ export default async function IndividualMinistries({
 
   const promises = [getPcData(url)];
 
-  if (params?.id == "254955") {
-    promises.push(
-      sanityFetch<any>({
-        query: teenMinistryHighlightsQuery,
-      })
-    );
-  }
+  // if (params?.id == "254955") {
+  //   promises.push(
+  //     sanityFetch<any>({
+  //       query: teenMinistryHighlightsQuery,
+  //     })
+  //   );
+  // }
 
   const [groups, highlightData] = await Promise.all(promises);
   console.log("🚀 ~ groups:", groups);
@@ -126,9 +126,9 @@ export default async function IndividualMinistries({
           </div>
         </div>
 
-        {params?.id == "254955" && highlightData[0] && (
+        {/* {params?.id == "254955" && highlightData[0] && (
           <MinistryHighlights highlightData={highlightData[0]} />
-        )}
+        )} */}
       </div>
     )
   );

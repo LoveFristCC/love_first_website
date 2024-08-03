@@ -2,10 +2,10 @@ import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getPcData } from "@/app/lib/getPcData";
-import { sanityFetch } from "@/sanity/lib/fetch";
-import { childrenMinistryHighlightsQuery } from "@/sanity/lib/queries";
-import MinistryHighlights from "@/components/ministryHighlights/MinistryHighlight";
-import ChildrenLessonPlans from "@/components/ministryHighlights/ChildrenLessonPlans";
+// import { sanityFetch } from "@/sanity/lib/fetch";
+// import { childrenMinistryHighlightsQuery } from "@/sanity/lib/queries";
+// import MinistryHighlights from "@/components/ministryHighlights/MinistryHighlight";
+// import ChildrenLessonPlans from "@/components/ministryHighlights/ChildrenLessonPlans";
 
 type Props = {
   params: { id: string };
@@ -47,13 +47,13 @@ export default async function IndividualOutreach({
 
   const promises = [getPcData(url)];
 
-  if (params?.id == "158867") {
-    promises.push(
-      sanityFetch<any>({
-        query: childrenMinistryHighlightsQuery,
-      })
-    );
-  }
+  // if (params?.id == "158867") {
+  //   promises.push(
+  //     sanityFetch<any>({
+  //       query: childrenMinistryHighlightsQuery,
+  //     })
+  //   );
+  // }
 
   const [groups, highlightData] = await Promise.all(promises);
 
@@ -125,14 +125,14 @@ export default async function IndividualOutreach({
             )}
           </div>
         </div>
-        {params?.id == "158867" && highlightData?.childrenMinistryEvents[0] && (
+        {/* {params?.id == "158867" && highlightData?.childrenMinistryEvents[0] && (
           <MinistryHighlights
             highlightData={highlightData?.childrenMinistryEvents[0]}
           />
         )}
         {params?.id == "158867" && highlightData?.childrenLessons[0] && (
           <ChildrenLessonPlans lessonPlans={highlightData?.childrenLessons} />
-        )}
+        )} */}
       </div>
     )
   );
