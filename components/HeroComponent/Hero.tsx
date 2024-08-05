@@ -42,6 +42,9 @@ const Hero = ({ serviceTime }: { serviceTime: string }) => {
         <Link href="/watch-online" className="watchOnline">
           Watch Online
         </Link>
+        <Link href="/bible-study" className="watchOnline">
+          Bible Study Notes
+        </Link>
       </div>
     </section>
   );

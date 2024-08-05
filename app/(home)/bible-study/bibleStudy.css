@@ -1,0 +1,139 @@
+/* General Reset and Box-Sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container Styling */
+.bibleStudyNotes {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f0f0f0; /* Light grey background for the entire page */
+}
+
+/* Header Section Styling */
+.bibleStudyHeader {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+
+.bibleStudyHeader::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+  z-index: 1;
+}
+
+.bibleStudyHeader img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.bibleStudyHeaderContent {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  color: #f9f9f9; /* Light color for contrast */
+  background: rgba(0, 0, 0, 0.7); /* Darker background for readability */
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 2;
+  text-align: center; /* Center text alignment */
+}
+
+.bibleStudyHeaderContent h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.bibleStudyHeaderContent p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Notes Section Styling */
+.notesSection {
+  padding: 40px;
+  background-color: #ffffff; /* White background for notes section */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 1200px;
+  margin: 20px auto 0;
+}
+
+.notesSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: #222; /* Slightly darker text for better readability */
+  text-align: center;
+  line-height: 1.4;
+}
+
+.notesSection div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.notesSection a {
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  color: #5d05a7;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    transform 0.3s;
+}
+
+.notesSection a:hover {
+  background-color: #5d05a7;
+  color: #ffffff;
+  transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .bibleStudyHeaderContent {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .bibleStudyHeaderContent h1 {
+    font-size: 2.2rem;
+  }
+
+  .notesSection h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bibleStudyHeaderContent {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .bibleStudyHeaderContent h1 {
+    font-size: 1.8rem;
+  }
+
+  .notesSection h2 {
+    font-size: 1.4rem;
+  }
+}

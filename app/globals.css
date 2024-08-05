@@ -16,7 +16,7 @@
 
 header {
   width: 100%;
-  padding: 15px 50px;
+  padding: 15px 10px 15px 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,14 +38,14 @@ main {
   z-index: 1;
 }
 
-nav {
-  width: 75%;
-}
-
 .homeNav {
   background: transparent;
   box-shadow: none;
   color: #fff;
+}
+
+nav {
+  width: 75%;
 }
 
 nav ul {
@@ -53,6 +53,7 @@ nav ul {
   justify-content: space-between;
   width: 100%;
   font-weight: 500;
+  gap: 0 15px;
   text-transform: uppercase;
 }
 
@@ -76,11 +77,11 @@ nav ul li ul {
   box-shadow: var(--shadow-3);
   border-radius: 8px;
   padding: 0 5px;
-  width: 100%;
+  width: 200%;
   min-width: fit-content;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-20px);
+  transform: translateY(-20px) translateX(-25%);
   transition:
     height 0.3s ease,
     transform 0.3s ease,
@@ -92,12 +93,13 @@ nav ul li:hover ul {
   min-height: 50px;
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateY(0) translateX(-25%);
 }
 
 nav ul li ul li {
   width: 100%;
   padding: 10px 20px;
+  font-size: 16px;
 }
 
 nav ul li ul li a {
@@ -120,6 +122,7 @@ nav ul li .desktopNavSpan {
   padding: 10px 20px;
   color: #fff;
   position: relative;
+  white-space: nowrap;
   transition:
     color 0.3s ease,
     transform 0.3s ease,
@@ -296,6 +299,10 @@ footer {
 .footerSvg.path-pastors-footer,
 .footerSvg.path-prayer-footer {
   background: #f9f9f9;
+}
+
+.footerSvg.path-study-footer {
+  background: #f0f0f0;
 }
 
 .footerContent {

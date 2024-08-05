@@ -20,6 +20,8 @@ export default function Footer() {
         return "pastors-footer";
       case "/prayer":
         return "prayer-footer";
+      case "/bible-study":
+        return "study-footer";
       // Add more cases as needed
       default:
         return "default-footer";
@@ -51,6 +53,7 @@ export default function Footer() {
           </div>
           <div className="footerLinks">
             <p>Connect</p>
+            <Link href="/connect">All Groups</Link>
             <Link href="/connect/creative-arts">Creative Arts</Link>
             <Link href="/connect/love-groups">Love Groups</Link>
             <Link href="/connect/media-team">Media Team</Link>
@@ -74,6 +77,14 @@ export default function Footer() {
             <Link href="/give">Give</Link>
             <Link href="/prayer">Need Prayer</Link>
             <Link href="/contact">Contact</Link>
+          </div>
+          <div className="footerLinks">
+            <p>Resources</p>
+            <Link href="/BABY-DEDICATION-REQUEST.pdf">
+              Baby Dedication form
+            </Link>
+            <Link href="/Minor-Baptism-Consent.pdf">Baptism Consent form</Link>
+            <Link href="/bible-study">Bible Study Notes</Link>
             <Link
               href="https://docs.google.com/forms/d/e/1FAIpQLSd6ZCSKtE1leLhUPuvyAoUNXwxRWq2HpY4F9oBiRJ8eWhkaTA/viewform"
               rel="noreferrer noopener"

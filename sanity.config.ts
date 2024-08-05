@@ -23,6 +23,7 @@ import leaders from "@/sanity/schemas/documents/leaders";
 import teenHighlights from "@/sanity/schemas/documents/teenMinistry";
 import childrenHighlights from "@/sanity/schemas/documents/childrensMinistry";
 import childrenLessons from "@/sanity/schemas/documents/childrenLessons";
+import bibleStudyNotes from "@/sanity/schemas/documents/bibleStudyNotes";
 
 import mainPage from "@/sanity/schemas/collections/mainPage";
 import settings from "@/sanity/schemas/singletons/settings";
@@ -46,6 +47,7 @@ export default defineConfig({
       teenHighlights,
       childrenHighlights,
       childrenLessons,
+      bibleStudyNotes,
     ],
   },
   plugins: [

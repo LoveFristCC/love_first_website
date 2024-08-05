@@ -10,7 +10,7 @@ export default function Header() {
 
   useEffect(() => {
     const updateMobile = () => {
-      setMobile(window.innerWidth < 1000 ? true : false);
+      setMobile(window.innerWidth < 1200 ? true : false);
     };
 
     updateMobile();

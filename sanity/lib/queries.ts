@@ -87,6 +87,17 @@ export const teenMinistryHighlightsQuery = groq`
     eventImages
   }
 `;
+
+export const bibleStudyNotes = groq`
+*[_type == "bibleStudyNotes"] | order(_createdAt desc) [0..7] {
+  _id,
+  title,
+  studyNotes {
+  "notes": asset->url
+  },
+  _createdAt
+}
+`;
 export const childrenMinistryHighlightsQuery = groq`
 {
 "childrenLessons": *[_type == "childrenBibleStudy"] | order(_createdAt desc) [0...3] {
