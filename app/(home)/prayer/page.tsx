@@ -2,6 +2,7 @@ import Image from "next/image";
 import "./prayer.css";
 import type { Metadata } from "next";
 import YoutubeVideo from "./Youtube";
+import PrayerForm from "./PrayerForm";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -14,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Prayer() {
   return (
-    <div>
+    <>
       <section className="headerHero">
         <div className="headerContent">
           <h1>
@@ -70,46 +71,7 @@ export default async function Prayer() {
             offering spiritual support and encouragement.
           </p>
         </div>
-        <div className="formContent">
-          <form className="prayerForm">
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Your Name"
-              required
-            />
-
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Your Email"
-              required
-            />
-
-            <label htmlFor="phone">Phone:</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="Your Phone Number"
-            />
-
-            <label htmlFor="prayerRequest">Prayer Request:</label>
-            <textarea
-              id="prayerRequest"
-              name="prayerRequest"
-              rows={6}
-              placeholder="Your Prayer Request"
-              required
-            ></textarea>
-
-            <button type="submit">Submit Prayer Request</button>
-          </form>
-        </div>
+        <PrayerForm />
       </section>
 
       <section className="dailyPrayerSection">
@@ -132,6 +94,6 @@ export default async function Prayer() {
           is welcome.
         </p>
       </section>
-    </div>
+    </>
   );
 }
