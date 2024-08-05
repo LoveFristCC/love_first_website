@@ -34,7 +34,7 @@ export default async function Events() {
           <h1>Bible Study Notes</h1>
           <p>
             Access and download the notes from our Wednesday Night Bible
-            studies. Dive deeper into the week's lesson and enrich your
+            studies. Dive deeper into the week&apos;s lesson and enrich your
             spiritual journey.
           </p>
         </div>
