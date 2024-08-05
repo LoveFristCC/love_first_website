@@ -196,8 +196,8 @@ export default function PrayerForm() {
           <div className="modalContent">
             <h2>Thank You For Submitting Your Prayer Request.</h2>
             <p>
-              Your request will be added to the church’s prayer list. God is
-              ABLE!
+              Your request will be added to the church&apos;s prayer list. God
+              is ABLE!
             </p>
             <p>
               You are also invited to join Pastor Jomo weekday mornings for
@@ -207,7 +207,7 @@ export default function PrayerForm() {
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                Pastor Jomo's Facebook
+                Pastor Jomo&apos;s Facebook
               </Link>
               .
             </p>
