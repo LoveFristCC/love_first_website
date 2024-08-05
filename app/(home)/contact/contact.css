@@ -108,6 +108,7 @@
 }
 
 .contactFormSection {
+  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -296,4 +297,82 @@
 
 .contactSocialIconsContainer a:hover svg {
   fill: rgba(93, 5, 167, 0.9);
+}
+
+/* Modal Overlay */
+.contactModalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.contactModalContent {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Header Styling */
+.contactModalContent h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Paragraph Styling */
+.contactModalContent p {
+  margin-bottom: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Link Styling */
+.contactModalContent a {
+  color: #6200ea;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contactModalContent a:hover {
+  text-decoration: underline;
+}
+
+/* Close Button Styling */
+.contactModalContent button {
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.contactModalContent button:hover {
+  background-color: #3700b3;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

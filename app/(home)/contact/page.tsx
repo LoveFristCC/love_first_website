@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import "./contact.css";
 import type { Metadata } from "next";
+import ContactForm from "./ContactForm";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -68,46 +69,7 @@ export default async function Contact() {
             important to us!
           </p>
         </div>
-        <form className="contactForm">
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your Name"
-            required
-          />
-
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Your Email"
-            required
-          />
-
-          <label htmlFor="phone">Phone:</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="Your Phone Number"
-          />
-
-          <label htmlFor="message">Message:</label>
-          <textarea
-            id="message"
-            name="message"
-            rows={6}
-            placeholder="Your Message"
-            required
-          ></textarea>
-
-          <button className="contactFormButton" type="submit">
-            Send Message
-          </button>
-        </form>
+        <ContactForm />
       </section>
 
       <section className="contactSocialLinks">

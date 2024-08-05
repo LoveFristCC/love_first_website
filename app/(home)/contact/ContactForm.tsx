@@ -3,7 +3,7 @@
 import React, { useState, FormEvent } from "react";
 import Link from "next/link";
 
-export default function PrayerForm() {
+export default function ContactForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [showThankYou, setShowThankYou] = useState<boolean>(false);
@@ -11,13 +11,11 @@ export default function PrayerForm() {
     name: "",
     email: "",
     phone: "",
-    prayerSubject: "",
     message: "",
   });
   const [fieldErrors, setFieldErrors] = useState({
     name: "",
     email: "",
-    prayerRequest: "",
     message: "",
   });
 
@@ -39,12 +37,8 @@ export default function PrayerForm() {
     }
 
     if (!formData.message.trim()) {
-      errors.prayerRequest = "Prayer request is required.";
+      errors.message = "Prayer request is required.";
       isValid = false;
-    }
-
-    if (!formData.prayerSubject) {
-      errors.prayerSubject = "Prayer Subject is required.";
     }
 
     setFieldErrors(errors);
@@ -57,7 +51,6 @@ export default function PrayerForm() {
     setFieldErrors({
       name: "",
       email: "",
-      prayerRequest: "",
       message: "",
     }); // Clear field errors
 
@@ -90,7 +83,6 @@ export default function PrayerForm() {
         name: "",
         email: "",
         phone: "",
-        prayerSubject: "",
         message: "",
       });
       setShowThankYou(true);
@@ -112,9 +104,8 @@ export default function PrayerForm() {
   }
 
   return (
-    <div className="formContent">
-      {error && <div style={{ color: "red" }}>{error}</div>}
-      <form onSubmit={onSubmit} className="prayerForm">
+    <>
+      <form onSubmit={onSubmit} className="contactForm">
         <label htmlFor="name">Name:</label>
         <input
           type="text"
@@ -153,69 +144,42 @@ export default function PrayerForm() {
           onChange={handleChange}
         />
 
-        <label htmlFor="prayerSubject">How can we pray for you?</label>
-        <select
-          id="prayerSubject"
-          name="prayerSubject"
-          value={formData.prayerSubject}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Select an option</option>
-          <option value="ACCEPT JESUS AS MY SAVIOR">
-            ACCEPT JESUS AS MY SAVIOR
-          </option>
-          <option value="HEALING">HEALING</option>
-          <option value="FINANCES">FINANCES</option>
-          <option value="JOB">JOB</option>
-          <option value="MARRIAGE">MARRIAGE</option>
-          <option value="OTHER">OTHER</option>
-        </select>
-
-        <label htmlFor="message">Prayer Request:</label>
+        <label htmlFor="message">Message:</label>
         <textarea
           id="message"
           name="message"
           rows={6}
-          placeholder="Your Prayer Request"
+          placeholder="Your Message"
           value={formData.message}
           onChange={handleChange}
           required
         ></textarea>
-        {fieldErrors.prayerRequest && (
-          <div style={{ color: "red" }}>{fieldErrors.prayerRequest}</div>
+        {fieldErrors.message && (
+          <div style={{ color: "red" }}>{fieldErrors.message}</div>
         )}
 
-        <button disabled={isLoading} type="submit">
-          {isLoading ? "Submitting..." : "Submit Prayer Request"}
+        <button
+          disabled={isLoading}
+          type="submit"
+          className="contactFormButton"
+        >
+          {isLoading ? "Submitting..." : "Send Message"}
         </button>
       </form>
 
       {showThankYou && (
-        <div className="modalOverlay">
-          <div className="modalContent">
-            <h2>Thank You For Submitting Your Prayer Request.</h2>
+        <div className="contactModalOverlay">
+          <div className="contactModalContent">
+            <h2>Thank You For Your Inquiry!</h2>
             <p>
-              Your request will be added to the church&apos;s prayer list. God
-              is ABLE!
-            </p>
-            <p>
-              You are also invited to join Pastor Jomo weekday mornings for
-              prayer at{" "}
-              <Link
-                href="https://www.facebook.com/pastorjomo/"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                Pastor Jomo&apos;s Facebook
-              </Link>
-              .
+              We appreciate you reaching out to us. Your message has been
+              received, and our team will get back to you as soon as possible.
             </p>
 
             <button onClick={() => setShowThankYou(false)}>Close</button>
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
