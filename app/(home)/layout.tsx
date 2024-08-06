@@ -2,11 +2,9 @@ import "../globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import { VisualEditing, toPlainText } from "next-sanity";
 import { Inter } from "next/font/google";
 import { draftMode } from "next/headers";
-import { Suspense } from "react";
 import AlertBanner from "./alert-banner";
 import type { SettingsQueryResult } from "@/sanity.types";
 import * as demo from "@/sanity/lib/demo";
@@ -15,15 +13,6 @@ import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-// const Footer = dynamic(() => import("@/components/Footer"), {
-//   // loading: () => <p>Loading...</p>,
-//   ssr: false,
-// });
-// const Header = dynamic(() => import("@/components/Header"), {
-//   // loading: () => <p>Loading...</p>,
-//   ssr: false,
-// });
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch<SettingsQueryResult>({
@@ -79,9 +68,8 @@ export default function RootLayout({
           {draftMode().isEnabled && <AlertBanner />}
           <Header />
           <main>{children}</main>
-          {/* <Suspense> */}
+
           <Footer />
-          {/* </Suspense> */}
         </section>
         {draftMode().isEnabled && <VisualEditing />}
         <SpeedInsights />
