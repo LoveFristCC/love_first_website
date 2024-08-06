@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Visit Love First Christian Center - Riverview, FL",
+    title: "Visit Us - Love First Christian Center, Riverview, FL",
     description:
       "Discover Love First Christian Center in Riverview, FL. Find our address, contact information, service times, and accessibility details. Plan your visit today!",
   };

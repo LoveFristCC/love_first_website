@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Online Live & On-Demand Services - Love First Christian Center",
+    title: "Online Services - Love First Christian Center",
     description:
       "Join Love First Christian Center services from anywhere! Stream live every Sunday and Wednesday or watch past sermons on-demand. Engage in uplifting worship online.",
   };

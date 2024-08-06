@@ -5,8 +5,7 @@ import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title:
-      "Ways to Give - Love First Christian Center | Online, Text, Cash App & Mail",
+    title: "Ways to Give - Love First Christian Center | Online, Text & Mail",
     description:
       "Explore how you can support Love First Christian Center through online donations, text, Cash App, Zelle, or mail. Your contributions help fund community programs and outreach. Learn more and make a difference today.",
   };
@@ -66,6 +65,8 @@ export default async function Give() {
               <a
                 href="https://lovefirst.churchcenter.com/giving"
                 title="Give Online to Love First Christian Center"
+                target="_blank"
+                rel="noreferrer noopener"
               >
                 online giving page
               </a>

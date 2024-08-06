@@ -6,8 +6,7 @@ import PrayerForm from "./PrayerForm";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title:
-      "Seek Prayer & Support - Love First Christian Center Daily Prayer Line",
+    title: "Prayer & Support - Love First Christian Center",
     description:
       "Find spiritual support at Love First Christian Center. Join daily prayer sessions with Pastor Jomo, submit your prayer requests, and connect with our community.",
   };

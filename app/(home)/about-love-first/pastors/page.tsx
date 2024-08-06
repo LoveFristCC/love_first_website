@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Meet the Team at Love First - Pastors, Staff, & Ministers",
+    title: "Meet the Team - Pastors, Staff & Ministers at Love First",
     description:
       "Meet the dedicated team at Love First Christian Center. Discover our pastors, staff, and ministers and learn how they support and lead our community with passion.",
   };
