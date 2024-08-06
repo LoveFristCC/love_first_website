@@ -1,5 +1,5 @@
 import "../globals.css";
-
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
@@ -86,6 +86,7 @@ export default function RootLayout({
         {draftMode().isEnabled && <VisualEditing />}
         <SpeedInsights />
       </body>
+      <GoogleAnalytics gaId="G-DC6EY20BM0" />
     </html>
   );
 }
