@@ -48,7 +48,7 @@ export async function POST(req: any) {
       return [
         {
           name: "General Inquiry",
-          address: "info@lovefirstchristiancenter.come",
+          address: "info@lovefirstchristiancenter.com",
         },
       ];
     } else {
