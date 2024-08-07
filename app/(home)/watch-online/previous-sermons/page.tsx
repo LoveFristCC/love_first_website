@@ -16,7 +16,6 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function PreviousSermons() {
   const seriesData: any = await sanityFetch({ query: youtubeSeries });
-  console.log("🚀 ~ seriesData:", seriesData);
   const latestSeries = seriesData[1];
   const youTubeVideos = latestSeries.youtubeVideos;
   const prevSermonsHeader = latestSeries.seriesImage;

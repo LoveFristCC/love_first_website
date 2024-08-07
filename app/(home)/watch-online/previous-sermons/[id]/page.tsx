@@ -46,8 +46,6 @@ export default async function IndividualSermons({
     params: { slug: params.id },
   });
 
-  console.log("🚀 ~ seriesData:", seriesData);
-
   return (
     <div>
       <section className="individual-series-header">

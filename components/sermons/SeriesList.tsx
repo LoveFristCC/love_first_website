@@ -30,7 +30,6 @@ interface SeriesListProps {
 }
 
 const SeriesList: React.FC<SeriesListProps> = ({ series }) => {
-  console.log("🚀 ~ series:", series);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 

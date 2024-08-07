@@ -25,7 +25,6 @@ const IndividualSermonYouTubePlayer = ({
     videoSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  console.log("🚀 ~ featuredVideo:", featuredVideo);
   return (
     <section className="individual-sermon-content">
       <div className="individual-video-section" ref={videoSectionRef}>
