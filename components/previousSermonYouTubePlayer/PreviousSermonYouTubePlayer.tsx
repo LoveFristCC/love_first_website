@@ -21,7 +21,7 @@ const PreviousSermonYouTubePlayer: React.FC<any> = ({
   };
   return (
     <div className="sermon-content">
-      <div className="video-container" onClick={handleLoadVideo}>
+      <div className="video-container" onClick={handleLoadVideo} role="button">
         {loadVideo ? (
           <iframe
             src={`https://www.youtube.com/embed/${featuredVideo.youtubeId}?autoplay=1&rel=0&modestbranding=1`}

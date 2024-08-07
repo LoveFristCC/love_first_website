@@ -67,6 +67,7 @@ const IndividualSermonYouTubePlayer = ({
                   }}
                   className="individual-video-container"
                   onClick={handleLoadVideo}
+                  role="button"
                 >
                   <Image
                     src={`https://img.youtube.com/vi/${featuredVideo.youtubeId}/maxresdefault.jpg`}

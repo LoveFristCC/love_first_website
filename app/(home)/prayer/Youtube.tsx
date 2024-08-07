@@ -6,7 +6,11 @@ const PayerYoutubeVideo = () => {
   const [loadVideo, setLoadVideo] = useState(false);
 
   return (
-    <div className="videoContent" onClick={() => setLoadVideo(true)}>
+    <div
+      className="videoContent"
+      onClick={() => setLoadVideo(true)}
+      role="button"
+    >
       <h2>Need Immediate Prayer? Watch and Pray with Us Now</h2>
       {loadVideo ? (
         <iframe

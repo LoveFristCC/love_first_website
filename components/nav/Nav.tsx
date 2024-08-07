@@ -8,7 +8,9 @@ export default function Nav() {
     <nav className="links" aria-label="Main Navigation">
       <ul className="navDropdown">
         <li className={pathname.includes("about-love-first") ? "active" : ""}>
-          <span className="desktopNavSpan">About ▾ </span>
+          <span className="desktopNavSpan" role="button">
+            About ▾{" "}
+          </span>
           <ul aria-label="About Love First">
             <li>
               <Link
@@ -56,7 +58,9 @@ export default function Nav() {
           </ul>
         </li>
         <li className={pathname.includes("connect") ? "active" : ""}>
-          <span className="desktopNavSpan">Connect ▾</span>
+          <span className="desktopNavSpan" role="button">
+            Connect ▾
+          </span>
           <ul aria-label="Connect with Us">
             <li>
               <Link
@@ -171,7 +175,9 @@ export default function Nav() {
           </ul>
         </li>
         <li className={`online ${pathname.includes("events") ? "active" : ""}`}>
-          <span className="desktopNavSpan">Events ▾ </span>
+          <span className="desktopNavSpan" role="button" aria-haspopup>
+            Events ▾{" "}
+          </span>
           <ul aria-label="Upcoming Events">
             <li>
               <Link
@@ -200,7 +206,9 @@ export default function Nav() {
         <li
           className={`online ${pathname.includes("watch-online") ? "active" : ""}`}
         >
-          <span className="desktopNavSpan">Online ▾ </span>
+          <span className="desktopNavSpan" role="button">
+            Online ▾{" "}
+          </span>
           <ul aria-label="Watch Online">
             <li>
               <Link
@@ -232,45 +240,6 @@ export default function Nav() {
             </li>
           </ul>
         </li>
-        {/* <li
-          className={`online ${pathname.includes("resources") ? "active" : ""}`}
-        >
-          <span className="desktopNavSpan">Resources ▾ </span>
-          <ul aria-label="Church Resources">
-            <li>
-              <Link
-                className={
-                  pathname === "/resources/bible-study-notes"
-                    ? "activeDropdownLink"
-                    : ""
-                }
-                href="/resources/bible-study-notes"
-                aria-current={
-                  pathname === "/resources/bible-study-notes"
-                    ? "page"
-                    : undefined
-                }
-              >
-                Bible Study Notes
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={
-                  pathname === "/resources/church-forms"
-                    ? "activeDropdownLink"
-                    : ""
-                }
-                href="/resources/church-forms"
-                aria-current={
-                  pathname === "/resources/church-forms" ? "page" : undefined
-                }
-              >
-                Church Forms
-              </Link>
-            </li>
-          </ul>
-        </li> */}
         <li className={pathname === "/prayer" ? "active" : ""}>
           <Link
             className="desktopNavSpan"

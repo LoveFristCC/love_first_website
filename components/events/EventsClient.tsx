@@ -89,6 +89,7 @@ const EventsClient = ({
                         key={i}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={headline.attributes.name}
                       >
                         <p className="eventHeader">
                           {headline.attributes.name}
