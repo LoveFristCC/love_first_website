@@ -57,11 +57,9 @@ const ministries = [
   },
 ];
 
-const getMainImageData = () => {
-  const now = new Date();
-  const day = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
-  const date = now.getDate();
-  const week = Math.ceil(date / 7);
+const getMainImageData = (date: any) => {
+  const newDate = date.getDate();
+  const week = Math.ceil(newDate / 7);
 
   if (week === 1) {
     // First Friday
@@ -70,7 +68,7 @@ const getMainImageData = () => {
     );
   } else if (week === 2) {
     // Second Saturday
-    const month = now.getMonth();
+    const month = date.getMonth();
     if (month % 2 === 0) {
       // Even months
       return ministries.find((ministry) => ministry.alt === "Womens Ministry");
@@ -92,15 +90,13 @@ const getMainImageData = () => {
   }
 };
 
-const CommunitySection = () => {
+const CommunitySection = ({ date }: { date: any }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const [mainImage, setMainImage] = useState<any>(getMainImageData());
+  const [mainImage, setMainImage] = useState<any>(getMainImageData(date));
   const [remainingMinistries, setRemainingMinistries] = useState<any>([]);
 
   useEffect(() => {
-    const mainImageData: any = getMainImageData();
-    setMainImage(mainImageData);
     setRemainingMinistries(
       ministries.filter((ministry) => ministry.id !== mainImage.id)
     );

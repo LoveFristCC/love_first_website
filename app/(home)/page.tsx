@@ -1,18 +1,16 @@
-import dynamic from "next/dynamic";
 import Hero from "@/components/HeroComponent/Hero";
 import SermonSection from "@/components/sermons/SermonSection";
 import WelcomeSection from "@/components/welcome/WelcomeSection";
 import EventsPage from "@/components/events/EventsPage";
-import CommunitySection from "@/components/community/CommunitySection";
-import { Suspense } from "react";
+// import CommunitySection from "@/components/community/CommunitySection";
+import dynamic from "next/dynamic";
 
-// const CommunitySection = dynamic(
-//   () => import("@/components/community/CommunitySection"),
-//   {
-//     loading: () => <p>Loading...</p>,
-//     ssr: false,
-//   }
-// );
+const CommunitySection = dynamic(
+  () => import("@/components/community/CommunitySection"),
+  {
+    ssr: false,
+  }
+);
 
 export default async function Page() {
   const date = new Date();
@@ -24,10 +22,9 @@ export default async function Page() {
     <div className="mainPage">
       <Hero serviceTime={serviceTime} />
 
-      {/* <Suspense> */}
       <WelcomeSection serviceTime={serviceTime} />
-      <CommunitySection />
-      {/* </Suspense> */}
+
+      <CommunitySection date={date} />
 
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -41,10 +38,8 @@ export default async function Page() {
         ></path>
       </svg>
 
-      {/* <Suspense> */}
       <SermonSection path="home" />
       <EventsPage />
-      {/* </Suspense> */}
     </div>
   );
 }
