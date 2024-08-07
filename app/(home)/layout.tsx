@@ -1,5 +1,5 @@
 import "../globals.css";
-
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { VisualEditing, toPlainText } from "next-sanity";
@@ -13,7 +13,6 @@ import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import GoogleAnalyticsClient from "./GoogleAnalytics";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch<SettingsQueryResult>({
@@ -74,7 +73,7 @@ export default function RootLayout({
         </section>
         {draftMode().isEnabled && <VisualEditing />}
         <SpeedInsights />
-        <GoogleAnalyticsClient />
+        <GoogleAnalytics gaId="G-DC6EY20BM0" />
       </body>
     </html>
   );

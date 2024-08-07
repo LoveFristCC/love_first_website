@@ -55,7 +55,6 @@ export default async function IndividualMinistries({
   }
 
   const [groups, highlightData] = await Promise.all(promises);
-  console.log("🚀 ~ groups:", groups);
 
   const groupName = groups?.data?.attributes.name;
   const groupImage =
