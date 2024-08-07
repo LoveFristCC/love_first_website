@@ -27,48 +27,26 @@ export const postQuery = groq`*[_type == "post" && slug.current == $slug] [0] {
   ${postFields}
 }`;
 
-export const seriesQuery = groq`*[_type == "seriesCollection"] {
-  featuredVideo {
-    title,
+export const youtubeSeries = groq`*[_type == "youtubeSermons"] | order(_createdAt desc) {
+  title,
+  route,
+  seriesImage,
+  youtubeVideos[]{
+    sermoneTitle,
     speaker,
-    serviceTitle,
     youtubeId
-  },
-  series[] {
-    title,
-    route,
-    seriesImage,
-    youtubeVideos[] {
-      title,
-      speaker,
-      youtubeId
-    }
   }
 }`;
 
-export const pastSeries = groq`*[_type == "seriesCollection"] {
-  series[] {
-    title,
-    route,
-    seriesImage,
-    youtubeVideos[] {
-      title,
-      speaker,
-      youtubeId
-    }
-  }
-}`;
-
-export const individualPastSeries = groq`*[_type == "seriesCollection"] {
-  series[route == $slug] {
-    title,
-    route,
-    seriesImage,
-    youtubeVideos[] {
-      title,
-      speaker,
-      youtubeId
-    }
+export const individualYoutubeSeries = groq`*[_type == "youtubeSermons" && route == $slug][0] {
+  _id,
+  title,
+  route,
+  seriesImage,
+  youtubeVideos[]{
+    sermoneTitle,
+    speaker,
+    youtubeId
   }
 }`;
 

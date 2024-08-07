@@ -1,22 +1,10 @@
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/utils";
 import Image from "next/image";
 import { sanityFetch } from "@/sanity/lib/fetch";
-import { pastSeries } from "@/sanity/lib/queries";
+import { youtubeSeries } from "@/sanity/lib/queries";
 import type { Metadata } from "next";
 import PreviousSermonYouTubePlayer from "@/components/previousSermonYouTubePlayer/PreviousSermonYouTubePlayer";
-
-// const PreviousSermonYouTubePlayer = dynamic(
-//   () =>
-//     import(
-//       "@/components/previousSermonYouTubePlayer/PreviousSermonYouTubePlayer"
-//     ),
-//   {
-//     loading: () => <p>Loading...</p>,
-//     ssr: false,
-//   }
-// );
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -27,8 +15,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function PreviousSermons() {
-  const seriesData: any = await sanityFetch({ query: pastSeries });
-  const latestSeries = seriesData[0]?.series[seriesData[0]?.series?.length - 1];
+  const seriesData: any = await sanityFetch({ query: youtubeSeries });
+  console.log("🚀 ~ seriesData:", seriesData);
+  const latestSeries = seriesData[1];
   const youTubeVideos = latestSeries.youtubeVideos;
   const prevSermonsHeader = latestSeries.seriesImage;
   const prevSeriesTitle = latestSeries.title;
@@ -60,7 +49,7 @@ export default async function PreviousSermons() {
       <section className="previous-sermons-section">
         <h2>View Sermons from Our Previous Series</h2>
         <div className="previous-sermons-list">
-          {seriesData[0]?.series?.map(
+          {seriesData.map(
             (
               item: { seriesImage: string; route: string; title: string },
               index: number

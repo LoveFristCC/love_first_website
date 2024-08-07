@@ -1,29 +1,15 @@
-import dynamic from "next/dynamic";
 import { sanityFetch } from "@/sanity/lib/fetch";
-import { seriesQuery } from "@/sanity/lib/queries";
-import type { SeriesQueryResult } from "@/sanity.types";
-import Link from "next/link";
+import { youtubeSeries } from "@/sanity/lib/queries";
 import SeriesList from "./SeriesList";
 import FeaturedVideo from "./FeaturedVideo";
 
-// const SeriesList = dynamic(() => import("./SeriesList"), {
-//   loading: () => <p>Loading...</p>,
-//   ssr: false,
-// });
-// const FeaturedVideo = dynamic(() => import("./FeaturedVideo"), {
-//   loading: () => <p>Loading...</p>,
-//   ssr: false,
-// });
-
 const SermonSection = async ({ path }: { path: string }) => {
-  const mainData = await sanityFetch<SeriesQueryResult>({
-    query: seriesQuery,
+  const mainData = await sanityFetch<any>({
+    query: youtubeSeries,
     stega: false,
   });
 
   if (!mainData || mainData.length === 0) return null;
-
-  const { featuredVideo, series } = mainData[0];
 
   return (
     <section className="sermon-section">
@@ -39,8 +25,8 @@ const SermonSection = async ({ path }: { path: string }) => {
         </>
       )}
 
-      <FeaturedVideo featuredVideo={featuredVideo} />
-      {path === "home" && <SeriesList series={series} />}
+      <FeaturedVideo featuredVideo={mainData[0]} />
+      {path === "home" && <SeriesList series={mainData} />}
     </section>
   );
 };

@@ -12,6 +12,9 @@ type FeaturedVideoProps = {
 };
 
 const FeaturedVideo: React.FC<any> = ({ featuredVideo }) => {
+  const latestSermonDetails =
+    featuredVideo.youtubeVideos[featuredVideo.youtubeVideos.length - 1];
+
   const [loadVideo, setLoadVideo] = useState(false);
   const handleLoadVideo = () => {
     setLoadVideo(true);
@@ -21,7 +24,7 @@ const FeaturedVideo: React.FC<any> = ({ featuredVideo }) => {
       <div className="video-container" onClick={handleLoadVideo}>
         {loadVideo ? (
           <iframe
-            src={`https://www.youtube.com/embed/${featuredVideo.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+            src={`https://www.youtube.com/embed/${latestSermonDetails.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
             title={`${featuredVideo.title} Sermon`}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -32,8 +35,8 @@ const FeaturedVideo: React.FC<any> = ({ featuredVideo }) => {
         ) : (
           <>
             <Image
-              src={`https://img.youtube.com/vi/${featuredVideo.youtubeId}/maxresdefault.jpg`}
-              alt={`${featuredVideo.serviceTitle} - Love First`}
+              src={`https://img.youtube.com/vi/${latestSermonDetails.youtubeId}/maxresdefault.jpg`}
+              alt={`${featuredVideo.title} - Love First`}
               className={`${featuredVideo.title} - Love First`}
               height={1000}
               width={1000}
@@ -46,9 +49,9 @@ const FeaturedVideo: React.FC<any> = ({ featuredVideo }) => {
         <h3>Sermon Series:</h3>
         <p>{featuredVideo.title}</p>
         <h3>Message Title:</h3>
-        <p>{featuredVideo.serviceTitle}</p>
+        <p>{latestSermonDetails.sermoneTitle}</p>
         <h3>Speaker:</h3>
-        <p>{featuredVideo.speaker}</p>
+        <p>{latestSermonDetails.speaker}</p>
       </div>
     </div>
   );

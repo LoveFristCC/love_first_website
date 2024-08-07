@@ -25,6 +25,7 @@ const IndividualSermonYouTubePlayer = ({
     videoSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  console.log("🚀 ~ featuredVideo:", featuredVideo);
   return (
     <section className="individual-sermon-content">
       <div className="individual-video-section" ref={videoSectionRef}>
@@ -96,7 +97,7 @@ const IndividualSermonYouTubePlayer = ({
                 <h3>Sermon Series:</h3>
                 <p>{currentSeries.title}</p>
                 <h3>Message Title:</h3>
-                <p>{featuredVideo.title}</p>
+                <p>{featuredVideo.sermoneTitle}</p>
                 <h3>Speaker:</h3>
                 <p>{featuredVideo.speaker}</p>
               </motion.div>
@@ -109,7 +110,7 @@ const IndividualSermonYouTubePlayer = ({
       <div className="individual-video-list">
         {currentSeries.youtubeVideos
           .filter((video: any) => video.youtubeId !== featuredVideo.youtubeId)
-          .map((el: { title: string; youtubeId: string }, i: number) => (
+          .map((el: { sermoneTitle: string; youtubeId: string }, i: number) => (
             <div
               key={i}
               className="individual-video-item"
@@ -117,12 +118,12 @@ const IndividualSermonYouTubePlayer = ({
             >
               <Image
                 src={`https://img.youtube.com/vi/${el.youtubeId}/maxresdefault.jpg`}
-                alt={`${el.title} - Love First`}
+                alt={`${el.sermoneTitle} - Love First`}
                 className="thumbnail-image"
                 width={200}
                 height={113}
               />
-              <h3>{el.title}</h3>
+              <h3>{el.sermoneTitle}</h3>
             </div>
           ))}
       </div>

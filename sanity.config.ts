@@ -24,8 +24,7 @@ import teenHighlights from "@/sanity/schemas/documents/teenMinistry";
 import childrenHighlights from "@/sanity/schemas/documents/childrensMinistry";
 import childrenLessons from "@/sanity/schemas/documents/childrenLessons";
 import bibleStudyNotes from "@/sanity/schemas/documents/bibleStudyNotes";
-
-import mainPage from "@/sanity/schemas/collections/mainPage";
+import youtubeSermons from "@/sanity/schemas/collections/youtubeSermons";
 import settings from "@/sanity/schemas/singletons/settings";
 import { resolveHref } from "@/sanity/lib/utils";
 
@@ -41,7 +40,7 @@ export default defineConfig({
   schema: {
     types: [
       settings,
-      mainPage,
+      youtubeSermons,
       leaders,
       events,
       teenHighlights,
