@@ -2,15 +2,7 @@ import Hero from "@/components/HeroComponent/Hero";
 import SermonSection from "@/components/sermons/SermonSection";
 import WelcomeSection from "@/components/welcome/WelcomeSection";
 import EventsPage from "@/components/events/EventsPage";
-// import CommunitySection from "@/components/community/CommunitySection";
-import dynamic from "next/dynamic";
-
-const CommunitySection = dynamic(
-  () => import("@/components/community/CommunitySection"),
-  {
-    ssr: false,
-  }
-);
+import CommunitySection from "@/components/community/CommunitySection";
 
 export default async function Page() {
   const date = new Date();
