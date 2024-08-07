@@ -1,10 +1,14 @@
 import Link from "next/link";
-import VideoComponent from "./VideoComponent";
+// import VideoComponent from "./VideoComponent";
 
 const Hero = ({ serviceTime }: { serviceTime: string }) => {
   return (
     <section className="heroContent">
-      <VideoComponent />
+      <div className="overlay" />
+      <video loop autoPlay muted playsInline preload="auto">
+        <source src="/lfccVideo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div className="headlineContainer">
         <h1>
           Welcome to
