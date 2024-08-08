@@ -5,19 +5,17 @@
 import { visionTool } from "@sanity/vision";
 import { PluginOptions, defineConfig } from "sanity";
 import { unsplashImageAsset } from "sanity-plugin-asset-source-unsplash";
-import {
-  presentationTool,
-  defineDocuments,
-  defineLocations,
-  type DocumentLocation,
-} from "sanity/presentation";
+// import {
+//   presentationTool,
+//   defineDocuments,
+//   defineLocations,
+//   type DocumentLocation,
+// } from "sanity/presentation";
 import { structureTool } from "sanity/structure";
 
 import { apiVersion, dataset, projectId, studioUrl } from "@/sanity/lib/api";
 import { pageStructure, singletonPlugin } from "@/sanity/plugins/settings";
 import { assistWithPresets } from "@/sanity/plugins/assist";
-// import author from "@/sanity/schemas/documents/author";
-// import post from "@/sanity/schemas/documents/post";
 import events from "@/sanity/schemas/documents/events";
 import leaders from "@/sanity/schemas/documents/leaders";
 import teenHighlights from "@/sanity/schemas/documents/teenMinistry";
@@ -26,12 +24,12 @@ import childrenLessons from "@/sanity/schemas/documents/childrenLessons";
 import bibleStudyNotes from "@/sanity/schemas/documents/bibleStudyNotes";
 import youtubeSermons from "@/sanity/schemas/collections/youtubeSermons";
 import settings from "@/sanity/schemas/singletons/settings";
-import { resolveHref } from "@/sanity/lib/utils";
+// import { resolveHref } from "@/sanity/lib/utils";
 
-const homeLocation = {
-  title: "Home",
-  href: "/",
-} satisfies DocumentLocation;
+// const homeLocation = {
+//   title: "Home",
+//   href: "/",
+// } satisfies DocumentLocation;
 
 export default defineConfig({
   basePath: studioUrl,
@@ -50,39 +48,39 @@ export default defineConfig({
     ],
   },
   plugins: [
-    presentationTool({
-      resolve: {
-        mainDocuments: defineDocuments([
-          {
-            route: "/posts/:slug",
-            filter: `_type == "post" && slug.current == $slug`,
-          },
-        ]),
-        locations: {
-          settings: defineLocations({
-            locations: [homeLocation],
-            message: "This document is used on all pages",
-            tone: "caution",
-          }),
-          post: defineLocations({
-            select: {
-              title: "title",
-              slug: "slug.current",
-            },
-            resolve: (doc) => ({
-              locations: [
-                {
-                  title: doc?.title || "Untitled",
-                  href: resolveHref("post", doc?.slug)!,
-                },
-                homeLocation,
-              ],
-            }),
-          }),
-        },
-      },
-      previewUrl: { previewMode: { enable: "/api/draft" } },
-    }),
+    // presentationTool({
+    //   resolve: {
+    //     mainDocuments: defineDocuments([
+    //       {
+    //         route: "/posts/:slug",
+    //         filter: `_type == "post" && slug.current == $slug`,
+    //       },
+    //     ]),
+    //     locations: {
+    //       settings: defineLocations({
+    //         locations: [homeLocation],
+    //         message: "This document is used on all pages",
+    //         tone: "caution",
+    //       }),
+    //       post: defineLocations({
+    //         select: {
+    //           title: "title",
+    //           slug: "slug.current",
+    //         },
+    //         resolve: (doc) => ({
+    //           locations: [
+    //             {
+    //               title: doc?.title || "Untitled",
+    //               href: resolveHref("post", doc?.slug)!,
+    //             },
+    //             homeLocation,
+    //           ],
+    //         }),
+    //       }),
+    //     },
+    //   },
+    //   previewUrl: { previewMode: { enable: "/api/draft" } },
+    // }),
     structureTool({ structure: pageStructure([settings]) }),
     // Configures the global "new document" button, and document actions, to suit the Settings document singleton
     singletonPlugin([settings.name]),

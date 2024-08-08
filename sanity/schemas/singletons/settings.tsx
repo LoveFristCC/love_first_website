@@ -50,34 +50,34 @@ export default defineType({
         }),
       ],
     }),
-    defineField({
-      name: "footer",
-      description:
-        "This is a block of text that will be displayed at the bottom of the page.",
-      title: "Footer Info",
-      type: "array",
-      of: [
-        defineArrayMember({
-          type: "block",
-          marks: {
-            annotations: [
-              {
-                name: "link",
-                type: "object",
-                title: "Link",
-                fields: [
-                  {
-                    name: "href",
-                    type: "url",
-                    title: "Url",
-                  },
-                ],
-              },
-            ],
-          },
-        }),
-      ],
-    }),
+    // defineField({
+    //   name: "footer",
+    //   description:
+    //     "This is a block of text that will be displayed at the bottom of the page.",
+    //   title: "Footer Info",
+    //   type: "array",
+    //   of: [
+    //     defineArrayMember({
+    //       type: "block",
+    //       marks: {
+    //         annotations: [
+    //           {
+    //             name: "link",
+    //             type: "object",
+    //             title: "Link",
+    //             fields: [
+    //               {
+    //                 name: "href",
+    //                 type: "url",
+    //                 title: "Url",
+    //               },
+    //             ],
+    //           },
+    //         ],
+    //       },
+    //     }),
+    //   ],
+    // }),
     defineField({
       name: "ogImage",
       title: "Open Graph Image",
@@ -107,14 +107,7 @@ export default defineType({
         defineField({
           name: "metadataBase",
           type: "url",
-          description: (
-            <a
-              href="https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase"
-              rel="noreferrer noopener"
-            >
-              test
-            </a>
-          ),
+          description: "This is the base URL for the website",
         }),
       ],
     }),
