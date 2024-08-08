@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Love Groups - Love First",
     description:
-      "Join our Love Groups at Love First to build stronger connections within our community. Experience spiritual growth, fellowship, and support through small group gatherings. Sign up today!",
+      "Join Love Groups at Love First to build connections and experience spiritual growth through small group gatherings. Sign up today!",
   };
 }
 

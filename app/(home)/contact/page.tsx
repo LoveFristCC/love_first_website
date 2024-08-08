@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Contact Us - Love First Christian Center",
     description:
-      "Get in touch with Love First Christian Center. Find our address, phone number, and email for inquiries. Our office hours are Monday to Friday, 9 AM to 3 PM, and Sunday, 7:30 AM to 1:30 PM. We're here to assist you!",
+      "Get in touch with Love First Christian Center. Find our address, phone number, and email. Office hours: Mon-Fri 9 AM-3 PM, Sun 7:30 AM-1:30 PM.",
   };
 }
 

@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Volunteer Army - Love First",
     description:
-      "Join the Volunteer Army and make a difference in your community! Discover diverse opportunities to contribute, connect, and grow through impactful volunteer work. Become a part of something greater today.",
+      "Join the Volunteer Army and make a difference! Explore diverse opportunities to contribute, connect, and grow through impactful volunteer work. Be a part of something greater.",
   };
 }
 

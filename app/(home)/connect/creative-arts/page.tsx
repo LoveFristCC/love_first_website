@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Creative Arts - Love First",
     description:
-      "Explore the vibrant world of creative arts at Love First. Discover how our creative arts programs inspire, uplift, and express faith through music, visual arts, drama, and more. Join us in celebrating creativity and spirituality in a welcoming community atmosphere.",
+      "Explore creative arts at Love First. Experience faith through music, visual arts, drama, and more. Join us in celebrating creativity and spirituality.",
   };
 }
 

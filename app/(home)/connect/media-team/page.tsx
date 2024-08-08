@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Media Team - Love First",
     description:
-      "Discover how you can use your media skills to make a difference at Love First. Join our vibrant Media Team and contribute to spreading love and positivity through creative content.",
+      "Use your media skills to make a difference at Love First. Join our Media Team and help spread love and positivity through creative content.",
   };
 }
 

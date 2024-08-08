@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Ways to Give - Love First Christian Center | Online, Text & Mail",
     description:
-      "Explore how you can support Love First Christian Center through online donations, text, Cash App, Zelle, or mail. Your contributions help fund community programs and outreach. Learn more and make a difference today.",
+      "Support Love First Christian Center with online donations, text, Cash App, Zelle, or mail. Your contributions fund community programs and outreach. Learn more and make a difference.",
   };
 }
 

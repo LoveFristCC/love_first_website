@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Ministries - Love First",
     description:
-      "Discover the diverse ministries at Love First, where each service opportunity helps build a stronger, faith-based community. From youth programs to outreach services, find your place to grow and serve.",
+      "Discover diverse ministries at Love First. From youth programs to outreach, find your place to grow and serve in our faith-based community.",
   };
 }
 

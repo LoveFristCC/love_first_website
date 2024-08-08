@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Service Volunteers - Love First",
     description:
-      "Join our dedicated team of service volunteers at Love First and make a meaningful impact in our community. Discover fulfilling opportunities to serve others, grow spiritually, and foster connections with like-hearted individuals. Find your purpose through service and become a vital part of our compassionate community at Love First.",
+      "Join our service volunteers at Love First and make a meaningful impact in our community. Discover opportunities to serve, grow spiritually, and connect with others.",
   };
 }
 

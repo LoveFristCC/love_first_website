@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Connection Opportunities - Love First",
     description:
-      "Explore a variety of connection opportunities at Love First. Our community offers numerous ways for you to get involved, build meaningful relationships, and grow in your faith. From volunteer programs and small group gatherings to worship services and special events, there's something for everyone. Join Love First today and discover how you can connect and serve with love in a welcoming and inclusive environment.",
+      "Explore connection opportunities at Love First. Get involved, build relationships, and grow in faith through our programs and services. Join us today!",
   };
 }
 

@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Previous Sermons - Love First Christian Center",
     description:
-      "Explore past sermons at Love First Christian Center. Listen to inspiring messages and teachings that uplift and strengthen your faith journey. Stay connected with our community and spiritual growth through our archive of previous sermons.",
+      "Explore past sermons at Love First Christian Center. Listen to inspiring messages that uplift and strengthen your faith journey. Stay connected with our community.",
   };
 }
 
