@@ -8,6 +8,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Service Volunteers - Love First",
     description:
       "Join our service volunteers at Love First and make a meaningful impact in our community. Discover opportunities to serve, grow spiritually, and connect with others.",
+    openGraph: {
+      url: `https://www.lfcc.tv/connect/service-volunteers`,
+    },
   };
 }
 

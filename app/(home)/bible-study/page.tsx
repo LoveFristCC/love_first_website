@@ -11,6 +11,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Bible Study Notes - Love First Christian Center",
     description:
       "Download current and archived Bible study notes from our Wednesday Night studies. Deepen your spiritual journey with our collection of in-depth lessons.",
+    openGraph: {
+      url: `https://www.lfcc.tv/bible-study`,
+    },
   };
 }
 

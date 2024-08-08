@@ -8,6 +8,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Ministries - Love First",
     description:
       "Discover diverse ministries at Love First. From youth programs to outreach, find your place to grow and serve in our faith-based community.",
+    openGraph: {
+      url: `https://www.lfcc.tv/connect/ministries`,
+    },
   };
 }
 

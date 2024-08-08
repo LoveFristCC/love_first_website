@@ -9,6 +9,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Contact Us - Love First Christian Center",
     description:
       "Get in touch with Love First Christian Center. Find our address, phone number, and email. Office hours: Mon-Fri 9 AM-3 PM, Sun 7:30 AM-1:30 PM.",
+    openGraph: {
+      url: "https://www.lfcc.tv/contact",
+    },
   };
 }
 

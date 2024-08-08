@@ -9,6 +9,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Connection Opportunities - Love First",
     description:
       "Explore connection opportunities at Love First. Get involved, build relationships, and grow in faith through our programs and services. Join us today!",
+    openGraph: {
+      url: "https://www.lfcc.tv/connect",
+    },
   };
 }
 

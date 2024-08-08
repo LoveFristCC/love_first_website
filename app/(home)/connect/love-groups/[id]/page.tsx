@@ -26,6 +26,7 @@ export async function generateMetadata(
     description: `Join our ${groupName} community at Love First Christian Center. Connect, grow, and engage with others. We can't wait to welcome you`,
     openGraph: {
       images: [groupImage, ...previousImages],
+      url: `https://www.lfcc.tv/connect/love-groups/${id}`,
     },
   };
 }

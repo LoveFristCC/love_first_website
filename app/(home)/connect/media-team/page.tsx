@@ -8,6 +8,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Media Team - Love First",
     description:
       "Use your media skills to make a difference at Love First. Join our Media Team and help spread love and positivity through creative content.",
+    openGraph: {
+      url: `https://www.lfcc.tv/connect/media-team`,
+    },
   };
 }
 

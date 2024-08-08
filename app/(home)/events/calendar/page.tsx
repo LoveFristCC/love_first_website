@@ -6,6 +6,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Events Calendar - Love First Christian Center",
     description:
       "Stay updated with all upcoming events and activities at Love First Christian Center. Explore our calendar and join us in community, worship, and fellowship.",
+    openGraph: {
+      url: "https://www.lfcc.tv/events/calendar",
+    },
   };
 }
 

@@ -32,6 +32,7 @@ export async function generateMetadata(
     openGraph: {
       // @ts-ignore
       images: [image, ...previousImages],
+      url: `https://www.lfcc.tv/watch-online/previous-sermons/${params?.id}`,
     },
   };
 }

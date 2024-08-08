@@ -11,6 +11,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Previous Sermons - Love First Christian Center",
     description:
       "Explore past sermons at Love First Christian Center. Listen to inspiring messages that uplift and strengthen your faith journey. Stay connected with our community.",
+    openGraph: {
+      url: "https://www.lfcc.tv/watch-online/previous-sermons",
+    },
   };
 }
 

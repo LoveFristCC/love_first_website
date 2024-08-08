@@ -6,6 +6,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Visit Us - Love First Christian Center, Riverview, FL",
     description:
       "Discover Love First Christian Center in Riverview, FL. Find our address, contact information, service times, and accessibility details. Plan your visit today!",
+    openGraph: {
+      url: `https://www.lfcc.tv/about-love-first/location`,
+    },
   };
 }
 

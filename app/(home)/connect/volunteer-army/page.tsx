@@ -8,6 +8,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Volunteer Army - Love First",
     description:
       "Join the Volunteer Army and make a difference! Explore diverse opportunities to contribute, connect, and grow through impactful volunteer work. Be a part of something greater.",
+    openGraph: {
+      url: "https://www.lfcc.tv/connect/volunteer-army",
+    },
   };
 }
 

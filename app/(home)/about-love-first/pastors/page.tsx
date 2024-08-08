@@ -10,6 +10,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Meet the Team - Pastors, Staff & Ministers at Love First",
     description:
       "Meet the dedicated team at Love First Christian Center. Discover our pastors, staff, and ministers and learn how they support and lead our community with passion.",
+    openGraph: {
+      url: `https://www.lfcc.tv/about-love-first/pastors`,
+    },
   };
 }
 

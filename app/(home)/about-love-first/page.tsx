@@ -7,6 +7,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "About Love First Christian Center",
     description:
       "Discover the inspiring story and vision of Love First Christian Center. Learn about our history, meet our leadership, and find your purpose here.",
+    openGraph: {
+      url: `https://www.lfcc.tv/about-love-first`,
+    },
   };
 }
 

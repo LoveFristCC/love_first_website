@@ -8,6 +8,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Creative Arts - Love First",
     description:
       "Explore creative arts at Love First. Experience faith through music, visual arts, drama, and more. Join us in celebrating creativity and spirituality.",
+    openGraph: {
+      url: `https://www.lfcc.tv/connect/creative-arts`,
+    },
   };
 }
 

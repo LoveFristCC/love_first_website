@@ -8,6 +8,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Youth Ministry Volunteers - Love First",
     description:
       "Join Love First’s Youth Ministry volunteers. Make an impact by nurturing faith and community through your time and talents.",
+    openGraph: {
+      url: "https://www.lfcc.tv/connect/youth",
+    },
   };
 }
 
