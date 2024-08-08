@@ -27,7 +27,7 @@ export const postQuery = groq`*[_type == "post" && slug.current == $slug] [0] {
   ${postFields}
 }`;
 
-export const youtubeSeries = groq`*[_type == "youtubeSermons"] | order(_createdAt desc) {
+export const youtubeSeries = groq`*[_type == "youtubeSermons"] | order(_createdAt desc) [0...6] {
   title,
   route,
   seriesImage,
@@ -39,7 +39,6 @@ export const youtubeSeries = groq`*[_type == "youtubeSermons"] | order(_createdA
 }`;
 
 export const individualYoutubeSeries = groq`*[_type == "youtubeSermons" && route == $slug][0] {
-  _id,
   title,
   route,
   seriesImage,

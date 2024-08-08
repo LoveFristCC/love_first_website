@@ -8,7 +8,7 @@ export default function Nav() {
     <nav className="links" aria-label="Main Navigation">
       <ul className="navDropdown">
         <li className={pathname.includes("about-love-first") ? "active" : ""}>
-          <span className="desktopNavSpan" role="button">
+          <span className="desktopNavSpan" role="button" aria-haspopup>
             About ▾{" "}
           </span>
           <ul aria-label="About Love First">
@@ -58,7 +58,7 @@ export default function Nav() {
           </ul>
         </li>
         <li className={pathname.includes("connect") ? "active" : ""}>
-          <span className="desktopNavSpan" role="button">
+          <span className="desktopNavSpan" role="button" aria-haspopup>
             Connect ▾
           </span>
           <ul aria-label="Connect with Us">
@@ -206,7 +206,7 @@ export default function Nav() {
         <li
           className={`online ${pathname.includes("watch-online") ? "active" : ""}`}
         >
-          <span className="desktopNavSpan" role="button">
+          <span className="desktopNavSpan" role="button" aria-haspopup>
             Online ▾{" "}
           </span>
           <ul aria-label="Watch Online">
