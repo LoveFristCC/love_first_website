@@ -44,6 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description: toPlainText(description),
     openGraph: {
+      url: metadataBase?.origin || "https://www.lfcc.tv",
       images: ogImage ? [ogImage] : [],
       siteName: siteName,
     },
