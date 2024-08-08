@@ -25,7 +25,7 @@ export default async function Pastors() {
   const staff = leaders.staff;
 
   return (
-    <div>
+    <>
       <section className="leadersHeroSection">
         <div className="leadersHeroContent">
           <h1>
@@ -52,128 +52,140 @@ export default async function Pastors() {
         </div>
       </section>
       <section className="pastorsSection">
-        <h2>Meet Our Pastors</h2>
-        {pastors &&
-          pastors.map(
-            (
-              el: {
-                name: string;
-                picture: string;
-                pastorTitle: string;
-                email: string;
-              },
-              i: number
-            ) => {
-              const imageUrl = urlForImage(el.picture)
-                ?.height(300)
-                .width(300)
-                .url();
-              return (
-                <article key={i} className="leaderCard">
-                  <div className="leaderImage">
-                    <Image
-                      src={imageUrl as string}
-                      alt={`${el.name} - Pastor at Love First Christian Center`}
-                      height={300}
-                      width={300}
-                    />
+        <div className="stickyHeader">
+          <h2>Meet Our Pastors</h2>
+        </div>
+        <div className="leaderCardContainer">
+          {pastors &&
+            pastors.map(
+              (
+                el: {
+                  name: string;
+                  picture: string;
+                  pastorTitle: string;
+                  email: string;
+                },
+                i: number
+              ) => {
+                const imageUrl = urlForImage(el.picture)
+                  ?.height(300)
+                  .width(300)
+                  .url();
+                return (
+                  <div key={i} className="leaderCard">
+                    <div className="leaderImage">
+                      <Image
+                        src={imageUrl as string}
+                        alt={`${el.name} - Pastor at Love First Christian Center`}
+                        height={300}
+                        width={300}
+                      />
+                    </div>
+                    <div className="leaderContent">
+                      <h3>{el.name}</h3>
+                      <h4>{el.pastorTitle}</h4>
+                      {el.email && (
+                        <p>
+                          <a href={`mailto:${el.email}`}>Email {el.name}</a>
+                        </p>
+                      )}
+                    </div>
                   </div>
-                  <div className="leaderContent">
-                    <h3>{el.name}</h3>
-                    <h4>{el.pastorTitle}</h4>
-                    {el.email && (
-                      <p>
-                        <a href={`mailto:${el.email}`}>Email {el.name}</a>
-                      </p>
-                    )}
-                  </div>
-                </article>
-              );
-            }
-          )}
-      </section>
-      <section className="staffSection">
-        <h2>Meet Our Staff</h2>
-        {staff &&
-          staff.map(
-            (
-              el: {
-                name: string;
-                picture: string;
-                pastorTitle: string;
-                email: string;
-              },
-              i: number
-            ) => {
-              const imageUrl = urlForImage(el.picture)
-                ?.height(300)
-                .width(300)
-                .url();
-              return (
-                <article key={i} className="leaderCard">
-                  <div className="leaderImage">
-                    <Image
-                      src={imageUrl as string}
-                      alt={`${el.name} - Staff at Love First Christian Center`}
-                      height={300}
-                      width={300}
-                    />
-                  </div>
-                  <div className="leaderContent">
-                    <h3>{el.name}</h3>
-                    <h4>{el.pastorTitle}</h4>
-                    {el.email && (
-                      <p>
-                        <a href={`mailto:${el.email}`}>Email {el.name}</a>
-                      </p>
-                    )}
-                  </div>
-                </article>
-              );
-            }
-          )}
+                );
+              }
+            )}
+        </div>
       </section>
       <section className="ministerSection">
-        <h2>Meet Our Ministers</h2>
-        {ministers &&
-          ministers.map(
-            (
-              el: {
-                name: string;
-                picture: string;
-                pastorTitle: string;
-                email: string;
-              },
-              i: number
-            ) => {
-              const imageUrl = urlForImage(el.picture)
-                ?.height(300)
-                .width(300)
-                .url();
-              return (
-                <article key={i} className="leaderCard">
-                  <div className="leaderImage">
-                    <Image
-                      src={imageUrl as string}
-                      alt={`${el.name} - Minister at Love First Christian Center`}
-                      height={300}
-                      width={300}
-                    />
+        <div className="stickyHeader">
+          <h2>Meet Our Ministers</h2>
+        </div>
+        <div className="leaderCardContainer">
+          {ministers &&
+            ministers.map(
+              (
+                el: {
+                  name: string;
+                  picture: string;
+                  pastorTitle: string;
+                  email: string;
+                },
+                i: number
+              ) => {
+                const imageUrl = urlForImage(el.picture)
+                  ?.height(300)
+                  .width(300)
+                  .url();
+                return (
+                  <div key={i} className="leaderCard">
+                    <div className="leaderImage">
+                      <Image
+                        src={imageUrl as string}
+                        alt={`${el.name} - Minister at Love First Christian Center`}
+                        height={300}
+                        width={300}
+                      />
+                    </div>
+                    <div className="leaderContent">
+                      <h3>{el.name}</h3>
+                      <h4>{el.pastorTitle}</h4>
+                      {el.email && (
+                        <p>
+                          <a href={`mailto:${el.email}`}>Email {el.name}</a>
+                        </p>
+                      )}
+                    </div>
                   </div>
-                  <div className="leaderContent">
-                    <h3>{el.name}</h3>
-                    <h4>{el.pastorTitle}</h4>
-                    {el.email && (
-                      <p>
-                        <a href={`mailto:${el.email}`}>Email {el.name}</a>
-                      </p>
-                    )}
-                  </div>
-                </article>
-              );
-            }
-          )}
+                );
+              }
+            )}
+        </div>
       </section>
-    </div>
+      <section className="staffSection">
+        <div className="stickyHeader">
+          <h2>Meet Our Staff</h2>
+        </div>
+        <div className="leaderCardContainer">
+          {staff &&
+            staff.map(
+              (
+                el: {
+                  name: string;
+                  picture: string;
+                  pastorTitle: string;
+                  email: string;
+                },
+                i: number
+              ) => {
+                const imageUrl = urlForImage(el.picture)
+                  ?.height(300)
+                  .width(300)
+                  .url();
+                return (
+                  <div key={i} className="leaderCard">
+                    <div className="leaderImage">
+                      <Image
+                        src={imageUrl as string}
+                        alt={`${el.name} - Staff at Love First Christian Center`}
+                        height={300}
+                        width={300}
+                      />
+                    </div>
+                    <div className="leaderContent">
+                      <h3>{el.name}</h3>
+                      <h4>{el.pastorTitle}</h4>
+                      {el.email && (
+                        <p>
+                          <a href={`mailto:${el.email}`}>Email {el.name}</a>
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                );
+              }
+            )}
+        </div>
+      </section>
+    </>
   );
 }
