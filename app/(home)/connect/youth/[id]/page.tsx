@@ -41,10 +41,6 @@ export default async function IndividualOutreach({
 }) {
   const url = `https://api.planningcenteronline.com/groups/v2/group_types/30699/groups/${params.id}?include=location`;
 
-  const eventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/30699/events?include=group&filter=upcoming`;
-
-  // const futureEventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}/events?filter=upcoming%2Cpublic&order=starts_at&per_page=3&include=location%2Cmy_rsvp`;
-
   const promises = [getPcData(url)];
 
   if (params?.id == "158867") {
@@ -117,7 +113,12 @@ export default async function IndividualOutreach({
               <div>
                 <p>
                   <Link href={`mailto:${groupEmail}`}>Contact us</Link>
-                  <Link href={redirectLink} rel="noreferrer noopener">
+                  <Link
+                    href={redirectLink}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    aria-label={`Join group ${groupName}`}
+                  >
                     Request to Join
                   </Link>
                 </p>

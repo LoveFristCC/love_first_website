@@ -1,15 +1,6 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-type FeaturedVideoProps = {
-  featuredVideo: {
-    url: string;
-    title: string;
-    serviceTitle: string;
-    speaker: string;
-    thumb: string;
-  };
-};
 
 const PreviousSermonYouTubePlayer: React.FC<any> = ({
   featuredVideo,
@@ -30,7 +21,6 @@ const PreviousSermonYouTubePlayer: React.FC<any> = ({
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
-            // loading="lazy"
           ></iframe>
         ) : (
           <>

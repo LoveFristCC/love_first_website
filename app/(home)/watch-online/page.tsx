@@ -35,6 +35,8 @@ const WatchOnline = () => {
               href="https://lovefirstcc.online.church/"
               className="watch-online-button"
               rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Watch Love First Online"
             >
               Watch Live
             </Link>
@@ -42,6 +44,8 @@ const WatchOnline = () => {
               href="https://www.youtube.com/@LovefirstChristianCenter/streams"
               className="watch-online-button"
               rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Watch Love First Online on Youtube"
             >
               Watch Live on YouTube
             </Link>

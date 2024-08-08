@@ -1,15 +1,6 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-type FeaturedVideoProps = {
-  featuredVideo: {
-    url: string;
-    title: string;
-    serviceTitle: string;
-    speaker: string;
-    thumb: string;
-  };
-};
 
 const FeaturedVideo: React.FC<any> = ({ featuredVideo }) => {
   const latestSermonDetails =

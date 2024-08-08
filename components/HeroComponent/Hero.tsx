@@ -1,5 +1,4 @@
 import Link from "next/link";
-// import VideoComponent from "./VideoComponent";
 
 const Hero = ({ serviceTime }: { serviceTime: string }) => {
   return (

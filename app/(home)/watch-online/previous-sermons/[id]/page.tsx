@@ -18,7 +18,7 @@ export async function generateMetadata(
     query: individualYoutubeSeries,
     params: { slug: params.id },
   });
-  // const currentSeries = seriesData[0]?.series[0];
+
   const image = urlForImage(seriesData.seriesImage)
     ?.height(1000)
     .width(2000)

@@ -89,6 +89,7 @@ export default function Footer() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSd6ZCSKtE1leLhUPuvyAoUNXwxRWq2HpY4F9oBiRJ8eWhkaTA/viewform"
               rel="noreferrer noopener"
               target="_blank"
+              aria-label="Submit an announcement form"
             >
               Share an Update
             </Link>

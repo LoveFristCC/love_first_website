@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import "./give.css";
 import type { Metadata } from "next";

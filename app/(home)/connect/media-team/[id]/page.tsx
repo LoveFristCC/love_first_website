@@ -37,14 +37,7 @@ export default async function IndividualMediaTeam({
 }) {
   const url = `https://api.planningcenteronline.com/groups/v2/group_types/260323/groups/${params.id}?include=location`;
 
-  const eventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/260323/events?include=group&filter=upcoming`;
-
-  // const futureEventsUrl = `https://api.planningcenteronline.com/groups/v2/group_types/27871/groups/${params.id}/events?filter=upcoming%2Cpublic&order=starts_at&per_page=3&include=location%2Cmy_rsvp`;
-
-  const [groups] = await Promise.all([
-    await getPcData(url),
-    // await getPcData(eventsUrl),
-  ]);
+  const [groups] = await Promise.all([await getPcData(url)]);
 
   const groupName = groups?.data?.attributes.name;
   const groupImage =
@@ -106,7 +99,12 @@ export default async function IndividualMediaTeam({
               <div>
                 <p>
                   <Link href={`mailto:${groupEmail}`}>Contact us</Link>
-                  <Link href={redirectLink} rel="noreferrer noopener">
+                  <Link
+                    href={redirectLink}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    aria-label={`Join group ${groupName}`}
+                  >
                     Register to Join
                   </Link>
                 </p>

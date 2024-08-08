@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 
@@ -40,6 +39,7 @@ export default function LocationPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="link"
+                aria-label="Map Location of Love First Christian Center"
               >
                 Get Directions
               </a>

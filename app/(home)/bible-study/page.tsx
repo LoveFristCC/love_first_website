@@ -58,6 +58,7 @@ export default async function Events() {
                       href={el.studyNotes.notes}
                       rel="noreferrer noopener"
                       target="_blank"
+                      aria-label="Download Wednesday Bible Study Notes"
                     >
                       {el.title}
                     </Link>

@@ -23,6 +23,7 @@ const ChildrenLessonPlans = async ({ lessonPlans }: { lessonPlans: any }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="lesson-button"
+                    aria-label={`Leader PDF for ${el.title}`}
                   >
                     Leader Lesson
                   </Link>
@@ -31,6 +32,7 @@ const ChildrenLessonPlans = async ({ lessonPlans }: { lessonPlans: any }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="lesson-button"
+                    aria-label={`Parent Lesson PDF for ${el.title}`}
                   >
                     Parent Lesson
                   </Link>
@@ -39,6 +41,7 @@ const ChildrenLessonPlans = async ({ lessonPlans }: { lessonPlans: any }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="lesson-button"
+                    aria-label={`Lesson Activity PDF for ${el.title}`}
                   >
                     Lesson Activity
                   </Link>

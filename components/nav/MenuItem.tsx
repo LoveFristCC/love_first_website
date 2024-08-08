@@ -26,21 +26,11 @@ export const MenuItem = ({
   toggleOpen: any;
 }) => {
   return link.header ? (
-    <motion.li
-      className="mobileListHeader"
-      variants={variants}
-      // whileHover={{ scale: 1.1 }}
-      // whileTap={{ scale: 0.95 }}
-    >
+    <motion.li className="mobileListHeader" variants={variants}>
       <span className="header-placeholder">{link.linkTitle}</span>
     </motion.li>
   ) : (
-    <motion.li
-      className="mobileListItem"
-      variants={variants}
-      // whileHover={{ scale: 1.1 }}
-      // whileTap={{ scale: 0.95 }}
-    >
+    <motion.li className="mobileListItem" variants={variants}>
       <Link
         className="text-placeholder"
         href={link.location}

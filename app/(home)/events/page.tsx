@@ -62,6 +62,7 @@ export default async function Events() {
             href="https://lovefirst.churchcenter.com/registrations/events"
             rel="noreferrer noopener"
             target="_blank"
+            aria-label="Register for Love First events"
           >
             Register for an Upcoming Events at Love First
           </Link>
@@ -96,10 +97,8 @@ export default async function Events() {
                     <Image
                       src={imageUrl as string}
                       alt={`${el.name} - Love First Event`}
-                      // layout="responsive"
                       width={500}
                       height={500}
-                      // objectFit="cover"
                     />
                   </div>
                   <div className="individualEventContent">
@@ -109,6 +108,7 @@ export default async function Events() {
                       href={el.redirectUrl}
                       rel="noreferrer noopener"
                       target="_blank"
+                      aria-label={`Register for ${el.name}`}
                     >
                       Register Now
                     </Link>

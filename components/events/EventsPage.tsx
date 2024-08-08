@@ -1,12 +1,5 @@
 import { getPcData } from "@/app/lib/getPcData";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
 import EventsClient from "./EventsClient";
-
-// const EventsClient = dynamic(() => import("./EventsClient"), {
-//   loading: () => <p>Loading...</p>,
-//   ssr: false,
-// });
 
 const EventsPage = async () => {
   const response = await getPcData(
@@ -37,11 +30,10 @@ const EventsPage = async () => {
     <section className="eventsSection">
       <div className="eventsContent">
         <h2 className="eventsHeadline">Upcoming Events at Love First</h2>
-        {/* <Suspense fallback={<p>Loading Events....</p>}> */}
+
         {groupedEvents && (
           <EventsClient eventData={eventData} groupedEvents={groupedEvents} />
         )}
-        {/* </Suspense> */}
       </div>
     </section>
   );

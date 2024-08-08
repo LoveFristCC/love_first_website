@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, FormEvent } from "react";
 import Link from "next/link";
 
@@ -206,6 +205,7 @@ export default function PrayerForm() {
                 href="https://www.facebook.com/pastorjomo/"
                 target="_blank"
                 rel="noreferrer noopener"
+                aria-label="Join Pastor Jomo for Prayer on Facebook"
               >
                 Pastor Jomo&apos;s Facebook
               </Link>

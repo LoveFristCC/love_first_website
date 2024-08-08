@@ -68,7 +68,6 @@ export default function RootLayout({
           {draftMode().isEnabled && <AlertBanner />}
           <Header />
           <main>{children}</main>
-
           <Footer />
         </section>
         {draftMode().isEnabled && <VisualEditing />}

@@ -1,7 +1,5 @@
 "use client";
-
 import React, { useState, FormEvent } from "react";
-import Link from "next/link";
 
 export default function ContactForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
