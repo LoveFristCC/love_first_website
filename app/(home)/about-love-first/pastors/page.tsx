@@ -2,15 +2,26 @@ import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/utils";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { leadershipQuery } from "@/sanity/lib/queries";
+import type { Metadata, ResolvingMetadata } from "next";
 
-import type { Metadata } from "next";
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
   return {
     title: "Meet the Team - Pastors, Staff & Ministers at Love First",
     description:
       "Meet the dedicated team at Love First Christian Center. Discover our pastors, staff, and ministers and learn how they support and lead our community with passion.",
     openGraph: {
+      images: [...previousImages],
+      siteName: siteName,
       url: `https://www.lfcc.tv/about-love-first/pastors`,
     },
   };

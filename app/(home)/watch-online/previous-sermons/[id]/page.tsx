@@ -25,6 +25,7 @@ export async function generateMetadata(
     .url();
 
   const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
 
   return {
     title: `${seriesData.title} - Love First`,
@@ -32,6 +33,7 @@ export async function generateMetadata(
     openGraph: {
       // @ts-ignore
       images: [image, ...previousImages],
+      siteName: siteName,
       url: `https://www.lfcc.tv/watch-online/previous-sermons/${params?.id}`,
     },
   };

@@ -1,14 +1,26 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getPcData } from "@/app/lib/getPcData";
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
   return {
     title: "Volunteer Army - Love First",
     description:
       "Join the Volunteer Army and make a difference! Explore diverse opportunities to contribute, connect, and grow through impactful volunteer work. Be a part of something greater.",
     openGraph: {
+      images: [...previousImages],
+      siteName: siteName,
       url: "https://www.lfcc.tv/connect/volunteer-army",
     },
   };

@@ -1,14 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getPcData } from "@/app/lib/getPcData";
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
   return {
     title: "Youth Ministry Volunteers - Love First",
     description:
       "Join Love First’s Youth Ministry volunteers. Make an impact by nurturing faith and community through your time and talents.",
     openGraph: {
+      images: [...previousImages],
+      siteName: siteName,
       url: "https://www.lfcc.tv/connect/youth",
     },
   };

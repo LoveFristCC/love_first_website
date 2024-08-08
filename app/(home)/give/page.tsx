@@ -1,13 +1,25 @@
 import Image from "next/image";
 import "./give.css";
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
   return {
     title: "Ways to Give - Love First Christian Center | Online, Text & Mail",
     description:
       "Support Love First Christian Center with online donations, text, Cash App, Zelle, or mail. Your contributions fund community programs and outreach. Learn more and make a difference.",
     openGraph: {
+      images: [...previousImages],
+      siteName: siteName,
       url: "https://www.lfcc.tv/give",
     },
   };

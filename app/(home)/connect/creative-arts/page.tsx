@@ -1,14 +1,26 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getPcData } from "@/app/lib/getPcData";
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
   return {
     title: "Creative Arts - Love First",
     description:
       "Explore creative arts at Love First. Experience faith through music, visual arts, drama, and more. Join us in celebrating creativity and spirituality.",
     openGraph: {
+      images: [...previousImages],
+      siteName: siteName,
       url: `https://www.lfcc.tv/connect/creative-arts`,
     },
   };

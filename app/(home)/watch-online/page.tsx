@@ -1,14 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import SermonSection from "@/components/sermons/SermonSection";
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
   return {
     title: "Online Services - Love First Christian Center",
     description:
       "Join Love First Christian Center from anywhere! Stream live every Sunday and Wednesday or watch past sermons on-demand. Engage in uplifting worship online.",
     openGraph: {
+      images: [...previousImages],
+      siteName: siteName,
       url: "https://www.lfcc.tv/watch-online",
     },
   };

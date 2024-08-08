@@ -3,14 +3,26 @@ import Image from "next/image";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { eventsQuery } from "@/sanity/lib/queries";
 import { urlForImage } from "@/sanity/lib/utils";
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
   return {
     title: "Events & Life Classes - Love First Christian Center",
     description:
       "Explore upcoming events and Life University classes at Love First Christian Center. Stay connected and engaged with our community. Discover how you can participate and make a difference.",
     openGraph: {
+      images: [...previousImages],
+      siteName: siteName,
       url: "https://www.lfcc.tv/events",
     },
   };

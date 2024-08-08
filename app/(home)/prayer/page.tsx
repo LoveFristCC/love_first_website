@@ -1,15 +1,27 @@
 import Image from "next/image";
 import "./prayer.css";
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import YoutubeVideo from "./Youtube";
 import PrayerForm from "./PrayerForm";
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
   return {
     title: "Prayer & Support - Love First Christian Center",
     description:
       "Find spiritual support at Love First Christian Center. Join daily prayer sessions with Pastor Jomo, submit your prayer requests, and connect with our community.",
     openGraph: {
+      images: [...previousImages],
+      siteName: siteName,
       url: "https://www.lfcc.tv/prayer",
     },
   };

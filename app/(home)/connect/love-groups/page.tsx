@@ -1,14 +1,26 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import { getPcData } from "@/app/lib/getPcData";
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
   return {
     title: "Love Groups - Love First",
     description:
       "Join Love Groups at Love First to build connections and experience spiritual growth through small group gatherings. Sign up today!",
     openGraph: {
+      images: [...previousImages],
+      siteName: siteName,
       url: `https://www.lfcc.tv/connect/love-groups`,
     },
   };

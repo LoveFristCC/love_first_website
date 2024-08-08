@@ -3,15 +3,27 @@ import { urlForImage } from "@/sanity/lib/utils";
 import Image from "next/image";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { youtubeSeries } from "@/sanity/lib/queries";
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import PreviousSermonYouTubePlayer from "@/components/previousSermonYouTubePlayer/PreviousSermonYouTubePlayer";
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
   return {
     title: "Previous Sermons - Love First Christian Center",
     description:
       "Explore past sermons at Love First Christian Center. Listen to inspiring messages that uplift and strengthen your faith journey. Stay connected with our community.",
     openGraph: {
+      images: [...previousImages],
+      siteName: siteName,
       url: "https://www.lfcc.tv/watch-online/previous-sermons",
     },
   };

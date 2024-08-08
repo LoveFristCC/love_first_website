@@ -1,13 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
   return {
     title: "About Love First Christian Center",
     description:
       "Discover the inspiring story and vision of Love First Christian Center. Learn about our history, meet our leadership, and find your purpose here.",
     openGraph: {
+      images: [...previousImages],
+      siteName: siteName,
       url: `https://www.lfcc.tv/about-love-first`,
     },
   };

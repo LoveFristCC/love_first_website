@@ -20,11 +20,13 @@ export async function generateMetadata(
   const groupImage = data.data.attributes.header_image.original;
 
   const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
 
   return {
     title: `${groupName} - Love First`,
     description: `Join our ${groupName} community at Love First Christian Center. Connect, grow, and engage with others. We can't wait to welcome you`,
     openGraph: {
+      siteName: siteName,
       images: [groupImage, ...previousImages],
       url: `https://www.lfcc.tv/connect/love-groups/${id}`,
     },

@@ -3,15 +3,26 @@ import Image from "next/image";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { bibleStudyNotes } from "@/sanity/lib/queries";
 import "./bibleStudy.css";
+import type { Metadata, ResolvingMetadata } from "next";
 
-import type { Metadata } from "next";
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
   return {
     title: "Bible Study Notes - Love First Christian Center",
     description:
       "Download current and archived Bible study notes from our Wednesday Night studies. Deepen your spiritual journey with our collection of in-depth lessons.",
     openGraph: {
+      images: [...previousImages],
+      siteName: siteName,
       url: `https://www.lfcc.tv/bible-study`,
     },
   };

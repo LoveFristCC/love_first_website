@@ -1,15 +1,27 @@
 import Link from "next/link";
 import Image from "next/image";
 import "./contact.css";
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import ContactForm from "./ContactForm";
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
   return {
     title: "Contact Us - Love First Christian Center",
     description:
       "Get in touch with Love First Christian Center. Find our address, phone number, and email. Office hours: Mon-Fri 9 AM-3 PM, Sun 7:30 AM-1:30 PM.",
     openGraph: {
+      images: [...previousImages],
+      siteName: siteName,
       url: "https://www.lfcc.tv/contact",
     },
   };

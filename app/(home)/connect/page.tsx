@@ -1,15 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import { getPcData } from "@/app/lib/getPcData";
 import "./connect.css";
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const previousImages = (await parent).openGraph?.images || [];
+  const siteName = "Love First Christian Center";
   return {
     title: "Connection Opportunities - Love First",
     description:
       "Explore connection opportunities at Love First. Get involved, build relationships, and grow in faith through our programs and services. Join us today!",
     openGraph: {
+      images: [...previousImages],
+      siteName: siteName,
       url: "https://www.lfcc.tv/connect",
     },
   };
