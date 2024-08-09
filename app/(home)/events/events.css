@@ -193,7 +193,7 @@
   max-width: 300px;
 }
 .individualEventImageContainer img {
-  box-shadow: var(--shadow-3);
+  /* box-shadow: var(--shadow-3); */
   border-radius: 5px;
 }
 

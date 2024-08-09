@@ -39,8 +39,11 @@ export default async function Prayer() {
         <Image
           src="/prayerHeader.webp"
           alt="A serene prayer setting to inspire spiritual reflection"
-          layout="fill"
-          objectFit="cover"
+          sizes="100vw"
+          fill
+          style={{
+            objectFit: "cover",
+          }}
           priority
         />
       </section>

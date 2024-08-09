@@ -43,8 +43,11 @@ export default async function Contact() {
         <Image
           src="/contactHeader.webp"
           alt="Contact Love First Christian Center"
-          layout="fill"
-          objectFit="cover"
+          sizes="100vw"
+          fill
+          style={{
+            objectFit: "cover",
+          }}
           priority
         />
       </section>

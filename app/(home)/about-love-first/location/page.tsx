@@ -37,8 +37,12 @@ export default function LocationPage() {
         <Image
           src="/locationHeader.webp"
           alt="Be Happy Here at Love First"
-          layout="fill"
-          objectFit="cover"
+          sizes="100vw"
+          fill
+          style={{
+            objectFit: "cover",
+          }}
+          priority
           className="heroImage"
         />
       </section>

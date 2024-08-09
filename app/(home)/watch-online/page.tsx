@@ -33,10 +33,13 @@ const WatchOnline = () => {
         <Image
           src="/onlineBackground.webp"
           alt="Watch Online Background"
-          layout="fill"
-          objectFit="cover"
-          className="watch-online-background-image"
+          sizes="100vw"
+          fill
+          style={{
+            objectFit: "cover",
+          }}
           priority
+          className="watch-online-background-image"
         />
         <div className="watch-online-hero-content">
           <h1 className="watch-online-title">Watch Our Services Online</h1>

@@ -32,8 +32,12 @@ export default async function AboutLoveFirst() {
         <Image
           src="/aboutUs.webp"
           alt="Love First History and Beliefs"
-          layout="fill"
-          objectFit="cover"
+          sizes="100vw"
+          fill
+          style={{
+            objectFit: "cover",
+          }}
+          priority
         />
         <div className="loveFirstAboutHeader">
           <h1>Learn More About Love First</h1>

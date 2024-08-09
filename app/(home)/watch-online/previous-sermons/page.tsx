@@ -44,10 +44,13 @@ export default async function PreviousSermons() {
         <Image
           src={image as string}
           alt={`${prevSeriesTitle} - Love First Christian Center`}
-          layout="fill"
-          objectFit="fill"
-          quality={100}
+          sizes="100vw"
+          fill
+          style={{
+            objectFit: "fill",
+          }}
           priority
+          quality={100}
         />
       </section>
       <section className="latest-sermon-section">

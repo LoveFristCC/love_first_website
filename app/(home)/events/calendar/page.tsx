@@ -38,8 +38,11 @@ export default async function Calendar() {
         <Image
           src="/calendarHeader.webp"
           alt="Calendar of Events at Love First"
-          layout="fill"
-          objectFit="cover"
+          sizes="100vw"
+          fill
+          style={{
+            objectFit: "cover",
+          }}
           priority
         />
       </section>
