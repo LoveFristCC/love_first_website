@@ -15,9 +15,9 @@ export async function generateMetadata(
   const previousImages = (await parent).openGraph?.images || [];
   const siteName = "Love First Christian Center";
   return {
-    title: "Online Services - Love First Christian Center",
+    title: "Church Online - Love First Christian Center",
     description:
-      "Join Love First Christian Center from anywhere! Stream live every Sunday and Wednesday or watch past sermons on-demand. Engage in uplifting worship online.",
+      "Join Love First Christian Center from anywhere! Stream church online live every Sunday and Wednesday or watch past sermons on-demand.",
     openGraph: {
       images: [...previousImages],
       siteName: siteName,

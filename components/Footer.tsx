@@ -86,6 +86,14 @@ export default function Footer() {
             <Link href="/Minor-Baptism-Consent.pdf">Baptism Consent form</Link>
             <Link href="/bible-study">Bible Study Notes</Link>
             <Link
+              href="https://churchcenter.com/setup"
+              rel="noreferrer noopener"
+              target="_blank"
+              aria-label="Love First Christian Center App"
+            >
+              Download the LFCC app
+            </Link>
+            <Link
               href="https://docs.google.com/forms/d/e/1FAIpQLSd6ZCSKtE1leLhUPuvyAoUNXwxRWq2HpY4F9oBiRJ8eWhkaTA/viewform"
               rel="noreferrer noopener"
               target="_blank"
