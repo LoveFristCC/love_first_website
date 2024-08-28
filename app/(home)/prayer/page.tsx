@@ -53,27 +53,15 @@ export default async function Prayer() {
         <div className="infoContent">
           <h3>Experience the Transformative Power of Prayer</h3>
           <p>
-            Elit at imperdiet dui accumsan sit amet nulla. Venenatis urna cursus
-            eget nunc scelerisque viverra mauris in aliquam. Ut enim blandit
-            volutpat maecenas volutpat blandit aliquam. Odio facilisis mauris
-            sit amet massa. Diam quam nulla porttitor massa id neque aliquam.
-            Egestas tellus rutrum tellus pellentesque eu. Vulputate ut pharetra
-            sit amet. Morbi non arcu risus quis. Massa enim nec dui nunc. At
-            tellus at urna condimentum mattis pellentesque id. Suspendisse
-            potenti nullam ac tortor. Sollicitudin nibh sit amet commodo.
-            Vulputate enim nulla aliquet porttitor lacus. Viverra mauris in
-            aliquam sem fringilla ut morbi. Posuere sollicitudin aliquam
-            ultrices sagittis orci a scelerisque purus. Convallis tellus id
-            interdum velit laoreet id.
+            At Love First Christian Center, we know that when you pray, God
+            answers. If you have accepted Jesus as your Lord and Savior, we want
+            to know and celebrate with you.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            If you are in need of prayer, We want to be your prayer partner and
+            help lift your burdens. No request is too small or too big. Please
+            fill out the form below and let us stand in agreement with you for
+            whatever situation you’re facing!
           </p>
         </div>
       </section>
