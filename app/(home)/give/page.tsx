@@ -14,7 +14,7 @@ export async function generateMetadata(
   const previousImages = (await parent).openGraph?.images || [];
   const siteName = "Love First Christian Center";
   return {
-    title: "Ways to Give - Love First Christian Center | Online, Text & Mail",
+    title: "Ways to Give - Love First Christian Center",
     description:
       "Support Love First Christian Center with online donations, text, Cash App, Zelle, or mail. Your contributions fund community programs and outreach. Learn more and make a difference.",
     openGraph: {
