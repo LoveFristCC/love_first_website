@@ -363,6 +363,7 @@ footer {
 
 .copyRight {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   font-size: 12px;
   margin-top: 10px;
@@ -371,9 +372,15 @@ footer {
   margin: auto;
 }
 
+.designerLink {
+  text-decoration: underline;
+}
+
 @media (max-width: 801px) {
   .copyRight {
     justify-content: center;
+    flex-direction: column;
+    text-align: center;
   }
 }
 

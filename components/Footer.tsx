@@ -176,6 +176,17 @@ export default function Footer() {
             Copyright {year} &copy; All Rights Reserved. Love First Christian
             Center
           </p>
+          <p>
+            Built and Designed by{" "}
+            <Link
+              href="https://www.khalstead.com"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="designerLink"
+            >
+              Kevin Halstead
+            </Link>
+          </p>
         </div>
       </footer>
     </>
