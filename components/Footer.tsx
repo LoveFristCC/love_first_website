@@ -177,7 +177,7 @@ export default function Footer() {
             Center
           </p>
           <p>
-            Built and Designed by{" "}
+            Website expertly crafted and designed by{" "}
             <Link
               href="https://www.khalstead.com"
               rel="noopener noreferrer"
