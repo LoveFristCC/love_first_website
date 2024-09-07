@@ -177,14 +177,14 @@ export default function Footer() {
             Center
           </p>
           <p>
-            Website expertly crafted and designed by{" "}
+            Website Expertly Crafted and Designed by{" "}
             <Link
               href="https://www.khalstead.com"
               rel="noopener noreferrer"
               target="_blank"
               className="designerLink"
             >
-              Kevin Halstead
+              Kevin Halstead, Owner of EliteWebWrxs
             </Link>
           </p>
         </div>
