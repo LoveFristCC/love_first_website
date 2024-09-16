@@ -249,11 +249,11 @@ export default function Nav() {
             Prayer
           </Link>
         </li>
-        <li className={pathname === "/give" ? "active" : ""}>
+        <li className={pathname === "/giving" ? "active" : ""}>
           <Link
             className="desktopNavSpan"
-            href="/give"
-            aria-current={pathname === "/give" ? "page" : undefined}
+            href="/giving"
+            aria-current={pathname === "/giving" ? "page" : undefined}
           >
             Give
           </Link>

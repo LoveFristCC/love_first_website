@@ -23,6 +23,7 @@ import childrenHighlights from "@/sanity/schemas/documents/childrensMinistry";
 import childrenLessons from "@/sanity/schemas/documents/childrenLessons";
 import bibleStudyNotes from "@/sanity/schemas/documents/bibleStudyNotes";
 import youtubeSermons from "@/sanity/schemas/collections/youtubeSermons";
+import redirects from "@/sanity/schemas/documents/redirects";
 import settings from "@/sanity/schemas/singletons/settings";
 // import { resolveHref } from "@/sanity/lib/utils";
 
@@ -45,6 +46,7 @@ export default defineConfig({
       childrenHighlights,
       childrenLessons,
       bibleStudyNotes,
+      redirects,
     ],
   },
   plugins: [

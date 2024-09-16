@@ -50,7 +50,7 @@ const itemIds = [
   { linkTitle: "Prayer", location: "", header: true },
   { linkTitle: "Submit A Prayer Request", location: "/prayer" },
   { linkTitle: "Give", location: "", header: true },
-  { linkTitle: "Give To Love First", location: "/give" },
+  { linkTitle: "Give To Love First", location: "/giving" },
   { linkTitle: "Have Questions", location: "", header: true },
   { linkTitle: "Contact", location: "/contact" },
 ];

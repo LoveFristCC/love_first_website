@@ -1,6 +1,5 @@
-import "../globals.css";
+// import "../globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { VisualEditing, toPlainText } from "next-sanity";
 import { Inter } from "next/font/google";
@@ -9,7 +8,7 @@ import AlertBanner from "./alert-banner";
 import type { SettingsQueryResult } from "@/sanity.types";
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
-import { settingsQuery } from "@/sanity/lib/queries";
+import { settingsQuery, redirect } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -57,24 +56,21 @@ const inter = Inter({
   display: "swap",
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} bg-white text-black`}>
-      <body>
-        <section className="min-h-screen">
-          {draftMode().isEnabled && <AlertBanner />}
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </section>
-        {draftMode().isEnabled && <VisualEditing />}
-        <SpeedInsights />
-        <GoogleAnalytics gaId="G-DC6EY20BM0" />
-      </body>
-    </html>
+    <>
+      <section className="min-h-screen">
+        {draftMode().isEnabled && <AlertBanner />}
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </section>
+      {draftMode().isEnabled && <VisualEditing />}
+      <GoogleAnalytics gaId="G-DC6EY20BM0" />
+    </>
   );
 }

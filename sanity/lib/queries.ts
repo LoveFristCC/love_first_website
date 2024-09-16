@@ -95,3 +95,8 @@ export const leadershipQuery = `{
     order
   }
 }`;
+
+export const redirect = groq`*[_type == "redirects"] {
+  title,
+  redirectUrl
+}`;

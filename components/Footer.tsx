@@ -74,7 +74,7 @@ export default function Footer() {
           </div>
           <div className="footerLinks">
             <p>Support</p>
-            <Link href="/give">Give</Link>
+            <Link href="/giving">Give</Link>
             <Link href="/prayer">Need Prayer</Link>
             <Link href="/contact">Contact</Link>
           </div>
