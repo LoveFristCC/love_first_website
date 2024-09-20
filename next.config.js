@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  compress: true,
   reactStrictMode: true,
   experimental: {
     // Used to guard against accidentally leaking SANITY_API_READ_TOKEN to the browser
