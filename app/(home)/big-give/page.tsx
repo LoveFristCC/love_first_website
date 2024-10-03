@@ -86,9 +86,9 @@ const BigGivePage = () => {
               />
               <h3>Expanding Our Community Outreach</h3>
               <p>
-                The new church will include a community center where we can host
-                events, offer support services, and provide a hub for outreach
-                to families in need.
+                The new church building will allow us to host events, offer
+                support services, and serve as a hub for outreach to families in
+                need, providing valuable resources and care to our community.
               </p>
             </div>
             <div className="impact-story">
