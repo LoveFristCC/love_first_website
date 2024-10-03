@@ -1,0 +1,143 @@
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 80vh;
+  background: url("/bigGive.webp") no-repeat center center/cover;
+  color: white;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-content {
+  text-align: center;
+}
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+.hero-description {
+  font-size: 1.5rem;
+  margin: 2rem auto;
+}
+.cta-button,
+.cta-bottom-button {
+  padding: 1rem 2rem;
+  background-color: #5d05a7;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  box-shadow: var(--shadow-3);
+  width: 100%;
+  max-width: 400px;
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.cta-bottom-button {
+  background: #fff;
+  color: #5d05a7;
+}
+
+/* Progress Section */
+.progress-section {
+  padding: 3rem 0;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+.progress-bar-container h2 {
+  margin-bottom: 1rem;
+  font-size: var(--font-size-fluid-2);
+}
+.progress-bar-container p {
+  margin: 1rem auto 0;
+  font-size: 24px;
+}
+.progress-bar {
+  width: 80%;
+  margin: 0 auto;
+  height: 30px;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+.progress-fill {
+  height: 100%;
+  background-color: #5d05a7;
+  border-radius: 5px;
+}
+
+/* Impact Stories Section */
+.impact-stories-section {
+  padding: 3rem 0;
+  text-align: center;
+  background-color: white;
+}
+
+.impact-stories-section h2 {
+  font-size: var(--font-size-fluid-2);
+}
+
+.impact-stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Event Details Section */
+.event-details-section {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #fafafa;
+}
+.event-details-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: var(--font-size-fluid-2);
+}
+
+/* Donation CTA Section */
+.donate-section {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: #5d05a7;
+  color: white;
+}
+.donate-section h2 {
+  margin-bottom: 2rem;
+  font-size: var(--font-size-fluid-2);
+}
+
+.bigGiveVideoContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding: 0 10px;
+}
+
+.bigGiveVideoContent iframe {
+  width: 100%;
+  box-shadow: var(--shadow-3);
+}
+
+.bigGiveYouTubeThumbImage {
+  position: relative;
+  box-shadow: var(--shadow-3);
+  /* padding: 0 20px; */
+}
+
+.impact-story h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}

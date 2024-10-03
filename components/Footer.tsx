@@ -22,6 +22,8 @@ export default function Footer() {
         return "prayer-footer";
       case "/bible-study":
         return "study-footer";
+      case "/big-give":
+        return "big-give-footer";
       // Add more cases as needed
       default:
         return "default-footer";

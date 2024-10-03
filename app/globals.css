@@ -307,6 +307,10 @@ footer {
   background: #f0f0f0;
 }
 
+.footerSvg.path-big-give-footer {
+  background: #5d05a7;
+}
+
 .footerContent {
   display: flex;
   justify-content: space-around;
@@ -1121,4 +1125,8 @@ video {
   flex-direction: column;
   font-size: 28px;
   font-weight: 600;
+}
+
+.big-give-container {
+  font-family: Arial, sans-serif;
 }
