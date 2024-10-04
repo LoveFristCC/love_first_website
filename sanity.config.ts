@@ -21,10 +21,12 @@ import leaders from "@/sanity/schemas/documents/leaders";
 import teenHighlights from "@/sanity/schemas/documents/teenMinistry";
 import childrenHighlights from "@/sanity/schemas/documents/childrensMinistry";
 import childrenLessons from "@/sanity/schemas/documents/childrenLessons";
+import alertMessage from "@/sanity/schemas/documents/alert";
 import bibleStudyNotes from "@/sanity/schemas/documents/bibleStudyNotes";
 import youtubeSermons from "@/sanity/schemas/collections/youtubeSermons";
 import redirects from "@/sanity/schemas/documents/redirects";
 import settings from "@/sanity/schemas/singletons/settings";
+
 // import { resolveHref } from "@/sanity/lib/utils";
 
 // const homeLocation = {
@@ -47,6 +49,7 @@ export default defineConfig({
       childrenLessons,
       bibleStudyNotes,
       redirects,
+      alertMessage,
     ],
   },
   plugins: [

@@ -176,13 +176,16 @@
   background: url("/serviceVolunteersBanner.webp") center center/cover no-repeat;
 }
 .ministries {
-  background: url("/minitriesBanner.webp") center center/cover no-repeat;
+  background: url("/ministriesBanner.webp") center center/cover no-repeat;
+}
+.children {
+  background: url("/ChildrenPage.webp") center 0 / cover no-repeat;
 }
 .volunteerArmy {
   background: url("/volunteersBanner.webp") center center/cover no-repeat;
 }
 .media {
-  background: url("/mediaMinistry.webp") center center/cover no-repeat;
+  background: url("/mediaMinistry.webp") center 0 / cover no-repeat;
 }
 .youth {
   background: url("/youthMinistry.webp") center center/cover no-repeat;

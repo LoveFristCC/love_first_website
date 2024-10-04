@@ -100,6 +100,19 @@ export default async function Give() {
             </p>
           </div>
           <div className="givingOption">
+            <h3>Support Us via PayPal</h3>
+            <p>
+              You can make your donation securely through PayPal. Simply click{" "}
+              <a
+                href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=P9C6XFFDUFD92"
+                title="Donate to Love First Christian Center via PayPal"
+              >
+                here
+              </a>{" "}
+              to contribute.
+            </p>
+          </div>
+          <div className="givingOption">
             <h3>Text to Give</h3>
             <p>
               Simply text the amount to{" "}

@@ -69,20 +69,28 @@ export default async function IndividualOutreach({
   return (
     groups && (
       <div className="individualContainer">
-        <div className="individualHeroHeader">
-          <div className="individualHeroHeaderContent">
-            <div className="altLogoContainer">
-              <Image
-                src="/loveFirstAltLogo.webp"
-                alt="Love First Christian Center"
-                width={600}
-                height={300}
-                priority
-              />
+        {params?.id == "158867" ? (
+          <section className="groupsHeroContainer">
+            <div className="groupsBackground children">
+              <h1>{groupName}</h1>
             </div>
-            <h1>{groupName}</h1>
+          </section>
+        ) : (
+          <div className="individualHeroHeader">
+            <div className="individualHeroHeaderContent">
+              <div className="altLogoContainer">
+                <Image
+                  src="/loveFirstAltLogo.webp"
+                  alt="Love First Christian Center"
+                  width={600}
+                  height={300}
+                  priority
+                />
+              </div>
+              <h1>{groupName}</h1>
+            </div>
           </div>
-        </div>
+        )}
         <div className="individualGroupCard">
           <Image src={groupImage} alt={groupName} width={400} height={400} />
           <div className="individualGroupContent">

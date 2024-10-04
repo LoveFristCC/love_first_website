@@ -100,3 +100,10 @@ export const redirect = groq`*[_type == "redirects"] {
   title,
   redirectUrl
 }`;
+
+export const alertMessage = groq`*[_type == "alertMessage"]{
+  title,
+  redirectUrl,
+  buttonText,
+  isActive
+}`;

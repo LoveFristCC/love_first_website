@@ -2,11 +2,8 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import { disableDraftMode } from "./actions";
-
-const emptySubscribe = () => () => {};
-
-export default function AlertBanner() {
+export default function AlertBanner({ message }: { message: any }) {
+  console.log("🚀 ~ message:", message);
   const [isVisible, setIsVisible] = useState(true);
 
   const handleClose = () => {
@@ -19,20 +16,18 @@ export default function AlertBanner() {
         className={`fixed bottom-0 left-0 z-50 w-full border-b bg-white/95 bg-purple-100 border border-purple-400 text-black-700 px-4 py-3 text-center backdrop-blur flex justify-between items-center`}
       >
         <p className="text-lg font-semibold">
-          🚨 <span className="font-bold">Big Give Alert:</span> We&apos;re in
-          the final stretch to raise the last $1 million for our new church!
-          Your support will help us create a space for worship, community, and
-          growth.{" "}
-          <Link
-            href="https://lovefirst.churchcenter.com/giving/to/big-give-building-fund"
-            className="underline hover:no-underline text-purple-700"
-            rel="noreferrer noopener"
-            target="_blank"
-            aria-label="Big Give Sunday For New Building"
-          >
-            Donate Now
-          </Link>{" "}
-          to make an impact!
+          {message.title}{" "}
+          {message.buttonText && message.redirectUrl && (
+            <Link
+              href={message.redirectUrl}
+              className="underline hover:no-underline text-purple-700"
+              rel="noreferrer noopener"
+              target="_blank"
+              aria-label="Big Give Sunday For New Building"
+            >
+              {message.buttonText}
+            </Link>
+          )}
         </p>
         <button
           onClick={handleClose}
