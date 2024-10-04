@@ -64,7 +64,7 @@ export default async function RootLayout({
   return (
     <>
       <section className="min-h-screen">
-        {draftMode().isEnabled && <AlertBanner />}
+        <AlertBanner />
         <Header />
         <main>{children}</main>
         <Footer />

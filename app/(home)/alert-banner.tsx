@@ -1,52 +1,47 @@
 "use client";
-
-import { useRouter } from "next/navigation";
-import { useSyncExternalStore, useTransition } from "react";
+import { useState } from "react";
+import Link from "next/link";
 
 import { disableDraftMode } from "./actions";
 
 const emptySubscribe = () => () => {};
 
 export default function AlertBanner() {
-  const router = useRouter();
-  const [pending, startTransition] = useTransition();
+  const [isVisible, setIsVisible] = useState(true);
 
-  const shouldShow = useSyncExternalStore(
-    emptySubscribe,
-    () => window.top === window,
-    () => false,
-  );
-
-  if (!shouldShow) return null;
+  const handleClose = () => {
+    setIsVisible(false);
+  };
 
   return (
-    <div
-      className={`${
-        pending ? "animate-pulse" : ""
-      } fixed top-0 left-0 z-50 w-full border-b bg-white/95 text-black backdrop-blur`}
-    >
-      <div className="py-2 text-center text-sm">
-        {pending ? (
-          "Disabling draft mode..."
-        ) : (
-          <>
-            {"Previewing drafts. "}
-            <button
-              type="button"
-              onClick={() =>
-                startTransition(() =>
-                  disableDraftMode().then(() => {
-                    router.refresh();
-                  }),
-                )
-              }
-              className="hover:text-cyan underline transition-colors duration-200"
-            >
-              Back to published
-            </button>
-          </>
-        )}
+    isVisible && (
+      <div
+        className={`fixed bottom-0 left-0 z-50 w-full border-b bg-white/95 bg-purple-100 border border-purple-400 text-black-700 px-4 py-3 text-center backdrop-blur flex justify-between items-center`}
+      >
+        <p className="text-lg font-semibold">
+          🚨 <span className="font-bold">Big Give Alert:</span> We&apos;re in
+          the final stretch to raise the last $1 million for our new church!
+          Your support will help us create a space for worship, community, and
+          growth.{" "}
+          <Link
+            href="https://lovefirst.churchcenter.com/giving/to/big-give-building-fund"
+            className="underline hover:no-underline text-purple-700"
+            rel="noreferrer noopener"
+            target="_blank"
+            aria-label="Big Give Sunday For New Building"
+          >
+            Donate Now
+          </Link>{" "}
+          to make an impact!
+        </p>
+        <button
+          onClick={handleClose}
+          className="absolute top-0 right-0 text-purple-700 hover:text-purple-900 text-xl font-bold p-2 focus:outline-none"
+          aria-label="Close Alert"
+        >
+          &times;
+        </button>
       </div>
-    </div>
+    )
   );
 }

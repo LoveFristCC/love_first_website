@@ -249,14 +249,34 @@ export default function Nav() {
             Prayer
           </Link>
         </li>
-        <li className={pathname === "/giving" ? "active" : ""}>
-          <Link
-            className="desktopNavSpan"
-            href="/giving"
-            aria-current={pathname === "/giving" ? "page" : undefined}
-          >
-            Give
-          </Link>
+        <li
+          className={
+            ["/giving", "/big-give"].includes(pathname) ? "active" : ""
+          }
+        >
+          <span className="desktopNavSpan" role="button" aria-haspopup>
+            Give ▾{" "}
+          </span>
+          <ul aria-label="Give Online">
+            <li>
+              <Link
+                className={pathname === "/giving" ? "activeDropdownLink" : ""}
+                href="/giving"
+                aria-current={pathname === "/giving" ? "page" : undefined}
+              >
+                Give Online
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={pathname === "/big-give" ? "activeDropdownLink" : ""}
+                href="/big-give"
+                aria-current={pathname === "/big-give" ? "page" : undefined}
+              >
+                Big Give
+              </Link>
+            </li>
+          </ul>
         </li>
         <li className={pathname === "/contact" ? "active" : ""}>
           <Link
