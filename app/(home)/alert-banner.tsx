@@ -3,7 +3,6 @@ import { useState } from "react";
 import Link from "next/link";
 
 export default function AlertBanner({ message }: { message: any }) {
-  console.log("🚀 ~ message:", message);
   const [isVisible, setIsVisible] = useState(true);
 
   const handleClose = () => {
@@ -13,7 +12,7 @@ export default function AlertBanner({ message }: { message: any }) {
   return (
     isVisible && (
       <div
-        className={`fixed bottom-0 left-0 z-50 w-full border-b bg-white/95 bg-purple-100 border border-purple-400 text-black-700 px-4 py-3 text-center backdrop-blur flex justify-between items-center`}
+        className={`fixed bottom-0 left-0 z-50 w-full border-b bg-purple-100 border border-purple-400 text-black-700 px-4 py-3 text-center backdrop-blur flex justify-between items-center`}
       >
         <p className="text-lg font-semibold">
           {message.title}{" "}
@@ -31,7 +30,7 @@ export default function AlertBanner({ message }: { message: any }) {
         </p>
         <button
           onClick={handleClose}
-          className="absolute top-0 right-0 text-purple-700 hover:text-purple-900 text-xl font-bold p-2 focus:outline-none"
+          className="absolute -top-6 right-0 text-purple-700 hover:text-purple-900 text-xl font-bold p-2 focus:outline-none bg-white rounded-full h-8 w-8 flex items-center justify-center"
           aria-label="Close Alert"
         >
           &times;
