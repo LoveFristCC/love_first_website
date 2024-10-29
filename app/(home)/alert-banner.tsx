@@ -22,7 +22,7 @@ export default function AlertBanner({ message }: { message: any }) {
               className="underline hover:no-underline text-purple-700"
               rel="noreferrer noopener"
               target="_blank"
-              aria-label="Big Give Sunday For New Building"
+              aria-label={`dynamic redirect for alert message ${message.title}`}
             >
               {message.buttonText}
             </Link>

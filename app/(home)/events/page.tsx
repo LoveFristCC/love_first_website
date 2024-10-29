@@ -59,22 +59,26 @@ export default async function Events() {
         <div className="lifeContent">
           <h2>Events and Life University Classes</h2>
           <p>
-            Lorem ipsum odor amet, consectetuer adipiscing elit. Hac hendrerit
-            aptent arcu facilisis tempor. Facilisis est praesent semper fames
-            volutpat porttitor suspendisse. Nibh tortor dictum laoreet; tempus
-            vestibulum faucibus scelerisque? Phasellus conubia montes convallis
-            proin condimentum aptent rutrum dis. Cras enim ad metus; conubia
-            dolor montes tellus justo. Lacinia ultricies molestie vehicula
-            pretium eros feugiat sagittis id.
+            Stay connected and engaged with the Love First Christian Center
+            community by participating in our upcoming events and Life
+            University classes. Our events offer dynamic opportunities to grow
+            spiritually, build connections, and find fellowship with other
+            members. From worship nights and outreach activities to
+            family-centered events, there’s something for everyone. Don’t miss
+            our seasonal gatherings and community celebrations, perfect for
+            deepening your connection with the church family and discovering
+            ways to serve and make a difference.
           </p>
           <p>
-            Lorem ipsum odor amet, consectetuer adipiscing elit. Hac hendrerit
-            aptent arcu facilisis tempor. Facilisis est praesent semper fames
-            volutpat porttitor suspendisse. Nibh tortor dictum laoreet; tempus
-            vestibulum faucibus scelerisque? Phasellus conubia montes convallis
-            proin condimentum aptent rutrum dis. Cras enim ad metus; conubia
-            dolor montes tellus justo. Lacinia ultricies molestie vehicula
-            pretium eros feugiat sagittis id.
+            Explore Life University classes at Love First Christian Center and
+            enhance your spiritual journey. Designed to support both new and
+            seasoned members, these classes provide insightful teachings and
+            practical tools for personal growth and faith-building. Life
+            University covers a range of topics, from discipleship and faith
+            fundamentals to courses on leadership and service. Join us to deepen
+            your understanding of God’s word, connect with mentors, and equip
+            yourself to live out your faith confidently in everyday life. Be a
+            part of this transformative learning experience!
           </p>
           <Link
             href="https://lovefirst.churchcenter.com/registrations/events"

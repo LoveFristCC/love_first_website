@@ -90,13 +90,24 @@ export default async function Prayer() {
           of community, our daily prayer line provides a meaningful start to
           your day.
         </p>
+
         <p>
           Call{" "}
           <strong>
             <a href="tel:6677701523">(667) 770-1523</a>
           </strong>{" "}
-          and use Access Code: <strong>101804#</strong> to participate. Everyone
-          is welcome.
+          and use Access Code: <strong>101804#</strong> or visit us on{" "}
+          <strong>
+            <a
+              href="https://www.youtube.com/@PASTORJOMO/streams"
+              target="_blank"
+              aria-label="Daily Prayer with Pastor Jomo on YouTube"
+              rel="noreferrer noopener"
+            >
+              YouTube
+            </a>
+          </strong>{" "}
+          to participate. Everyone is welcome.
         </p>
       </section>
     </>
