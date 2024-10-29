@@ -91,7 +91,7 @@ export default function Footer() {
               href="https://churchcenter.com/setup"
               rel="noreferrer noopener"
               target="_blank"
-              aria-label="Love First Christian Center App"
+              aria-label="Download the LFCC app"
             >
               Download the LFCC app
             </Link>
@@ -99,7 +99,7 @@ export default function Footer() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSd6ZCSKtE1leLhUPuvyAoUNXwxRWq2HpY4F9oBiRJ8eWhkaTA/viewform"
               rel="noreferrer noopener"
               target="_blank"
-              aria-label="Submit an announcement form"
+              aria-label="Share an Update"
             >
               Share an Update
             </Link>

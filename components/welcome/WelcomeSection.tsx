@@ -24,7 +24,7 @@ const WelcomeSection = ({ serviceTime }: { serviceTime: string }) => {
               target="_blank"
               rel="noreferrer noopener"
               className="welcomeLink"
-              aria-label="Register for Love First Events"
+              aria-label="Register for upcoming events"
             >
               Register for upcoming events
             </Link>

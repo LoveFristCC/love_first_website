@@ -84,7 +84,7 @@ export default async function Events() {
             href="https://lovefirst.churchcenter.com/registrations/events"
             rel="noreferrer noopener"
             target="_blank"
-            aria-label="Register for Love First events"
+            aria-label="Register for an Upcoming Events at Love First"
           >
             Register for an Upcoming Events at Love First
           </Link>
