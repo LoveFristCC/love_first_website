@@ -68,7 +68,6 @@ export default async function RootLayout({
   });
 
   const { isActive } = alert[0];
-  console.log("🚀 ~ isActive:", isActive);
 
   return (
     <>

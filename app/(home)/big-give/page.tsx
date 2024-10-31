@@ -113,7 +113,7 @@ const BigGivePage = () => {
           <h2>BIG GIVE</h2>
           <p>
             Mark your calendars! Our Big Give event is happening on{" "}
-            <strong>October 20th, 2024</strong>, at Love First.
+            <strong>November 17th, 2024</strong>, at Love First.
           </p>
           <p>
             “But who am I, and what is my people, that we should be able thus to
