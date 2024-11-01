@@ -957,6 +957,9 @@ video {
   /* flex: 0 0 300px; */
   margin-right: 20px; /* Adjust as needed for spacing */
   transition: transform 0.5s ease;
+  @media (max-width: 659px) {
+    margin-right: 0;
+  }
 }
 
 .series-list h3 {
