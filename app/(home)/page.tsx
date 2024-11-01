@@ -31,7 +31,7 @@ export default async function Page() {
       </svg>
 
       <SermonSection path="home" />
-      <EventsPage />
+      {/* <EventsPage /> */}
     </div>
   );
 }
