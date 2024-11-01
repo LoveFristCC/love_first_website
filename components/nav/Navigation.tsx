@@ -51,7 +51,7 @@ const itemIds = [
   { linkTitle: "Submit A Prayer Request", location: "/prayer" },
   { linkTitle: "Give", location: "", header: true },
   { linkTitle: "Give To Love First", location: "/giving" },
-  { linkTitle: "Big Give", location: "/big-give" },
+  { linkTitle: "Big Give", location: "/biggive" },
   { linkTitle: "Have Questions", location: "", header: true },
   { linkTitle: "Contact", location: "/contact" },
 ];

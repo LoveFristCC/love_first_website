@@ -250,9 +250,7 @@ export default function Nav() {
           </Link>
         </li>
         <li
-          className={
-            ["/giving", "/big-give"].includes(pathname) ? "active" : ""
-          }
+          className={["/giving", "/biggive"].includes(pathname) ? "active" : ""}
         >
           <span className="desktopNavSpan" role="button" aria-haspopup>
             Give ▾{" "}
@@ -269,9 +267,9 @@ export default function Nav() {
             </li>
             <li>
               <Link
-                className={pathname === "/big-give" ? "activeDropdownLink" : ""}
-                href="/big-give"
-                aria-current={pathname === "/big-give" ? "page" : undefined}
+                className={pathname === "/biggive" ? "activeDropdownLink" : ""}
+                href="/biggive"
+                aria-current={pathname === "/biggive" ? "page" : undefined}
               >
                 Big Give
               </Link>
