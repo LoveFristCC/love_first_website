@@ -5,7 +5,10 @@ const Hero = ({ serviceTime }: { serviceTime: string }) => {
     <section className="heroContent">
       <div className="overlay" />
       <video loop autoPlay muted playsInline preload="auto">
-        <source src="/lfccVideo.mp4" type="video/mp4" />
+        <source
+          src="https://res.cloudinary.com/dgbmdx6xt/video/upload/q_auto,f_auto/v1730473558/q6lsu5usdbj5btdpb9vg.mp4"
+          type="video/mp4"
+        />
         Your browser does not support the video tag.
       </video>
       <div className="headlineContainer">
