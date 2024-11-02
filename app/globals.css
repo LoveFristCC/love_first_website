@@ -468,6 +468,7 @@ footer {
 
 .headlineContainer {
   z-index: 10;
+  margin-top: 60px;
 }
 
 .heroContent h1 {
