@@ -47,6 +47,7 @@ const itemIds = [
   { linkTitle: "Service Volunteers", location: "/connect/service-volunteers" },
   { linkTitle: "Volunteer Army", location: "/connect/volunteer-army" },
   { linkTitle: "Youth Group", location: "/connect/youth" },
+  { linkTitle: "Children's Ministry", location: "connect/youth/158867" },
   { linkTitle: "Prayer", location: "", header: true },
   { linkTitle: "Submit A Prayer Request", location: "/prayer" },
   { linkTitle: "Give", location: "", header: true },

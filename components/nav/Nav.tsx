@@ -172,6 +172,21 @@ export default function Nav() {
                 Youth Group
               </Link>
             </li>
+            <li>
+              <Link
+                className={
+                  pathname === "connect/youth/158867"
+                    ? "activeDropdownLink"
+                    : ""
+                }
+                href="connect/youth/158867"
+                aria-current={
+                  pathname === "connect/youth/158867" ? "page" : undefined
+                }
+              >
+                Children&apos;s Ministry
+              </Link>
+            </li>
           </ul>
         </li>
         <li className={`online ${pathname.includes("events") ? "active" : ""}`}>
