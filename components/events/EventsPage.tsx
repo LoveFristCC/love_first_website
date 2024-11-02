@@ -9,12 +9,18 @@ const EventsPage = async () => {
     `https://api.planningcenteronline.com/calendar/v2/events?where[visible_in_church_center]=true&filter=future`
   );
   const eventData = events.data;
+  console.log("🚀 ~ eventData:", eventData);
 
   // Function to group events by date
   const groupEventsByDate = (events: any) => {
     return events.reduce(
       (acc: any, el: { attributes: { starts_at: string } }) => {
-        const date = new Date(el.attributes.starts_at).toDateString();
+        // Convert the date to EST and format as a date string
+        const date = new Date(el.attributes.starts_at).toLocaleDateString(
+          "en-US",
+          { timeZone: "America/New_York" }
+        );
+
         if (!acc[date]) acc[date] = [];
         acc[date].push(el);
         return acc;
@@ -25,6 +31,7 @@ const EventsPage = async () => {
 
   // Group events by date
   const groupedEvents = groupEventsByDate(response.data);
+  console.log("🚀 ~ groupedEvents:", groupedEvents);
 
   return (
     <section className="eventsSection">
