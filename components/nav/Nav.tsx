@@ -175,13 +175,13 @@ export default function Nav() {
             <li>
               <Link
                 className={
-                  pathname === "connect/youth/158867"
+                  pathname === "/connect/youth/158867"
                     ? "activeDropdownLink"
                     : ""
                 }
-                href="connect/youth/158867"
+                href="/connect/youth/158867"
                 aria-current={
-                  pathname === "connect/youth/158867" ? "page" : undefined
+                  pathname === "/connect/youth/158867" ? "page" : undefined
                 }
               >
                 Children&apos;s Ministry
