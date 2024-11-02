@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { DateTime } from "luxon";
 
 export default function TimeComponent({
   startTime,
@@ -8,8 +8,12 @@ export default function TimeComponent({
   endTime: string;
 }) {
   // Formatted times using date-fns
-  const formattedStartTime = format(new Date(startTime), "h:mm a");
-  const formattedEndTime = format(new Date(endTime), "h:mm a");
+  const formattedStartTime = DateTime.fromISO(startTime, {
+    zone: "America/New_York",
+  }).toFormat("h:mm a");
+  const formattedEndTime = DateTime.fromISO(endTime, {
+    zone: "America/New_York",
+  }).toFormat("h:mm a");
 
   return (
     <time
@@ -17,7 +21,7 @@ export default function TimeComponent({
       className="timeComponent"
       suppressHydrationWarning
     >
-      {formattedStartTime} - {formattedEndTime}
+      {formattedStartTime} - {formattedEndTime} EST
     </time>
   );
 }
