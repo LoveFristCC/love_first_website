@@ -9,7 +9,6 @@ const EventsPage = async () => {
     `https://api.planningcenteronline.com/calendar/v2/events?where[visible_in_church_center]=true&filter=future`
   );
   const eventData = events.data;
-  console.log("🚀 ~ eventData:", eventData);
 
   // Function to group events by date
   const groupEventsByDate = (events: any) => {
@@ -31,7 +30,6 @@ const EventsPage = async () => {
 
   // Group events by date
   const groupedEvents = groupEventsByDate(response.data);
-  console.log("🚀 ~ groupedEvents:", groupedEvents);
 
   return (
     <section className="eventsSection">
