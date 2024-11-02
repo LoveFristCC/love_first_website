@@ -1,5 +1,6 @@
 import { getPcData } from "@/app/lib/getPcData";
 import EventsClient from "./EventsClient";
+import { DateTime } from "luxon";
 
 const EventsPage = async () => {
   const response = await getPcData(
@@ -14,11 +15,10 @@ const EventsPage = async () => {
   const groupEventsByDate = (events: any) => {
     return events.reduce(
       (acc: any, el: { attributes: { starts_at: string } }) => {
-        // Convert the date to EST and format as a date string
-        const date = new Date(el.attributes.starts_at).toLocaleDateString(
-          "en-US",
-          { timeZone: "America/New_York" }
-        );
+        // Convert the date to EST and format as a date string using Luxon
+        const date = DateTime.fromISO(el.attributes.starts_at, { zone: "utc" })
+          .setZone("America/New_York")
+          .toLocaleString(DateTime.DATE_SHORT);
 
         if (!acc[date]) acc[date] = [];
         acc[date].push(el);
