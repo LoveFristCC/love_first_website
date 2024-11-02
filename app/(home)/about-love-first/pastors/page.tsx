@@ -82,8 +82,10 @@ export default async function Pastors() {
                 i: number
               ) => {
                 const imageUrl = urlForImage(el.picture)
-                  ?.height(300)
-                  .width(300)
+                  ?.width(300)
+                  .height(300)
+                  .fit("crop")
+                  .focalPoint(0.5, 0.3)
                   .url();
                 return (
                   <div key={i} className="leaderCard">
@@ -174,6 +176,8 @@ export default async function Pastors() {
                 const imageUrl = urlForImage(el.picture)
                   ?.height(300)
                   .width(300)
+                  .fit("crop")
+                  .focalPoint(0.5, 0.3)
                   .url();
                 return (
                   <div key={i} className="leaderCard">
