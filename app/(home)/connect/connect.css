@@ -151,7 +151,7 @@
 .groupsHeroContainer {
   position: relative;
   width: 100%;
-  min-height: 70vh;
+  min-height: 75vh;
   display: flex;
   justify-content: center;
   align-items: center;
