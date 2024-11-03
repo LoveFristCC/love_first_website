@@ -10,7 +10,7 @@ export const getPcData = async (url: string) => {
       headers: {
         Authorization: `Basic ${credentials}`,
       },
-      next: { revalidate: 10 },
+      next: { revalidate: 43200 },
     });
 
     if (!res.ok) {
