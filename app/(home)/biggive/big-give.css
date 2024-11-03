@@ -23,9 +23,21 @@
   font-size: 3.5rem;
   margin-bottom: 1rem;
 }
+
 .hero-description {
   font-size: 1.5rem;
   margin: 2rem auto;
+}
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    margin-top: 5rem;
+  }
+  .hero-description {
+    font-size: 18px;
+    padding: 0 10px;
+  }
 }
 .cta-button,
 .cta-bottom-button {
