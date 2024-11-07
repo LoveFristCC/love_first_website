@@ -2,7 +2,7 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { VisualEditing, toPlainText } from "next-sanity";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import { draftMode } from "next/headers";
 import AlertBanner from "./alert-banner";
 import type { SettingsQueryResult } from "@/sanity.types";
@@ -50,11 +50,11 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
+// const inter = Inter({
+//   variable: "--font-inter",
+//   subsets: ["latin"],
+//   display: "swap",
+// });
 
 export default async function RootLayout({
   children,
@@ -78,7 +78,7 @@ export default async function RootLayout({
         <main>{children}</main>
         <Footer />
       </section>
-      {draftMode().isEnabled && <VisualEditing />}
+      {/* {draftMode().isEnabled && <VisualEditing />} */}
       <GoogleAnalytics gaId="G-DC6EY20BM0" />
     </>
   );
