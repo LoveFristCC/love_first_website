@@ -20,10 +20,5 @@ export default function Redirect({ redirectLinks }: { redirectLinks: any }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
-  return (
-    <div className="redirectContainer">
-      <h1>404 | Not Found</h1>
-      <h2>Redirecting.....</h2>
-    </div>
-  );
+  return <div className="redirectContainer"></div>;
 }
