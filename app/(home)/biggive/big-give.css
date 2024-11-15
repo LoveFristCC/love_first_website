@@ -22,12 +22,15 @@
 .hero-title {
   font-size: 3.5rem;
   margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
 }
 
 .hero-description {
   font-size: 1.5rem;
   margin: 2rem auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
 }
+
 @media (max-width: 600px) {
   .hero-title {
     font-size: 2.5rem;
@@ -102,6 +105,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  margin-top: 10px;
 }
 
 /* Event Details Section */
@@ -152,4 +156,17 @@
 .impact-story h3 {
   font-size: 22px;
   margin-bottom: 10px;
+}
+
+.impact-story-image-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.impact-story-image-container img {
+  width: 100%;
+  height: 250px;
+  border-radius: 5px;
+  box-shadow: var(--shadow-2);
 }

@@ -42,8 +42,8 @@ const BigGivePage = () => {
               <h1 className="hero-title">Big Give Sunday</h1>
               <BigGiveYoutubeVideo />
               <p className="hero-description">
-                Help us raise the last $1 million to complete our vision. Your
-                generosity can change lives!
+                Help us to complete our vision. Your generosity can change
+                lives!
               </p>
               <Link
                 href="https://lovefirst.churchcenter.com/giving/to/big-give-building-fund"
@@ -64,12 +64,14 @@ const BigGivePage = () => {
           <h2>How Your Donation Will Build Our Future</h2>
           <div className="impact-stories-grid">
             <div className="impact-story">
-              <Image
-                src="/worship.webp"
-                alt="New Church Vision"
-                width={600}
-                height={400}
-              />
+              <div className="impact-story-image-container">
+                <Image
+                  src="/NewSanctuary.webp"
+                  alt="New Church Vision"
+                  width={600}
+                  height={400}
+                />
+              </div>
               <h3>A Place to Worship and Grow</h3>
               <p>
                 Your generosity will help us build a new sanctuary that provides
@@ -78,12 +80,14 @@ const BigGivePage = () => {
               </p>
             </div>
             <div className="impact-story">
-              <Image
-                src="/bigGiveOutreach.webp"
-                alt="Community Center"
-                width={600}
-                height={400}
-              />
+              <div className="impact-story-image-container">
+                <Image
+                  src="/CommunityOutreach.webp"
+                  alt="Community Center"
+                  width={600}
+                  height={400}
+                />
+              </div>
               <h3>Expanding Our Community Outreach</h3>
               <p>
                 The new church building will allow us to host events, offer
@@ -92,12 +96,14 @@ const BigGivePage = () => {
               </p>
             </div>
             <div className="impact-story">
-              <Image
-                src="/childrenMinistry.webp"
-                alt="Youth and Children's Space"
-                width={600}
-                height={400}
-              />
+              <div className="impact-story-image-container">
+                <Image
+                  src="/ChildrenSpaces.webp"
+                  alt="Youth and Children's Space"
+                  width={600}
+                  height={400}
+                />
+              </div>
               <h3>Dedicated Youth and Children&apos;s Spaces</h3>
               <p>
                 With your support, we will create modern, dedicated spaces for
