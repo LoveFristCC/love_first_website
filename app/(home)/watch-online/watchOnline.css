@@ -5,12 +5,18 @@
 
 .watch-online-hero {
   position: relative;
-  height: 80vh;
+  aspect-ratio: 5 / 2.5;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   text-align: left;
+  @media (max-width: 900px) {
+    aspect-ratio: 5/4;
+  }
+  @media (max-width: 600px) {
+    aspect-ratio: 4 / 7;
+  }
 }
 
 .watch-online-hero::after {
@@ -247,9 +253,15 @@
 
 .previous-series-header {
   width: 100%;
-  height: 65vh;
+  aspect-ratio: 5 / 2.5;
   position: relative;
   overflow: hidden;
+  @media (max-width: 900px) {
+    aspect-ratio: 5/4;
+  }
+  @media (max-width: 600px) {
+    aspect-ratio: 4 / 5;
+  }
 }
 
 .previous-series-header::before {

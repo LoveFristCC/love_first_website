@@ -13,8 +13,14 @@
 .aboutHeader {
   position: relative;
   width: 100%;
-  min-height: 75vh;
+  aspect-ratio: 5 / 2.5;
   overflow: hidden;
+  @media (max-width: 900px) {
+    aspect-ratio: 5/4;
+  }
+  @media (max-width: 650px) {
+    aspect-ratio: 4 / 5;
+  }
 }
 
 .aboutHeader img {
@@ -180,9 +186,16 @@
 .locationHero {
   position: relative;
   width: 100%;
-  aspect-ratio: 5 / 3;
+  /* height: 60vh; */
+  aspect-ratio: 5 / 2.5;
   overflow: hidden;
   box-shadow: var(--shadow-2);
+  @media (max-width: 900px) {
+    aspect-ratio: 5/4;
+  }
+  @media (max-width: 650px) {
+    aspect-ratio: 4 / 5;
+  }
 }
 
 .locationHero .locationHeaderContainer {

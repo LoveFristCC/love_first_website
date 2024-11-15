@@ -1,11 +1,17 @@
 .contactHero {
   position: relative;
-  min-height: 75vh;
+  aspect-ratio: 5 / 2.5;
   background: #f0f0f0;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-3);
+  @media (max-width: 900px) {
+    aspect-ratio: 5/4;
+  }
+  @media (max-width: 600px) {
+    aspect-ratio: 4 / 5;
+  }
   /* overflow: hidden;  */
 }
 .contactHero::after {

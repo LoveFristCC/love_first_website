@@ -12,6 +12,9 @@
   background-position: center;
   padding: 20px;
   box-sizing: border-box;
+  @media (max-width: 600px) {
+    aspect-ratio: 4 / 6;
+  }
 }
 
 .headerHero::after {
