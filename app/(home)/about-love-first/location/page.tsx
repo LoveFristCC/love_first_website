@@ -41,6 +41,8 @@ export default function LocationPage() {
           fill
           style={{
             objectFit: "cover",
+            width: "100%",
+            height: "100%",
           }}
           priority
           className="heroImage"
