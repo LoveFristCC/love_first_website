@@ -38,7 +38,8 @@ export default function LocationPage() {
           src="/locationHeader.webp"
           alt="Be Happy Here at Love First"
           sizes="100vw"
-          fill
+          width={1920}
+          height={1080}
           style={{
             objectFit: "cover",
             width: "100%",
