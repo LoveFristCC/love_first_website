@@ -8,6 +8,7 @@ export default async function NotFound() {
       query: redirect,
     }),
   ]);
+  console.log("🚀 ~ redirectLinks:", redirectLinks);
 
   return <Redirect redirectLinks={redirectLinks} />;
 }
