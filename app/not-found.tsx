@@ -6,6 +6,10 @@ export default async function NotFound() {
   const [redirectLinks] = await Promise.all([
     sanityFetch<any>({
       query: redirect,
+      // params: {},
+      // perspective: "published",
+      // stega: false,
+      timeout: 0,
     }),
   ]);
 
