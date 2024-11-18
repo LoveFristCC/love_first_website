@@ -7,7 +7,6 @@ export default function Redirect({ redirectLinks }: { redirectLinks: any }) {
   const pathname = usePathname();
   console.log("🚀 ~ pathname:", pathname);
   const router = useRouter();
-  console.log("🚀 ~ router:", router);
 
   useEffect(() => {
     const matchedRedirectLink = redirectLinks.find(
