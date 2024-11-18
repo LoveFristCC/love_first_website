@@ -6,6 +6,7 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { childrenMinistryHighlightsQuery } from "@/sanity/lib/queries";
 import MinistryHighlights from "@/components/ministryHighlights/MinistryHighlight";
 import ChildrenLessonPlans from "@/components/ministryHighlights/ChildrenLessonPlans";
+import GroupCard from "./groupCard";
 
 type Props = {
   params: { id: string };
@@ -43,6 +44,7 @@ export default async function IndividualOutreach({
   params: { id: string };
 }) {
   const url = `https://api.planningcenteronline.com/groups/v2/group_types/30699/groups/${params.id}?include=location`;
+  const nurseryUrl = `https://api.planningcenteronline.com/groups/v2/group_types/30699/groups/158735?include=location`;
 
   const promises = [getPcData(url)];
 
@@ -50,11 +52,13 @@ export default async function IndividualOutreach({
     promises.push(
       sanityFetch<any>({
         query: childrenMinistryHighlightsQuery,
-      })
+      }),
+      getPcData(nurseryUrl)
     );
   }
 
-  const [groups, highlightData] = await Promise.all(promises);
+  const [groups, highlightData, nurseryData] = await Promise.all(promises);
+  console.log("🚀 ~ nurseryData:", nurseryData);
 
   const groupName = groups?.data?.attributes.name;
   const groupImage =
@@ -64,8 +68,18 @@ export default async function IndividualOutreach({
   const groupDescription = groups?.data?.attributes?.description;
   const groupEmail = groups?.data?.attributes?.contact_email;
   const redirectLink = groups?.data.attributes.public_church_center_web_url;
-
   const location = groups?.included[0]?.attributes;
+
+  const nurseryName = nurseryData?.data?.attributes.name;
+  const nurseryImage =
+    nurseryData?.data?.attributes?.header_image.original ||
+    nurseryData?.data?.attributes?.header_image.medium;
+  const nurserySchedule = nurseryData?.data?.attributes?.schedule;
+  const nurseryDescription = nurseryData?.data?.attributes?.description;
+  const nurseryEmail = nurseryData?.data?.attributes?.contact_email;
+  const nurseryLink = nurseryData?.data.attributes.public_church_center_web_url;
+  const nurseryLocation = nurseryData?.included[0]?.attributes;
+
   return (
     groups && (
       <div className="individualContainer">
@@ -91,52 +105,41 @@ export default async function IndividualOutreach({
             </div>
           </div>
         )}
-        <div className="individualGroupCard">
-          <Image src={groupImage} alt={groupName} width={400} height={400} />
-          <div className="individualGroupContent">
-            {groupDescription && (
-              <div>
-                <h2>About {groupName}</h2>
-                <div
-                  className="groupDescription"
-                  dangerouslySetInnerHTML={{
-                    __html: groupDescription,
-                  }}
-                />
-              </div>
-            )}
-            {groupSchedule && (
-              <div>
-                <h3>Schedule</h3>
-                <p>{groupSchedule}</p>
-              </div>
-            )}
 
-            {location && (
-              <div>
-                <h3>Location</h3>
-                <p>{location.name}</p>
-                <p>{location.full_formatted_address}</p>
-              </div>
-            )}
-
-            {groupEmail && (
-              <div>
-                <p>
-                  <Link href={`mailto:${groupEmail}`}>Contact us</Link>
-                  <Link
-                    href={redirectLink}
-                    rel="noreferrer noopener"
-                    target="_blank"
-                    aria-label={`Join group ${groupName}`}
-                  >
-                    Request to Join
-                  </Link>
-                </p>
-              </div>
-            )}
+        {params?.id == "158867" ? (
+          <div className="nurseryKidsContainer">
+            {" "}
+            <GroupCard
+              groupImage={nurseryImage}
+              groupDescription={nurseryDescription}
+              groupName={nurseryName}
+              groupSchedule={nurserySchedule}
+              location={nurseryLocation}
+              groupEmail={nurseryEmail}
+              redirectLink={nurseryLink}
+            />
+            <GroupCard
+              groupImage={groupImage}
+              groupDescription={groupDescription}
+              groupName={groupName}
+              groupSchedule={groupSchedule}
+              location={location}
+              groupEmail={groupEmail}
+              redirectLink={redirectLink}
+            />
           </div>
-        </div>
+        ) : (
+          <GroupCard
+            groupImage={groupImage}
+            groupDescription={groupDescription}
+            groupName={groupName}
+            groupSchedule={groupSchedule}
+            location={location}
+            groupEmail={groupEmail}
+            redirectLink={redirectLink}
+          />
+        )}
+
         {params?.id == "158867" && highlightData?.childrenMinistryEvents[0] && (
           <MinistryHighlights
             highlightData={highlightData?.childrenMinistryEvents[0]}

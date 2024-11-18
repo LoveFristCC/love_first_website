@@ -354,6 +354,14 @@
     box-shadow 0.3s ease;
 }
 
+.individualGroupContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
 /* .individualGroupCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
@@ -382,6 +390,7 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  justify-content: center;
 }
 
 .individualGroupContent p a {
@@ -412,6 +421,10 @@
 
   .individualHeroHeader h1 {
     font-size: 3rem;
+  }
+
+  .individualGroupContent p {
+    justify-content: flex-start;
   }
 }
 
@@ -637,5 +650,13 @@
   .lesson-button {
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
+  }
+}
+
+.nurseryKidsContainer {
+  display: flex;
+  gap: 0 10px;
+  @media (max-width: 1070px) {
+    flex-direction: column-reverse;
   }
 }

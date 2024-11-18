@@ -162,11 +162,13 @@ export default function Nav() {
             <li>
               <Link
                 className={
-                  pathname === "/connect/youth" ? "activeDropdownLink" : ""
+                  pathname === "/connect/ministries/254955"
+                    ? "activeDropdownLink"
+                    : ""
                 }
-                href="/connect/youth"
+                href="/connect/ministries/254955"
                 aria-current={
-                  pathname === "/connect/youth" ? "page" : undefined
+                  pathname === "/connect/ministries/254955" ? "page" : undefined
                 }
               >
                 Youth Group
