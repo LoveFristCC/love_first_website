@@ -10,6 +10,7 @@ export default async function NotFound() {
       // perspective: "published",
       // stega: false,
       timeout: 0,
+      cdn: false,
     }),
   ]);
 
