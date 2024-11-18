@@ -15,14 +15,16 @@
 /* Header Section Styling */
 .bibleStudyHeader {
   position: relative;
-  aspect-ratio: 5 / 2.5;
+  height: 60vh;
   overflow: hidden;
   border-bottom: 1px solid #ddd;
   width: 100%;
   @media (max-width: 900px) {
+    height: unset;
     aspect-ratio: 5/4;
   }
   @media (max-width: 600px) {
+    height: unset;
     aspect-ratio: 4 / 5;
   }
 }

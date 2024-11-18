@@ -7,7 +7,7 @@
 .connectHeroContainer {
   position: relative;
   width: 100%;
-  aspect-ratio: 5 / 2.5;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,9 +16,11 @@
   overflow: hidden;
   box-shadow: var(--shadow-3);
   @media (max-width: 900px) {
+    height: unset;
     aspect-ratio: 4 / 5;
   }
   @media (max-width: 550px) {
+    height: unset;
     aspect-ratio: 4 / 7;
   }
 }
@@ -157,7 +159,7 @@
 .groupsHeroContainer {
   position: relative;
   width: 100%;
-  aspect-ratio: 5 / 2.5;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,9 +168,11 @@
   overflow: hidden;
   box-shadow: var(--shadow-3);
   @media (max-width: 900px) {
+    height: unset;
     aspect-ratio: 5 / 4.5;
   }
   @media (max-width: 600px) {
+    height: unset;
     aspect-ratio: 4 / 7;
   }
 }

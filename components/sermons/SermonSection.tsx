@@ -15,8 +15,11 @@ const SermonSection = async ({ path }: { path: string }) => {
     <section className="sermon-section">
       {path === "home" ? (
         <>
-          <h2>Missed The Last Sermon?</h2>
-          <p>Don&apos;t worry! Catch up on all our messages now.</p>
+          <h2>Watch Our Latest Featured Sermon Online</h2>
+          <p>
+            Catch this powerful sermon and gain insights to uplift your faith
+            and spirit. Available to watch anytime.
+          </p>
         </>
       ) : (
         <>

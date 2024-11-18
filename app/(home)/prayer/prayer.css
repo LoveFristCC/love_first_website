@@ -1,7 +1,7 @@
 .headerHero {
   position: relative;
   width: 100%;
-  aspect-ratio: 5 / 3;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -13,9 +13,11 @@
   padding: 20px;
   box-sizing: border-box;
   @media (max-width: 900px) {
+    height: unset;
     aspect-ratio: 5/4;
   }
   @media (max-width: 600px) {
+    height: unset;
     aspect-ratio: 4 / 6;
   }
 }
