@@ -3,7 +3,7 @@ import SermonSection from "@/components/sermons/SermonSection";
 import WelcomeSection from "@/components/welcome/WelcomeSection";
 import EventsPage from "@/components/events/EventsPage";
 import CommunitySection from "@/components/community/CommunitySection";
-// import JoinSection from "@/components/join/join";
+import JoinSection from "@/components/join/join";
 
 export default async function Page() {
   const date = new Date();
@@ -32,7 +32,7 @@ export default async function Page() {
       </svg>
 
       <SermonSection path="home" />
-      {/* <JoinSection /> */}
+      <JoinSection />
       <EventsPage />
     </div>
   );

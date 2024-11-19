@@ -5,17 +5,16 @@ const JoinSection = () => {
   return (
     <section className="joinSection">
       <div className="joinContentContainer">
-        <div className="altLogoContainer">
+        <div className="newMemberLogoContainer">
           <Image
-            src="/loveFirstAltLogo.webp"
-            alt="Love First Christian Center"
+            src="/lfcc-new-member.webp"
+            alt="Love First Christian Center new member"
             width={600}
             height={300}
           />
         </div>
         <div className="joinLpContent">
           <h2>Ready to Become a Member at Love First?</h2>
-          <p>text here</p>
 
           <div className="joinButtons">
             <Link href={`/join`} className="joinLink">
