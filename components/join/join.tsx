@@ -18,7 +18,7 @@ const JoinSection = () => {
 
           <div className="joinButtons">
             <Link href={`/join`} className="joinLink">
-              Become a Member
+              Join Now
             </Link>
           </div>
         </div>
