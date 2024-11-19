@@ -5,7 +5,6 @@ import { usePathname, useRouter } from "next/navigation";
 export default function Redirect({ redirectLinks }: { redirectLinks: any }) {
   console.log("🚀 ~ redirectLinks:", redirectLinks);
   const pathname = usePathname();
-  console.log("🚀 ~ pathname:", pathname);
   const router = useRouter();
 
   useEffect(() => {
