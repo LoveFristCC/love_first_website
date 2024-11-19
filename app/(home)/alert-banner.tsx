@@ -22,7 +22,7 @@ export default function AlertBanner({ message }: { message: any }) {
               className="underline hover:no-underline text-purple-700"
               rel="noreferrer noopener"
               target="_blank"
-              aria-label={`dynamic redirect for alert message ${message.title}`}
+              aria-label={`dynamic redirect for alert message ${message.buttonText}`}
             >
               {message.buttonText}
             </Link>
