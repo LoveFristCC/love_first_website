@@ -16,7 +16,7 @@ const PayerYoutubeVideo = () => {
         <iframe
           width="426"
           height="240"
-          src="https://www.youtube.com/embed/SSFmp-0bXf0?t=5s&autoplay=1&rel=0&modestbranding=1"
+          src="https://www.youtube.com/embed/SSFmp-0bXf0?t=5s&autoplay=1&mute=1&rel=0&modestbranding=1"
           title="Join Our Prayer Session with Pastor Jomo"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
