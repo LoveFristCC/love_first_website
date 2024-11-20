@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const IndividualSermonYouTubePlayer = ({
@@ -12,6 +12,17 @@ const IndividualSermonYouTubePlayer = ({
   const [featuredVideo, setFeaturedVideo] = useState(
     currentSeries.youtubeVideos[0]
   );
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if the user is on a mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const videoSectionRef = useRef<HTMLDivElement>(null);
 
@@ -24,6 +35,10 @@ const IndividualSermonYouTubePlayer = ({
     setLoadVideo(false);
     videoSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const videoUrl = `https://www.youtube.com/embed/${featuredVideo.youtubeId}?autoplay=1&rel=0&modestbranding=1${
+    isMobile ? "&mute=1" : ""
+  }`;
 
   return (
     <section className="individual-sermon-content">
@@ -44,7 +59,7 @@ const IndividualSermonYouTubePlayer = ({
                   className="individual-video-container"
                 >
                   <iframe
-                    src={`https://www.youtube.com/embed/${featuredVideo.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+                    src={videoUrl}
                     title={`${featuredVideo.title} Sermon`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
