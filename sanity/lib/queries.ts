@@ -13,6 +13,17 @@ export const youtubeSeries = groq`*[_type == "youtubeSermons"] | order(_createdA
   }
 }`;
 
+export const allYoutubeSeries = groq`*[_type == "youtubeSermons"] | order(_createdAt desc) {
+  title,
+  route,
+  seriesImage,
+  youtubeVideos[]{
+    sermoneTitle,
+    speaker,
+    youtubeId
+  }
+}`;
+
 export const individualYoutubeSeries = groq`*[_type == "youtubeSermons" && route == $slug][0] {
   title,
   route,

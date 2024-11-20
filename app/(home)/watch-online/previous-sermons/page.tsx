@@ -2,7 +2,7 @@ import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/utils";
 import Image from "next/image";
 import { sanityFetch } from "@/sanity/lib/fetch";
-import { youtubeSeries } from "@/sanity/lib/queries";
+import { allYoutubeSeries } from "@/sanity/lib/queries";
 import type { Metadata, ResolvingMetadata } from "next";
 import PreviousSermonYouTubePlayer from "@/components/previousSermonYouTubePlayer/PreviousSermonYouTubePlayer";
 
@@ -30,7 +30,7 @@ export async function generateMetadata(
 }
 
 export default async function PreviousSermons() {
-  const seriesData: any = await sanityFetch({ query: youtubeSeries });
+  const seriesData: any = await sanityFetch({ query: allYoutubeSeries });
   const latestSeries = seriesData[1];
   const youTubeVideos = latestSeries.youtubeVideos;
   const prevSermonsHeader = latestSeries.seriesImage;
