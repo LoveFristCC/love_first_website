@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const JoinSection = () => {
+  console.log("test");
   return (
     <section className="joinSection">
       <div className="joinContentContainer">
