@@ -111,10 +111,14 @@ export default async function IndividualMinistries({
               </div>
             )}
 
-            {groupEmail && (
-              <div>
-                <p>
+            <div>
+              <p>
+                {groupEmail && (
                   <Link href={`mailto:${groupEmail}`}>Contact us</Link>
+                )}
+              </p>
+              <p>
+                {redirectLink && (
                   <Link
                     href={redirectLink}
                     rel="noreferrer noopener"
@@ -123,9 +127,9 @@ export default async function IndividualMinistries({
                   >
                     Register to Join
                   </Link>
-                </p>
-              </div>
-            )}
+                )}
+              </p>
+            </div>
           </div>
         </div>
 

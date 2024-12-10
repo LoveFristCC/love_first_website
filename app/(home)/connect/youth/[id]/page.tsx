@@ -58,7 +58,6 @@ export default async function IndividualOutreach({
   }
 
   const [groups, highlightData, nurseryData] = await Promise.all(promises);
-  console.log("🚀 ~ nurseryData:", nurseryData);
 
   const groupName = groups?.data?.attributes.name;
   const groupImage =
