@@ -1,31 +1,30 @@
 "use client";
-import Script from "next/script";
 import { useEffect } from "react";
 
 export default function VisitorReachForm() {
-  // useEffect(() => {
-  //   const scriptId = "typeform-embed-script";
+  useEffect(() => {
+    const scriptId = "typeform-embed-script";
 
-  //   // Remove existing script if it exists
-  //   const existingScript = document.getElementById(scriptId);
-  //   if (existingScript) {
-  //     existingScript.remove();
-  //   }
+    // Remove existing script if it exists
+    const existingScript = document.getElementById(scriptId);
+    if (existingScript) {
+      existingScript.remove();
+    }
 
-  //   // Dynamically load the script
-  //   const script = document.createElement("script");
-  //   script.id = scriptId;
-  //   script.src = "//embed.typeform.com/next/embed.js";
-  //   script.async = true;
-  //   document.body.appendChild(script);
+    // Dynamically load the script
+    const script = document.createElement("script");
+    script.id = scriptId;
+    script.src = "//embed.typeform.com/next/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
 
-  //   return () => {
-  //     // Cleanup script on unmount
-  //     if (script) {
-  //       script.remove();
-  //     }
-  //   };
-  // }, []);
+    return () => {
+      // Cleanup script on unmount
+      if (script) {
+        script.remove();
+      }
+    };
+  }, []);
 
   return (
     <>
