@@ -1,12 +1,7 @@
 import Image from "next/image";
 import type { Metadata, ResolvingMetadata } from "next";
-import dynamic from "next/dynamic";
-// import VisitorReachForm from ;
+import VisitorReachForm from "./visitorReachForm";
 import "./visit.css";
-
-const VisitorReachForm = dynamic(() => import("./visitorReachForm"), {
-  ssr: false,
-});
 
 type Props = {
   params: { id: string };
