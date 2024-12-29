@@ -51,7 +51,7 @@ export default function Footer() {
             <p>About</p>
             <Link href="/about-love-first">Beliefs</Link>
             <Link href="/about-love-first/pastors">Leadership</Link>
-            <Link href="/about-love-first/location">Location</Link>
+            <Link href="/visit-us">Visit Us</Link>
           </div>
           <div className="footerLinks">
             <p>Connect</p>

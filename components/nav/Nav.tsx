@@ -14,6 +14,15 @@ export default function Nav() {
           <ul aria-label="About Love First">
             <li>
               <Link
+                className={pathname === "/visit-us" ? "activeDropdownLink" : ""}
+                href="/visit-us"
+                aria-current={pathname === "/visit-us" ? "page" : undefined}
+              >
+                Visit Us
+              </Link>
+            </li>
+            <li>
+              <Link
                 className={
                   pathname === "/about-love-first" ? "activeDropdownLink" : ""
                 }
@@ -23,21 +32,6 @@ export default function Nav() {
                 }
               >
                 Our History
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={
-                  pathname === "/about-love-first/location"
-                    ? "activeDropdownLink"
-                    : ""
-                }
-                href="/about-love-first/location"
-                aria-current={
-                  pathname === "/about-love-first/location" ? "page" : undefined
-                }
-              >
-                Location
               </Link>
             </li>
             <li>

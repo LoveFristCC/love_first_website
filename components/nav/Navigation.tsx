@@ -33,7 +33,7 @@ const itemIds = [
   { linkTitle: "Previous Sermons", location: "/watch-online/previous-sermons" },
   { linkTitle: "About Us", location: "", header: true },
   { linkTitle: "History", location: "/about-love-first" },
-  { linkTitle: "Location", location: "/about-love-first/location" },
+  { linkTitle: "Visit Us", location: "/visit-us" },
   { linkTitle: "Our Pastors", location: "/about-love-first/pastors" },
   { linkTitle: "Events", location: "", header: true },
   { linkTitle: "Up Coming Events", location: "/events" },
