@@ -7,7 +7,13 @@ export default function Nav() {
   return (
     <nav className="links" aria-label="Main Navigation">
       <ul className="navDropdown">
-        <li className={pathname.includes("about-love-first") ? "active" : ""}>
+        <li
+          className={
+            pathname.includes("about-love-first") || pathname === "/visit-us"
+              ? "active"
+              : ""
+          }
+        >
           <span className="desktopNavSpan" role="button" aria-haspopup>
             About ▾{" "}
           </span>
