@@ -16,10 +16,7 @@ const Hero = ({ serviceTime }: { serviceTime: string }) => {
         <p>Love God, Love People, Love First!</p>
 
         <div className="buttonContainer">
-          <Link
-            href={`/about-love-first/location`}
-            className="serviceButtonContainer"
-          >
+          <Link href={`/visit-us`} className="serviceButtonContainer">
             Join Us {serviceTime}
           </Link>
 

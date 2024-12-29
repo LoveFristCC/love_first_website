@@ -46,7 +46,7 @@ export default async function AboutLoveFirst() {
       </div>
       <section className="visitSection">
         <div className="visitOption">
-          <Link href="/about-love-first/location" className="visitLink">
+          <Link href="/visit-us" className="visitLink">
             Visit us in person →
           </Link>
           <p className="visitDescription">
