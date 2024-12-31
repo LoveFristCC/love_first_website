@@ -80,7 +80,7 @@ export default async function RootLayout({
         <Footer />
       </section>
       {/* {draftMode().isEnabled && <VisualEditing />} */}
-      <GoogleAnalytics gaId="G-DC6EY20BM0" />
+      {/*<GoogleAnalytics gaId="G-DC6EY20BM0" />*/}
     </>
   );
 }
