@@ -206,6 +206,12 @@
     box-shadow 0.3s ease;
 }
 
+.danielFastContent h2 {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin: 0;
+}
+
 .fastingScriptures h3 {
   font-size: 28px; /* Slightly larger heading */
   font-weight: 700;

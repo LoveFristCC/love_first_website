@@ -115,11 +115,13 @@ export default function DanielFastContent() {
 
       <div className="danielFastContent">
         <Card>
+          <CardHeader>
+            <h2>Mark 9:28-29</h2>
+          </CardHeader>
           <CardContent>
             <p className="daniel-fast-scripture">
               {`"And when He had gone indoors, His disciples asked Him privately, Why could not we drive it out? And He replied to them, This kind cannot be driven out by anything but prayer and fasting."`}
             </p>
-            <p className="daniel-fast-scripture-reference">- Mark 9:28-29</p>
           </CardContent>
         </Card>
 
