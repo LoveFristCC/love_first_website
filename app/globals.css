@@ -307,6 +307,10 @@ footer {
   background: #f0f0f0;
 }
 
+.footerSvg.path-fasting-footer {
+  background: #eeeeee;
+}
+
 .footerSvg.path-big-give-footer {
   background: #5d05a7;
 }

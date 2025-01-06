@@ -24,6 +24,8 @@ export default function Footer() {
         return "study-footer";
       case "/biggive":
         return "big-give-footer";
+      case "/fast":
+        return "fasting-footer";
       // Add more cases as needed
       default:
         return "default-footer";
