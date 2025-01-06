@@ -25,6 +25,7 @@ import alertMessage from "@/sanity/schemas/documents/alert";
 import bibleStudyNotes from "@/sanity/schemas/documents/bibleStudyNotes";
 import youtubeSermons from "@/sanity/schemas/collections/youtubeSermons";
 import redirects from "@/sanity/schemas/documents/redirects";
+import fileUploads from "./sanity/schemas/documents/fileUploads";
 import settings from "@/sanity/schemas/singletons/settings";
 
 // import { resolveHref } from "@/sanity/lib/utils";
@@ -50,6 +51,7 @@ export default defineConfig({
       bibleStudyNotes,
       redirects,
       alertMessage,
+      fileUploads,
     ],
   },
   plugins: [

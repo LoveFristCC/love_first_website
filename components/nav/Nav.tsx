@@ -57,7 +57,11 @@ export default function Nav() {
             </li>
           </ul>
         </li>
-        <li className={pathname.includes("connect") ? "active" : ""}>
+        <li
+          className={
+            pathname.includes("connect") || pathname === "/fast" ? "active" : ""
+          }
+        >
           <span className="desktopNavSpan" role="button" aria-haspopup>
             Connect ▾
           </span>
@@ -187,6 +191,15 @@ export default function Nav() {
                 }
               >
                 Children&apos;s Ministry
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={pathname === "/fast" ? "activeDropdownLink" : ""}
+                href="/fast"
+                aria-current={pathname === "/fast" ? "page" : undefined}
+              >
+                Daniel Fast
               </Link>
             </li>
           </ul>
