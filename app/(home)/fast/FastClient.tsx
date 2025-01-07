@@ -95,7 +95,7 @@ export default function DanielFastContent() {
         </div>
         <div className="danielFastCTA">
           <a
-            href="https://cdn.sanity.io/files/51iewwwv/production/b78ce9f59707423a612980b26e74e627cbd8fc6d.pdf"
+            href="https://cdn.sanity.io/files/51iewwwv/production/bfba72222e70d0ab0d043bd006404478d1986b1d.pdf"
             target="_blank"
             rel="noreferrer noopener"
             className="downloadButton"
