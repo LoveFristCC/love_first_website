@@ -9,7 +9,11 @@ import AlertBanner from "./alert-banner";
 import type { SettingsQueryResult } from "@/sanity.types";
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
-import { settingsQuery, alertMessage } from "@/sanity/lib/queries";
+import {
+  settingsQuery,
+  alertMessage,
+  seasonalPages,
+} from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -62,11 +66,16 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const alert: any = await sanityFetch<SettingsQueryResult>({
-    query: alertMessage,
-    // Metadata should never contain stega
-    stega: false,
-  });
+  const [alert, pages] = await Promise.all([
+    sanityFetch<any>({
+      query: alertMessage,
+      // Metadata should never contain stega
+      stega: false,
+    }),
+    sanityFetch<any>({
+      query: seasonalPages,
+    }),
+  ]);
 
   const { isActive } = alert[0];
 
@@ -75,7 +84,7 @@ export default async function RootLayout({
       <section className="min-h-screen">
         {isActive && <AlertBanner message={alert[0]} />}
 
-        <Header />
+        <Header pages={pages} />
         <main>{children}</main>
         <Footer />
       </section>

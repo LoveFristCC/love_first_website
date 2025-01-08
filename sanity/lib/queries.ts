@@ -118,3 +118,17 @@ export const alertMessage = groq`*[_type == "alertMessage"]{
   buttonText,
   isActive
 }`;
+
+export const seasonalPages = groq`*[_type == "seasonalPages"]{
+  title,
+  isActive
+}`;
+
+export const danielFast = groq`*[_type == "danielFastContent"]{
+  title,
+  subtitle,
+  redirectUrl,
+  fastingGuide {
+  "URL": asset->url
+  }
+}`;

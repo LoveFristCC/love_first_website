@@ -6,8 +6,14 @@ import Link from "next/link";
 import Nav from "./nav/Nav";
 import MobileNav from "./nav/MobileNav";
 
-export default function Header() {
+export default function Header({ pages }: { pages: any }) {
   const [mobile, setMobile] = useState<boolean | null>(null);
+
+  const showDanielFastLink =
+    pages.find((el: any) => el?.title === "Daniel Fast") || null;
+
+  const showBigGiveLink =
+    pages.find((el: any) => el?.title === "Big Give") || null;
 
   useEffect(() => {
     const updateMobile = () => {
@@ -34,7 +40,17 @@ export default function Header() {
           />
         </Link>
       </div>
-      {mobile ? <MobileNav /> : <Nav />}
+      {mobile ? (
+        <MobileNav
+          showDanielFastLink={showDanielFastLink}
+          showBigGiveLink={showBigGiveLink}
+        />
+      ) : (
+        <Nav
+          showDanielFastLink={showDanielFastLink}
+          showBigGiveLink={showBigGiveLink}
+        />
+      )}
     </header>
   );
 }

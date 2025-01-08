@@ -27,6 +27,8 @@ import youtubeSermons from "@/sanity/schemas/collections/youtubeSermons";
 import redirects from "@/sanity/schemas/documents/redirects";
 import fileUploads from "./sanity/schemas/documents/fileUploads";
 import settings from "@/sanity/schemas/singletons/settings";
+import danielFast from "@/sanity/schemas/documents/danielFast";
+import seasonalPage from "@/sanity/schemas/documents/seasonalPage";
 
 // import { resolveHref } from "@/sanity/lib/utils";
 
@@ -51,6 +53,8 @@ export default defineConfig({
       bibleStudyNotes,
       redirects,
       alertMessage,
+      danielFast,
+      seasonalPage,
       fileUploads,
     ],
   },

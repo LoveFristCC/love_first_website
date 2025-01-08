@@ -1,5 +1,7 @@
 import DanielFastContent from "./FastClient";
 import type { Metadata, ResolvingMetadata } from "next";
+import { sanityFetch } from "@/sanity/lib/fetch";
+import { danielFast } from "@/sanity/lib/queries";
 
 type Props = {
   params: { id: string };
@@ -24,6 +26,9 @@ export async function generateMetadata(
   };
 }
 
-export default function Fast() {
-  return <DanielFastContent />;
+export default async function Fast() {
+  const fastingData: any = await sanityFetch({
+    query: danielFast,
+  });
+  return <DanielFastContent fastingData={fastingData[0]} />;
 }

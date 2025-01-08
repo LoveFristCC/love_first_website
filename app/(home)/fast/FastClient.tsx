@@ -15,16 +15,27 @@ import {
 import { scriptureDays } from "./scriptures";
 import "./daniel-fast.css";
 
-export default function DanielFastContent() {
+export default function DanielFastContent({
+  fastingData,
+}: {
+  fastingData: {
+    title: string;
+    subtitle: string;
+    redirectUrl: string;
+    fastingGuide: { URL: string };
+  };
+}) {
   const [activeTab, setActiveTab] = useState("daily-scriptures");
   const [loadVideo, setLoadVideo] = useState(false);
+
+  const { title, subtitle, redirectUrl, fastingGuide } = fastingData;
 
   return (
     <div className="daniel-fast-container">
       <section className="danielFastHero">
         <div className="danielHeaderFastContent">
-          <h1>Daniel Fast 2025</h1>
-          <p>21 Days of Prayer, Fasting, and Transformation</p>
+          <h1>{title}</h1>
+          <p>{subtitle}</p>
         </div>
         <Image
           src="/danielFastHeader.webp"
@@ -95,7 +106,7 @@ export default function DanielFastContent() {
         </div>
         <div className="danielFastCTA">
           <a
-            href="https://cdn.sanity.io/files/51iewwwv/production/bfba72222e70d0ab0d043bd006404478d1986b1d.pdf"
+            href={fastingGuide?.URL}
             target="_blank"
             rel="noreferrer noopener"
             className="downloadButton"
@@ -103,7 +114,7 @@ export default function DanielFastContent() {
             Download Prayer & Fasting Guide
           </a>
           <a
-            href="https://lovefirst.churchcenter.com/giving"
+            href={redirectUrl}
             target="_blank"
             rel="noreferrer noopener"
             className="downloadButton"

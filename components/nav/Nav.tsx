@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Nav() {
+export default function Nav({
+  showBigGiveLink,
+  showDanielFastLink,
+}: {
+  showDanielFastLink: any;
+  showBigGiveLink: any;
+}) {
   const pathname = usePathname();
 
   return (
@@ -193,15 +199,18 @@ export default function Nav() {
                 Children&apos;s Ministry
               </Link>
             </li>
-            <li>
-              <Link
-                className={pathname === "/fast" ? "activeDropdownLink" : ""}
-                href="/fast"
-                aria-current={pathname === "/fast" ? "page" : undefined}
-              >
-                Daniel Fast
-              </Link>
-            </li>
+
+            {showDanielFastLink?.isActive && (
+              <li>
+                <Link
+                  className={pathname === "/fast" ? "activeDropdownLink" : ""}
+                  href="/fast"
+                  aria-current={pathname === "/fast" ? "page" : undefined}
+                >
+                  Daniel Fast
+                </Link>
+              </li>
+            )}
           </ul>
         </li>
         <li className={`online ${pathname.includes("events") ? "active" : ""}`}>
@@ -295,15 +304,19 @@ export default function Nav() {
                 Give Online
               </Link>
             </li>
-            <li>
-              <Link
-                className={pathname === "/biggive" ? "activeDropdownLink" : ""}
-                href="/biggive"
-                aria-current={pathname === "/biggive" ? "page" : undefined}
-              >
-                Big Give
-              </Link>
-            </li>
+            {showBigGiveLink?.isActive && (
+              <li>
+                <Link
+                  className={
+                    pathname === "/biggive" ? "activeDropdownLink" : ""
+                  }
+                  href="/biggive"
+                  aria-current={pathname === "/biggive" ? "page" : undefined}
+                >
+                  Big Give
+                </Link>
+              </li>
+            )}
           </ul>
         </li>
         <li className={pathname === "/contact" ? "active" : ""}>

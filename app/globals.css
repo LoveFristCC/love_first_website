@@ -254,9 +254,10 @@ nav ul li.active > span {
   color: rgba(93, 5, 167, 0.7);
 }
 
-@media (max-width: 801px) {
+@media (max-width: 1200px) {
   .text-placeholder:hover {
     color: rgba(93, 5, 167, 0.7);
+    flex: none;
   }
 }
 

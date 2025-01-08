@@ -25,7 +25,13 @@ const sidebar = {
   },
 };
 
-export const MobileNav = () => {
+export const MobileNav = ({
+  showBigGiveLink,
+  showDanielFastLink,
+}: {
+  showDanielFastLink: any;
+  showBigGiveLink: any;
+}) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
@@ -47,7 +53,12 @@ export const MobileNav = () => {
       className={`mobileNav`}
     >
       <motion.div className="background" variants={sidebar}>
-        <Navigation toggleOpen={toggleOpen} isOpen={isOpen} />
+        <Navigation
+          toggleOpen={toggleOpen}
+          isOpen={isOpen}
+          showDanielFastLink={showDanielFastLink}
+          showBigGiveLink={showBigGiveLink}
+        />
       </motion.div>
       <MenuToggle toggle={() => toggleOpen()} />
     </motion.nav>
