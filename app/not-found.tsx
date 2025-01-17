@@ -13,6 +13,7 @@ export default async function NotFound() {
       cdn: false,
     }),
   ]);
+  console.log("🚀 ~ redirectLinks:", redirectLinks);
 
   return <Redirect redirectLinks={redirectLinks} />;
 }
