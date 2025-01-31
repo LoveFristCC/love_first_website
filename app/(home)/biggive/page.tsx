@@ -24,7 +24,7 @@ export async function generateMetadata(
     openGraph: {
       images: [...previousImages],
       siteName: siteName,
-      url: "https://www.lfcc.tv/big-give",
+      url: "https://www.lfcc.tv/biggive",
     },
   };
 }
