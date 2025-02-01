@@ -4,6 +4,8 @@ import Link from "next/link";
 import ProgressBar from "./ProgressBar";
 import BigGiveYoutubeVideo from "./BigGiveYoutube";
 import type { Metadata, ResolvingMetadata } from "next";
+import { sanityFetch } from "@/sanity/lib/fetch";
+import { bigGive } from "@/sanity/lib/queries";
 import "./big-give.css";
 
 type Props = {
@@ -29,8 +31,9 @@ export async function generateMetadata(
   };
 }
 
-const BigGivePage = () => {
-  // Example progress state
+const BigGivePage = async () => {
+  const data: any = await sanityFetch({ query: bigGive });
+  console.log("🚀 ~ data:", data);
 
   return (
     <>
@@ -39,14 +42,11 @@ const BigGivePage = () => {
         <section className="hero-section">
           <div className="hero-overlay">
             <div className="hero-content">
-              <h1 className="hero-title">Big Give Sunday</h1>
-              <BigGiveYoutubeVideo />
-              <p className="hero-description">
-                Help us to complete our vision. Your generosity can change
-                lives!
-              </p>
+              <h1 className="hero-title">{data?.title}</h1>
+              <BigGiveYoutubeVideo youtubeVideo={data?.youtubeVideo} />
+              <p className="hero-description">{data?.subtitle}</p>
               <Link
-                href="https://lovefirst.churchcenter.com/giving/to/big-give-building-fund"
+                href={data?.redirectUrl}
                 className="cta-button"
                 rel="noreferrer noopener"
                 target="_blank"
@@ -57,11 +57,11 @@ const BigGivePage = () => {
             </div>
           </div>
         </section>
-        <ProgressBar />
+        <ProgressBar percentFinished={data?.percentFinished} />
 
         {/* Impact Stories Section */}
         <section className="impact-stories-section">
-          <h2>How Your Donation Will Build Our Future</h2>
+          <h2>{data?.impactHeadline}</h2>
           <div className="impact-stories-grid">
             <div className="impact-story">
               <div className="impact-story-image-container">
@@ -72,12 +72,8 @@ const BigGivePage = () => {
                   height={400}
                 />
               </div>
-              <h3>A Place to Worship and Grow</h3>
-              <p>
-                Your generosity will help us build a new sanctuary that provides
-                a welcoming space for our congregation to worship, grow, and
-                serve the people of God.
-              </p>
+              <h3>{data?.impactContentHeadlineOne}</h3>
+              <p>{data?.impactContentTextOne}</p>
             </div>
             <div className="impact-story">
               <div className="impact-story-image-container">
@@ -88,12 +84,8 @@ const BigGivePage = () => {
                   height={400}
                 />
               </div>
-              <h3>Expanding Our Community Outreach</h3>
-              <p>
-                The new church building will allow us to host events, offer
-                support services, and serve as a hub for outreach to families in
-                need, providing valuable resources and care to our community.
-              </p>
+              <h3>{data?.impactContentHeadlineTwo}</h3>
+              <p>{data?.impactContentTextTwo}</p>
             </div>
             <div className="impact-story">
               <div className="impact-story-image-container">
@@ -104,35 +96,27 @@ const BigGivePage = () => {
                   height={400}
                 />
               </div>
-              <h3>Dedicated Youth and Children&apos;s Spaces</h3>
-              <p>
-                With your support, we will create modern, dedicated spaces for
-                our youth and children&apos;s ministries, allowing them to
-                engage in programs that nurture their spiritual development.
-              </p>
+              <h3>{data?.impactContentHeadlineThree}</h3>
+              <p>{data?.impactContentTextThree}</p>
             </div>
           </div>
         </section>
 
         {/* Event Details Section */}
         <section className="event-details-section">
-          <h2>BIG GIVE</h2>
+          <h2>{data?.bigGiveSection}</h2>
           <p>
             Mark your calendars! Our Big Give event is happening on{" "}
-            <strong>March 16th, 2025</strong>, at Love First.
+            <strong>{data?.bigGiveSectionDate}</strong>, at Love First.
           </p>
-          <p>
-            “But who am I, and what is my people, that we should be able thus to
-            offer willingly? For all things come from you, and of your own have
-            we given you.“ 1 Chronicles 29:14.
-          </p>
+          <p>{data?.bigGiveSectionBibleVerse}</p>
         </section>
 
         {/* Donation CTA Section */}
         <section id="donate-section" className="donate-section">
           <h2>Ready to Make an Impact?</h2>
           <Link
-            href="https://lovefirst.churchcenter.com/giving/to/big-give-building-fund"
+            href={data?.redirectUrl}
             className="cta-bottom-button"
             rel="noreferrer noopener"
             target="_blank"

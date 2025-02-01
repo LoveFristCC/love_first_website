@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const BigGiveYoutubeVideo = () => {
+const BigGiveYoutubeVideo = ({ youtubeVideo }: { youtubeVideo: string }) => {
   const [loadVideo, setLoadVideo] = useState(false);
 
   return (
@@ -15,7 +15,7 @@ const BigGiveYoutubeVideo = () => {
         <iframe
           width="600"
           height="300"
-          src="https://www.youtube.com/embed/kTOFghRkZaU?t=5s&autoplay=1&rel=0&modestbranding=1"
+          src={`https://www.youtube.com/embed/${youtubeVideo}?t=5s&autoplay=1&rel=0&modestbranding=1`}
           title="Big Give Sunday with Pastor Jomo"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -25,7 +25,7 @@ const BigGiveYoutubeVideo = () => {
       ) : (
         <div className="bigGiveYouTubeThumbImage">
           <Image
-            src="https://img.youtube.com/vi/kTOFghRkZaU/maxresdefault.jpg"
+            src={`https://img.youtube.com/vi/${youtubeVideo}/maxresdefault.jpg`}
             alt="Big Give Sunday"
             className="big-give-youtube-thumbnail"
             height={300}

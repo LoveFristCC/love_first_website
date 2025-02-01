@@ -29,6 +29,7 @@ import fileUploads from "./sanity/schemas/documents/fileUploads";
 import settings from "@/sanity/schemas/singletons/settings";
 import danielFast from "@/sanity/schemas/documents/danielFast";
 import seasonalPage from "@/sanity/schemas/documents/seasonalPage";
+import bigGive from "@/sanity/schemas/documents/bigGive";
 
 // import { resolveHref } from "@/sanity/lib/utils";
 
@@ -54,6 +55,7 @@ export default defineConfig({
       redirects,
       alertMessage,
       danielFast,
+      bigGive,
       seasonalPage,
       fileUploads,
     ],

@@ -132,3 +132,22 @@ export const danielFast = groq`*[_type == "danielFastContent"]{
   "URL": asset->url
   }
 }`;
+
+export const bigGive = groq`*[_type == "bigGiveContent"][0] {
+  title,
+  subtitle,
+  youtubeVideo,
+  redirectUrl,
+  percentFinished,
+  progressTitle,
+  impactHeadline,
+  impactContentHeadlineOne,
+  impactContentTextOne,
+  impactContentHeadlineTwo,
+  impactContentTextTwo,
+  impactContentHeadlineThree,
+  impactContentTextThree,
+  bigGiveSection,
+  bigGiveSectionDate,
+  bigGiveSectionBibleVerse
+}`;

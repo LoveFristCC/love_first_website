@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 
-const ProgressBar = () => {
-  const [progress, setProgress] = useState(87); // Example progress, adjust dynamically based on backend data
+const ProgressBar = ({ percentFinished }: { percentFinished: string }) => {
+  const [progress, setProgress] = useState(Number(percentFinished)); // Example progress, adjust dynamically based on backend data
   return (
     <section className="progress-section">
       <div className="progress-bar-container">
