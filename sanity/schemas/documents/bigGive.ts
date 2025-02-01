@@ -43,11 +43,6 @@ export default defineType({
       type: "string",
     }),
     defineField({
-      name: "progressTitle",
-      title: "Progress Bar Headline",
-      type: "string",
-    }),
-    defineField({
       name: "impactHeadline",
       title: "Impact Headline",
       type: "string",
