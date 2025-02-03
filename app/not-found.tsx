@@ -9,8 +9,8 @@ export default async function NotFound() {
       // params: {},
       // perspective: "published",
       // stega: false,
-      timeout: 0,
-      cdn: false,
+      // timeout: 0,
+      // cdn: false,
     }),
   ]);
   console.log("🚀 ~ redirectLinks:", redirectLinks);
