@@ -35,29 +35,12 @@ export async function generateMetadata(
       title: "Online Church Services | Live & On-Demand - Love First Christian",
       description:
         "Join our U.S.-based church community online. Live stream Sunday services at 7:45 AM, 9:45 AM, 11:45 AM (EST) and Wednesday Bible study at 7 PM (EST).",
-      images: [
-        {
-          url: "https://www.lfcc.tv/logo.webp",
-          width: 1200,
-          height: 630,
-          alt: "Live Church Services Online - Love First Christian Center",
-        },
-        ...previousImages,
-      ],
+      images: [...previousImages],
       siteName: siteName,
       url: "https://www.lfcc.tv/watch-online",
-      type: "website",
-      locale: "en_US",
     },
     alternates: {
       canonical: "https://www.lfcc.tv/watch-online",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: "Online Church Services | Live & On-Demand - Love First Christian",
-      description:
-        "Join live worship services online from anywhere in the United States. Experience authentic Christian community with Love First Christian Center.",
-      images: ["https://www.lfcc.tv/logo.webp"],
     },
   };
 }
