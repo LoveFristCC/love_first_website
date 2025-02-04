@@ -36,6 +36,9 @@ export async function generateMetadata(
       siteName: siteName,
       url: `https://www.lfcc.tv/watch-online/previous-sermons/${params?.id}`,
     },
+    alternates: {
+      canonical: `https://www.lfcc.tv/watch-online/previous-sermons/${params?.id}`,
+    },
   };
 }
 

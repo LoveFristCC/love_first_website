@@ -24,6 +24,9 @@ export async function generateMetadata(
       siteName: siteName,
       url: `https://www.lfcc.tv/about-love-first/pastors`,
     },
+    alternates: {
+      canonical: `https://www.lfcc.tv/about-love-first/pastors`,
+    },
   };
 }
 

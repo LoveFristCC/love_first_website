@@ -35,6 +35,9 @@ export async function generateMetadata(
       images: [groupImage, ...previousImages],
       url: `https://www.lfcc.tv/connect/youth/${id}`,
     },
+    alternates: {
+      canonical: `https://www.lfcc.tv/connect/youth/${id}`,
+    },
   };
 }
 

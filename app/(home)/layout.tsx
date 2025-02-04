@@ -52,6 +52,9 @@ export async function generateMetadata(): Promise<Metadata> {
       images: ogImage ? [ogImage] : [],
       siteName: siteName,
     },
+    alternates: {
+      canonical: "https://www.lfcc.tv",
+    },
   };
 }
 

@@ -23,6 +23,9 @@ export async function generateMetadata(
       siteName: siteName,
       url: "https://www.lfcc.tv/watch-online",
     },
+    alternates: {
+      canonical: "https://www.lfcc.tv/watch-online",
+    },
   };
 }
 

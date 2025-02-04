@@ -21,6 +21,9 @@ export async function generateMetadata(
       siteName: siteName,
       url: "https://www.lfcc.tv/events/calendar",
     },
+    alternates: {
+      canonical: "https://www.lfcc.tv/events/calendar",
+    },
   };
 }
 

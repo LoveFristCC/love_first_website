@@ -25,6 +25,9 @@ export async function generateMetadata(
       siteName: siteName,
       url: `https://www.lfcc.tv/bible-study`,
     },
+    alternates: {
+      canonical: `https://www.lfcc.tv/bible-study`,
+    },
   };
 }
 

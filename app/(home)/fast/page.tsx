@@ -23,6 +23,9 @@ export async function generateMetadata(
       siteName: siteName,
       url: "https://www.lfcc.tv/fast",
     },
+    alternates: {
+      canonical: "https://www.lfcc.tv/fast",
+    },
   };
 }
 

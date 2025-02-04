@@ -30,6 +30,9 @@ export async function generateMetadata(
       siteName: siteName,
       url: `https://www.lfcc.tv/connect/creative-arts/${id}`,
     },
+    alternates: {
+      canonical: `https://www.lfcc.tv/connect/creative-arts/${id}`,
+    },
   };
 }
 

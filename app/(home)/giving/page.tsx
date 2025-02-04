@@ -22,6 +22,9 @@ export async function generateMetadata(
       siteName: siteName,
       url: "https://www.lfcc.tv/giving",
     },
+    alternates: {
+      canonical: "https://www.lfcc.tv/giving",
+    },
   };
 }
 

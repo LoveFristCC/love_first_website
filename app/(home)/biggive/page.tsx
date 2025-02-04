@@ -28,12 +28,14 @@ export async function generateMetadata(
       siteName: siteName,
       url: "https://www.lfcc.tv/biggive",
     },
+    alternates: {
+      canonical: `https://www.lfcc.tv/biggive`,
+    },
   };
 }
 
 const BigGivePage = async () => {
   const data: any = await sanityFetch({ query: bigGive });
-  console.log("🚀 ~ data:", data);
 
   return (
     <>
