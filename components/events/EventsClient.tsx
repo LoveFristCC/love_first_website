@@ -62,7 +62,7 @@ const EventsClient = ({
               viewport={{ once: true, amount: 0.4 }}
               variants={cardVariants}
             >
-              <h3 className="dateHeader">{date}</h3>
+              <p className="dateHeader">{date}</p>
               {groupedEvents[date].map(
                 (
                   el: {
@@ -91,9 +91,9 @@ const EventsClient = ({
                         rel="noopener noreferrer"
                         aria-label={`Join event ${headline.attributes.name}`}
                       >
-                        <p className="eventHeader">
+                        <h3 className="eventHeader">
                           {headline.attributes.name}
-                        </p>
+                        </h3>
                         <p>{el.attributes.location}</p>
                         <TimeComponent
                           startTime={el.attributes.starts_at}
