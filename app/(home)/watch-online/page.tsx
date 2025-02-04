@@ -34,7 +34,7 @@ export async function generateMetadata(
     openGraph: {
       title: "Online Church Services | Live & On-Demand - Love First",
       description:
-        "Join our U.S.-based church community online. Live stream Sunday services at 7:45 AM, 9:45 AM, 11:45 AM (EST) and Wednesday Bible study at 7 PM (EST).",
+        "Join live church services online from anywhere. Stream Sunday worship and Wednesday Bible study with Love First Christian Center. Watch now or view on-demand sermons.",
       images: [...previousImages],
       siteName: siteName,
       url: "https://www.lfcc.tv/watch-online",
