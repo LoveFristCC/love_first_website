@@ -32,7 +32,7 @@ export async function generateMetadata(
       "Christian live stream",
     ],
     openGraph: {
-      title: "Online Church Services | Live & On-Demand - Love First Christian",
+      title: "Online Church Services | Live & On-Demand - Love First",
       description:
         "Join our U.S.-based church community online. Live stream Sunday services at 7:45 AM, 9:45 AM, 11:45 AM (EST) and Wednesday Bible study at 7 PM (EST).",
       images: [...previousImages],
