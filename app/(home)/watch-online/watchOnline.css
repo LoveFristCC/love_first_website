@@ -1,27 +1,33 @@
-.watch-online {
-  position: relative;
-  overflow: hidden;
+:root {
+  --wo-primary-color: #5f05a6;
+  --wo-secondary-color: #f8f9fa;
+  --wo-text-color: #333;
+  --wo-background-color: #f8f9fa;
+  --wo-white: #ffffff;
 }
 
-.watch-online-hero {
+.wo-section-description {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.wo-container {
+  font-family: "Arial", sans-serif;
+  color: var(--wo-text-color);
+  line-height: 1.6;
+}
+
+.wo-hero {
   position: relative;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  text-align: left;
-  @media (max-width: 900px) {
-    height: unset;
-    aspect-ratio: 5/4;
-  }
-  @media (max-width: 600px) {
-    height: unset;
-    aspect-ratio: 4 / 7;
-  }
+  text-align: center;
+  color: var(--wo-white);
 }
 
-.watch-online-hero::after {
+.wo-hero::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -29,572 +35,177 @@
   z-index: 1;
 }
 
-.watch-online-background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.wo-hero-background {
   z-index: -1;
 }
 
-.watch-online-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  padding: 20px;
+.wo-hero-content {
+  max-width: 800px;
+  padding: 2rem;
+  z-index: 999;
+  border-radius: 10px;
 }
 
-.watch-online-title {
+.wo-hero-title {
   font-size: 3rem;
-  font-weight: bold;
   margin-bottom: 1rem;
-  text-align: center;
-  white-space: balance;
+  animation: wo-fadeInUp 1s ease-out;
 }
 
-.watch-online-description {
-  font-size: 1.25rem;
+.wo-hero-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  animation: wo-fadeInUp 1s ease-out 0.3s;
+}
+
+.wo-hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  animation: wo-fadeInUp 1s ease-out 0.6s;
+}
+
+.wo-button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin: auto;
+}
+
+.wo-button-primary {
+  background-color: var(--wo-primary-color);
+  color: var(--wo-white);
+  border: 2px solid transparent;
+}
+
+.wo-button-secondary {
+  background-color: var(--wo-secondary-color);
+  color: #333;
+  border: 2px solid #5f05a6;
+}
+
+.wo-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wo-section-title {
+  font-size: 2.5rem;
+  text-align: center;
   margin-bottom: 2rem;
 }
 
-@media (max-width: 1200px) {
-  .watch-online-title {
-    font-size: 2.5rem;
-  }
-
-  .watch-online-description {
-    font-size: 1.15rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .watch-online-title {
-    font-size: 2.25rem;
-  }
-
-  .watch-online-description {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .watch-online-title {
-    font-size: 2rem;
-  }
-
-  .watch-online-description {
-    font-size: 1rem;
-  }
-
-  .watch-online-hero {
-    min-height: 40vh;
-    padding: 60px 20px;
-    text-align: center;
-  }
-
-  .watch-online-hero-content {
-    max-width: 100%;
-    padding: 10px;
-  }
-}
-
-@media (max-width: 576px) {
-  .watch-online-hero-content {
-    padding: 10px;
-  }
-}
-
-@media (max-width: 400px) {
-  .watch-online-hero {
-    padding: 40px 10px;
-  }
-}
-
-.watch-online-info {
-  background: rgba(93, 5, 167, 0.7);
-  color: white;
-  padding: 40px 20px;
+.wo-content-wrapper {
+  max-width: 1150px;
   margin: 0 auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.watch-online-info-block {
-  padding: 20px;
-}
-
-.watch-online-info-title {
-  font-size: 2.5em;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.watch-online-info-content {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-}
-
-.watch-online-buttons {
+  padding: 4rem 2rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
 }
 
-.watch-online-button {
-  display: inline-block;
-  background-color: #eee;
-  color: #333;
-  padding: 12px 24px;
-  border-radius: 5px;
-  font-size: 1em;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 10px;
-  text-decoration: none;
-  transition:
-    background-color 0.3s ease,
-    transform 0.2s ease,
-    color 0.2s ease;
-  box-shadow: var(--shadow-3);
+.wo-info-section {
+  background-color: var(--wo-background-color);
 }
 
-.watch-online-button:hover {
-  /* background-color: rgba(93, 5, 167, 0.7); */
-  transform: scale(1.05);
-  /* color: #fff; */
-}
-
-@media (max-width: 600px) {
-  .watch-online-info-title {
-    font-size: 2em;
-  }
-
-  .watch-online-info-content {
-    font-size: 1em;
-  }
-
-  .watch-online-button {
-    padding: 10px 20px;
-    font-size: 0.9em;
-    width: 100%;
-  }
-}
-
-.on-demand-services {
-  /* background: linear-gradient(135deg, #5d05a7, #333); */
-  color: #333;
-  padding: 50px 20px;
-  text-align: center;
-  border-radius: 10px;
-  margin: 40px 0;
-}
-
-.on-demand-content {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.on-demand-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #5d05a7;
-}
-
-.on-demand-description {
-  font-size: 1.25rem;
-  margin-bottom: 30px;
-}
-
-.on-demand-button {
-  display: inline-block;
-  background-color: rgba(93, 5, 167, 0.7);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition:
-    background-color 0.3s ease,
-    transform 0.3s ease;
-  box-shadow: var(--shadow-3);
-}
-
-.on-demand-button:hover {
-  background-color: #333;
-  transform: scale(1.05);
-}
-
-@media (max-width: 600px) {
-  .on-demand-title {
-    font-size: 2rem;
-  }
-
-  .on-demand-description {
-    font-size: 1rem;
-  }
-
-  .on-demand-button {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    width: 100%;
-  }
-}
-
-/* .previous-container {
+.wo-schedule {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-} */
-
-.previous-series-header {
-  width: 100%;
-  height: 70vh;
-  position: relative;
-  overflow: hidden;
-  @media (max-width: 900px) {
-    height: unset;
-    aspect-ratio: 5/4;
-  }
-  @media (max-width: 600px) {
-    height: unset;
-    aspect-ratio: 4 / 5;
-  }
+  justify-content: space-around;
+  margin-bottom: 2rem;
 }
 
-.previous-series-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
-  z-index: 1;
-}
-
-.previous-series-header img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.latest-sermon-section {
-  width: 100%;
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #f5f5f5;
-  box-shadow: var(--shadow-3);
-  border-radius: 8px;
+.wo-schedule-item {
   text-align: center;
 }
 
-.latest-sermon-section h1 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
+.wo-schedule-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.wo-info-note {
   text-align: center;
-  white-space: balance;
+  font-style: italic;
 }
 
-.latest-sermon-section iframe {
-  width: 100%;
-  max-width: 800px; /* Adjust this value based on your design */
-
-  border: none;
-  border-radius: 8px;
-  margin: 0 auto;
-  display: block;
+.wo-on-demand-section {
+  background-color: var(--wo-white);
 }
 
-.latest-sermon-section img:hover {
-  box-shadow: var(--shadow-1);
-}
-.featuredImage {
-  box-shadow: var(--shadow-3);
-  border-radius: 10px;
-}
-
-.previous-sermons-section {
-  width: 100%;
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #fff;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-  border-radius: 12px;
-  text-align: center;
-}
-
-.previous-sermons-section h2 {
-  font-size: 2.5rem;
-  color: #5d05a7;
-  margin-bottom: 30px;
-}
-
-.previous-sermons-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  flex-direction: row-reverse;
-}
-
-.previous-sermon-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: var(--shadow-2);
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
-  text-align: center;
-}
-
-.previous-sermon-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.previous-sermon-item img {
-  border-radius: 12px;
-  margin-bottom: 10px;
-}
-
-.previous-sermon-title {
-  font-size: 1.2rem;
-  color: #555;
-  font-weight: bold;
-}
-
-body {
-  font-family: "Arial", sans-serif;
-  margin: 0;
+.wo-feature-list {
+  list-style-type: none;
   padding: 0;
-  box-sizing: border-box;
-}
-
-.individual-series-header {
-  position: relative;
-  min-height: 60vh;
-  height: 60vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, rgba(93, 5, 167, 0.7), #333);
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-.individual-series-header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  margin: 10px auto 0;
-  padding: 0;
-  text-transform: uppercase;
-  text-shadow: 2px 4px 6px #000;
-}
-
-.individual-sermon-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  /* background: #f9f9f9; */
-}
-
-.individual-sermon-content h2 {
-  text-align: center;
-  font-size: var(--font-size-fluid-2);
-  margin: 20px 0;
-  color: #333;
-}
-
-.individual-video-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px; /* Space between video and details */
-  padding: 20px;
-  background: #f9f9f9;
-  min-height: 60vh;
-
-  width: 100%;
-
-  border-radius: 10px;
-}
-
-.individual-video-container {
-  flex: 1;
-  max-width: 800px;
-  width: 100%;
-  height: auto;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-
-  border-radius: 8px;
-}
-
-.individual-video-container iframe,
-.individual-video-container .individual-featured-image {
-  width: 100%;
-  height: auto;
-  border: none;
-  border-radius: 8px;
-  aspect-ratio: 16 / 9;
-  object-fit: cover; /* Ensure the video/image covers the container */
-  box-shadow: var(--shadow-3);
-}
-
-.individual-play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.individual-play-button::before {
-  content: "";
-  display: inline-block;
-  margin-left: 5px;
-  border-style: solid;
-  border-width: 15px 0 15px 25px;
-  border-color: transparent transparent transparent white;
-}
-
-.individual-sermon-details {
-  flex: 1;
-  max-width: 35%;
-
-  padding: 20px;
-  border-radius: 8px;
-}
-
-.individual-sermon-details h3 {
-  font-size: var(--font-size-fluid-1);
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #5f04a6;
-}
-
-.individual-sermon-details p {
-  margin: 5px 0;
-  color: #555;
-  font-size: 1rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .individual-video-section {
-    flex-direction: column;
-    gap: 20px;
-    padding: 0;
-  }
-
-  .individual-video-container {
-    max-width: 100%;
-  }
-
-  .individual-sermon-details {
-    max-width: 100%;
-    width: 100%;
-  }
-}
-
-.individual-video-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-.individual-video-item {
-  cursor: pointer;
-  border-radius: 8px;
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
-}
-
-.individual-video-item:hover {
-  transform: translateY(-5px);
-  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
-}
-
-.thumbnail-image {
-  width: 100%;
-  height: auto;
+.wo-feature-list li {
+  background-color: var(--wo-background-color);
+  padding: 1rem;
   border-radius: 5px;
-  box-shadow: var(--shadow-2);
-}
-
-.individual-video-item h3 {
-  font-size: 1rem;
-  color: #333;
-  margin: 10px 0 0 0;
   text-align: center;
 }
 
-/* Responsive Design */
+.wo-faq-section {
+  background-color: var(--wo-background-color);
+}
+
+.wo-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.wo-faq-item {
+  background-color: var(--wo-white);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.wo-faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.wo-faq-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #5f05a6;
+  text-align: center;
+}
+
+@keyframes wo-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
-  .individual-series-header h1 {
-    font-size: 1.5rem;
-    padding: 5px 10px;
+  .wo-hero-title {
+    font-size: 2rem;
   }
 
-  /* .individual-sermon-details h3,
-  .individual-sermon-details p {
-    font-size: 0.9rem;
-  } */
-
-  .individual-play-button {
-    width: 50px;
-    height: 50px;
+  .wo-hero-description {
+    font-size: 1rem;
   }
 
-  .individual-play-button::before {
-    border-width: 12px 0 12px 20px;
+  .wo-hero-buttons {
+    flex-direction: column;
   }
-}
 
-.individualSubHead {
-  font-size: var(--font-size-fluid-2);
-  width: 100%;
-  text-align: center;
-  color: #5d05a7;
-  padding: 30px 0;
-  /* background: #f9f9f9; */
-}
-
-.individual-series-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  .wo-schedule {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

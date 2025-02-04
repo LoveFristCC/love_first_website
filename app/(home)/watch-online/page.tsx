@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import SermonSection from "@/components/sermons/SermonSection";
 import type { Metadata, ResolvingMetadata } from "next";
+import { serviceDate } from "@/app/utils/seoServiceDate";
+console.log("🚀 ~ serviceDate:", serviceDate);
 
 type Props = {
   params: { id: string };
@@ -14,91 +17,213 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const previousImages = (await parent).openGraph?.images || [];
   const siteName = "Love First Christian Center";
+
   return {
-    title: "Church Online - Love First Christian Center",
+    title: "Online Church Services | Live & On-Demand - Love First Christian",
     description:
-      "Join Love First Christian Center from anywhere! Stream church online live every Sunday and Wednesday or watch past sermons on-demand.",
+      "Join live church services online from anywhere. Stream Sunday worship and Wednesday Bible study with Love First Christian Center. Watch now or view on-demand sermons.",
+    keywords: [
+      "watch church services online",
+      "live church services online",
+      "online church service",
+      "stream church services",
+      "virtual church services",
+      "Sunday worship online",
+      "Christian live stream",
+    ],
     openGraph: {
-      images: [...previousImages],
+      title: "Online Church Services | Live & On-Demand - Love First Christian",
+      description:
+        "Join our U.S.-based church community online. Live stream Sunday services at 7:45 AM, 9:45 AM, 11:45 AM (EST) and Wednesday Bible study at 7 PM (EST).",
+      images: [
+        {
+          url: "https://www.lfcc.tv/logo.webp",
+          width: 1200,
+          height: 630,
+          alt: "Live Church Services Online - Love First Christian Center",
+        },
+        ...previousImages,
+      ],
       siteName: siteName,
       url: "https://www.lfcc.tv/watch-online",
+      type: "website",
+      locale: "en_US",
     },
     alternates: {
       canonical: "https://www.lfcc.tv/watch-online",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Online Church Services | Live & On-Demand - Love First Christian",
+      description:
+        "Join live worship services online from anywhere in the United States. Experience authentic Christian community with Love First Christian Center.",
+      images: ["https://www.lfcc.tv/logo.webp"],
     },
   };
 }
 
 const WatchOnline = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Church",
+    name: "Love First Christian Center",
+    url: "https://www.lfcc.tv",
+    logo: "https://www.lfcc.tv/logo.webp",
+    image: "https://www.lfcc.tv/onlineBackground.webp",
+    description:
+      "Watch live church services online with Love First Christian Center, serving spiritual communities across the United States.",
+    event: [
+      {
+        "@type": "Event",
+        name: "Sunday Worship Service",
+        startDate: serviceDate,
+        eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+        eventStatus: "https://schema.org/EventScheduled",
+        location: {
+          "@type": "VirtualLocation",
+          url: "https://www.lfcc.tv/watch-online",
+        },
+        image: "https://www.lfcc.tv/onlineBackground.webp",
+      },
+    ],
+  };
+
   return (
-    <div className="watch-online">
-      <section className="watch-online-hero">
+    <div className="wo-container">
+      <Script
+        id="church-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
+      <section className="wo-hero">
         <Image
           src="/onlineBackground.webp"
-          alt="Watch Online Background"
+          alt="Live Church Services Online - Love First Christian Center"
           sizes="100vw"
           fill
-          style={{
-            objectFit: "cover",
-          }}
+          style={{ objectFit: "cover" }}
           priority
-          className="watch-online-background-image"
+          className="wo-hero-background"
         />
-        <div className="watch-online-hero-content">
-          <h1 className="watch-online-title">Watch Our Services Online</h1>
-          <p className="watch-online-description">
-            Join us from anywhere in the world! Our live streams and on-demand
-            services are available for you to watch and participate in our
-            worship experience.
+        <div className="wo-hero-content">
+          <h1 className="wo-hero-title">
+            Watch Church Services Online from Anywhere.
+          </h1>
+          <p className="wo-hero-description">
+            Experience authentic Christian community with Love First&apos;s{" "}
+            <strong>live online church services</strong>. Join thousands of
+            believers across America for powerful worship, biblical teaching,
+            and spiritual connection. Participate live every Sunday and
+            Wednesday or watch on-demand at your convenience.
           </p>
-          <div className="watch-online-buttons">
+          <div className="wo-hero-buttons">
             <Link
               href="https://lovefirstcc.online.church/"
-              className="watch-online-button"
+              className="wo-button wo-button-primary"
               rel="noopener noreferrer"
               target="_blank"
-              aria-label="Watch Love First Online"
+              aria-label="Join Live Church Service Now"
             >
-              Watch Live
+              Join Live Service Now
             </Link>
             <Link
               href="https://www.youtube.com/@LovefirstChristianCenter/streams"
-              className="watch-online-button"
+              className="wo-button wo-button-secondary"
               rel="noopener noreferrer"
               target="_blank"
-              aria-label="Watch Love First Online on Youtube"
+              aria-label="Watch on YouTube Live"
             >
-              Watch Live on YouTube
+              YouTube Live Stream
             </Link>
           </div>
         </div>
       </section>
-      <section className="watch-online-info">
-        <div className="watch-online-info-block">
-          <h2 className="watch-online-info-title">Live Stream Schedule</h2>
-          <p className="watch-online-info-content">
-            Our live services are streamed every Sunday at 7:45 AM, 9:45 AM,
-            11:45 AM and Wednesday at 7 PM. Don&apos;t miss out on our engaging
-            and uplifting services.
+
+      <section className="wo-info-section">
+        <div className="wo-content-wrapper">
+          <h2 className="wo-section-title">Weekly Live Stream Schedule</h2>
+          <div className="wo-schedule">
+            <div className="wo-schedule-item">
+              <h3>Sunday Worship</h3>
+              <p>7:45 AM | 9:45 AM | 11:45 AM (EST)</p>
+            </div>
+            <div className="wo-schedule-item">
+              <h3>Wednesday Bible Study</h3>
+              <p>7:00 PM (EST)</p>
+            </div>
+          </div>
+          <p className="wo-info-note">
+            All services available live online. Set reminders for your preferred
+            service time and never miss a moment of worship.
           </p>
         </div>
       </section>
 
       <SermonSection path="online" />
 
-      <section className="on-demand-services">
-        <div className="on-demand-content">
-          <h2 className="on-demand-title">On-Demand Services</h2>
-          <p className="on-demand-description">
-            Catch up on past services or re-watch your favorite messages
-            anytime. Our on-demand library is available 24/7.
+      <section className="wo-on-demand-section">
+        <div className="wo-content-wrapper">
+          <h2 className="wo-section-title">
+            24/7 On-Demand Worship Experience
+          </h2>
+          <p className="wo-section-description">
+            Access our entire library of <strong>online church services</strong>{" "}
+            featuring:
           </p>
+          <ul className="wo-feature-list">
+            <li>Full Sunday worship recordings</li>
+            <li>Bible study archives</li>
+            <li>Seasonal sermon series</li>
+            <li>Special event recordings</li>
+          </ul>
           <Link
             href="/watch-online/previous-sermons"
-            className="on-demand-button"
+            className="wo-button wo-button-primary"
+            aria-label="Browse All Sermons"
           >
-            Previous Sermons
+            Browse Sermon Library
           </Link>
+        </div>
+      </section>
+
+      <section className="wo-faq-section">
+        <div className="wo-content-wrapper">
+          <h2 className="wo-section-title">Frequently Asked Questions</h2>
+          <div className="wo-faq-grid">
+            <div className="wo-faq-item">
+              <h3>How do I watch church services online?</h3>
+              <p>
+                Simply click &quot;Join Live Service Now&quot; during service
+                times or select any previous sermon from our library. No account
+                required - completely free access.
+              </p>
+            </div>
+            <div className="wo-faq-item">
+              <h3>Can I take notes during the live stream?</h3>
+              <p>
+                Yes! Our live stream includes an interactive notes feature that
+                lets you jot down reflections and save key insights in real
+                time. You can easily revisit your notes after the service to
+                reflect on meaningful moments from the sermon.
+              </p>
+            </div>
+            <div className="wo-faq-item">
+              <h3>Can I participate in live chat?</h3>
+              <p>
+                Yes! Our live stream includes interactive prayer requests and
+                real-time chat with our ministry team.
+              </p>
+            </div>
+            <div className="wo-faq-item">
+              <h3>Is there an online Bible available during the service?</h3>
+              <p>
+                Absolutely! You’ll find multiple translations, search tools, and
+                verse highlighting to help you follow along with the sermon or
+                study independently. Best of all—it’s completely free to use!
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
