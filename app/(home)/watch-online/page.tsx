@@ -1,10 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
+import { DateTime } from "luxon";
 import SermonSection from "@/components/sermons/SermonSection";
+import {
+  nextSundayMorning,
+  nextSundayAfternoon,
+  nextSundayLateMorning,
+  nextWednesday,
+} from "@/app/utils/seoServiceDate";
 import type { Metadata, ResolvingMetadata } from "next";
-import { serviceDate } from "@/app/utils/seoServiceDate";
-console.log("🚀 ~ serviceDate:", serviceDate);
 
 type Props = {
   params: { id: string };
@@ -51,22 +56,72 @@ const WatchOnline = () => {
     "@type": "Church",
     name: "Love First Christian Center",
     url: "https://www.lfcc.tv",
-    logo: "https://www.lfcc.tv/logo.webp",
-    image: "https://www.lfcc.tv/onlineBackground.webp",
-    description:
-      "Watch live church services online with Love First Christian Center, serving spiritual communities across the United States.",
     event: [
       {
-        "@type": "Event",
-        name: "Sunday Worship Service",
-        startDate: serviceDate,
-        eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
-        eventStatus: "https://schema.org/EventScheduled",
+        "@type": "EventSeries",
+        name: "Weekly Sunday Worship Services",
+        startDate: nextSundayMorning,
+        eventSchedule: {
+          "@type": "Schedule",
+          repeatFrequency: "P1W",
+          byDay: "http://schema.org/Sunday",
+          startTime: DateTime.fromISO(nextSundayMorning as string).toFormat(
+            "HH:mm:ssZZ"
+          ),
+          endTime: DateTime.fromISO(nextSundayMorning as string)
+            .plus({ minutes: 75 })
+            .toFormat("HH:mm:ssZZ"),
+        },
         location: {
           "@type": "VirtualLocation",
           url: "https://www.lfcc.tv/watch-online",
         },
-        image: "https://www.lfcc.tv/onlineBackground.webp",
+        subEvent: [
+          {
+            "@type": "Event",
+            name: "Sunday Morning Worship",
+            startDate: nextSundayMorning,
+            endDate: DateTime.fromISO(nextSundayMorning as string)
+              .plus({ minutes: 75 })
+              .toISO(),
+          },
+          {
+            "@type": "Event",
+            name: "Sunday Late Morning Worship",
+            startDate: nextSundayLateMorning,
+            endDate: DateTime.fromISO(nextSundayLateMorning as string)
+              .plus({ minutes: 75 })
+              .toISO(),
+          },
+          {
+            "@type": "Event",
+            name: "Sunday Afternoon Worship",
+            startDate: nextSundayAfternoon,
+            endDate: DateTime.fromISO(nextSundayAfternoon as string)
+              .plus({ minutes: 75 })
+              .toISO(),
+          },
+        ],
+      },
+      {
+        "@type": "EventSeries",
+        name: "Weekly Bible Study",
+        startDate: nextWednesday,
+        eventSchedule: {
+          "@type": "Schedule",
+          repeatFrequency: "P1W",
+          byDay: "http://schema.org/Wednesday",
+          startTime: DateTime.fromISO(nextWednesday as string).toFormat(
+            "HH:mm:ssZZ"
+          ),
+          endTime: DateTime.fromISO(nextWednesday as string)
+            .plus({ minutes: 90 })
+            .toFormat("HH:mm:ssZZ"),
+        },
+        location: {
+          "@type": "VirtualLocation",
+          url: "https://www.lfcc.tv/watch-online",
+        },
       },
     ],
   };

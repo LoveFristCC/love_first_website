@@ -1,33 +1,34 @@
-const getUpcomingServiceDates = () => {
-  const now = new Date();
-  const timeZone = "America/New_York"; // Adjust based on your church's time zone
+import { DateTime } from "luxon";
 
-  // Define service times
-  const serviceTimes = [
-    { day: 0, time: "07:45" }, // Sunday 7:45 AM
-    { day: 0, time: "09:45" }, // Sunday 9:45 AM
-    { day: 0, time: "11:45" }, // Sunday 11:45 AM
-    { day: 3, time: "19:00" }, // Wednesday 7:00 PM
-  ];
+// Utility function to get next occurrence of a service
+const getNextServiceDate = (dayOfWeek: any, timeString: any) => {
+  // Get the current time in America/New_York timezone
+  const now = DateTime.now().setZone("America/New_York");
 
-  // Find the next upcoming service
-  for (let i = 0; i < 7; i++) {
-    const futureDate = new Date(now);
-    futureDate.setDate(now.getDate() + i);
-    const serviceDay = futureDate.getDay();
+  // Extract hours and minutes from timeString
+  const [hours, minutes] = timeString.split(":").map(Number);
 
-    for (const service of serviceTimes) {
-      if (service.day === serviceDay) {
-        const [hours, minutes] = service.time.split(":");
-        futureDate.setHours(parseInt(hours), parseInt(minutes), 0, 0);
-
-        if (futureDate > now) {
-          return futureDate.toISOString();
-        }
-      }
-    }
+  // Calculate the next occurrence of the specified weekday
+  let result = now.set({
+    hour: hours,
+    minute: minutes,
+    second: 0,
+    millisecond: 0,
+  });
+  while (result.weekday !== dayOfWeek) {
+    result = result.plus({ days: 1 });
   }
-  return null;
+
+  // If the time for today has already passed, move to next week's occurrence
+  if (result < now) {
+    result = result.plus({ days: 7 });
+  }
+
+  return result.toISO(); // Returns ISO string with correct timezone offset
 };
 
-export const serviceDate = getUpcomingServiceDates();
+// Generate service dates with automatic DST handling
+export const nextSundayMorning = getNextServiceDate(7, "07:45"); // Sunday (Luxon uses 1-7 for Mon-Sun)
+export const nextSundayLateMorning = getNextServiceDate(7, "09:45");
+export const nextSundayAfternoon = getNextServiceDate(7, "11:45");
+export const nextWednesday = getNextServiceDate(3, "19:00"); // Wednesday
