@@ -4,8 +4,30 @@ import WelcomeSection from "@/components/welcome/WelcomeSection";
 import EventsPage from "@/components/events/EventsPage";
 import CommunitySection from "@/components/community/CommunitySection";
 import JoinSection from "@/components/join/join";
+import Script from "next/script";
 
 export default async function Page() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "PlaceOfWorship",
+    name: "Love First Christian Center",
+    url: "https://www.lfcc.tv",
+    logo: "https://cdn.sanity.io/images/51iewwwv/production/1334751cc15e41816828dbcfe980784ecb970b92-500x201.webp",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "12847 Balm Riverview Rd",
+      addressLocality: "Riverview",
+      addressRegion: "FL",
+      postalCode: "33579",
+      addressCountry: "US",
+    },
+    telephone: "+1-813-671-2009",
+    sameAs: [
+      "https://www.facebook.com/wearelovefirst",
+      "https://www.instagram.com/wearelovefirst",
+      "https://www.youtube.com/@LoveFirstChristianCenter",
+    ],
+  };
   const date = new Date();
   const day = date.getDay();
 
@@ -13,6 +35,11 @@ export default async function Page() {
 
   return (
     <div className="mainPage">
+      <Script
+        id="church-local-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <Hero serviceTime={serviceTime} />
 
       <WelcomeSection serviceTime={serviceTime} />
