@@ -154,6 +154,41 @@ export default async function Give() {
           </div>
         </div>
       </section>
+      <section className="giving-corporate-match">
+        <div className="giving-corporate-inner-container">
+          <h2 className="corporate-match-title">Corporate Matching</h2>
+          <div className="corporate-match-content">
+            <p className="corporate-match-text">
+              Many corporations allocate funds to match the donations that their
+              employees give in support of nonprofits. Typically, companies with
+              these programs will match donations dollar for dollar —
+              effectively doubling your church contributions.
+            </p>
+            <p className="corporate-match-text">
+              Below is a list of participating corporates. Please check the list
+              below and inquire with your Human Resources Department to see if
+              your company has a matching program. Your donation amounts and
+              necessary documentation can be obtained by calling the church
+              office at{" "}
+              <a href="tel:8136712009" className="phone-number">
+                813-671-2009
+              </a>{" "}
+              during business hours.
+            </p>
+            <div className="corporate-list">
+              <a
+                href="https://cdn.sanity.io/files/51iewwwv/production/133a0fdae22b430b5519647e78348964af579e89.pdf"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="list-link"
+                aria-label="Check if your employer offers donation matching"
+              >
+                Find Out If Your Employer Matches Donations
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
