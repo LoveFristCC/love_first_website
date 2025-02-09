@@ -24,9 +24,9 @@ export async function generateMetadata(
   const siteName = "Love First Christian Center";
 
   return {
-    title: "Online Church Services | Live & On-Demand - Love First Christian",
+    title: "Online Church Services | Live & On-Demand - Love First",
     description:
-      "Join live church services online from anywhere. Stream Sunday worship and Wednesday Bible study with Love First Christian Center. Watch now or view on-demand sermons.",
+      "Join live church services online from anywhere. Stream Sunday worship and Wednesday Bible study with Love First. Watch now or view on-demand sermons.",
     keywords: [
       "watch church services online",
       "live church services online",
