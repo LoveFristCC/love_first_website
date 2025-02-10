@@ -127,6 +127,7 @@ export default function Footer() {
               <Link
                 href="https://www.facebook.com/wearelovefirst"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Visit Love First on Facebook"
               >
                 <svg
@@ -143,6 +144,7 @@ export default function Footer() {
               <Link
                 href="https://www.instagram.com/wearelovefirst/"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Visit Love First on Instagram"
               >
                 <svg
@@ -159,6 +161,7 @@ export default function Footer() {
               <Link
                 href="https://www.youtube.com/@LoveFirstChristianCenter"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Visit Love First on YouTube"
               >
                 <svg
@@ -182,12 +185,7 @@ export default function Footer() {
           </p>
           <p>
             Website Expertly Crafted and Designed by{" "}
-            <Link
-              href="https://www.khalstead.com"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="designerLink"
-            >
+            <Link href="https://www.khalstead.com" className="designerLink">
               Kevin Halstead, Owner of EliteWebWrxs
             </Link>
           </p>
