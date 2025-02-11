@@ -61,6 +61,7 @@ const WatchOnline = () => {
         "@type": "EventSeries",
         name: "Weekly Sunday Worship Services",
         startDate: nextSundayMorning,
+        eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
         eventSchedule: {
           "@type": "Schedule",
           repeatFrequency: "P1W",
@@ -73,7 +74,8 @@ const WatchOnline = () => {
             .toFormat("HH:mm:ssZZ"),
         },
         location: {
-          "@type": "VirtualLocation",
+          "@type": "Place",
+          name: "Online Event",
           url: "https://www.lfcc.tv/watch-online",
         },
         subEvent: [
@@ -84,8 +86,10 @@ const WatchOnline = () => {
             endDate: DateTime.fromISO(nextSundayMorning as string)
               .plus({ minutes: 75 })
               .toISO(),
+            eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
             location: {
-              "@type": "VirtualLocation",
+              "@type": "Place",
+              name: "Online Event",
               url: "https://www.lfcc.tv/watch-online",
             },
           },
@@ -96,8 +100,10 @@ const WatchOnline = () => {
             endDate: DateTime.fromISO(nextSundayLateMorning as string)
               .plus({ minutes: 75 })
               .toISO(),
+            eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
             location: {
-              "@type": "VirtualLocation",
+              "@type": "Place",
+              name: "Online Event",
               url: "https://www.lfcc.tv/watch-online",
             },
           },
@@ -108,8 +114,10 @@ const WatchOnline = () => {
             endDate: DateTime.fromISO(nextSundayAfternoon as string)
               .plus({ minutes: 75 })
               .toISO(),
+            eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
             location: {
-              "@type": "VirtualLocation",
+              "@type": "Place",
+              name: "Online Event",
               url: "https://www.lfcc.tv/watch-online",
             },
           },
@@ -119,6 +127,7 @@ const WatchOnline = () => {
         "@type": "EventSeries",
         name: "Weekly Bible Study",
         startDate: nextWednesday,
+        eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
         eventSchedule: {
           "@type": "Schedule",
           repeatFrequency: "P1W",
@@ -131,7 +140,8 @@ const WatchOnline = () => {
             .toFormat("HH:mm:ssZZ"),
         },
         location: {
-          "@type": "VirtualLocation",
+          "@type": "Place",
+          name: "Online Event",
           url: "https://www.lfcc.tv/watch-online",
         },
       },
