@@ -84,6 +84,10 @@ const WatchOnline = () => {
             endDate: DateTime.fromISO(nextSundayMorning as string)
               .plus({ minutes: 75 })
               .toISO(),
+            location: {
+              "@type": "VirtualLocation",
+              url: "https://www.lfcc.tv/watch-online",
+            },
           },
           {
             "@type": "Event",
@@ -92,6 +96,10 @@ const WatchOnline = () => {
             endDate: DateTime.fromISO(nextSundayLateMorning as string)
               .plus({ minutes: 75 })
               .toISO(),
+            location: {
+              "@type": "VirtualLocation",
+              url: "https://www.lfcc.tv/watch-online",
+            },
           },
           {
             "@type": "Event",
@@ -100,6 +108,10 @@ const WatchOnline = () => {
             endDate: DateTime.fromISO(nextSundayAfternoon as string)
               .plus({ minutes: 75 })
               .toISO(),
+            location: {
+              "@type": "VirtualLocation",
+              url: "https://www.lfcc.tv/watch-online",
+            },
           },
         ],
       },
@@ -125,7 +137,6 @@ const WatchOnline = () => {
       },
     ],
   };
-
   return (
     <div className="wo-container">
       <Script
