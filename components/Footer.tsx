@@ -105,6 +105,14 @@ export default function Footer() {
             >
               Share an Update
             </Link>
+            <Link
+              href="https://cdn.sanity.io/files/51iewwwv/production/9be49b20d0d38cb9e7a51d8f980281497a745fda.pdf"
+              rel="noreferrer noopener"
+              target="_blank"
+              aria-label="Annual report 2024"
+            >
+              Annual Report
+            </Link>
           </div>
         </div>
         <div className="footerHeader">
