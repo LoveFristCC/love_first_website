@@ -34,7 +34,7 @@ export const Navigation = ({
     { linkTitle: "Visit Us", location: "/visit-us" },
     { linkTitle: "Our Pastors", location: "/about-love-first/pastors" },
     { linkTitle: "Events", location: "", header: true },
-    { linkTitle: "Up Coming Events", location: "/events" },
+    { linkTitle: "Upcoming Events", location: "/events" },
     { linkTitle: "Calendar", location: "/events/calendar" },
     { linkTitle: "Our Groups", location: "", header: true },
     { linkTitle: "All Groups", location: "/connect" },
