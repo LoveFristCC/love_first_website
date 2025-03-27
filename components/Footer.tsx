@@ -101,9 +101,17 @@ export default function Footer() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSd6ZCSKtE1leLhUPuvyAoUNXwxRWq2HpY4F9oBiRJ8eWhkaTA/viewform"
               rel="noreferrer noopener"
               target="_blank"
-              aria-label="Share an Update"
+              aria-label="Ministry Announcement Request"
             >
-              Share an Update
+              Ministry Announcement Request
+            </Link>
+            <Link
+              href="https://forms.gle/2gGbANRDwJGKK55V6"
+              rel="noreferrer noopener"
+              target="_blank"
+              aria-label="Ministry Event Request"
+            >
+              Ministry Event Request
             </Link>
             <Link
               href="https://cdn.sanity.io/files/51iewwwv/production/9be49b20d0d38cb9e7a51d8f980281497a745fda.pdf"
