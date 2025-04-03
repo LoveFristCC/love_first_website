@@ -21,7 +21,7 @@ export default function Redirect() {
           next: { revalidate: 0 },
         }
       );
-      console.log("🚀 ~ data:", data);
+
       const matchedRedirectLink = data.find(
         (el: any) => el.title === pathname || ""
       );
