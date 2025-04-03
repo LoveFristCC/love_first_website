@@ -53,9 +53,10 @@ export default async function Pastors() {
           <Image
             src="/Jomo-Charmaine-Leadership.webp"
             alt="Jomo and Charmaine Cousins"
-            height={400}
-            width={400}
+            height={300}
+            width={300}
             priority
+            quality={100}
           />
         </div>
       </section>

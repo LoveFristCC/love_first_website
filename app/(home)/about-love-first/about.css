@@ -188,12 +188,12 @@
 .leadersHeroSection {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   min-height: 65vh;
-  padding: 75px 40px;
+  padding: 95px 40px 65px;
   background: linear-gradient(to right, rgba(93, 5, 167, 0.7), #333);
   color: #fff;
-  gap: 2rem;
+  gap: 1rem;
 
   @media (max-width: 840px) {
     flex-direction: column-reverse;
