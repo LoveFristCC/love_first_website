@@ -121,6 +121,14 @@ export default function Footer() {
             >
               Annual Report
             </Link>
+            <Link
+              href="https://forms.gle/2dpsyNxh8tJXU7Rn7"
+              rel="noreferrer noopener"
+              target="_blank"
+              aria-label="Scholarship Application"
+            >
+              Scholarship Application
+            </Link>
           </div>
         </div>
         <div className="footerHeader">
